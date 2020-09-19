@@ -1,0 +1,236 @@
+<template>
+  <div data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="800">
+    <div class="hero-image parallax py-1">
+      <div class="h-100">
+        <div class="h-100 d-flex flex-column justify-content-center">
+          <h3 class="text-center text-white play-title">JUGAR</h3>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-5 col-sm-6 col-xs-6 col-6 d-flex align-items-center">
+                <div>
+                  <p class="text-white secondary-font" style="font-size: 1.5rem; text-transform: uppercase;">¡Llego el momento de participar para ganar un stepway!</p>
+                  <p
+                      class="text-white"
+                  >Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.</p>
+                  <p class="text-white">¡Regístralo arriba si aún no lo has hecho!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mobile-play pb-3">
+      <h3 class="text-center text-white play-title pt-3">JUGAR</h3>
+
+      <h4 class="text-center text-white mt-3 secondary-font">¡LLEGO EL MOMENTO DE PARTICIPAR<br>PARA GANAR ESTE AUTO!</h4>
+
+      <img src="./../assets/stepway.png" class="img-fluid d-block mx-auto px-5">
+
+      <p class="text-white text-center px-5">Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.
+¡Regístralo arriba si aún no lo has hecho!</p>
+    </div>
+
+    <div class="verify-ticket py-5">
+      <div class="container">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <div class="form-group">
+            <label class="text-white">Nº. de Ticket/Código de facturación</label>
+            <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
+            <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
+            <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
+          </div>
+
+          <button @click="verify" id="faq" class="d-block btn btn-primary mt-3 mx-auto button">VERIFICAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Play",
+
+  props: {
+    msg: String,
+  },
+
+  watch: {
+    ticket: function(newValue) {
+      this.customTicketIsValid = newValue.length === 27;
+
+      const result = newValue.replace(/\D/g, "").replace(/(.{4})/g, '$1 ').trim();
+      if (result.length > 27) {
+        this.$nextTick(() => this.ticket = this.ticket.substring(0, this.ticket.length - 1));
+        return ;
+      }
+      this.$nextTick(() => this.ticket = result);
+    },
+  },
+
+  validation: {
+    ticket: {
+      required: { msg: 'Este campo es requerido' }
+    }
+  },
+
+  data() {
+    return {
+      ticket: "",
+      customTicketIsValid: false,
+      formTouched: false,
+    }
+  },
+
+  vuelidation: {
+    data: {
+      ticket: {
+        required: { msg: 'Este campo es requerido' },
+      },
+    },
+  },
+
+  methods: {
+    verify() {
+      this.formTouched = true;
+      if (this.$vuelidation.valid()) {
+        window.$('#init').modal('show')
+      }
+    }
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+.mobile-play {
+  background: url('./../assets/modalSuccess.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button {
+  background: #ff0e9b !important;
+  padding: 14px 55px;
+  font-weight: bold;
+  border-color: #ff0e9b !important;
+  font-size: 1rem;
+}
+
+.verify-ticket {
+  background: #621E66;
+}
+
+.win-title {
+  font-size: 1.3rem;
+  margin-top: 5px;
+}
+
+.win {
+  color: white;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.win-min {
+  font-size: 0.8rem;
+}
+
+.hero-image {
+  background-image: url("./../assets/jugar.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  display: none;
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .win-title {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+
+  .win {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .hero-image {
+    background-image: url("./../assets/jugar.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .win-title {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .win {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .win-min {
+    font-size: 1.1rem;
+  }
+
+  .mobile-play {
+    display: none;
+  }
+
+  .hero-image {
+    display: block;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .hero-image {
+    background-image: url("./../assets/jugar.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .win {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .hero-image {
+    background-image: url("./../assets/jugar.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+}
+</style>
