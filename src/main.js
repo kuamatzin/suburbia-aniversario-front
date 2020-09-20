@@ -36,6 +36,11 @@ const validations = {
     var valid = Number(args.min) <= value && Number(args.max) >= value;
     return [valid, msg];
   },
+  min: function min(value) {
+    var msg = 'Para poder participar el ticket de compra debe ser de mínimo $500';
+    var valid = value >= 500;
+    return [valid, msg];
+  },
   betweenLength: function betweenLength(value, args) {
     var msg = 'Must have between {{ min }} and {{ max }} characters';
     var valid =

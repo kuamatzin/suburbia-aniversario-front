@@ -162,6 +162,7 @@
                 for="defaultCheck1"
               >He verificado que toda mi información es correcta</label>
             </div>
+            <div class="invalid-error mb-2" v-if="formTouched && !correctInfo">Verifica que toda la información sea correcta</div>
 
             <div class="d-flex align-items-center mt-2">
               <i class="far fa-square checkbox" @click="bases = !bases" v-if="bases === false"></i>
@@ -171,6 +172,7 @@
                 bases del concurso
               </a></span>
             </div>
+            <div class="invalid-error mb-2" v-if="formTouched && !bases">Debes aceptar las bases del concurso</div>
 
             <div class="d-flex align-items-center mt-2">
               <i class="far fa-square checkbox" @click="terms = !terms" v-if="terms === false"></i>
@@ -180,6 +182,7 @@
                 términos y condiciones
               </a></span>
             </div>
+            <div class="invalid-error mb-2" v-if="formTouched && !terms">Acepta los términos y condiciones</div>
 
             <div class="d-flex align-items-center mt-2">
               <i class="far fa-square checkbox" @click="privacy = !privacy" v-if="privacy === false"></i>
@@ -189,6 +192,7 @@
                 aviso de privacidad
               </a></span>
             </div>
+            <div class="invalid-error mb-2" v-if="formTouched && !privacy">Lee nuestro aviso de privacidad</div>
           </div>
 
           <button id="jugar" class="d-block btn btn-primary mt-5 mx-auto button" @click="submit()">REGISTRAR</button>
@@ -304,7 +308,7 @@
     </div>
 
     <!-- Modal Exito -->
-    <div class="modal fade" id="success" tabindex="-1">
+    <div class="modal fade" id="success" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-lg">
         <div class="modal-content modal-success">
           <div class="modal-body">
@@ -354,16 +358,22 @@
                 <p class="ml-2 text-white">Recibirás un correo con todos los resultados una vez concluidas todas las participaciones.</p>
               </div>
 
-              <div class="row">
+              <div class="row" v-if="response.ticket.max_attempts < response.ticket.attempts">
                 <div class="col-md-6">
                   <button class="success-buttons mt-4 mb-4" @click="closeModal()">CERRAR</button>
                 </div>
 
                 <div class="col-md-6">
-                  <button class="success-buttons mt-4 mb-4">
+                  <button class="success-buttons mt-4 mb-4" @click="playAgain()">
                     <p class="m-0">JUGAR OTRA VEZ</p>
-                    <p class="m-0 participations">(3 participaciones restantes)</p>
+                    <p class="m-0 participations">({{response.ticket.max_attempts - response.ticket.attempts}} participaciones restantes)</p>
                   </button>
+                </div>
+              </div>
+
+              <div class="row" v-else>
+                <div class="col-md-6 offset-md-3">
+                  <button class="success-buttons mt-4 mb-4" @click="closeModal()">CERRAR</button>
                 </div>
               </div>
 
@@ -388,6 +398,7 @@
 
 <script>
 import Trivia from "./../services/trivia";
+import { EventBus } from './../services/events';
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -396,6 +407,12 @@ const msg = 'Este campo es requerido';
 export default {
   name: "Ticket",
 
+  mounted() {
+    EventBus.$on('getTicket', (ticket) => {
+      this.response.ticket = ticket;
+    })
+  },
+  
   data() {
     return {
       date: {
@@ -433,7 +450,7 @@ export default {
       confirm_ticket: "1111 1111 1111 1111 1111 11",
       store: "Nombre tienda (ejemplo, esto viene de servidor)",
       payment_method: "suburbia_card",
-      buy_amount: 1499,
+      buy_amount: 0,
       correctInfo: false,
       terms: false,
       privacy: false,
@@ -489,7 +506,7 @@ export default {
         required: { msg },
       },
       buy_amount: {
-        required: { msg },
+        min: true
       },
     },
   },
@@ -565,6 +582,7 @@ export default {
         });
         if (error) { return this.alert(error) }
         this.response.ticket = data.data.data;
+        EventBus.$emit('sendDataToPlay', this.response.ticket);
         window.$('#init').modal('show')
       }
     },
@@ -577,6 +595,11 @@ export default {
           alert('Este ticket ya ha sido registrado');
         }
       }
+    },
+
+    playAgain() {
+      window.$('#success').modal('hide')
+      window.$('#init').modal('show')
     },
 
     async startTrivia() {
@@ -625,7 +648,6 @@ export default {
         question_id: this.data_questions[this.activeQuestion].id,
         answer_id: this.answerSelected,
       });
-      console.log(this.response.ticket);
       const dataAnswers = {
         ticket_id: this.response.ticket.id,
         token: this.response.token,
@@ -633,9 +655,23 @@ export default {
       }
 
       const [error, data] = await Trivia.sendAnswers(dataAnswers);
+      
+      this.toggleTimer();
+      this.data_questions = [];
+      this.activeQuestion = 0;
+      this.answerSelected = 1000;
+      this.time = 0;
+      this.minutes = 0;
+      this.timer = '0:00';
+
       if(error) { return alert('Error mandando preguntas'); }
       this.response.answer = data.data.answer;
       this.response.ticket = data.data.ticket;
+      this.response.token = '';
+      this.answers = [];
+
+      EventBus.$emit('sendDataToPlay', data.data.ticket);
+
       window.$('#trivia').modal('hide')
       window.$('#success').modal('show')
     },
@@ -666,6 +702,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.invalid-error {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
 .checkbox {
   font-size: 1.3rem;
   cursor: pointer;
@@ -879,7 +922,7 @@ export default {
 }
 
 .modal-success {
-  background: url('./../assets/modalSuccess.jpg');
+  background: url('./../assets/bg_gracias.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

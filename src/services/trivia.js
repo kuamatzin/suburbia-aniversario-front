@@ -10,6 +10,10 @@ export default {
     return await to(axios.get('/token'));
   },
 
+  async getTicket(ticket) {
+    return await to(axios.get(`/ticket/${ticket}`));
+  },
+
   async getQuestions() {
     return await to(axios.get('/questions'));
   },

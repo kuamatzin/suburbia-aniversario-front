@@ -47,6 +47,27 @@
           </div>
 
           <button @click="verify" id="faq" class="d-block btn btn-primary mt-3 mx-auto button">VERIFICAR</button>
+
+
+          <div class="mt-5" v-if="registeredTicket">
+            <div class="d-flex flex-column align-items-center justify-content-center"> 
+              
+              <div class="d-flex align-items-center mb-3" v-for="index in registeredTicket.attempts" :key="index">
+                <p class="m-0 text-white">Participación #{{index}}</p>
+
+                <div class="ml-3 btn-completed">completado</div>
+              </div>
+
+              <p style="display:none">{{registeredTicket.games}}</p>
+
+              <div class="d-flex align-items-center mb-3" v-for="(n, i) in registeredTicket.games" :key="i">
+                <p class="m-0 text-white">Participación #{{i + registeredTicket.init}}</p>
+
+                <button class="ml-3 btn-play" @click="initGame">jugar</button>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -54,6 +75,9 @@
 </template>
 
 <script>
+import Trivia from "./../services/trivia";
+import { EventBus } from './../services/events';
+
 export default {
   name: "Play",
 
@@ -80,11 +104,18 @@ export default {
     }
   },
 
+  mounted() {
+    EventBus.$on('sendDataToPlay', (ticket) => {
+      this.formatTicketData(ticket)
+    })
+  },
+
   data() {
     return {
       ticket: "",
       customTicketIsValid: false,
       formTouched: false,
+      registeredTicket: ''
     }
   },
 
@@ -97,11 +128,30 @@ export default {
   },
 
   methods: {
-    verify() {
+    async verify() {
       this.formTouched = true;
       if (this.$vuelidation.valid()) {
-        window.$('#init').modal('show')
+        const [error, data] = await Trivia.getTicket(this.ticket.replace(/ /g,''))
+        if (error) return console.log(error);
+
+        this.formatTicketData(data.data.data);
       }
+    },
+
+    formatTicketData(data) {
+      const object = {};
+      object['id'] = data.id;
+      object['attempts'] = data.attempts ? Number(data.attempts) : 0;
+      object['max_attempts'] = Number(data.max_attempts);
+      object['games'] = object['max_attempts'] - object['attempts'];
+      object['init'] =  object['max_attempts'] - object['games'] + 1;
+      this.registeredTicket = {...object};
+      console.log(this.registeredTicket);
+      EventBus.$emit('getTicket', this.registeredTicket);
+    },
+
+    initGame() {
+      window.$('#init').modal('show')
     }
   }
 };
@@ -109,6 +159,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.btn-play {
+  background: #ff0e9b !important;
+  border: none;
+  padding-bottom: .3rem;
+  padding-top: .3rem;
+  width: 170px;
+  color: white;
+}
+
+.btn-completed {
+  background: white !important;
+  border: none;
+  padding-bottom: .3rem;
+  padding-top: .3rem;
+  width: 170px;
+  color: #711968;
+  text-align: center;
+  cursor: default;
+}
+
 .mobile-play {
   background: url('./../assets/modalSuccess.jpg');
   background-position: center;
