@@ -13,4 +13,12 @@ export default {
   async getQuestions() {
     return await to(axios.get('/questions'));
   },
+
+  async registerTicket(ticket) {
+    return await to(axios.post('/ticket', ticket));
+  },
+
+  async sendAnswers(answers) {
+    return await to(axios.post('/responses', answers));
+  },
 };

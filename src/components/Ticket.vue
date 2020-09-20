@@ -69,7 +69,7 @@
 
             <div class="col-md-4">
               <div class="form-group">
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" v-model="b_day">
                   <option disabled selected>Día</option>
                   <option v-for="index in 31" :key="index">{{ index }}</option>
                 </select>
@@ -78,7 +78,7 @@
 
             <div class="col-md-4">
               <div class="form-group">
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" v-model="b_month">
                   <option disabled selected>Mes</option>
                   <option v-for="month in date.month" :key="month">{{month}}</option>
                 </select>
@@ -87,7 +87,7 @@
 
             <div class="col-md-4">
               <div class="form-group">
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" v-model="b_year">
                   <option disabled selected>Año</option>
                   <option v-for="index in 90" :key="index">{{ 2021 - index}}</option>
                 </select>
@@ -256,25 +256,31 @@
 
               <div class="trivia-modal">
                 <div class="row row-modal mt-4">
-                  <div class="col-md-6 mb-4">
-                    <div class="d-flex justify-content-center align-items-center option" @click="answerSelected = 0" :class="{'selected': answerSelected === 0}">
+                  <div class="col-md-6 mt-4">
+                    <div class="d-flex justify-content-center align-items-center option" @click="answerSelected = data_questions[activeQuestion].responses[0].id" :class="{'selected': answerSelected === data_questions[activeQuestion].responses[0].id}">
                       <div class="number-option">A</div>
-                      <div class="option-response">{{data_questions[activeQuestion].responses[0].response}}</div>
+                      <div class="option-response px-2">{{data_questions[activeQuestion].responses[0].response}}</div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="d-flex justify-content-center align-items-center option" @click="answerSelected = 1" :class="{'selected': answerSelected === 1}">
+                  <div class="col-md-6 mt-4">
+                    <div class="d-flex justify-content-center align-items-center option" @click="answerSelected = data_questions[activeQuestion].responses[1].id" :class="{'selected': answerSelected === data_questions[activeQuestion].responses[1].id}">
                       <div class="number-option">B</div>
-                      <div class="option-response">{{data_questions[activeQuestion].responses[1].response}}</div>
+                      <div class="option-response px-2">{{data_questions[activeQuestion].responses[1].response}}</div>
                     </div>
                   </div>
                 </div>
 
-                <div class="row row-modal mt-4">
-                  <div class="col-md-6">
-                    <div class="d-flex justify-content-center align-items-center option" @click="answerSelected = 2" :class="{'selected': answerSelected === 2}">
+                <div class="row row-modal">
+                  <div class="col-md-6 mt-4">
+                    <div class="d-flex justify-content-center align-items-center option" @click="answerSelected = data_questions[activeQuestion].responses[2].id" :class="{'selected': answerSelected === data_questions[activeQuestion].responses[2].id}">
                       <div class="number-option">C</div>
-                      <div class="option-response">{{data_questions[activeQuestion].responses[2].response}}</div>
+                      <div class="option-response px-2">{{data_questions[activeQuestion].responses[2].response}}</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-4">
+                    <div class="d-flex justify-content-center align-items-center option" @click="answerSelected = data_questions[activeQuestion].responses[3].id" :class="{'selected': answerSelected === data_questions[activeQuestion].responses[3].id}">
+                      <div class="number-option">D</div>
+                      <div class="option-response px-2">{{data_questions[activeQuestion].responses[3].response}}</div>
                     </div>
                   </div>
                 </div>
@@ -328,7 +334,7 @@
                   <div class="d-flex flex-column align-items-center justify-content-center">
                     <span class="text-white">TIEMPO</span>
                     <div class="results mt-2">
-                      3:47
+                      {{response.answer.seconds}}
                     </div>
                   </div>
                 </div>
@@ -337,7 +343,7 @@
                   <div class="d-flex flex-column align-items-center justify-content-center">
                     <span class="text-white">ACIERTOS</span>
                     <div class="results mt-2">
-                      9/12
+                      {{response.answer.correct_answers}}/12
                     </div>
                   </div>
                 </div>
@@ -394,24 +400,40 @@ export default {
     return {
       date: {
         month: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        month_f: {
+          'Enero': '01',
+          'Febrero': '02',
+          'Marzo': '03',
+          'Abril': '04',
+          'Mayo': '05',
+          'Junio': '06',
+          'Julio': '07',
+          'Agosto': '08',
+          'Septiembre': '09',
+          'Octubre': '10',
+          'Noviembre': '11',
+          'Diciembre': '12'
+        },
       },
       trivia: {
         token: '',
       },
-      name: "",
-      first_name: "",
+      first_name: "Carlos",
       second_name: "",
-      paternal_last_name: "",
+      paternal_last_name: "Cuamatzin",
       maternal_last_name: "",
       gender: "male",
-      phone: "",
-      mobile: "",
-      email: "",
-      ticket: "",
-      confirm_ticket: "",
+      b_day: '1',
+      b_month: 'Enero',
+      b_year: '1995',
+      phone: "2228544315",
+      mobile: "2228544315",
+      email: "kuamatzin@gmail.com",
+      ticket: "1111 1111 1111 1111 1111 11",
+      confirm_ticket: "1111 1111 1111 1111 1111 11",
       store: "Nombre tienda (ejemplo, esto viene de servidor)",
       payment_method: "suburbia_card",
-      buy_amount: "",
+      buy_amount: 1499,
       correctInfo: false,
       terms: false,
       privacy: false,
@@ -424,11 +446,17 @@ export default {
       timer: '0:00',
       isRunning: false,
       interval: null,
-      customTicketIsValid: false,
-      customTicketConfirmationIsValid: false,
+      customTicketIsValid: true,
+      customTicketConfirmationIsValid: true,
       formTouched: false,
       isInputActive: false,
       value: '',
+      response: {
+        ticket: '',
+        token: '',
+        answer: ''
+      },
+      answers: []
     };
   },
 
@@ -517,18 +545,44 @@ export default {
   },
 
   methods: {
-    submit() {
+    async submit() {
       this.formTouched = true;
-      if (this.$vuelidation.valid()) {
+      if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid) {
+        const [error, data ] = await Trivia.registerTicket({
+          first_name: this.first_name,
+          second_name: this.second_name,
+          paternal_last_name: this.paternal_last_name,
+          maternal_last_name: this.maternal_last_name,
+          gender: this.gender,
+          phone: this.phone,
+          mobile: this.mobile,
+          email: this.email,
+          ticket: this.ticket.replace(/ /g,''),
+          store: "Puebla",
+          payment_method: this.payment_method,
+          buy_amount: this.buy_amount,
+          birthdate: `${this.b_year}-${this.date.month_f[this.b_month]}-${this.b_day < 10 ? '0' + this.b_day : this.b_day}T00:00:00.000000Z`,
+        });
+        if (error) { return this.alert(error) }
+        this.response.ticket = data.data.data;
         window.$('#init').modal('show')
+      }
+    },
+
+    alert(error) {
+      if (error.response && error.response.data && error.response.data.errors) {
+        console.log('Hay errores');
+        console.log(error.response.data.errors)
+        if (error.response.data.errors.ticket && error.response.data.errors.ticket[0] === "The ticket has already been taken.") {
+          alert('Este ticket ya ha sido registrado');
+        }
       }
     },
 
     async startTrivia() {
       const [error, { data }] = await Trivia.getToken();
       if (error) return alert('Oops ocurrió un problema, intenta más tarde');
-      this.token = data.token;
-      alert(this.token);
+      this.response.token = data.token;
       window.$('#init').modal('hide')
       window.$('#trivia').modal('show')
       const [errorQuestions, { data: dataQuestions }] = await Trivia.getQuestions();
@@ -557,11 +611,31 @@ export default {
     },
 
     nextQuestion() {
+      this.answers.push({
+        question_id: this.data_questions[this.activeQuestion].id,
+        answer_id: this.answerSelected,
+      });
       this.activeQuestion = this.activeQuestion + 1;
       this.answerSelected = 1000;
+      console.log(this.answers);
     },
 
-    sendAnswers() {
+    async sendAnswers() {
+      this.answers.push({
+        question_id: this.data_questions[this.activeQuestion].id,
+        answer_id: this.answerSelected,
+      });
+      console.log(this.response.ticket);
+      const dataAnswers = {
+        ticket_id: this.response.ticket.id,
+        token: this.response.token,
+        responses: this.answers
+      }
+
+      const [error, data] = await Trivia.sendAnswers(dataAnswers);
+      if(error) { return alert('Error mandando preguntas'); }
+      this.response.answer = data.data.answer;
+      this.response.ticket = data.data.ticket;
       window.$('#trivia').modal('hide')
       window.$('#success').modal('show')
     },
@@ -655,9 +729,12 @@ export default {
 
 .selected {
   border: 1px solid #ff0e9b !important;
+  background: #ff0e9b !important;
+  border-radius: .4rem;
 
   .number-option {
     background: #ff0e9b !important;
+    height: 100%;
   }
 }
 
@@ -670,10 +747,12 @@ export default {
 .option {
   border: 1px solid #666666;
   border-radius: .4rem;
-  height: 3.5rem;
   cursor: pointer;
+  background: #666666;
+  height: 100%;
 
   .number-option {
+    border-radius: .4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -685,12 +764,16 @@ export default {
   }
 
   .option-response {
+    border-top-right-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 75%;
     color: #666666;
     font-size: 1.2rem;
+    height: 100%;
   }
 }
 
