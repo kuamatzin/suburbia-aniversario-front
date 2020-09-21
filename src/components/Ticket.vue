@@ -358,7 +358,7 @@
                 <p class="ml-2 text-white">Recibirás un correo con todos los resultados una vez concluidas todas las participaciones.</p>
               </div>
 
-              <div class="row" v-if="response.ticket.max_attempts < response.ticket.attempts">
+              <div class="row" v-if="response.ticket.attempts < response.ticket.max_attempts">
                 <div class="col-md-6">
                   <button class="success-buttons mt-4 mb-4" @click="closeModal()">CERRAR</button>
                 </div>
@@ -438,17 +438,17 @@ export default {
       first_name: "Carlos",
       second_name: "",
       paternal_last_name: "Cuamatzin",
-      maternal_last_name: "",
+      maternal_last_name: "Hernández",
       gender: "male",
       b_day: '1',
       b_month: 'Enero',
       b_year: '1995',
       phone: "2228544315",
-      mobile: "2228544315",
+      mobile: "2228544316",
       email: "kuamatzin@gmail.com",
-      ticket: "1111 1111 1111 1111 1111 11",
-      confirm_ticket: "1111 1111 1111 1111 1111 11",
-      store: "Nombre tienda (ejemplo, esto viene de servidor)",
+      ticket: "1111 1111 1111 1111 1111 44",
+      confirm_ticket: "1111 1111 1111 1111 1111 44",
+      store: "",
       payment_method: "suburbia_card",
       buy_amount: 0,
       correctInfo: false,
