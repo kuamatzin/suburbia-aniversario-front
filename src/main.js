@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Main from './Main.vue';
 import Terms from './Terms.vue';
+import Admin from './Admin.vue';
 import Vuelidation from 'vuelidation';
 import VueRouter from 'vue-router';
 
@@ -96,6 +97,7 @@ Vue.config.productionTip = false;
 const routes = [
   { path: '/', component: App },
   { path: '/terminos', component: Terms },
+  { path: '/admin', component: Admin },
 ];
 
 const router = new VueRouter({

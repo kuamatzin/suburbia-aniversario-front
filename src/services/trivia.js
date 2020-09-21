@@ -25,4 +25,8 @@ export default {
   async sendAnswers(answers) {
     return await to(axios.post('/responses', answers));
   },
+
+  async getResults() {
+    return await to(axios.get('/results'));
+  }
 };
