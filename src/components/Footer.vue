@@ -17,23 +17,18 @@
               <a target="_blank" href="https://www.youtube.com/user/ModaSuburbia">
                 <i class="fab fa-youtube icon mx-2"></i>
               </a>
-              <a target="_blank" href="https://www.pinterest.com.mx/SuburbiaModa">
-                <i class="fab fa-pinterest icon mx-2"></i>
-              </a>
             </div>
           </div>
 
           <div class="col-sm-9 order-sm-1">
             <div class="d-flex">
-              <div class="px-3">
-                <a href="/terminos" target="_blank">
+              <div class="px-3" style="color: grey;">
                   Todos los derechos reservados D.R.
                   <span class="ml-2 slash">/</span>
-                </a>
               </div>
 
               <div class="px-3">
-                <a href="/terminos" target="_blank">
+                <a href="/bases" target="_blank">
                   Bases del concurso
                   <span class="ml-2 slash">/</span>
                 </a>
@@ -47,7 +42,7 @@
               </div>
 
               <div class="px-3">
-                <a href="/terminos" target="_blank">Aviso de privacidad</a>
+                <a href="/privacidad" target="_blank">Aviso de privacidad</a>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@
           <h3 class="text-center text-white px-5 regular primary-font">VIGENCIA DE PARTICIPACIÓN</h3>
           <h3
             class="text-center text-white mt-2 px-5 primary-font"
-          >DEL 1 DE OCTUBRE AL 31 DE OCTUBRE DE 2020</h3>
+          >DEL 1 AL 31 DE OCTUBRE DE 2020</h3>
         </div>
       </div>
     </div>

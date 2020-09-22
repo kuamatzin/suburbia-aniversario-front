@@ -46,7 +46,7 @@
             <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
           </div>
 
-          <button @click="verify" id="faq" class="d-block btn btn-primary mt-3 mx-auto button">VERIFICAR</button>
+          <button @click="verify" id="faq" :disabled="loading" class="d-flex align-items-center btn btn-primary mt-3 mx-auto button">VERIFICAR <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
 
 
           <div class="mt-5" v-if="registeredTicket">
@@ -115,7 +115,8 @@ export default {
       ticket: "",
       customTicketIsValid: false,
       formTouched: false,
-      registeredTicket: ''
+      registeredTicket: '',
+      loading: false,
     }
   },
 
@@ -131,7 +132,9 @@ export default {
     async verify() {
       this.formTouched = true;
       if (this.$vuelidation.valid()) {
+        this.loading = true;
         const [error, data] = await Trivia.getTicket(this.ticket.replace(/ /g,''))
+        this.loading = false;
         if (error) return console.log(error);
 
         this.formatTicketData(data.data.data);

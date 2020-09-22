@@ -37,7 +37,9 @@
           <a class="nav-link" href="#ticket">Registrar ticket</a>
         </li>
         <li class="nav-item logo">
-          <img alt="Suburbia aniversario" src="./../assets/logo-dorado.png" style="width: 200px" />
+          <a href="#navbarSupportedContent">
+            <img alt="Suburbia aniversario" src="./../assets/logo-dorado.png" style="width: 200px" />
+          </a>
         </li>
         <li class="nav-item" @click="hideCollapse">
           <a class="nav-link" href="#jugar">Jugar</a>

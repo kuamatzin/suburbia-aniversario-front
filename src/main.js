@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import Main from './Main.vue';
 import Terms from './Terms.vue';
+import Privacy from './Privacy.vue';
+import Bases from './Bases.vue';
 import Admin from './Admin.vue';
 import Vuelidation from 'vuelidation';
 import VueRouter from 'vue-router';
@@ -97,6 +99,8 @@ Vue.config.productionTip = false;
 const routes = [
   { path: '/', component: App },
   { path: '/terminos', component: Terms },
+  { path: '/bases', component: Bases },
+  { path: '/privacidad', component: Privacy },
   { path: '/admin', component: Admin },
 ];
 

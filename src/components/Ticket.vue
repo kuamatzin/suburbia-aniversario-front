@@ -50,16 +50,18 @@
 
           <div class="form-group mt-4">
             <label for="inputName">Apellido Materno*</label>
-            <input type="text" class="form-control" v-model="maternal_last_name" />
+            <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('maternal_last_name') }" v-model="maternal_last_name" />
             <div class="invalid-feedback">{{ $vuelidation.error('maternal_last_name') }}</div>
           </div>
 
           <div class="form-group mt-4">
             <label for="exampleFormControlSelect1">Género*</label>
-            <select class="form-control" v-model="gender">
+            <select class="form-control" v-model="gender" :class="{'is-invalid': $vuelidation.error('gender') }">
+              <option value="" disabled>Seleccionar</option>
               <option value="male">Hombre</option>
               <option value="female">Mujer</option>
             </select>
+            <div class="invalid-feedback">{{ $vuelidation.error('gender') }}</div>
           </div>
 
           <div class="row mt-4">
@@ -69,28 +71,31 @@
 
             <div class="col-md-4">
               <div class="form-group">
-                <select class="form-control" v-model="b_day">
-                  <option disabled selected>Día</option>
+                <select class="form-control" v-model="b_day" :class="{'is-invalid': $vuelidation.error('b_day') }">
+                  <option value="" disabled>Seleccionar</option>
                   <option v-for="index in 31" :key="index">{{ index }}</option>
                 </select>
+                <div class="invalid-feedback">{{ $vuelidation.error('b_day') }}</div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-group">
-                <select class="form-control" v-model="b_month">
-                  <option disabled selected>Mes</option>
+                <select class="form-control" v-model="b_month" :class="{'is-invalid': $vuelidation.error('b_month') }">
+                  <option value="" disabled>Seleccionar</option>
                   <option v-for="month in date.month" :key="month">{{month}}</option>
                 </select>
+                <div class="invalid-feedback">{{ $vuelidation.error('b_month') }}</div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-group">
-                <select class="form-control" v-model="b_year">
-                  <option disabled selected>Año</option>
+                <select class="form-control" v-model="b_year" :class="{'is-invalid': $vuelidation.error('b_year') }">
+                  <option value="" disabled>Seleccionar</option>
                   <option v-for="index in 90" :key="index">{{ 2021 - index}}</option>
                 </select>
+                <div class="invalid-feedback">{{ $vuelidation.error('b_year') }}</div>
               </div>
             </div>
           </div>
@@ -115,14 +120,14 @@
 
           <div class="form-group mt-4">
             <label for="inputName">Nº. de Ticket/Código de facturación* <i @click="openHelpModal('ticket')" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
           </div>
 
           <div class="form-group mt-4">
             <label for="inputName">Nº. de Ticket/Código de facturación* (Repetir)</label>
-            <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('confirm_ticket') || (customTicketConfirmationIsValid === false && formTouched) }" v-model="confirm_ticket" />
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('confirm_ticket') || (customTicketConfirmationIsValid === false && formTouched) }" v-model="confirm_ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("confirm_ticket")'>{{ $vuelidation.error('confirm_ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe coincidir con el ticket</div>
           </div>
@@ -134,17 +139,18 @@
 
           <div class="form-group mt-4">
             <label for="exampleFormControlSelect1">Método de pago</label>
-            <select class="form-control" :class="{'is-invalid': $vuelidation.error('payment_method') }" v-model="payment_method">
+            <select class="form-control" v-model="payment_method" :class="{'is-invalid': $vuelidation.error('payment_method') }">
+              <option value="" disabled>Seleccionar</option>
               <option value="suburbia_card">Tarjeta Suburbia</option>
               <option value="bbva_card">Tarjeta BBVA Bancomer</option>
               <option value="cash">Efectivo</option>
               <option value="other">Otra forma de pago</option>
             </select>
-            <div class="invalid-feedback" v-if='$vuelidation.error("confirm_ticket")'>{{ $vuelidation.error('confirm_ticket') }}</div>
+            <div class="invalid-feedback">{{ $vuelidation.error('payment_method') }}</div>
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal('ticket')" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <label for="inputName">Monto Total de Compra*</label>
             <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="displayValue" />
             <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
           </div>
@@ -195,7 +201,10 @@
             <div class="invalid-error mb-2" v-if="formTouched && !privacy">Lee nuestro aviso de privacidad</div>
           </div>
 
-          <button id="jugar" class="d-block btn btn-primary mt-5 mx-auto button" @click="submit()">REGISTRAR</button>
+          <button id="jugar" :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" @click="submit()">
+            REGISTRAR
+            <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </button>
       </div>
     </div>
 
@@ -231,7 +240,7 @@
 
             <p class="text-center primary-color mt-4 good-luck">¡BUENA SUERTE!</p>
 
-            <button class="start mt-4 mb-4" @click="startTrivia()">INICIAR</button>
+            <button class="start mt-4 mb-4 d-flex align-content-center" @click="startTrivia()">INICIAR <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
           </div>
         </div>
       </div>
@@ -297,9 +306,13 @@
                 <i class="fas fa-arrow-alt-circle-right ml-2"></i>
               </button>
 
-              <button v-if="activeQuestion + 1 === data_questions.length" :disabled="answerSelected === 1000" class="d-flex align-items-center last-question mt-4 mb-4" @click="sendAnswers()">
-                Finalizar
-                <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+              <button v-if="activeQuestion + 1 === data_questions.length" :disabled="answerSelected === 1000 || loading" class="d-flex align-items-center last-question mt-4 mb-4" @click="sendAnswers()">
+                <span>
+                  Finalizar
+                  <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+                </span>
+
+                <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
               </button>
             </div>
           </div>
@@ -354,7 +367,7 @@
               </div>
 
               <div class="px-5 mt-4 d-flex justify-content-center align-items-center">
-                <img src="./../assets/participa.svg" width="150px" alt="">
+                <img src="./../assets/icon_eye_blanco.svg" width="100px" alt="">
                 <p class="ml-2 text-white">Recibirás un correo con todos los resultados una vez concluidas todas las participaciones.</p>
               </div>
 
@@ -439,17 +452,17 @@ export default {
       second_name: "",
       paternal_last_name: "Cuamatzin",
       maternal_last_name: "Hernández",
-      gender: "male",
-      b_day: '1',
-      b_month: 'Enero',
-      b_year: '1995',
+      gender: "",
+      b_day: '',
+      b_month: '',
+      b_year: '',
       phone: "2228544315",
       mobile: "2228544316",
       email: "kuamatzin@gmail.com",
       ticket: "1111 1111 1111 1111 1111 44",
       confirm_ticket: "1111 1111 1111 1111 1111 44",
       store: "",
-      payment_method: "suburbia_card",
+      payment_method: "",
       buy_amount: 0,
       correctInfo: false,
       terms: false,
@@ -473,13 +486,17 @@ export default {
         token: '',
         answer: ''
       },
-      answers: []
+      answers: [],
+      loading: false
     };
   },
 
   vuelidation: {
     data: {
       first_name: {
+        required: { msg },
+      },
+      maternal_last_name: {
         required: { msg },
       },
       paternal_last_name: {
@@ -507,6 +524,18 @@ export default {
       },
       buy_amount: {
         min: true
+      },
+      b_day: {
+        required: { msg }
+      },
+      b_month: {
+        required: { msg }
+      },
+      b_year: {
+        required: { msg }
+      },
+      payment_method: {
+        required: { msg }
       },
     },
   },
@@ -565,6 +594,7 @@ export default {
     async submit() {
       this.formTouched = true;
       if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid) {
+        this.loading = true;
         const [error, data ] = await Trivia.registerTicket({
           first_name: this.first_name,
           second_name: this.second_name,
@@ -580,6 +610,7 @@ export default {
           buy_amount: this.buy_amount,
           birthdate: `${this.b_year}-${this.date.month_f[this.b_month]}-${this.b_day < 10 ? '0' + this.b_day : this.b_day}T00:00:00.000000Z`,
         });
+        this.loading = false;
         if (error) { return this.alert(error) }
         this.response.ticket = data.data.data;
         EventBus.$emit('sendDataToPlay', this.response.ticket);
@@ -603,14 +634,17 @@ export default {
     },
 
     async startTrivia() {
+      this.loading = true;
       const [error, { data }] = await Trivia.getToken();
+      this.loading = false;
       if (error) return alert('Oops ocurrió un problema, intenta más tarde');
       this.response.token = data.token;
+      this.loading = true;
+      const [errorQuestions, { data: dataQuestions }] = await Trivia.getQuestions();
+      this.loading = false;
+      if (errorQuestions) return alert('Oops ocurrió un problema, intenta más tarde');
       window.$('#init').modal('hide')
       window.$('#trivia').modal('show')
-      const [errorQuestions, { data: dataQuestions }] = await Trivia.getQuestions();
-      if (errorQuestions) return alert('Oops ocurrió un problema, intenta más tarde');
-
       this.data_questions = dataQuestions.data;
       this.toggleTimer();
     },
@@ -644,6 +678,7 @@ export default {
     },
 
     async sendAnswers() {
+      this.loading = true;
       this.answers.push({
         question_id: this.data_questions[this.activeQuestion].id,
         answer_id: this.answerSelected,
@@ -655,7 +690,7 @@ export default {
       }
 
       const [error, data] = await Trivia.sendAnswers(dataAnswers);
-      
+      this.loading = false;
       this.toggleTimer();
       this.data_questions = [];
       this.activeQuestion = 0;
@@ -926,5 +961,9 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    background-position: right calc(.575em + .875rem) center !important;
 }
 </style>
