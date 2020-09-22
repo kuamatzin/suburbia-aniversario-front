@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <go-top :size="50" bg-color="#EAC144"></go-top>
+
     <div class="pagewide p-3 bg-white">
       <div class="container">
         <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 130px" />
@@ -35,6 +37,7 @@ import Play from "./components/Play.vue";
 import FAQ from "./components/FAQ.vue";
 import Winners from "./components/Winners.vue";
 import Footer from "./components/Footer.vue";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: "App",
@@ -48,6 +51,7 @@ export default {
     FAQ,
     Winners,
     Footer,
+    GoTop
   },
 };
 </script>
@@ -71,6 +75,26 @@ body {
     font-family: "Rajdhani", sans-serif !important;
     font-weight: 700;
   }
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
 }
 
 .primary-font {

@@ -215,7 +215,7 @@
           >
             <div
                 class="card-body"
-            >PPuedes comunicarte al teléfono 55 55 55 55 en horario de 9 a 6 pm de lunes a viernes.
+            >Puedes comunicarte al teléfono 55 55 55 55 en horario de 9 a 6 pm de lunes a viernes.
             </div>
           </div>
         </div>
