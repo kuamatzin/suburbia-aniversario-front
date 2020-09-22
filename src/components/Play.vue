@@ -11,7 +11,7 @@
             <div class="row">
               <div class="col-md-5 col-sm-6 col-xs-6 col-6 d-flex align-items-center">
                 <div>
-                  <p class="text-white secondary-font" style="font-size: 1.5rem; text-transform: uppercase;">¡Llego el momento de participar para ganar un stepway!</p>
+                  <p class="text-white secondary-font" style="font-size: 1.5rem; text-transform: uppercase;">¡Llego el momento de participar para ganar una stepway!</p>
                   <p
                       class="text-white"
                   >Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.</p>

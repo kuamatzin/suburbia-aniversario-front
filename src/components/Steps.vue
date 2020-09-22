@@ -6,7 +6,7 @@
       Responde correctamente al mayor número de preguntas en el menor tiempo posible y gana
       <span
         class="secondary-color font-weight-bold"
-      >¡una Stepway del año totalmente nueva!</span>
+      >¡una Stepway totalmente nueva!</span>
     </p>
 
     <div
