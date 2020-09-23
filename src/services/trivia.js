@@ -5,6 +5,12 @@ const axios = Axios.create({
   baseURL: `${process.env.VUE_APP_URL}`,
 });
 
+const getHeaders = () => {
+  return {
+    authorization: `Bearer ${localStorage.token}`,
+  };
+};
+
 export default {
   async getToken() {
     return await to(axios.get('/token'));
@@ -27,7 +33,14 @@ export default {
   },
 
   async getResults() {
-    return await to(axios.get('/results'));
+    return await to(axios.get('/results', { headers: getHeaders() }));
+  },
+
+  async login(credentials) {
+    const [error, data] = await to(axios.post('/login', credentials));
+    if (error) return [error];
+    localStorage.token = data.data.access_token;
+    return [null]
   },
 
   getStore(number) {
@@ -191,5 +204,5 @@ export default {
     };
 
     return stores[number];
-  }
+  },
 };

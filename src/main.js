@@ -5,6 +5,7 @@ import Terms from './Terms.vue';
 import Privacy from './Privacy.vue';
 import Bases from './Bases.vue';
 import Admin from './Admin.vue';
+import Login from './Login.vue';
 import Vuelidation from 'vuelidation';
 import VueRouter from 'vue-router';
 
@@ -102,6 +103,7 @@ const routes = [
   { path: '/bases', component: Bases },
   { path: '/privacidad', component: Privacy },
   { path: '/admin', component: Admin },
+  { path: '/login', component: Login },
 ];
 
 const router = new VueRouter({

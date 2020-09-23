@@ -12,30 +12,30 @@
         <div class="col-md-3">
           <div class="card">
             <div class="card-body">
-              <h2>
+              <h4>
                 Número de registros:
                 <br />{{stats.total_tickets}}
-              </h2>
+              </h4>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card">
             <div class="card-body">
-              <h2>
+              <h4>
                 Número de participaciones:
                 <br />{{stats.participations}}
-              </h2>
+              </h4>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card">
             <div class="card-body">
-              <h2>
+              <h4>
                 Número de respuestas:
                 <br />{{stats.answers}}
-              </h2>
+              </h4>
             </div>
           </div>
         </div>
@@ -140,13 +140,16 @@ export default {
   methods: {
     async getResults() {
       const [error, data ] = await Trivia.getResults();
-      if (error) return console.log(error);
+      if (error) {
+        console.log(error);
+        this.$router.push("/login");
+        return console.log(error)
+      }
       this.data = data.data.data;
       this.stats.total_tickets = data.data.count;
       this.stats.participations = data.data.participations;
       this.stats.answers = data.data.answers;
       this.answers = data.data.data.map((el) => el.answers);
-      console.log(this.answers)
     },  
   },
 };
