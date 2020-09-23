@@ -1,35 +1,63 @@
 <template>
   <div>
-    <div class="wrapper fadeInDown flex align-items-center" style="height: 100vh;">
+    <div
+      class="wrapper fadeInDown flex align-items-center"
+      style="height: 100vh"
+    >
       <div id="formContent">
         <!-- Tabs Titles -->
 
         <!-- Icon -->
         <div class="fadeIn first">
-          <img alt="Suburbia aniversario" src="@/assets/logo.jpg" class="my-3" style="width: 150px"/>
+          <img
+            alt="Suburbia aniversario"
+            src="@/assets/logo.jpg"
+            class="my-3"
+            style="width: 150px"
+          />
         </div>
 
         <!-- Login Form -->
         <div>
-          <input
-            type="email"
-            id="login"
-            class="fadeIn second"
-            name="login"
-            placeholder="Email"
-            v-model="email"
-            required
-          />
-          <input
-            type="password"
-            id="password"
-            class="fadeIn third"
-            name="login"
-            placeholder="Password"
-            v-model="password"
-            required
-          />
-          <button @click="login()" class="fadeIn d-flex align-content-center justify-content-center btn btn-primary my-5 mx-auto button">Iniciar sesión</button>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              :class="{ 'is-invalid': $vuelidation.error('email') }"
+              v-model="email"
+              required
+            />
+            <div class="invalid-feedback" v-if="$vuelidation.error('email')">
+              {{ $vuelidation.error("email") }}
+            </div>
+          </div>
+          <div>
+            <input
+              type="password"
+              class="fadeIn form-control"
+              placeholder="Password"
+              :class="{ 'is-invalid': $vuelidation.error('password') }"
+              v-model="password"
+              required
+            />
+            <div class="invalid-feedback" v-if="$vuelidation.error('password')">
+              {{ $vuelidation.error("password") }}
+            </div>
+          </div>
+          <button
+            @click="login()"
+            :disabled="$vuelidation.errors() || loading"
+            class="d-flex align-content-center justify-content-center btn btn-primary my-5 mx-auto button"
+          >
+            Iniciar sesión
+            <span
+              v-if="loading"
+              class="ml-2 my-auto spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+          </button>
         </div>
       </div>
     </div>
@@ -37,32 +65,47 @@
 </template>
 
 <script>
-import API from './services/trivia';
+import API from "./services/trivia";
 
 export default {
-    data() {
-        return {
-            email: '',
-            password: '',
-        }
-    },
-    methods: {
-        async login() {
-            console.log('Usad')
-            const [error] = await API.login({
-                email: this.email,
-                password: this.password
-            });
-            if (error) return alert('Credenciales incorrectas');
+  data() {
+    return {
+      email: "",
+      password: "",
+      loading: false,
+    };
+  },
 
-            this.$router.push("/admin");
-        }
-    }
-}
+  vuelidation: {
+    data: {
+      email: {
+        email: true,
+      },
+      password: {
+        required: { msg: "Este campo es requerido" },
+      },
+    },
+  },
+
+  methods: {
+    async login() {
+      if (this.$vuelidation.valid()) {
+        this.loading = true;
+        const [error] = await API.login({
+          email: this.email,
+          password: this.password,
+        });
+        this.loading = false;
+        if (error) return alert("Credenciales incorrectas");
+
+        this.$router.push("/admin");
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 .button {
   background: #ff0e9b !important;
   padding: 14px 55px;
