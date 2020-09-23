@@ -59,7 +59,7 @@ export default {
   padding-right: 60px;
   padding-left: 60px;
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 

@@ -16,6 +16,8 @@
                       class="text-white"
                   >Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.</p>
                   <p class="text-white">¡Regístralo arriba si aún no lo has hecho!</p>
+
+                  <p class="text-white">Al terminar todas tus participaciones, te enviaremos un correo con tu registro y resultados.</p>
                 </div>
               </div>
             </div>
@@ -34,6 +36,8 @@
 
       <p class="text-white text-center px-5">Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.
 ¡Regístralo arriba si aún no lo has hecho!</p>
+
+      <p class="text-white text-center px-5">Al terminar todas tus participaciones, te enviaremos un correo con tu registro y resultados.</p>
     </div>
 
     <div class="verify-ticket py-5">

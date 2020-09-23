@@ -4,13 +4,44 @@
       <a class="navbar-brand pl-3">
         <img alt="Suburbia aniversario" src="./assets/logo.jpg" style="width: 100px" />
       </a>
-      <span class="text-white">
-        Cerrar sesión
-      </span>
+      <span class="text-white">Cerrar sesión</span>
     </nav>
 
     <div class="container-fluid py-3 px-4">
-      <div class="card">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h2>
+                Número de registros:
+                <br />{{stats.total_tickets}}
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h2>
+                Número de participaciones:
+                <br />{{stats.participations}}
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h2>
+                Número de respuestas:
+                <br />{{stats.answers}}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-3">
         <div class="mt px-3 mt-3">
           <h3>Registros</h3>
         </div>
@@ -39,7 +70,7 @@
                   class="accordion-toggle pointer"
                   :key="ticket.id"
                 >
-                  <td>{{ticket.created_at}}</td>
+                  <td>{{moment(ticket.created_at).format('LLL')}}</td>
                   <td>{{ticket.first_name}} {{ticket.paternal_last_name}}</td>
                   <td>{{ticket.email}}</td>
                   <td>{{ticket.ticket}}</td>
@@ -86,6 +117,8 @@
 
 <script>
 import Trivia from "./services/trivia";
+import * as moment from "moment";
+moment.locale("es");
 
 export default {
   mounted() {
@@ -97,20 +130,24 @@ export default {
       error: "",
       data: "",
       answers: [],
+      stats: {
+        total_tickets: 0,
+      },
+      moment,
     };
   },
 
   methods: {
     async getResults() {
-      [
-        this.error,
-        {
-          data: { data: this.data },
-        },
-      ] = await Trivia.getResults();
-      if (this.error) return console.log(this.error);
-      this.answers = this.data.data.map((el) => el.answers);
-    },
+      const [error, data ] = await Trivia.getResults();
+      if (error) return console.log(error);
+      this.data = data.data.data;
+      this.stats.total_tickets = data.data.count;
+      this.stats.participations = data.data.participations;
+      this.stats.answers = data.data.answers;
+      this.answers = data.data.data.map((el) => el.answers);
+      console.log(this.answers)
+    },  
   },
 };
 </script>
@@ -125,12 +162,12 @@ export default {
 }
 
 .card {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 </style>

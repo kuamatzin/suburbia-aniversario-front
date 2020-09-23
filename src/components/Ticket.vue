@@ -150,7 +150,7 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Monto Total de Compra*</label>
+            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal('ticket')" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
             <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="displayValue" />
             <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
           </div>
@@ -572,6 +572,7 @@ export default {
       this.customTicketIsValid = newValue.length === 27;
       this.customTicketConfirmationIsValid = newValue === this.confirm_ticket;
       const result = newValue.replace(/\D/g, "").replace(/(.{4})/g, '$1 ').trim();
+      this.getStore(result.substring(7, 12).replace(' ', ''));
       if (result.length > 27) {
         this.$nextTick(() => this.ticket = this.ticket.substring(0, this.ticket.length - 1));
         return ;
@@ -730,6 +731,10 @@ export default {
     openHelpModal(type) {
       console.log(type);
       window.$('#help').modal('show')
+    },
+
+    getStore(store) {
+      this.store = Trivia.getStore(store);
     }
   },
 };
