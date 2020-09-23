@@ -31,8 +31,6 @@ export default {
   },
 
   getStore(number) {
-    console.log('asdasd')
-    console.log(number);
     const stores = {
       '4160': 'Los Mochis',
       '0942': 'Los Mochis Sendero',

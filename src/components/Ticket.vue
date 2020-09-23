@@ -120,7 +120,7 @@
 
           <div class="form-group mt-4">
             <label for="inputName">Nº. de Ticket/Código de facturación* <i @click="openHelpModal('ticket')" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (validateStore === false && ticket.length > 13) || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
           </div>
@@ -448,19 +448,19 @@ export default {
       trivia: {
         token: '',
       },
-      first_name: "Carlos",
+      first_name: "",
       second_name: "",
-      paternal_last_name: "Cuamatzin",
-      maternal_last_name: "Hernández",
+      paternal_last_name: "",
+      maternal_last_name: "",
       gender: "",
       b_day: '',
       b_month: '',
       b_year: '',
-      phone: "2228544315",
-      mobile: "2228544316",
-      email: "kuamatzin@gmail.com",
-      ticket: "1111 1111 1111 1111 1111 44",
-      confirm_ticket: "1111 1111 1111 1111 1111 44",
+      phone: "",
+      mobile: "",
+      email: "",
+      ticket: "",
+      confirm_ticket: "",
       store: "",
       payment_method: "",
       buy_amount: 0,
@@ -476,6 +476,7 @@ export default {
       timer: '0:00',
       isRunning: false,
       interval: null,
+      validateStore: false,
       customTicketIsValid: true,
       customTicketConfirmationIsValid: true,
       formTouched: false,
@@ -572,7 +573,9 @@ export default {
       this.customTicketIsValid = newValue.length === 27;
       this.customTicketConfirmationIsValid = newValue === this.confirm_ticket;
       const result = newValue.replace(/\D/g, "").replace(/(.{4})/g, '$1 ').trim();
-      this.getStore(result.substring(7, 12).replace(' ', ''));
+      if (result.length > 13) {
+        this.getStore(result.substring(7, 12).replace(' ', ''));
+      }
       if (result.length > 27) {
         this.$nextTick(() => this.ticket = this.ticket.substring(0, this.ticket.length - 1));
         return ;
@@ -606,7 +609,7 @@ export default {
           mobile: this.mobile,
           email: this.email,
           ticket: this.ticket.replace(/ /g,''),
-          store: "Puebla",
+          store: this.store,
           payment_method: this.payment_method,
           buy_amount: this.buy_amount,
           birthdate: `${this.b_year}-${this.date.month_f[this.b_month]}-${this.b_day < 10 ? '0' + this.b_day : this.b_day}T00:00:00.000000Z`,
@@ -735,6 +738,7 @@ export default {
 
     getStore(store) {
       this.store = Trivia.getStore(store);
+      this.validateStore = this.store ? true: false;
     }
   },
 };
