@@ -21,27 +21,27 @@
           </div>
 
           <div class="col-sm-9 order-sm-1">
-            <div class="d-flex">
-              <div class="px-3" style="color: grey;">
+            <div class="row">
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center" style="color: grey;">
                   Todos los derechos reservados D.R.
                   <span class="ml-2 slash">/</span>
               </div>
 
-              <div class="px-3">
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
                 <a href="/bases" target="_blank">
                   Bases del concurso
-                  <span class="ml-2 slash">/</span>
+                  <span class="slash">/</span>
                 </a>
               </div>
               
-              <div class="px-3">
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
                 <a href="/terminos" target="_blank">
                   Términos y condiciones
                   <span class="ml-2 slash">/</span>
                 </a>
               </div>
 
-              <div class="px-3">
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
                 <a href="/privacidad" target="_blank">Aviso de privacidad</a>
               </div>
             </div>
