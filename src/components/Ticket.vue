@@ -854,11 +854,12 @@ export default {
     border-top-right-radius: .4rem;
     border-bottom-right-radius: .4rem;
     background: white;
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 75%;
     color: #666666;
+    overflow-wrap: anywhere;
+    display: flex;
     font-size: 1.2rem;
     height: 100%;
   }

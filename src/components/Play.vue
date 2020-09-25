@@ -63,11 +63,13 @@
               </div>
 
               <p style="display:none">{{registeredTicket.games}}</p>
+              <div v-if="registeredTicket.games">
+                <div class="d-flex align-items-center mb-3" v-for="n in registeredTicket.games" :key="n">
+                  <p>{{n}}</p>
+                  <p class="m-0 text-white">Participación #{{(n + registeredTicket.init) - 1}}</p>
 
-              <div class="d-flex align-items-center mb-3" v-for="(n, i) in registeredTicket.games" :key="i">
-                <p class="m-0 text-white">Participación #{{i + registeredTicket.init}}</p>
-
-                <button class="ml-3 btn-play" @click="initGame">jugar</button>
+                  <button class="ml-3 btn-play" @click="initGame">jugar</button>
+                </div>
               </div>
 
             </div>
@@ -113,7 +115,11 @@ export default {
       this.formatTicketData(ticket)
     })
 
-    EventBus.$on('plusOneTicketPlay', () => this.registeredTicket.attempts = this.registeredTicket.attempts + 1);
+    EventBus.$on('plusOneTicketPlay', () => {
+      this.registeredTicket.attempts = this.registeredTicket.attempts + 1;
+      this.registeredTicket.games = this.registeredTicket.games - 1;
+      this.registeredTicket.init =  this.registeredTicket.max_attempts - this.registeredTicket.games + 1;
+    });
   },
 
   data() {
