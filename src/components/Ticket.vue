@@ -120,9 +120,12 @@
 
           <div class="form-group mt-4">
             <label for="inputName">Nº. de Ticket/Código de facturación* <i @click="openHelpModal('ticket')" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (validateStore === false && ticket.length > 13) || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
-            <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
-            <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (validateStore === false && ticket.length > 13) || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
+            <div class="invalid-feedback" v-if="ticketAlreadyExists">Este ticket ya fue registrado previamente.</div>
+            <template v-else>
+              <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
+              <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
+            </template>
           </div>
 
           <div class="form-group mt-4">
@@ -479,6 +482,7 @@ export default {
       validateStore: false,
       customTicketIsValid: true,
       customTicketConfirmationIsValid: true,
+      ticketAlreadyExists: false,
       formTouched: false,
       isInputActive: false,
       value: '',
@@ -569,6 +573,8 @@ export default {
 
   watch: {
     ticket: function(newValue) {
+      console.log('Que onda');
+      this.ticketAlreadyExists = false;
       this.formTouched = true;
       this.customTicketIsValid = newValue.length === 27;
       this.customTicketConfirmationIsValid = newValue === this.confirm_ticket;
@@ -597,7 +603,7 @@ export default {
   methods: {
     async submit() {
       this.formTouched = true;
-      if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid) {
+      if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false) {
         this.loading = true;
         const [error, data ] = await Trivia.registerTicket({
           first_name: this.first_name,
@@ -625,7 +631,8 @@ export default {
     alert(error) {
       if (error.response && error.response.data && error.response.data.errors) {
         if (error.response.data.errors.ticket && error.response.data.errors.ticket[0] === "The ticket has already been taken.") {
-          alert('Este ticket ya ha sido registrado');
+          this.ticketAlreadyExists = true;
+          console.log(this.ticketAlreadyExists);
         }
       }
     },
@@ -793,8 +800,16 @@ export default {
 }
 
 .trivia-modal {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .trivia-modal {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .counter {

@@ -99,13 +99,13 @@ Vue.use(Vuelidation, {
 Vue.config.productionTip = false;
 
 const routes = [
-  { path: '/', component: App },
+  { path: '/app', component: App },
   { path: '/terminos', component: Terms },
   { path: '/bases', component: Bases },
   { path: '/privacidad', component: Privacy },
   { path: '/admin', component: Admin },
   { path: '/login', component: Login },
-  { path: '/counter', component: Counter },
+  { path: '/', component: Counter },
 ];
 
 const router = new VueRouter({

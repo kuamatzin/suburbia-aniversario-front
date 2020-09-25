@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "aniversariosuburbia-dev"
+  },
+  "targets": {
+    "aniversario-suburbia": {
+      "hosting": {
+        "production": [
+          "aniversario-suburbia"
+        ],
+      }
+    }
   }
 }
