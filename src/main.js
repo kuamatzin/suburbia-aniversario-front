@@ -6,6 +6,7 @@ import Privacy from './Privacy.vue';
 import Bases from './Bases.vue';
 import Admin from './Admin.vue';
 import Login from './Login.vue';
+import Counter from './Counter.vue';
 import Vuelidation from 'vuelidation';
 import VueRouter from 'vue-router';
 
@@ -104,6 +105,7 @@ const routes = [
   { path: '/privacidad', component: Privacy },
   { path: '/admin', component: Admin },
   { path: '/login', component: Login },
+  { path: '/counter', component: Counter },
 ];
 
 const router = new VueRouter({
