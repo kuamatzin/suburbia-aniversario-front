@@ -210,7 +210,7 @@
 
     <!-- Modal Iniciar -->
     <div class="modal fade" id="init" tabindex="-1">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content my-modal">
           <div class="modal-body">
             <p class="p-m text-center primary-color m-0 mt-4">¡Este es el momento de participar!</p>
@@ -248,7 +248,7 @@
 
     <!-- Modal Trivia -->
     <div class="modal fade" id="trivia" tabindex="-1" aria-labelledby="triviaLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-body">
             <div class="d-flex justify-content-between p-3">
@@ -322,7 +322,7 @@
 
     <!-- Modal Exito -->
     <div class="modal fade" id="success" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content modal-success">
           <div class="modal-body">
 
@@ -398,7 +398,7 @@
 
     <!-- Modal Ayuda -->
     <div class="modal fade" id="help" tabindex="-1">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-body">
            <img alt="Suburbia aniversario" src="./../assets/ticket.png" class="w-100" />
@@ -457,8 +457,8 @@ export default {
       b_month: 'Enero',
       b_year: '1990',
       phone: "2228544315",
-      mobile: "2228544315",
-      email: "kuamatzin@gmail.com",
+      mobile: "",
+      email: "",
       ticket: "2222 2241 6022 2222 2222 22",
       confirm_ticket: "2222 2241 6022 2222 2222 22",
       store: "Los Mochis",
@@ -746,6 +746,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.modal-dialog{
+      overflow-y: initial !important
+}
+.modal-body{
+  height: 100%;
+  overflow-y: auto;
+}
+
 .invalid-error {
     width: 100%;
     margin-top: .25rem;

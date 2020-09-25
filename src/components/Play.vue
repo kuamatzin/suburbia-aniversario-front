@@ -65,7 +65,7 @@
               <p style="display:none">{{registeredTicket.games}}</p>
               <div v-if="registeredTicket.games">
                 <div class="d-flex align-items-center mb-3" v-for="n in registeredTicket.games" :key="n">
-                  <p>{{n}}</p>
+                  
                   <p class="m-0 text-white">Participación #{{(n + registeredTicket.init) - 1}}</p>
 
                   <button class="ml-3 btn-play" @click="initGame">jugar</button>

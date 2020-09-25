@@ -74,10 +74,6 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-
-    p {
-      color: blue !important;
-    }
   }
 }
 
@@ -90,10 +86,6 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-
-    p {
-      color: red !important;
-    }
 
     .timer-countdown {
       margin-top: 0px;
@@ -114,9 +106,6 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-    p {
-      color: yellow !important;
-    }
   }
 
   .timer-countdown {
@@ -133,10 +122,6 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-
-    p {
-      color: green;
-    }
   }
 
   .timer-countdown {
