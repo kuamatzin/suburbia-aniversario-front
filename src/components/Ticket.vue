@@ -448,26 +448,26 @@ export default {
       trivia: {
         token: '',
       },
-      first_name: "",
+      first_name: "Carlos",
       second_name: "",
-      paternal_last_name: "",
-      maternal_last_name: "",
-      gender: "",
-      b_day: '',
-      b_month: '',
-      b_year: '',
-      phone: "",
-      mobile: "",
-      email: "",
-      ticket: "",
-      confirm_ticket: "",
-      store: "",
-      payment_method: "",
+      paternal_last_name: "Cuamatzin",
+      maternal_last_name: "Hernández",
+      gender: "male",
+      b_day: '1',
+      b_month: 'Enero',
+      b_year: '1990',
+      phone: "2228544315",
+      mobile: "2228544315",
+      email: "kuamatzin@gmail.com",
+      ticket: "2222 2241 6022 2222 2222 22",
+      confirm_ticket: "2222 2241 6022 2222 2222 22",
+      store: "Los Mochis",
+      payment_method: "suburbia_card",
       buy_amount: 0,
-      correctInfo: false,
-      terms: false,
-      privacy: false,
-      bases: false,
+      correctInfo: true,
+      terms: true,
+      privacy: true,
+      bases: true,
       data_questions: [],
       activeQuestion: 0,
       answerSelected: 1000,
@@ -617,15 +617,13 @@ export default {
         this.loading = false;
         if (error) { return this.alert(error) }
         this.response.ticket = data.data.data;
-        EventBus.$emit('sendDataToPlay', this.response.ticket);
+        EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
         window.$('#init').modal('show')
       }
     },
 
     alert(error) {
       if (error.response && error.response.data && error.response.data.errors) {
-        console.log('Hay errores');
-        console.log(error.response.data.errors)
         if (error.response.data.errors.ticket && error.response.data.errors.ticket[0] === "The ticket has already been taken.") {
           alert('Este ticket ya ha sido registrado');
         }
@@ -639,16 +637,18 @@ export default {
 
     async startTrivia() {
       this.loading = true;
-      const [error, { data }] = await Trivia.getToken();
+      const [error, { data }] = await Trivia.getToken(this.response.ticket.id);
       this.loading = false;
       if (error) return alert('Oops ocurrió un problema, intenta más tarde');
       this.response.token = data.token;
+      this.response.ticket = data.ticket;
+      EventBus.$emit('plusOneTicketPlay');
       this.loading = true;
       const [errorQuestions, { data: dataQuestions }] = await Trivia.getQuestions();
       this.loading = false;
       if (errorQuestions) return alert('Oops ocurrió un problema, intenta más tarde');
       window.$('#init').modal('hide')
-      window.$('#trivia').modal('show')
+      window.$('#trivia').modal('show');
       this.data_questions = dataQuestions.data;
       this.toggleTimer();
     },
@@ -709,7 +709,7 @@ export default {
       this.response.token = '';
       this.answers = [];
 
-      EventBus.$emit('sendDataToPlay', data.data.ticket);
+      EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(data.data.ticket)));
 
       window.$('#trivia').modal('hide')
       window.$('#success').modal('show')

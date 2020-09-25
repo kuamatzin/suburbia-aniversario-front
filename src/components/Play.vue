@@ -112,6 +112,8 @@ export default {
     EventBus.$on('sendDataToPlay', (ticket) => {
       this.formatTicketData(ticket)
     })
+
+    EventBus.$on('plusOneTicketPlay', () => this.registeredTicket.attempts = this.registeredTicket.attempts + 1);
   },
 
   data() {
@@ -141,11 +143,11 @@ export default {
         this.loading = false;
         if (error) return console.log(error);
 
-        this.formatTicketData(data.data.data);
+        this.formatTicketData(data.data.data, true);
       }
     },
 
-    formatTicketData(data) {
+    formatTicketData(data, sendToTicket = false) {
       const object = {};
       object['id'] = data.id;
       object['attempts'] = data.attempts ? Number(data.attempts) : 0;
@@ -153,8 +155,9 @@ export default {
       object['games'] = object['max_attempts'] - object['attempts'];
       object['init'] =  object['max_attempts'] - object['games'] + 1;
       this.registeredTicket = {...object};
-      console.log(this.registeredTicket);
-      EventBus.$emit('getTicket', this.registeredTicket);
+      if (sendToTicket) {
+        EventBus.$emit('getTicket', this.registeredTicket);
+      }
     },
 
     initGame() {

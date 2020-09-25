@@ -12,8 +12,9 @@ const getHeaders = () => {
 };
 
 export default {
-  async getToken() {
-    return await to(axios.get('/token'));
+  async getToken(ticket_id) {
+    console.log(ticket_id);
+    return await to(axios.post('/token', { ticket_id }));
   },
 
   async getTicket(ticket) {
@@ -40,7 +41,7 @@ export default {
     const [error, data] = await to(axios.post('/login', credentials));
     if (error) return [error];
     localStorage.token = data.data.access_token;
-    return [null]
+    return [null];
   },
 
   getStore(number) {
