@@ -119,8 +119,49 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Nº. de Ticket/Código de facturación* <i @click="openHelpModal('ticket')" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (validateStore === false && ticket.length > 13) || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
+            <label for="inputName">Tienda*</label>
+            <select class="form-control" @change="setBuyTypeValidation()" v-model="buy_type" :class="{'is-invalid': $vuelidation.error('buy_type') }">
+              <option value="" disabled>Seleccionar</option>
+              <option value="store">Física</option>
+              <option value="online">Online</option>
+            </select>
+            <div class="invalid-feedback">{{ $vuelidation.error('buy_type') }}</div>
+          </div>
+
+          <div class="form-group mt-4" v-if="buy_type === 'online'">
+            <label for="inputName">Número de boleta*</label>
+            <input type="text" @input="preventMaxCharacters('online_ticket', 16)" class="form-control" :class="{'is-invalid': $vuelidation.error('online_ticket') }" v-model="online_ticket" />
+            <div class="invalid-feedback" v-if='$vuelidation.error("online_ticket")'>{{ $vuelidation.error('online_ticket') }}</div>
+          </div>
+
+          <div class="row mt-4" v-if="buy_type === 'store'">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Terminal TE:*</label>
+                <input type="text" @input="preventMaxCharacters('terminal', 2)" class="form-control" :class="{'is-invalid': $vuelidation.error('terminal') }" v-model="terminal" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("terminal")'>{{ $vuelidation.error('terminal') }}</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Transacción TR:*</label>
+                <input type="text" @input="preventMaxCharacters('transaction', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('transaction') }" v-model="transaction" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("transaction")'>{{ $vuelidation.error('transaction') }}</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Tienda:*</label>
+                <input type="text" @input="preventMaxCharacters('store_number', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('store_number') || validateStore === false }" v-model="store_number" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("store_number")'>{{ $vuelidation.error('store_number') }}</div>
+                <div class="invalid-feedback" v-if="!$vuelidation.error('store_number') && (validateStore === false && formTouched)">Este campo debe ser un ticket válido</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="inputName">Nº. de Ticket/Código de facturación* <i @click="openHelpModal()" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
             <div class="invalid-feedback" v-if="ticketAlreadyExists">Este ticket ya fue registrado previamente.</div>
             <template v-else>
               <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
@@ -153,7 +194,7 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal('ticket')" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal()" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
             <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="displayValue" />
             <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
           </div>
@@ -427,6 +468,8 @@ export default {
     EventBus.$on('getTicket', (ticket) => {
       this.response.ticket = ticket;
     })
+
+    if (process.env.NODE_ENV === 'development') this.setTestData();
   },
   
   data() {
@@ -462,6 +505,11 @@ export default {
       phone: "",
       mobile: "",
       email: "",
+      buy_type: "",
+      online_ticket: "",
+      terminal: "",
+      transaction: "",
+      store_number: "",
       ticket: "",
       confirm_ticket: "",
       store: "",
@@ -479,7 +527,7 @@ export default {
       timer: '0:00',
       isRunning: false,
       interval: null,
-      validateStore: false,
+      validateStore: "false",
       customTicketIsValid: true,
       customTicketConfirmationIsValid: true,
       ticketAlreadyExists: false,
@@ -520,6 +568,25 @@ export default {
       },
       email: {
         email: true
+      },
+      buy_type: {
+        required: { msg },
+      },
+      online_ticket: {
+        numeric: true,
+        length: 16,
+      },
+      terminal: {
+        numeric: true,
+        length: 2,
+      },
+      transaction: {
+        numeric: true,
+        length: 4,
+      },
+      store_number: {
+        numeric: true,
+        length: 4,
       },
       ticket: {
         required: { msg },
@@ -573,16 +640,13 @@ export default {
 
   watch: {
     ticket: function(newValue) {
-      console.log('Que onda');
       this.ticketAlreadyExists = false;
       this.formTouched = true;
-      this.customTicketIsValid = newValue.length === 27;
+      this.customTicketIsValid = newValue.length === 23;
       this.customTicketConfirmationIsValid = newValue === this.confirm_ticket;
-      const result = newValue.replace(/\D/g, "").replace(/(.{4})/g, '$1 ').trim();
-      if (result.length > 13) {
-        this.getStore(result.substring(7, 12).replace(' ', ''));
-      }
-      if (result.length > 27) {
+      const result = newValue.replace(/[^A-Za-z0-9]/g, "").replace(/(.{5})/g, '$1 ').toUpperCase().trim();
+      console.log(result);
+      if (result.length > 23) {
         this.$nextTick(() => this.ticket = this.ticket.substring(0, this.ticket.length - 1));
         return ;
       }
@@ -591,8 +655,8 @@ export default {
 
     confirm_ticket: function(newValue) {
       this.customTicketConfirmationIsValid = newValue === this.ticket;
-      const result = newValue.replace(/\D/g, "").replace(/(.{4})/g, '$1 ').trim();
-      if (result.length > 27) {
+      const result = newValue.replace(/[^A-Za-z0-9]/g, "").replace(/(.{5})/g, '$1 ').toUpperCase().trim();
+      if (result.length > 23) {
         this.$nextTick(() => this.confirm_ticket = this.confirm_ticket.substring(0, this.confirm_ticket.length - 1));
         return ;
       }
@@ -601,8 +665,35 @@ export default {
   },
 
   methods: {
+    setBuyTypeValidation() {
+      if (this.buy_type === 'store') {
+        this.terminal = "";
+        this.transaction = "";
+        this.store_number = "";
+        this.online_ticket = "2222222222222222";
+      } else {
+        this.terminal = "22";
+        this.transaction = "2222";
+        this.store_number = "2222";
+        this.online_ticket = "";
+      }
+    },
+
+    preventMaxCharacters(value, max) {
+      if (this[value].length > max) {
+        this[value] = this[value].slice(0, max);
+      }
+
+      if (value === 'store_number' && this[value].length === 4) {
+        this.getStore(this[value]);
+      }
+    },
+
     async submit() {
       this.formTouched = true;
+      if (this.buy_type === 'online') {
+        this.store = 'Test'
+      }
       if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false) {
         this.loading = true;
         const [error, data ] = await Trivia.registerTicket({
@@ -614,6 +705,11 @@ export default {
           phone: this.phone,
           mobile: this.mobile,
           email: this.email,
+          buy_type: this.buy_type,
+          online_ticket: this.online_ticket,
+          store_number: this.store_number,
+          terminal: this.terminal,
+          transaction: this.transaction,
           ticket: this.ticket.replace(/ /g,''),
           store: this.store,
           payment_method: this.payment_method,
@@ -625,6 +721,8 @@ export default {
         this.response.ticket = data.data.data;
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
         window.$('#init').modal('show')
+      } else {
+        console.log(this.$vuelidation.errors())
       }
     },
 
@@ -738,14 +836,41 @@ export default {
       window.$('#success').modal('hide')
     },
 
-    openHelpModal(type) {
-      console.log(type);
+    openHelpModal() {
       window.$('#help').modal('show')
     },
 
     getStore(store) {
       this.store = Trivia.getStore(store);
       this.validateStore = this.store ? true: false;
+    },
+
+    setTestData() {
+      this.first_name = "Carlos";
+      this.second_name = "";
+      this.paternal_last_name = "Cuamatzin";
+      this.maternal_last_name = "Hernández";
+      this.gender = "male";
+      this.b_day = '1';
+      this.b_month = 'Enero';
+      this.b_year = '1990';
+      this.phone = "2228544315";
+      this.mobile = "2228544315";
+      this.email = "kuamatzin@gmail.com";
+      this.buy_type = "store";
+      this.online_ticket = "";
+      this.terminal = "";
+      this.transaction = "";
+      this.store_number = "";
+      this.ticket = "22222 22222 22222 22222";
+      this.confirm_ticket = "22222 22222 22222 22222";
+      this.store = "";
+      this.payment_method = "suburbia_card";
+      this.buy_amount = 0;
+      this.correctInfo = true;
+      this.terms = true;
+      this.privacy = true;
+      this.bases = true;
     }
   },
 };

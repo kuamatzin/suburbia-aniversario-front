@@ -93,10 +93,10 @@ export default {
 
   watch: {
     ticket: function(newValue) {
-      this.customTicketIsValid = newValue.length === 27;
+      this.customTicketIsValid = newValue.length === 23;
 
-      const result = newValue.replace(/\D/g, "").replace(/(.{4})/g, '$1 ').trim();
-      if (result.length > 27) {
+      const result = newValue.replace(/[^A-Za-z0-9]/g, "").replace(/(.{5})/g, '$1 ').toUpperCase().trim();
+      if (result.length > 23) {
         this.$nextTick(() => this.ticket = this.ticket.substring(0, this.ticket.length - 1));
         return ;
       }

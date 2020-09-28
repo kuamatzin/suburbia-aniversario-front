@@ -59,7 +59,7 @@
           >
             <div
                 class="card-body"
-            >Las personas que realicen compras mínimas de $500 pesos en cualquier tienda Suburbia o tienda en línea.
+            >Las personas mayores de 18 años que realicen compras mínimas de $500 pesos en cualquier tienda Suburbia o tienda en línea.
             </div>
           </div>
         </div>

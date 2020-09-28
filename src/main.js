@@ -96,6 +96,8 @@ Vue.use(Vuelidation, {
   methods: validations,
 });
 
+Vue.component('pagination', require('laravel-vue-pagination'));
+
 Vue.config.productionTip = false;
 
 const routes = [

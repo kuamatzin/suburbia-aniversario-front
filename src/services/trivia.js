@@ -33,8 +33,8 @@ export default {
     return await to(axios.post('/responses', answers));
   },
 
-  async getResults() {
-    return await to(axios.get('/results', { headers: getHeaders() }));
+  async getResults(page) {
+    return await to(axios.get(`/results?page=${page}`, { headers: getHeaders() }));
   },
 
   async login(credentials) {

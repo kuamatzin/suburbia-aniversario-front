@@ -41,25 +41,13 @@
               </div>
             </div>
           </div>
-          <!--
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h4>
-                  Número de respuestas:
-                  <br />{{ stats.answers }}
-                </h4>
-              </div>
-            </div>
-          </div>
-          -->
         </div>
 
         <div class="card mt-3">
           <div class="mt px-3 mt-3">
             <h3>Registros</h3>
           </div>
-          <div class="card-body">
+          <div class="card-body" v-if="data !== ''">
             <table
               class="table table-condensed"
               style="border-collapse: collapse"
@@ -70,7 +58,7 @@
                   <th scope="col">Nombre</th>
                   <th scope="col">Email</th>
                   <th scope="col">Ticket</th>
-                  <th scope="col">Fecha</th>
+                  <th scope="col">Tipo de compra</th>
                   <th scope="col">Store</th>
                   <th scope="col">Terminal</th>
                   <th scope="col">Transacción</th>
@@ -92,8 +80,11 @@
                       {{ ticket.first_name }} {{ ticket.paternal_last_name }}
                     </td>
                     <td>{{ ticket.email }}</td>
-                    <td>{{ ticket.ticket }}</td>
-                    <td>{{ ticket.ticket_data.date }}</td>
+                    <td>{{ ticket.ticket }}</td>  
+                    <td>
+                      <span v-if="ticket.buy_type == 'store'">Tienda</span>
+                      <span v-else>Online</span>
+                    </td>
                     <td>{{ ticket.ticket_data.store }}</td>
                     <td>{{ ticket.ticket_data.terminal }}</td>
                     <td>{{ ticket.ticket_data.transaction }}</td>
@@ -134,6 +125,8 @@
                 </template>
               </tbody>
             </table>
+            <pagination :data="data" @pagination-change-page="getResults">
+            </pagination>
           </div>
         </div>
       </div>
@@ -165,21 +158,21 @@ export default {
   },
 
   methods: {
-    async getResults() {
+    async getResults(page = 1) {
       if (!localStorage.token) {
         this.$router.push("/login");
       }
       this.loading = true;
-      const [error, data] = await Trivia.getResults();
+      const [error, response] = await Trivia.getResults(page);
       if (error) {
         this.$router.push("/login");
         return console.log(error);
       }
-      this.data = data.data.data;
-      this.stats.total_tickets = data.data.count;
-      this.stats.participations = data.data.participations;
-      this.stats.answers = data.data.answers;
-      this.answers = data.data.data.data.map((el) => el.answers);
+      this.data = response.data.data;
+      this.stats.total_tickets = response.data.count;
+      this.stats.participations = response.data.participations;
+      this.stats.answers = response.data.answers;
+      this.answers = response.data.data.data.map((el) => el.answers);
       this.loading = false;
     },
 
