@@ -128,6 +128,16 @@
             <div class="invalid-feedback">{{ $vuelidation.error('buy_type') }}</div>
           </div>
 
+          <div class="form-group mt-4">
+            <label for="inputName">Código de facturación* <i @click="openHelpModal()" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
+            <div class="invalid-feedback" v-if="ticketAlreadyExists">Este ticket ya fue registrado previamente.</div>
+            <template v-else>
+              <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
+              <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
+            </template>
+          </div>
+
           <div class="form-group mt-4" v-if="buy_type === 'online'">
             <label for="inputName">Número de boleta*</label>
             <input type="text" @input="preventMaxCharacters('online_ticket', 16)" class="form-control" :class="{'is-invalid': $vuelidation.error('online_ticket') }" v-model="online_ticket" />
@@ -160,17 +170,7 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Nº. de Ticket/Código de facturación* <i @click="openHelpModal()" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
-            <div class="invalid-feedback" v-if="ticketAlreadyExists">Este ticket ya fue registrado previamente.</div>
-            <template v-else>
-              <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
-              <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
-            </template>
-          </div>
-
-          <div class="form-group mt-4">
-            <label for="inputName">Nº. de Ticket/Código de facturación* (Repetir)</label>
+            <label for="inputName">Código de facturación* (Repetir)</label>
             <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('confirm_ticket') || (customTicketConfirmationIsValid === false && formTouched) }" v-model="confirm_ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("confirm_ticket")'>{{ $vuelidation.error('confirm_ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe coincidir con el ticket</div>
