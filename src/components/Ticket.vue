@@ -238,7 +238,7 @@
               <i class="far fa-square checkbox" @click="privacy = !privacy" v-if="privacy === false"></i>
               <i class="fas fa-check-square active-checkbox" @click="privacy = !privacy" v-else></i>
 
-              <span class="ml-3">He leído el <a target="_blank" href="https://assets.suburbia.com.mx/assets/ayuda/#/sec/otros-temas/terminos-y-condiciones" class="form-check-label link" for="defaultCheck3">
+              <span class="ml-3">He leído el <a target="_blank" href="http://assets.suburbia.com.mx/assets/ayuda/#/sec/credito/aviso-de-privacidad-integral-clientes" class="form-check-label link" for="defaultCheck3">
                 aviso de privacidad
               </a></span>
             </div>
@@ -745,6 +745,7 @@ export default {
       const [error, { data }] = await Trivia.getToken(this.response.ticket.id);
       this.loading = false;
       if (error) return alert('Oops ocurrió un problema, intenta más tarde');
+      this.resetFields();
       this.response.token = data.token;
       this.response.ticket = data.ticket;
       EventBus.$emit('plusOneTicketPlay');
@@ -843,6 +844,34 @@ export default {
     getStore(store) {
       this.store = Trivia.getStore(store);
       this.validateStore = this.store ? true: false;
+    },
+
+    resetFields() {
+      this.first_name = "";
+      this.second_name = "";
+      this.paternal_last_name = "";
+      this.maternal_last_name = "";
+      this.gender = "";
+      this.b_day = '';
+      this.b_month = '';
+      this.b_year = '';
+      this.phone = "";
+      this.mobile = "";
+      this.email = "";
+      this.buy_type = "";
+      this.online_ticket = "";
+      this.terminal = "";
+      this.transaction = "";
+      this.store_number = "";
+      this.ticket = "";
+      this.confirm_ticket = "";
+      this.store = "";
+      this.payment_method = "";
+      this.buy_amount = 0;
+      this.correctInfo = false;
+      this.terms = false;
+      this.privacy = false;
+      this.bases = false;
     },
 
     setTestData() {
