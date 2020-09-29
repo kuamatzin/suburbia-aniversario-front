@@ -2,12 +2,12 @@
   <div class="section-suburbia container mt-5">
     <h3 class="text-center primary-color">MECÁNICA</h3>
 
-    <p class="text-center px-5 mt-4">
+    <p class="text-center px-5 m-0 mt-4">
       Responde correctamente al mayor número de preguntas en el menor tiempo posible y gana
-      <span
-        class="secondary-color font-weight-bold"
-      >¡una Stepway totalmente nueva!</span>
     </p>
+    <p
+        class="text-center secondary-color font-weight-bold m-0"
+      >¡una Stepway totalmente nueva!</p>
 
     <div
       class="row mt-5"

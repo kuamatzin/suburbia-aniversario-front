@@ -218,7 +218,7 @@
               <i class="far fa-square checkbox" @click="bases = !bases" v-if="bases === false"></i>
               <i class="fas fa-check-square active-checkbox" @click="bases = !bases" v-else></i>
 
-              <span class="ml-3">Acepto las <a target="_blank" href="https://assets.suburbia.com.mx/assets/ayuda/#/sec/otros-temas/terminos-y-condiciones" class="form-check-label link" for="defaultCheck3">
+              <span class="ml-3">Acepto las <a target="_blank" href="/bases" class="form-check-label link" for="defaultCheck3">
                 bases del concurso
               </a></span>
             </div>

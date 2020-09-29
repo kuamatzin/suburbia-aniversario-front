@@ -23,7 +23,7 @@
           <div class="col-sm-9 order-sm-1">
             <div class="row">
               <div class="col-md-3 d-flex align-items-center justify-content-center text-center" style="color: grey;">
-                  Todos los derechos reservados D.R.
+                  Derechos reservados Suburbia
                   <span class="ml-2 slash">/</span>
               </div>
 
@@ -35,7 +35,7 @@
               </div>
               
               <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
-                <a href="http://assets.suburbia.com.mx/assets/ayuda/#/sec/credito/aviso-de-privacidad-integral-clientes" target="_blank">
+                <a href="http://assets.suburbia.com.mx/assets/ayuda/#/sec/otros-temas/terminos-y-condiciones" target="_blank">
                   Términos y condiciones
                   <span class="ml-2 slash">/</span>
                 </a>
