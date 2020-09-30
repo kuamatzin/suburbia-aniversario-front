@@ -837,8 +837,8 @@
                         >Ingresar a la p&aacute;gina
                         <strong
                           ><a
-                            href="http://www.concursoaniversariosuburbia.com.mx"
-                            >www.concursoaniversariosuburbia.com.mx</a
+                            href="https://aniversariosuburbia.com.mx/"
+                            >www.aniversariosuburbia.com.mx</a
                           >&nbsp;</strong
                         >y registrarse, para lo cual deber&aacute; complementar
                         todos los campos obligatorios e informaci&oacute;n
@@ -888,7 +888,7 @@
                         participante deber&aacute; verificar su ticket de compra
                         &oacute; c&oacute;digo de facturaci&oacute;n (en caso de
                         compras a trav&eacute;s de la p&aacute;gina de internet
-                        www. suburbia.com.mx), y posteriormente deber&aacute;
+                        www.suburbia.com.mx), y posteriormente deber&aacute;
                         dar &ldquo;clic&rdquo; en el bot&oacute;n de
                         &ldquo;verificar&rdquo;.&nbsp;</span
                       ></span
@@ -1025,7 +1025,7 @@
                         registrado correcta y ver&iacute;dicamente sus tickets
                         de compra &oacute; c&oacute;digo de facturaci&oacute;n
                         (en caso de compras a trav&eacute;s de la p&aacute;gina
-                        de internet www. suburbia.com.mx), obtenga su folio de
+                        de internet www.suburbia.com.mx), obtenga su folio de
                         participaci&oacute;n conforme a las presentes bases y
                         que responda todas las preguntas de manera correcta en
                         el menor tiempo, ser&aacute; el acreedor/ganador del
@@ -1144,7 +1144,7 @@
                       participantes, verificar que sus tickets de compra
                       &oacute; c&oacute;digo de facturaci&oacute;n (en caso de
                       compras a trav&eacute;s de la p&aacute;gina de internet
-                      www. suburbia.com.mx) cumplan con los requisitos de
+                      www.suburbia.com.mx) cumplan con los requisitos de
                       participaci&oacute;n y registro, as&iacute; como de
                       verificar que los datos registrados y proporcionados por
                       ellos mismos, sean correctos y ver&iacute;dicos, lo
@@ -1543,8 +1543,8 @@
                       la Rep&uacute;blica Mexicana, y/o en las redes sociales
                       oficiales y/o en la p&aacute;gina
                       <strong
-                        ><a href="http://www.concursoaniversariosuburbia.com.mx"
-                          >www.concursoaniversariosuburbia.com.mx</a
+                        ><a href="https://aniversariosuburbia.com.mx/"
+                          >www.aniversariosuburbia.com.mx</a
                         ></strong
                       ></span
                     ></span
@@ -1629,8 +1629,8 @@
                       siguientes al d&iacute;a en que se publiquen los
                       resultados en las tiendas y en la p&aacute;gina
                       <strong
-                        ><a href="http://www.concursoaniversariosuburbia.com.mx"
-                          >www.concursoaniversariosuburbia.com.mx</a
+                        ><a href="https://aniversariosuburbia.com.mx/"
+                          >www.aniversariosuburbia.com.mx</a
                         ></strong
                       >. Dicha entrega se realizar&aacute; en la tienda
                       m&aacute;s cercana al domicilio del acreedor, dato que se
@@ -2162,7 +2162,7 @@
                         promoci&oacute;n, previa notificaci&oacute;n a
                         trav&eacute;s de la p&aacute;gina en Internet
                         <strong>www.suburbia.com.mx</strong> y/o
-                        <strong>www.concursoaniversariosuburbia.com.mx</strong>,
+                        <strong>www.aniversariosuburbia.com.mx</strong>,
                         as&iacute; como ante la autoridad
                         correspondiente.&nbsp;</span
                       ></span

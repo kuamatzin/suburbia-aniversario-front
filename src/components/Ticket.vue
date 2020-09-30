@@ -785,7 +785,6 @@ export default {
       });
       this.activeQuestion = this.activeQuestion + 1;
       this.answerSelected = 1000;
-      console.log(this.answers);
     },
 
     async sendAnswers() {
