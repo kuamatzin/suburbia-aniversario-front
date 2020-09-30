@@ -242,7 +242,7 @@
                 aviso de privacidad
               </a></span>
             </div>
-            
+
             <div class="invalid-error mb-2" v-if="formTouched && !privacy">Lee nuestro aviso de privacidad</div>
           </div>
 
@@ -693,7 +693,6 @@ export default {
       this.formTouched = true;
       if (this.buy_type === "online") {
         this.store = 'Test'
-        return this.resetFields();
       }
       if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false) {
         this.loading = true;
@@ -762,6 +761,7 @@ export default {
 
     toggleTimer() {
       if (this.isRunning) {
+        console.log("Voy a parar");
         clearInterval(this.interval);
       } else {
         this.interval = setInterval(this.incrementTime, 1000);
@@ -789,6 +789,7 @@ export default {
     },
 
     async sendAnswers() {
+      this.toggleTimer();
       this.loading = true;
       this.answers.push({
         question_id: this.data_questions[this.activeQuestion].id,
@@ -802,7 +803,6 @@ export default {
 
       const [error, data] = await Trivia.sendAnswers(dataAnswers);
       this.loading = false;
-      this.toggleTimer();
       this.data_questions = [];
       this.activeQuestion = 0;
       this.answerSelected = 1000;
