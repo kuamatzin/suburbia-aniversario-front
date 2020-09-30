@@ -242,6 +242,7 @@
                 aviso de privacidad
               </a></span>
             </div>
+            
             <div class="invalid-error mb-2" v-if="formTouched && !privacy">Lee nuestro aviso de privacidad</div>
           </div>
 
@@ -253,7 +254,7 @@
     </div>
 
     <!-- Modal Iniciar -->
-    <div class="modal fade" id="init" tabindex="-1">
+    <div class="modal fade" id="init" tabindex="-1" aria-labelledby="triviaStart" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content my-modal">
           <div class="modal-body">
@@ -645,7 +646,6 @@ export default {
       this.customTicketIsValid = newValue.length === 23;
       this.customTicketConfirmationIsValid = newValue === this.confirm_ticket;
       const result = newValue.replace(/[^A-Za-z0-9]/g, "").replace(/(.{5})/g, '$1 ').toUpperCase().trim();
-      console.log(result);
       if (result.length > 23) {
         this.$nextTick(() => this.ticket = this.ticket.substring(0, this.ticket.length - 1));
         return ;
@@ -691,8 +691,9 @@ export default {
 
     async submit() {
       this.formTouched = true;
-      if (this.buy_type === 'online') {
+      if (this.buy_type === "online") {
         this.store = 'Test'
+        return this.resetFields();
       }
       if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false) {
         this.loading = true;
@@ -849,6 +850,7 @@ export default {
     resetFields() {
       this.first_name = "";
       this.second_name = "";
+      this.second_name = "";
       this.paternal_last_name = "";
       this.maternal_last_name = "";
       this.gender = "";
@@ -867,11 +869,16 @@ export default {
       this.confirm_ticket = "";
       this.store = "";
       this.payment_method = "";
-      this.buy_amount = 0;
+      this.displayValue = 0;
       this.correctInfo = false;
       this.terms = false;
       this.privacy = false;
       this.bases = false;
+      this.customTicketIsValid = true;
+      this.customTicketConfirmationIsValid = true;
+      this.ticketAlreadyExists = false;
+      this.formTouched = false;
+      this.$vuelidation.reset();
     },
 
     setTestData() {

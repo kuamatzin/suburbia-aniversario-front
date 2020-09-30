@@ -44,7 +44,7 @@
       <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center">
           <div class="form-group">
-            <label class="text-white">Nº. de Ticket/Código de facturación</label>
+            <label class="text-white">Código de facturación</label>
             <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
