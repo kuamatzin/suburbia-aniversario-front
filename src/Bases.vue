@@ -837,7 +837,7 @@
                         >Ingresar a la p&aacute;gina
                         <strong
                           ><a
-                            href="https://aniversariosuburbia.com.mx/"
+                            href="https://www.aniversariosuburbia.com.mx/"
                             >www.aniversariosuburbia.com.mx</a
                           >&nbsp;</strong
                         >y registrarse, para lo cual deber&aacute; complementar
@@ -1543,7 +1543,7 @@
                       la Rep&uacute;blica Mexicana, y/o en las redes sociales
                       oficiales y/o en la p&aacute;gina
                       <strong
-                        ><a href="https://aniversariosuburbia.com.mx/"
+                        ><a href="https://www.aniversariosuburbia.com.mx/"
                           >www.aniversariosuburbia.com.mx</a
                         ></strong
                       ></span
@@ -1629,7 +1629,7 @@
                       siguientes al d&iacute;a en que se publiquen los
                       resultados en las tiendas y en la p&aacute;gina
                       <strong
-                        ><a href="https://aniversariosuburbia.com.mx/"
+                        ><a href="https://www.aniversariosuburbia.com.mx/"
                           >www.aniversariosuburbia.com.mx</a
                         ></strong
                       >. Dicha entrega se realizar&aacute; en la tienda

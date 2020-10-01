@@ -38,7 +38,7 @@
 
           <div class="form-group">
             <label for="inputName">Segundo Nombre</label>
-            <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('second_name') }" />
+            <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('second_name') }" v-model="second_name" />
             <div class="invalid-feedback" v-if='$vuelidation.error("second_name")'>{{ $vuelidation.error('second_name') }}</div>
           </div>
 
@@ -853,7 +853,6 @@ export default {
     resetFields() {
       this.first_name = "";
       this.second_name = "";
-      this.second_name = "";
       this.paternal_last_name = "";
       this.maternal_last_name = "";
       this.gender = "";
@@ -886,7 +885,7 @@ export default {
 
     setTestData() {
       this.first_name = "Carlos";
-      this.second_name = "";
+      this.second_name = "Carlos";
       this.paternal_last_name = "Cuamatzin";
       this.maternal_last_name = "Hernández";
       this.gender = "male";
