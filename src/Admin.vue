@@ -13,8 +13,11 @@
       >
     </nav>
 
-    <div class="container-fluid py-3 px-4" style="height: 85vh;">
-      <div v-if="loading" class="h-100 d-flex align-items-center justify-content-center">
+    <div class="container-fluid py-3 px-4" style="height: 85vh">
+      <div
+        v-if="loading"
+        class="h-100 d-flex align-items-center justify-content-center"
+      >
         <div class="spinner-border m-5" role="status">
           <span class="sr-only">Loading...</span>
         </div>
@@ -38,6 +41,29 @@
                   Número de participaciones:
                   <br />{{ stats.participations }}
                 </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card" style="height: 104px;">
+              <div class="card-body">
+                <div class="form-inline my-3 my-lg-0">
+                  <input
+                    class="form-control mr-sm-2"
+                    type="search"
+                    placeholder="Ticket"
+                    aria-label="Search"
+                    v-model="ticket"
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0"
+                    :disabled="ticket === ''"
+                    @click="searchTicket()"
+                  >
+                    Buscar
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -82,7 +108,7 @@
                       {{ ticket.first_name }} {{ ticket.paternal_last_name }}
                     </td>
                     <td>{{ ticket.email }}</td>
-                    <td>{{ ticket.ticket }}</td>  
+                    <td>{{ ticket.ticket }}</td>
                     <td>
                       <span v-if="ticket.buy_type == 'store'">Tienda</span>
                       <span v-else>Online</span>
@@ -148,6 +174,7 @@ export default {
 
   data() {
     return {
+      ticket: '',
       error: "",
       data: "",
       answers: [],
@@ -155,7 +182,7 @@ export default {
         total_tickets: 0,
       },
       moment,
-      loading: false
+      loading: false,
     };
   },
 
@@ -182,6 +209,21 @@ export default {
       localStorage.clear();
       this.$router.push("/login");
     },
+
+    async searchTicket() {
+      this.loading = true;
+      const [error, response] = await Trivia.searchByTicket(this.ticket);
+      if (error) {
+        this.$router.push("/login");
+        return console.log(error);
+      }
+      this.data = response.data.data;
+      this.stats.total_tickets = response.data.count;
+      this.stats.participations = response.data.participations;
+      this.stats.answers = response.data.answers;
+      this.answers = response.data.data.data.map((el) => el.answers);
+      this.loading = false;
+    }
   },
 };
 </script>

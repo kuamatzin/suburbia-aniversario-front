@@ -155,21 +155,21 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="inputName">Terminal TE:*</label>
-                <input type="text" @input="preventMaxCharacters('terminal', 2)" class="form-control" :class="{'is-invalid': $vuelidation.error('terminal') }" v-model="terminal" />
+                <input type="number" @input="preventMaxCharacters('terminal', 2)" class="form-control" :class="{'is-invalid': $vuelidation.error('terminal') }" v-model="terminal" />
                 <div class="invalid-feedback" v-if='$vuelidation.error("terminal")'>{{ $vuelidation.error('terminal') }}</div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label for="inputName">Transacción TR:*</label>
-                <input type="text" @input="preventMaxCharacters('transaction', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('transaction') }" v-model="transaction" />
+                <input type="number" @input="preventMaxCharacters('transaction', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('transaction') }" v-model="transaction" />
                 <div class="invalid-feedback" v-if='$vuelidation.error("transaction")'>{{ $vuelidation.error('transaction') }}</div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label for="inputName">Tienda:*</label>
-                <input type="text" @input="preventMaxCharacters('store_number', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('store_number') || validateStore === false }" v-model="store_number" />
+                <input type="number" @input="preventMaxCharacters('store_number', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('store_number') || validateStore === false }" v-model="store_number" />
                 <div class="invalid-feedback" v-if='$vuelidation.error("store_number")'>{{ $vuelidation.error('store_number') }}</div>
                 <div class="invalid-feedback" v-if="!$vuelidation.error('store_number') && (validateStore === false && formTouched)">Este campo debe ser un ticket válido</div>
               </div>

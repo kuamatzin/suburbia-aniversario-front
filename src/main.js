@@ -6,7 +6,6 @@ import Privacy from './Privacy.vue';
 import Bases from './Bases.vue';
 import Admin from './Admin.vue';
 import Login from './Login.vue';
-import Counter from './Counter.vue';
 import Vuelidation from 'vuelidation';
 import VueRouter from 'vue-router';
 
@@ -101,13 +100,12 @@ Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.config.productionTip = false;
 
 const routes = [
-  { path: '/app', component: App },
   { path: '/terminos', component: Terms },
   { path: '/bases', component: Bases },
   { path: '/privacidad', component: Privacy },
   { path: '/admin', component: Admin },
   { path: '/login', component: Login },
-  { path: '/', component: Counter },
+  { path: '/', component: App },
 ];
 
 const router = new VueRouter({

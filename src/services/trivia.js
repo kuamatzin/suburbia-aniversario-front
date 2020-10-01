@@ -34,7 +34,15 @@ export default {
   },
 
   async getResults(page) {
-    return await to(axios.get(`/results?page=${page}`, { headers: getHeaders() }));
+    return await to(
+      axios.get(`/results?page=${page}`, { headers: getHeaders() })
+    );
+  },
+
+  async searchByTicket(ticket) {
+    return await to(
+      axios.get(`/ticket/number/${ticket}`, { headers: getHeaders() })
+    );
   },
 
   async login(credentials) {
@@ -211,7 +219,7 @@ export default {
       '0994': 'ZITACUARO',
       '0949': 'TIJUANA PABELLÓN ROSARITO',
       '0782': 'TIENDA ONLINE',
-    }
+    };
 
     return stores[number];
   },

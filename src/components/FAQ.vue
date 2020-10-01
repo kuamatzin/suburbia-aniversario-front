@@ -244,12 +244,10 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El nombre del acreedor que resulte ganador de la presente
-              mecánica, se dará a conocer el día 21 de Noviembre de 2020, a
-              través de cartulinas ubicadas en piso de venta de todas las
-              tiendas Suburbia de la República Mexicana, y/o en las redes
-              sociales oficiales y/o en la página
-              www.concursoaniversariosuburbia.com.mx
+              El nombre del acreedor que resulte ganador de la presente mecánica, se dará a conocer el día 21
+de Noviembre de 2020, a través de cartulinas ubicadas en piso de venta de todas las tiendas
+Suburbia de la República Mexicana, y/o en las redes sociales oficiales y/o en la página
+https://aniversariosuburbia.com.mx
             </div>
           </div>
         </div>
