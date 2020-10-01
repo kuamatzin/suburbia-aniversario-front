@@ -129,7 +129,7 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Código de facturación* <i @click="openHelpModal()" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <label for="inputName">Código de facturación* <i @click="openHelpModal(1)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
             <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
             <div class="invalid-feedback" v-if="ticketAlreadyExists">Este ticket ya fue registrado previamente.</div>
             <template v-else>
@@ -194,7 +194,7 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal()" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal(2)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
             <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="displayValue" />
             <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
           </div>
@@ -375,7 +375,7 @@
               <div class="row px-4">
                 <div class="col-md-4 mb-3">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="./../assets/50.png" class="img-fluid">
+                    <img src="./../assets/logo-dorado.png" class="img-fluid">
                   </div>
                 </div>
 
@@ -443,10 +443,11 @@
 
     <!-- Modal Ayuda -->
     <div class="modal fade" id="help" tabindex="-1">
-      <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-body">
-           <img alt="Suburbia aniversario" src="./../assets/ticket.png" class="w-100" />
+           <img v-if="ticketHelper" alt="Suburbia aniversario" src="./../assets/ticket_popup.jpg" class="w-100" />
+           <img v-else alt="Suburbia aniversario" src="./../assets/ticket_popup_precio.jpg" class="w-100" />
           </div>
         </div>
       </div>
@@ -475,6 +476,7 @@ export default {
   
   data() {
     return {
+      ticketHelper: true,
       date: {
         month: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
         month_f: {
@@ -676,6 +678,7 @@ export default {
         this.transaction = "2222";
         this.store_number = "2222";
         this.online_ticket = "";
+        this.store = 'Tienda Online'
       }
     },
 
@@ -692,7 +695,7 @@ export default {
     async submit() {
       this.formTouched = true;
       if (this.buy_type === "online") {
-        this.store = 'Test'
+        this.store = 'Tienda Online'
       }
       if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false) {
         this.loading = true;
@@ -837,7 +840,8 @@ export default {
       window.$('#success').modal('hide')
     },
 
-    openHelpModal() {
+    openHelpModal(type) {
+      this.ticketHelper = type === 1;
       window.$('#help').modal('show')
     },
 
@@ -1039,7 +1043,7 @@ export default {
     background: white;
     align-items: center;
     justify-content: center;
-    width: 75%;
+    width: 95%;
     color: #666666;
     overflow-wrap: anywhere;
     display: flex;

@@ -24,20 +24,17 @@
             <div class="row">
               <div class="col-md-3 d-flex align-items-center justify-content-center text-center" style="color: grey;">
                   Derechos reservados Suburbia
-                  <span class="ml-2 slash">/</span>
               </div>
 
               <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
                 <a href="/bases" target="_blank">
                   Bases del concurso
-                  <span class="slash">/</span>
                 </a>
               </div>
               
               <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
                 <a href="http://assets.suburbia.com.mx/assets/ayuda/#/sec/otros-temas/terminos-y-condiciones" target="_blank">
                   Términos y condiciones
-                  <span class="ml-2 slash">/</span>
                 </a>
               </div>
 

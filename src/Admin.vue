@@ -54,6 +54,7 @@
             >
               <thead>
                 <tr>
+                  <th scope="col"></th>
                   <th scope="col">Fecha</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Email</th>
@@ -68,13 +69,14 @@
                 </tr>
               </thead>
               <tbody>
-                <template v-for="ticket of data.data">
+                <template v-for="(ticket, index) of data.data">
                   <tr
                     data-toggle="collapse"
                     :data-target="'#demo' + ticket.id"
                     class="accordion-toggle pointer"
                     :key="ticket.id"
                   >
+                    <td>{{ index + 1 }}</td>
                     <td>{{ moment(ticket.created_at).format("LLL") }}</td>
                     <td>
                       {{ ticket.first_name }} {{ ticket.paternal_last_name }}

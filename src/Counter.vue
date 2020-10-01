@@ -5,7 +5,7 @@
       class="hero-image-suburbia parallax margin-hero d-flex justify-content-center align-items-center"
     >
       <countdown
-        :time="new Date('10/01/2020 00:00:00').getTime() - new Date().getTime()"
+        :time="new Date('10/03/2020 00:00:00').getTime() - new Date().getTime()"
       >
         <template slot-scope="props">
           <div class="row timer-countdown">
