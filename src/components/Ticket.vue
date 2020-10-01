@@ -801,7 +801,8 @@ export default {
       const dataAnswers = {
         ticket_id: this.response.ticket.id,
         token: this.response.token,
-        responses: this.answers
+        responses: this.answers,
+        timer: this.timer,
       }
 
       const [error, data] = await Trivia.sendAnswers(dataAnswers);
