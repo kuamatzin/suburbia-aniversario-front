@@ -396,7 +396,7 @@
                   <div class="d-flex flex-column align-items-center justify-content-center">
                     <span class="text-white">TIEMPO</span>
                     <div class="results mt-2">
-                      {{response.answer.seconds}}
+                      {{ timerResult }}
                     </div>
                   </div>
                 </div>
@@ -528,6 +528,7 @@ export default {
       time: 0,
       minutes: 0,
       timer: '0:00',
+      timerResult: '0:00',
       isRunning: false,
       interval: null,
       validateStore: "false",
@@ -810,6 +811,7 @@ export default {
       this.answerSelected = 1000;
       this.time = 0;
       this.minutes = 0;
+      this.timerResult = this.timer;
       this.timer = '0:00';
 
       if(error) { return alert('Error mandando preguntas'); }
