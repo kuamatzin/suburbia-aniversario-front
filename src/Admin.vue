@@ -45,15 +45,16 @@
             </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="card" style="height: 104px;">
               <div class="card-body">
-                <div class="form-inline my-3 my-lg-0">
+                <div class="form-inline my-3">
                   <input
                     class="form-control mr-sm-2"
                     type="search"
                     placeholder="Ticket"
                     aria-label="Search"
+                    style="width: 60%;"
                     v-model="ticket"
                   />
                   <button
@@ -62,6 +63,13 @@
                     @click="searchTicket()"
                   >
                     Buscar
+                  </button>
+                  <button
+                    class="btn btn-outline-danger my-2 my-sm-0 ml-1"
+                    :disabled="ticket === ''"
+                    @click="cancelSearch()"
+                  >
+                    &times;
                   </button>
                 </div>
               </div>
@@ -143,7 +151,10 @@
                               <th scope="row">{{ index + 1 }}</th>
                               <td>{{ answer.correct_answers }}</td>
                               <td>{{ 12 - answer.correct_answers }}</td>
-                              <td>{{ answer.seconds }}</td>
+                              <td>
+                                <span v-if="answer.timer">{{ answer.timer }}</span>
+                                <span v-else>{{ answer.seconds }}</span>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -223,6 +234,11 @@ export default {
       this.stats.answers = response.data.answers;
       this.answers = response.data.data.data.map((el) => el.answers);
       this.loading = false;
+    },
+
+    async cancelSearch() {
+      await this.getResults();
+      this.ticket = '';
     }
   },
 };
