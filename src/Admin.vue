@@ -98,6 +98,7 @@
                   <th scope="col">Terminal</th>
                   <th scope="col">Transacción</th>
                   <th scope="col">Monto de compra</th>
+                  <th scope="col">Método de pago</th>
                   <th scope="col">Participaciones jugadas</th>
                   <th scope="col">Noº max. participaciones</th>
                 </tr>
@@ -118,13 +119,19 @@
                     <td>{{ ticket.email }}</td>
                     <td>{{ ticket.ticket }}</td>
                     <td>
-                      <span v-if="ticket.buy_type == 'store'">Tienda</span>
+                      <span v-if="ticket.buy_type == 'store'">Física</span>
                       <span v-else>Online</span>
                     </td>
                     <td>{{ ticket.ticket_data.store }}</td>
                     <td>{{ ticket.ticket_data.terminal }}</td>
                     <td>{{ ticket.ticket_data.transaction }}</td>
                     <td>{{ ticket.buy_amount }}</td>
+                    <td>
+                      <span v-if="ticket.payment_method === 'cash'">Efectivo</span>
+                      <span v-if="ticket.payment_method === 'suburbia_card'">Tarjeta Suburbia</span>
+                      <span v-if="ticket.payment_method === 'other'">Otro</span>
+                      <span v-if="ticket.payment_method === 'bbva_card'">Tarjeta BBVA</span>
+                    </td>
                     <td>{{ ticket.attempts }}</td>
                     <td>{{ ticket.max_attempts }}</td>
                   </tr>
@@ -158,7 +165,7 @@
                               </td>
                             </tr>
                             <tr>
-                              <th scope="row"></th>
+                              <th scope="row">{{ ticket.answers.length + 1 }}</th>
                               <td></td>
                               <td></td>
                               <td></td>
