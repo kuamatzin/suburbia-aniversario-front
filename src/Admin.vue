@@ -141,6 +141,7 @@
                               <th scope="col">Respuestas correctas</th>
                               <th scope="col">Respuestas incorrectas</th>
                               <th scope="col">Tiempo</th>
+                              <th scope="col"># Participaciones inconclusas</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -155,6 +156,13 @@
                                 <span v-if="answer.timer">{{ answer.timer }}</span>
                                 <span v-else>{{ answer.seconds }}</span>
                               </td>
+                            </tr>
+                            <tr>
+                              <th scope="row"></th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td class="text-center">{{ ticket.attempts - ticket.answers.length }}</td>
                             </tr>
                           </tbody>
                         </table>
