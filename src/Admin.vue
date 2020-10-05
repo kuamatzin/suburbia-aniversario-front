@@ -164,7 +164,7 @@
                                 <span v-else>{{ answer.seconds }}</span>
                               </td>
                             </tr>
-                            <tr>
+                            <tr v-if="ticket.attempts - ticket.answers.length !== 0">
                               <th scope="row">{{ ticket.answers.length + 1 }}</th>
                               <td></td>
                               <td></td>
