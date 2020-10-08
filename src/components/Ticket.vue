@@ -746,6 +746,10 @@ export default {
 
     async startTrivia() {
       this.loading = true;
+      this.time = 0;
+      this.minutes = 0;
+      this.timerResult = '0:00';
+      this.timer = '0:00';
       const [error, { data }] = await Trivia.getToken(this.response.ticket.id);
       this.loading = false;
       if (error) return alert('Oops ocurrió un problema, intenta más tarde');
@@ -765,7 +769,6 @@ export default {
 
     toggleTimer() {
       if (this.isRunning) {
-        console.log("Voy a parar");
         clearInterval(this.interval);
       } else {
         this.interval = setInterval(this.incrementTime, 1000);
@@ -815,7 +818,7 @@ export default {
       this.timerResult = this.timer;
       this.timer = '0:00';
 
-      if(error) { return alert('Error mandando preguntas'); }
+      if (error) { return alert('Error mandando preguntas'); }
       this.response.answer = data.data.answer;
       this.response.ticket = data.data.ticket;
       this.response.token = '';
