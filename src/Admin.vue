@@ -160,8 +160,7 @@
                               <td>{{ answer.correct_answers }}</td>
                               <td>{{ 12 - answer.correct_answers }}</td>
                               <td>
-                                <span v-if="answer.timer">{{ answer.timer }}</span>
-                                <span v-else>{{ answer.seconds }}</span>
+                                <span>{{ answer.seconds }} segundos</span>
                               </td>
                             </tr>
                             <tr v-if="ticket.attempts - ticket.answers.length !== 0">
