@@ -160,7 +160,7 @@
                               <td>{{ answer.correct_answers }}</td>
                               <td>{{ 12 - answer.correct_answers }}</td>
                               <td>
-                                <span>{{ answer.seconds }} segundos</span>
+                                <p>{{ getTime(answer.seconds) }}</p>
                               </td>
                             </tr>
                             <tr v-if="ticket.attempts - ticket.answers.length !== 0">
@@ -253,6 +253,14 @@ export default {
     async cancelSearch() {
       await this.getResults();
       this.ticket = '';
+    },
+
+    getTime(seconds) {
+      const mins = Math.floor(Number(seconds / 60 % 60));
+      let secs = Math.floor(Number(seconds % 60));
+      secs = secs < 10 ? `0${secs}` : secs;
+
+      return `${mins}:${secs}`
     }
   },
 };
