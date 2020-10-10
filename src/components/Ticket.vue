@@ -246,10 +246,44 @@
             <div class="invalid-error mb-2" v-if="formTouched && !privacy">Lee nuestro aviso de privacidad</div>
           </div>
 
-          <button id="jugar" :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" @click="submit()">
+          <button id="jugar" :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" @click="confirmData()">
             REGISTRAR
             <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           </button>
+      </div>
+    </div>
+
+    <!-- Modal Confirmar -->
+    <div class="modal fade" id="confirm" tabindex="-1" aria-labelledby="triviaStart" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content my-modal">
+          <div class="modal-body">
+            <p style="font-size: 22px" class="p-m text-center primary-color m-0 mt-4">¡Confirma que tus datos estén correctos!</p>
+
+            <div class="d-flex align-items-center justify-content-center mt-4 py-3 px-4">
+              <div>
+                <p class="p-m m-0 primary-color text-center">Ticket: <span style="font-weight: 700; color: #ff0e9b">{{ ticket }}</span></p>
+                <p class="p-m m-0 mt-3 primary-color text-center">Método de pago: <span style="font-weight: 700; color: #ff0e9b">
+                  <span v-if="payment_method === 'suburbia_card'">Tarjeta Suburbia</span>
+                  <span v-if="payment_method === 'bbva_card'">Tarjeta BBVA Bancomer</span>
+                  <span v-if="payment_method === 'cash'">Efectivo</span>
+                  <span v-if="payment_method === 'other'">Otra forma de pago</span>
+                </span></p>
+                <p class="p-m m-0 mt-3 primary-color text-center">Monto de compra: <span style="font-weight: 700; color: #ff0e9b">{{ displayValue }}</span></p>
+                <p class="p-m m-0 mt-3 primary-color text-center">Email: <span style="font-weight: 700; color: #ff0e9b">{{ email }}</span></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <button class="start mt-4 mb-4 d-flex align-content-center" @click="closeConfirm()">Regresar <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+              </div>
+              <div class="col-md-6">
+                <button class="start mt-4 mb-4 d-flex align-content-center" @click="submit()">Confirmar <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -693,7 +727,16 @@ export default {
       }
     },
 
+    closeConfirm() {
+      window.$('#confirm').modal('hide')
+    },
+
+    confirmData() {
+      window.$('#confirm').modal('show')
+    },
+
     async submit() {
+      window.$('#confirm').modal('hide')
       this.formTouched = true;
       if (this.buy_type === "online") {
         this.store = 'Tienda Online'

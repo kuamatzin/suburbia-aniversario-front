@@ -54,6 +54,7 @@ export default {
 
   getStore(number) {
     const stores = {
+      '0954': 'EXPLANADA CULIACÁN',
       '0776': 'SAN JUAN DEL RÍO GALERIAS',
       '0648': 'QUERÉTARO PLAZA DE TOROS',
       '0529': 'QUERÉTARO PLAZA DEL PARQUE',
