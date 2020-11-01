@@ -11,16 +11,6 @@
 
     <Banner />
 
-    <Steps />
-
-    <Calendar />
-
-    <Ticket />
-
-    <Play />
-
-    <FAQ />
-
     <Winners />
 
     <Footer />
@@ -30,11 +20,6 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Banner from "./components/Banner.vue";
-import Steps from "./components/Steps.vue";
-import Calendar from "./components/Calendar.vue";
-import Ticket from "./components/Ticket.vue";
-import Play from "./components/Play.vue";
-import FAQ from "./components/FAQ.vue";
 import Winners from "./components/Winners.vue";
 import Footer from "./components/Footer.vue";
 import GoTop from '@inotom/vue-go-top';
@@ -44,11 +29,6 @@ export default {
   components: {
     Navbar,
     Banner,
-    Steps,
-    Calendar,
-    Ticket,
-    Play,
-    FAQ,
     Winners,
     Footer,
     GoTop
