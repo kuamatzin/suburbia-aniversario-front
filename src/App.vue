@@ -7,7 +7,6 @@
         <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 130px" />
       </div>
     </div>
-    <Navbar />
 
     <Banner />
 
@@ -18,7 +17,6 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
 import Banner from "./components/Banner.vue";
 import Winners from "./components/Winners.vue";
 import Footer from "./components/Footer.vue";
@@ -27,7 +25,6 @@ import GoTop from '@inotom/vue-go-top';
 export default {
   name: "App",
   components: {
-    Navbar,
     Banner,
     Winners,
     Footer,

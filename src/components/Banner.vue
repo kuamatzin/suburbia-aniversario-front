@@ -18,7 +18,7 @@ export default {
 <style scoped lang="scss">
 .hero-image-suburbia {
   background-image: url("./../assets/banner.jpeg");
-  height: 350px;
+  height: 150px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,7 +29,7 @@ export default {
 @media (min-width: 576px) {
   .hero-image-suburbia {
     background-image: url("./../assets/banner.jpeg");
-    height: 500px;
+    height: 200px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,7 +41,7 @@ export default {
 @media (min-width: 768px) {
   .hero-image-suburbia {
     background-image: url("./../assets/banner.jpeg");
-    height: 480px;
+    height: 200px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,7 +53,7 @@ export default {
 @media (min-width: 992px) {
   .hero-image-suburbia {
     background-image: url("./../assets/banner.jpeg");
-    height: 480px;
+    height: 200px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

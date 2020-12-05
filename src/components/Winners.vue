@@ -18,7 +18,7 @@
       <div class="col-md-8 offset-md-2">
         <div>
           <img
-            src="./../assets/ganadores.jpg"
+            src="./../assets/ganador.jpg"
             alt="ganadores"
             class="img-fluid"
             style="position: relative"
