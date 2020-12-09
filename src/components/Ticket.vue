@@ -1,7 +1,7 @@
 <template>
   <div class="section-suburbia container mt-5">
     <h3
-      class="text-center primary-color"
+      class="text-center primary-color-subtitle"
       data-aos="fade-up"
       data-aos-offset="200"
       data-aos-delay="50"
@@ -100,16 +100,16 @@
             </div>
           </div>
 
-          <div class="form-group mt-2">
-            <label for="inputName">Teléfono Fijo (10 dígitos)*</label>
-            <input type="number" class="form-control" :class="{'is-invalid': $vuelidation.error('phone') }" v-model="phone" @input="updateValuePhone" />
-            <div class="invalid-feedback" v-if='$vuelidation.error("phone")'>{{ $vuelidation.error('phone') }}</div>
-          </div>
-
           <div class="form-group mt-4">
             <label for="inputName">Teléfono Móvil (10 dígitos)*</label>
             <input type="number" class="form-control" :class="{'is-invalid': $vuelidation.error('mobile') }" v-model="mobile" @input="updateValueMobile" />
             <div class="invalid-feedback" v-if='$vuelidation.error("mobile")'>{{ $vuelidation.error('mobile') }}</div>
+          </div>
+          
+          <div class="form-group mt-2">
+            <label for="inputName">Teléfono Fijo (10 dígitos)</label>
+            <input type="number" class="form-control" :class="{'is-invalid': phone.length > 0 && $vuelidation.error('phone') }" v-model="phone" @input="updateValuePhone" />
+            <div class="invalid-feedback" v-if='phone.length > 0 && $vuelidation.error("phone")'>{{ $vuelidation.error('phone') }}</div>
           </div>
 
           <div class="form-group mt-4">
@@ -186,7 +186,7 @@
             <select class="form-control" v-model="payment_method" :class="{'is-invalid': $vuelidation.error('payment_method') }">
               <option value="" disabled>Seleccionar</option>
               <option value="suburbia_card">Tarjeta Suburbia</option>
-              <option value="bbva_card">Tarjeta BBVA Bancomer</option>
+              <option value="citibanamex_card">Tarjeta Citibanamex</option>
               <option value="cash">Efectivo</option>
               <option value="other">Otra forma de pago</option>
             </select>
@@ -195,14 +195,15 @@
 
           <div class="form-group mt-4">
             <label for="inputName">Monto Total de Compra* <i @click="openHelpModal(2)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="displayValue" />
+            <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="fValue" />
             <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
           </div>
 
           <div class="d-flex justify-content-end primary-color" style="font-size: .8rem">
             * Casilla obligatoria
           </div>
-
+          {{ correctInfo }}
+          {{ formTouched }}
           <div class="mt-4">
             <div class="d-flex align-items-center">
               <i class="far fa-square checkbox" @click="correctInfo = !correctInfo" v-if="correctInfo === false"></i>
@@ -258,32 +259,32 @@
       <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content my-modal">
           <div class="modal-body">
-            <p class="p-m text-center primary-color m-0 mt-4">¡Este es el momento de participar!</p>
+            <p class="p-m text-center text-black m-0 mt-4">¡Este es el momento de participar!</p>
 
             <div class="d-flex justify-content-center my-2">
               <i class="fas fa-circle bullet"></i>
             </div>
 
-            <p class="p-m text-center m-0 primary-color">Deberás contestar a cada pregunta</p>
-            <p class="p-m text-center m-0 primary-color">de opción múltiple seleccionando la respuesta correcta</p>
+            <p class="p-m text-center m-0 text-black">Deberás contestar a cada pregunta</p>
+            <p class="p-m text-center m-0 text-black">de opción múltiple seleccionando la respuesta correcta</p>
 
             <div class="d-flex justify-content-center my-2">
               <i class="fas fa-circle bullet"></i>
             </div>
 
-            <p class="p-m text-center m-0 primary-color mt-3">Recuerda que una vez que des click en el botón</p>
-            <p class="p-m text-center m-0 primary-color">de "INICIAR" comenzará a correr tu tiempo.</p>
+            <p class="p-m text-center m-0 text-black mt-3">Recuerda que una vez que des clic en el botón</p>
+            <p class="p-m text-center m-0 text-black">de "INICIAR" comenzará a correr tu tiempo.</p>
 
             <div class="d-flex align-items-center justify-content-center mt-4 important py-3 px-4">
               <div>
-                <p class="text-center m-0 title primary-color">IMPORTANTE:</p>
+                <p class="text-center m-0 title text-black">IMPORTANTE:</p>
 
-                <p class="p-m m-0 primary-color text-center">Iniciando no podrás regresar ni reiniciar por ningún motivo.</p>
-                <p class="p-m m-0 primary-color text-center">Se registrará como participación aún siendo inconcluso.</p>
+                <p class="p-m m-0 text-black text-center">Iniciando no podrás regresar ni reiniciar por ningún motivo.</p>
+                <p class="p-m m-0 text-black text-center">Se registrará como participación aún siendo inconcluso.</p>
               </div>
             </div>
 
-            <p class="text-center primary-color mt-4 good-luck">¡BUENA SUERTE!</p>
+            <p class="text-center text-black mt-4 good-luck">¡BUENA SUERTE!</p>
 
             <button class="start mt-4 mb-4 d-flex align-content-center" @click="startTrivia()">INICIAR <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
           </div>
@@ -294,17 +295,11 @@
     <!-- Modal Trivia -->
     <div class="modal fade" id="trivia" tabindex="-1" aria-labelledby="triviaLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
+        <div class="modal-content my-modal-trivia">
           <div class="modal-body">
             <div class="d-flex justify-content-between p-3">
               <div>
                 {{activeQuestion + 1}}/{{data_questions.length}}
-              </div>
-
-              <div>
-                <div class="counter">
-                  {{ timer }}
-                </div>
               </div>
             </div>
             
@@ -375,7 +370,7 @@
               <div class="row px-4">
                 <div class="col-md-4 mb-3">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="./../assets/logo-dorado.png" class="img-fluid">
+                    <img src="./../assets/logo.jpg" class="img-fluid">
                   </div>
                 </div>
 
@@ -405,7 +400,7 @@
                   <div class="d-flex flex-column align-items-center justify-content-center">
                     <span class="text-white">ACIERTOS</span>
                     <div class="results mt-2">
-                      {{response.answer.correct_answers}}/12
+                      {{response.answer.correct_answers}}/15
                     </div>
                   </div>
                 </div>
@@ -470,12 +465,12 @@ export default {
     EventBus.$on('getTicket', (ticket) => {
       this.response.ticket = ticket;
     })
-
     if (process.env.NODE_ENV === 'development') this.setTestData();
   },
   
   data() {
     return {
+      resetingFields: false,
       ticketHelper: true,
       date: {
         month: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -617,6 +612,34 @@ export default {
   },
 
   computed: {
+    fValue: {
+      // getter
+      get: function() {
+        if (this.isInputActive) {
+          // Cursor is inside the input field. unformat display value for user
+          return this.value.toString()
+        } else {
+          // User is not modifying now. Format display value for user interface
+          return "$ " + Number(this.value).toFixed(2).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")
+        }
+      },
+      // setter
+      set: function(newValue) {
+        if (newValue.length > 2) {
+          newValue = newValue.replace(".", "");
+          this.value =
+            newValue.substr(0, newValue.length - 2) +
+            "." +
+            newValue.substr(newValue.length - 2);
+            
+          this.buy_amount = this.value;
+          // add thousend separator formatting here
+        } else {
+          this.value = newValue;
+          this.buy_amount = this.value;
+        }
+      }
+    },
     displayValue: {
       get: function() {
         if (this.isInputActive) {
@@ -645,7 +668,12 @@ export default {
   watch: {
     ticket: function(newValue) {
       this.ticketAlreadyExists = false;
-      this.formTouched = true;
+      if (this.resetingFields === true) {
+        this.formTouched = false;
+      } else {
+        this.formTouched = true;
+        this.resetingFields === false;
+      }
       this.customTicketIsValid = newValue.length === 23;
       this.customTicketConfirmationIsValid = newValue === this.confirm_ticket;
       const result = newValue.replace(/[^A-Za-z0-9]/g, "").replace(/(.{5})/g, '$1 ').toUpperCase().trim();
@@ -699,7 +727,19 @@ export default {
         this.store = 'Tienda Online'
       }
       if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false) {
-        this.loading = true;
+        this.registerTicket();
+      } else {
+        if (this.phone === '') {
+          const errors = this.$vuelidation.errors();
+          if (errors.phone && Object.keys(errors).length === 1) {
+            this.registerTicket();
+          }
+        }
+      }
+    },
+
+    async registerTicket() {
+      this.loading = true;
         const [error, data ] = await Trivia.registerTicket({
           first_name: this.first_name,
           second_name: this.second_name,
@@ -724,17 +764,13 @@ export default {
         if (error) { return this.alert(error) }
         this.response.ticket = data.data.data;
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
-        window.$('#init').modal('show')
-      } else {
-        console.log(this.$vuelidation.errors())
-      }
+        window.$('#init').modal('show');
     },
 
     alert(error) {
       if (error.response && error.response.data && error.response.data.errors) {
         if (error.response.data.errors.ticket && error.response.data.errors.ticket[0] === "The ticket has already been taken.") {
           this.ticketAlreadyExists = true;
-          console.log(this.ticketAlreadyExists);
         }
       }
     },
@@ -785,6 +821,12 @@ export default {
       this.timer = this.time >= 10 ? `${this.minutes}:${this.time}` : `${this.minutes}:0${this.time}`;
     },
 
+    formatSecondsToTimer(time) {
+      let minutes = Math.floor(time / 60);
+      let seconds = time - minutes * 60;
+      return seconds >= 10 ? `${minutes}:${seconds}` : `${minutes}:0${seconds}`;
+    },
+
     nextQuestion() {
       this.answers.push({
         question_id: this.data_questions[this.activeQuestion].id,
@@ -815,9 +857,8 @@ export default {
       this.answerSelected = 1000;
       this.time = 0;
       this.minutes = 0;
-      this.timerResult = this.timer;
+      this.timerResult = this.formatSecondsToTimer(data.data.answer.seconds);
       this.timer = '0:00';
-
       if (error) { return alert('Error mandando preguntas'); }
       this.response.answer = data.data.answer;
       this.response.ticket = data.data.ticket;
@@ -857,6 +898,7 @@ export default {
     },
 
     resetFields() {
+      this.resetingFields = true;
       this.first_name = "";
       this.second_name = "";
       this.paternal_last_name = "";
@@ -898,7 +940,7 @@ export default {
       this.b_day = '1';
       this.b_month = 'Enero';
       this.b_year = '1990';
-      this.phone = "2228544315";
+      this.phone = "";
       this.mobile = "2228544315";
       this.email = "kuamatzin@gmail.com";
       this.buy_type = "store";
@@ -954,7 +996,7 @@ export default {
 }
 
 .link {
-  color: #711968;
+  color: #D70000;
   cursor: pointer;
   text-decoration: underline;
 
@@ -982,7 +1024,7 @@ export default {
 }
 
 .counter {
-  background: #ff0e9b;
+  background: #1C6812;
   padding: .5rem 1rem;
   display: flex;
   justify-content: center;
@@ -1007,18 +1049,18 @@ export default {
 }
 
 .selected {
-  border: 1px solid #ff0e9b !important;
-  background: #ff0e9b !important;
+  border: 1px solid #621F64 !important;
+  background: #621F64 !important;
   border-radius: .4rem;
 
   .number-option {
-    background: #ff0e9b !important;
+    background: #621F64 !important;
     height: 100%;
   }
 }
 
 .participations {
-  color: #ff0e9b;
+  color: aliceblue;
   font-size: .9rem !important;
   font-weight: normal !important;
 }
@@ -1058,15 +1100,15 @@ export default {
 }
 
 .button {
-  background: #ff0e9b !important;
+  background: #D70000 !important;
   padding: 14px 55px;
   font-weight: bold;
-  border-color: #ff0e9b !important;
+  border-color: #D70000 !important;
   font-size: 1rem;
 }
 
 .bullet {
-  color: #ff0e9b;
+  color: #1C6812;
   font-size: .7rem;
 }
 
@@ -1104,7 +1146,7 @@ export default {
   margin-right: auto;
   margin-left: auto;
   border-radius: .8rem;
-  background: #711968;
+  background: #1C6812;
   border: none;
 }
 
@@ -1118,7 +1160,7 @@ export default {
   margin-right: auto;
   margin-left: auto;
   border-radius: .8rem;
-  background: #711968;
+  background: #1C6812;
   border: none;
   min-height: 90px;
 }
@@ -1129,12 +1171,20 @@ export default {
   font-size: 1.1rem;
   padding: .8rem 2.5rem;
   border-radius: .35rem;
-  background: #B2B2B2;
+  background: #621F64;
   border: none;
 
   &:hover:not([disabled]) {
-    background: #ff0e9b;
+    background: #621F64;
   }
+}
+
+.next-question:disabled {
+  background-color: #B2B2B2 !important;
+}
+
+.next-question[disabled] {
+  background-color: #B2B2B2 !important;
 }
 
 .last-question {
@@ -1153,6 +1203,13 @@ export default {
 
 .my-modal {
   background: url('./../assets/fondo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.my-modal-trivia {
+  background: url('./../assets/trivia.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

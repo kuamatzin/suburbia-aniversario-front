@@ -2,14 +2,9 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="w-100 mobile-menu">
       <li class="nav-item logo-mobile">
-        <img alt="Suburbia aniversario" src="./../assets/logo.jpg" style="width: 100px" />
-      </li>
-      <li class="nav-item logo-mobile">
-        <img
-          alt="Suburbia aniversario"
-          src="./../assets/logo-dorado.png"
-          style="width: 100px"
-        />
+        <a href="#mecanica">
+          <img alt="Suburbia aniversario" src="./../assets/logo.jpg" style="width: 100px" />
+        </a>
       </li>
       <button
         style="width: 100px"
@@ -35,11 +30,6 @@
         </li>
         <li class="nav-item" @click="hideCollapse">
           <a class="nav-link" href="#ticket">Registrar ticket</a>
-        </li>
-        <li class="nav-item logo">
-          <a href="#navbarSupportedContent">
-            <img alt="Suburbia aniversario" src="./../assets/logo-dorado.png" style="width: 200px" />
-          </a>
         </li>
         <li class="nav-item" @click="hideCollapse">
           <a class="nav-link" href="#jugar">Jugar</a>

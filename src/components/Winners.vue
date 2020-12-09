@@ -6,7 +6,7 @@
     data-aos-delay="50"
     data-aos-duration="800"
   >
-    <h3 class="text-center primary-color">GANADOR</h3>
+    <h3 class="text-center primary-color-subtitle">GANADOR</h3>
 
     <div
       class="row"
@@ -18,7 +18,7 @@
       <div class="col-md-8 offset-md-2">
         <div>
           <img
-            src="./../assets/ganador.jpg"
+            src="./../assets/ganadores.jpg"
             alt="ganadores"
             class="img-fluid"
             style="position: relative"

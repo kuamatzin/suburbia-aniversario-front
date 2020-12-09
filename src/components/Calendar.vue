@@ -6,7 +6,7 @@
     data-aos-delay="50"
     data-aos-duration="800"
   >
-    <h3 class="text-center primary-color">CALENDARIO</h3>
+    <h3 class="text-center primary-color-subtitle">CALENDARIO</h3>
 
     <div class="calendar-image parallax py-1 mt-5">
       <div
@@ -17,10 +17,10 @@
         data-aos-duration="800"
       >
         <div class="text-calendar">
-          <h3 class="text-center text-white px-5 regular primary-font">VIGENCIA DE PARTICIPACIÓN</h3>
+          <h3 class="text-center text-black px-5 regular primary-font">VIGENCIA DE PARTICIPACIÓN</h3>
           <h3
-            class="text-center text-white mt-2 px-5 primary-font"
-          >DEL 1 AL 31 DE OCTUBRE DE 2020</h3>
+            class="text-center text-black mt-2 px-5 primary-font"
+          >DEL 10 DE DICIEMBRE DE 2020 AL 6 DE ENERO DE 2021</h3>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@ export default {
 }
 
 .calendar-image {
-  background-image: url("./../assets/calendarioMobile.jpg");
+  background-image: url("./../assets/calendario_R.jpg");
   height: 300px;
   background-position: center;
   background-repeat: no-repeat;

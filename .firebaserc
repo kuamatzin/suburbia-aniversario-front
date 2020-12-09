@@ -1,13 +1,16 @@
 {
   "projects": {
-    "default": "aniversariosuburbia-dev"
+    "default": "suburbio-navidad"
   },
   "targets": {
-    "aniversario-suburbia": {
+    "suburbio-navidad": {
       "hosting": {
         "production": [
-          "aniversario-suburbia"
+          "suburbio-navidad"
         ],
+        "testing": [
+          "testing-navidad-suburbia"
+        ]
       }
     }
   }

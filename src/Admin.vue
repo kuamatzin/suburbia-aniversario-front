@@ -130,7 +130,7 @@
                       <span v-if="ticket.payment_method === 'cash'">Efectivo</span>
                       <span v-if="ticket.payment_method === 'suburbia_card'">Tarjeta Suburbia</span>
                       <span v-if="ticket.payment_method === 'other'">Otro</span>
-                      <span v-if="ticket.payment_method === 'bbva_card'">Tarjeta BBVA</span>
+                      <span v-if="ticket.payment_method === 'citibanamex_card'">Tarjeta Citibanamex</span>
                     </td>
                     <td>{{ ticket.attempts }}</td>
                     <td>{{ ticket.max_attempts }}</td>
@@ -158,7 +158,7 @@
                             >
                               <th scope="row">{{ index + 1 }}</th>
                               <td>{{ answer.correct_answers }}</td>
-                              <td>{{ 12 - answer.correct_answers }}</td>
+                              <td>{{ 15 - answer.correct_answers }}</td>
                               <td>
                                 <p>{{ getTime(answer.seconds) }}</p>
                               </td>

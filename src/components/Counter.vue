@@ -5,7 +5,7 @@
       class="hero-image-suburbia parallax margin-hero d-flex justify-content-center align-items-center"
     >
       <countdown
-        :time="new Date('10/01/2020 00:00:00').getTime() - new Date().getTime()"
+        :time="new Date('12/10/2020 00:00:00').getTime() - new Date().getTime()"
       >
         <template slot-scope="props">
           <div class="row timer-countdown">
@@ -49,11 +49,11 @@ export default {
 .timer {
   font-size: 3rem;
   text-align: center;
-  color: white;
+  color: #2E3030;
 }
 
 .hero-image-suburbia {
-  background-image: url("./assets/under.jpg");
+  background-image: url("./../assets/bg_countdwon_R.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,14 +61,14 @@ export default {
   background-attachment: scroll;
 
   p {
-    color: white;
+    color: #2E3030;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .hero-image-suburbia {
-    background-image: url("./assets/under.jpg");
+    background-image: url("./../assets/under.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -80,7 +80,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .hero-image-suburbia {
-    background-image: url("./assets/under.jpg");
+    background-image: url("./../assets/under.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,7 +100,7 @@ export default {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .hero-image-suburbia {
-    background-image: url("./assets/under.jpg");
+    background-image: url("./../assets/under.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -116,7 +116,7 @@ export default {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .hero-image-suburbia {
-    background-image: url("./assets/under.jpg");
+    background-image: url("./../assets/under.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;

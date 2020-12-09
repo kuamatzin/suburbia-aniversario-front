@@ -1,6 +1,6 @@
 <template>
   <div class="section-suburbia container mt-5">
-    <h3 class="text-center primary-color">MECÁNICA</h3>
+    <h3 class="text-center primary-color-subtitle">MECÁNICA</h3>
 
     <p class="text-center px-5 m-0 mt-4">
       Responde correctamente al mayor número de preguntas en el menor tiempo posible y gana
@@ -34,7 +34,7 @@
         <div class="d-flex align-items-center">
           <img alt="Ticket" src="./../assets/3a.svg" style="width: 100px" />
 
-          <p class="ml-2 primary-color secondary-font font-weight-bold">TARJETAS SUBURBIA Y BBVA OTORGAN DOBLE PARTICIPACIÓN</p>
+          <p class="ml-2 primary-color secondary-font font-weight-bold">TARJETAS SUBURBIA Y CITIBANAMEX OTORGAN DOBLE PARTICIPACIÓN</p>
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
           class="img-fluid d-block mx-auto mb-3"
         />
         <h4 class="text-center secondary-color">Paso 2</h4>
-        <p class="text-center">Tendrás 12 preguntas para resolver.</p>
+        <p class="text-center">Tendrás 15 preguntas para resolver.</p>
       </div>
 
       <div class="col-md-2">

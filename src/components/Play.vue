@@ -6,18 +6,18 @@
     <div class="hero-image parallax py-1">
       <div class="h-100">
         <div class="h-100 d-flex flex-column justify-content-center">
-          <h3 class="text-center text-white play-title">JUGAR</h3>
+          <h3 class="text-center primary-color-subtitle play-title">JUGAR</h3>
           <div class="container mt-5">
             <div class="row">
               <div class="col-md-5 col-sm-6 col-xs-6 col-6 d-flex align-items-center">
                 <div>
-                  <p class="text-white secondary-font" style="font-size: 1.5rem; text-transform: uppercase;">¡Llego el momento de participar para ganar una stepway!</p>
+                  <p class="text-black secondary-font" style="font-size: 1.5rem; text-transform: uppercase;">¡Llego el momento de participar para ganar una stepway!</p>
                   <p
-                      class="text-white"
+                      class="text-black"
                   >Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.</p>
-                  <p class="text-white">¡Regístralo arriba si aún no lo has hecho!</p>
+                  <p class="text-black">¡Regístralo arriba si aún no lo has hecho!</p>
 
-                  <p class="text-white">Al terminar todas tus participaciones, te enviaremos un correo con tu registro y resultados.</p>
+                  <p class="text-black">Al terminar todas tus participaciones, te enviaremos un correo con tu registro y resultados.</p>
                 </div>
               </div>
             </div>
@@ -28,23 +28,22 @@
 
 
     <div class="mobile-play pb-3">
-      <h3 class="text-center text-white play-title pt-3">JUGAR</h3>
+      <h3 class="text-center play-title pt-5 primary-color-subtitle">JUGAR</h3>
 
-      <h4 class="text-center text-white mt-3 secondary-font">¡LLEGO EL MOMENTO DE PARTICIPAR<br>PARA GANAR ESTE AUTO!</h4>
+      <h4 class="text-center text-black mt-3 secondary-font">¡LLEGO EL MOMENTO DE PARTICIPAR<br>PARA GANAR ESTE AUTO!</h4>
 
-      <img src="./../assets/stepway.png" class="img-fluid d-block mx-auto px-5">
+      <p class="text-black text-center px-5 mt-5">Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.</p>
 
-      <p class="text-white text-center px-5">Si ya registraste tu ticket, captúralo nuevamente para concluir tus participaciones restantes.
-¡Regístralo arriba si aún no lo has hecho!</p>
+      <p class="text-black text-center px-5">¡Regístralo arriba si aún no lo has hecho!</p>
 
-      <p class="text-white text-center px-5">Al terminar todas tus participaciones, te enviaremos un correo con tu registro y resultados.</p>
+      <img src="./../assets/stepway2.png" class="img-fluid d-block ml-5 px-5">
     </div>
 
     <div class="verify-ticket py-5">
       <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center">
-          <div class="form-group">
-            <label class="text-white">Código de facturación</label>
+          <div class="form-group mt-1">
+            <label class="text-black">Código de facturación</label>
             <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
@@ -57,7 +56,7 @@
             <div class="d-flex flex-column align-items-center justify-content-center"> 
               
               <div class="d-flex align-items-center mb-3" v-for="index in registeredTicket.attempts" :key="index">
-                <p class="m-0 text-white">Participación #{{index}}</p>
+                <p class="m-0 text-black">Participación #{{index}}</p>
 
                 <div class="ml-3 btn-completed">completado</div>
               </div>
@@ -66,7 +65,7 @@
               <div v-if="registeredTicket.games">
                 <div class="d-flex align-items-center mb-3" v-for="n in registeredTicket.games" :key="n">
                   
-                  <p class="m-0 text-white">Participación #{{(n + registeredTicket.init) - 1}}</p>
+                  <p class="m-0 text-black">Participación #{{(n + registeredTicket.init) - 1}}</p>
 
                   <button class="ml-3 btn-play" @click="initGame">jugar</button>
                 </div>
@@ -203,15 +202,20 @@ export default {
 }
 
 .button {
-  background: #ff0e9b !important;
+  background: #D70000 !important;
   padding: 14px 55px;
   font-weight: bold;
-  border-color: #ff0e9b !important;
+  border-color: #D70000 !important;
   font-size: 1rem;
 }
 
 .verify-ticket {
-  background: #621E66;
+  background-image: url("./../assets/verificar.jpg");
+  min-height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
 }
 
 .win-title {
@@ -239,6 +243,13 @@ export default {
   display: none;
 }
 
+.mobile-play {
+  background: url('./../assets/trivia.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
@@ -263,6 +274,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    display: block;
   }
 
   .win-title {
@@ -284,10 +296,6 @@ export default {
   .mobile-play {
     display: none;
   }
-
-  .hero-image {
-    display: block;
-  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -299,6 +307,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    display: block;
   }
 
   .win {
@@ -317,6 +326,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    display: block;
   }
 }
 </style>

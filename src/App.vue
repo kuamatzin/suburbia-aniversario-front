@@ -2,33 +2,52 @@
   <div id="app">
     <go-top :size="50" bg-color="#EAC144"></go-top>
 
-    <div class="pagewide p-3 bg-white">
-      <div class="container">
-        <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 130px" />
-      </div>
-    </div>
+    <Navbar />
 
     <Banner />
+
+    <Steps />
+
+    <Calendar />
+
+    <Ticket />
+
+    <Play />
+
+    <FAQ />
 
     <Winners />
 
     <Footer />
+    
   </div>
 </template>
 
 <script>
-import Banner from "./components/Banner.vue";
-import Winners from "./components/Winners.vue";
-import Footer from "./components/Footer.vue";
+import Ticket from "./components/Ticket";
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import Steps from "./components/Steps";
+import Calendar from "./components/Calendar";
+import Play from "./components/Play";
+import FAQ from "./components/FAQ";
+import Winners from "./components/Winners";
+import Footer from "./components/Footer";
 import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: "App",
   components: {
+    GoTop,
+    Ticket,
+    Navbar,
     Banner,
+    Steps,
+    Calendar,
+    Play,
+    FAQ,
     Winners,
-    Footer,
-    GoTop
+    Footer
   },
 };
 </script>
@@ -74,6 +93,10 @@ body {
   background-color: #555;
 }
 
+.primary-color-subtitle {
+  color: #D70000;
+}
+
 .primary-font {
   font-family: "Montserrat", sans-serif !important;
 }
@@ -88,6 +111,10 @@ body {
 
 .secondary-color {
   color: #ff0e9b;
+}
+
+.text-black {
+  color: #2E3030 !important;
 }
 
 .section-suburbia {
