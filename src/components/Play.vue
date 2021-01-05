@@ -36,20 +36,20 @@
 
       <p class="text-black text-center px-5">¡Regístralo arriba si aún no lo has hecho!</p>
 
-      <img src="./../assets/stepway2.png" class="img-fluid d-block ml-5 px-5">
+      <img src="./../assets/stepway2.png" width="80%" class="img-fluid d-block ml-5">
     </div>
 
     <div class="verify-ticket py-5">
       <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center">
           <div class="form-group mt-1">
-            <label class="text-black">Código de facturación</label>
+            <p class="text-center text-black">Código de facturación</p>
             <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
           </div>
 
-          <button @click="verify" id="faq" :disabled="loading" class="d-flex align-items-center btn btn-primary mt-3 mx-auto button">VERIFICAR <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+          <button @click="verify" :disabled="loading" class="d-flex align-items-center btn btn-primary mt-3 mx-auto button">VERIFICAR <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
 
 
           <div class="mt-5" v-if="registeredTicket">
@@ -76,6 +76,8 @@
         </div>
       </div>
     </div>
+
+    <div id="faq" class="ancla-faq"></div>
   </div>
 </template>
 
@@ -195,7 +197,7 @@ export default {
 }
 
 .mobile-play {
-  background: url('./../assets/modalSuccess.jpg');
+  background: url('./../assets/modalArbolitos.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -244,7 +246,7 @@ export default {
 }
 
 .mobile-play {
-  background: url('./../assets/trivia.jpg');
+  background: url('./../assets/modalArbolitos.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

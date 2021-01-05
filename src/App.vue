@@ -2,6 +2,10 @@
   <div id="app">
     <go-top :size="50" bg-color="#EAC144"></go-top>
 
+    <!--
+    <Counter />
+    -->
+
     <Navbar />
 
     <Banner />
@@ -19,11 +23,12 @@
     <Winners />
 
     <Footer />
-    
   </div>
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
+/*import Counter from "./components/Counter";*/
 import Ticket from "./components/Ticket";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
@@ -33,11 +38,12 @@ import Play from "./components/Play";
 import FAQ from "./components/FAQ";
 import Winners from "./components/Winners";
 import Footer from "./components/Footer";
-import GoTop from '@inotom/vue-go-top';
+import GoTop from "@inotom/vue-go-top";
 
 export default {
   name: "App",
   components: {
+    /*Counter,*/
     GoTop,
     Ticket,
     Navbar,
@@ -47,7 +53,7 @@ export default {
     Play,
     FAQ,
     Winners,
-    Footer
+    Footer,
   },
 };
 </script>
@@ -89,12 +95,64 @@ body {
   border-radius: 4px;
 }
 
+.ancla-cal {
+  position: absolute;
+  top: 400px;
+}
+
+.ancla {
+  position: absolute;
+  top: 30px;
+}
+
+.ancla-to-cal {
+  position: absolute;
+  top: 550px;
+}
+
+.ancla-play {
+  position: absolute;
+  top: 1600px;
+}
+
+.ancla-faq {
+  position: absolute;
+  top: 470px;
+}
+
+@media (min-width: 992px) {
+  .ancla {
+    position: absolute;
+    top: 180px;
+  }
+
+  .ancla-cal {
+    position: absolute;
+    top: 650px;
+  }
+
+  .ancla-to-cal {
+    position: absolute;
+    top: 150px;
+  }
+
+  .ancla-play {
+    position: absolute;
+    top: 1800px;
+  }
+
+  .ancla-faq {
+    position: absolute;
+    top: 680px;
+  }
+}
+
 #myBtn:hover {
   background-color: #555;
 }
 
 .primary-color-subtitle {
-  color: #D70000;
+  color: #d70000;
 }
 
 .primary-font {
@@ -114,7 +172,7 @@ body {
 }
 
 .text-black {
-  color: #2E3030 !important;
+  color: #2e3030 !important;
 }
 
 .section-suburbia {

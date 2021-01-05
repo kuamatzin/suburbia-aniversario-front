@@ -1,48 +1,59 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="w-100 mobile-menu">
-      <li class="nav-item logo-mobile">
-        <a href="#mecanica">
-          <img alt="Suburbia aniversario" src="./../assets/logo.jpg" style="width: 100px" />
-        </a>
-      </li>
-      <button
-        style="width: 100px"
-        class="navbar-toggler hidden-sm-up float-xs-right"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars" style="color:white"></i>
-      </button>
+  <div>
+    <div class="container">
+      <img src="../assets/logo.jpg" alt="logo" width="150px" class="navbar-white my-2" />
     </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="w-100 mobile-menu">
+        <li class="nav-item logo-mobile">
+          <a href="#mecanica">
+            <img
+              alt="Suburbia aniversario"
+              src="./../assets/logo.jpg"
+              style="width: 100px"
+            />
+          </a>
+        </li>
+        <button
+          style="width: 100px"
+          class="navbar-toggler hidden-sm-up float-xs-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars" style="color: white"></i>
+        </button>
+      </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav d-flex justify-content-center align-items-center w-100">
-        <li class="nav-item active" @click="hideCollapse">
-          <a class="nav-link" href="#mecanica">Mecánica</a>
-        </li>
-        <li class="nav-item" @click="hideCollapse">
-          <a class="nav-link" href="#calendario">Calendario</a>
-        </li>
-        <li class="nav-item" @click="hideCollapse">
-          <a class="nav-link" href="#ticket">Registrar ticket</a>
-        </li>
-        <li class="nav-item" @click="hideCollapse">
-          <a class="nav-link" href="#jugar">Jugar</a>
-        </li>
-        <li class="nav-item" @click="hideCollapse">
-          <a class="nav-link" href="#faq">Preguntas frecuentes</a>
-        </li>
-        <li class="nav-item" @click="hideCollapse">
-          <a class="nav-link" href="#ganadores">Ganador</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul
+          class="navbar-nav d-flex justify-content-center align-items-center w-100"
+        >
+          <li class="nav-item active" @click="hideCollapse">
+            <a class="nav-link" href="#mecanica">Mecánica</a>
+          </li>
+          <li class="nav-item" @click="hideCollapse">
+            <a class="nav-link" href="#calendario">Calendario</a>
+          </li>
+          <li class="nav-item" @click="hideCollapse">
+            <a class="nav-link" href="#ticket">Registrar ticket</a>
+          </li>
+          <li class="nav-item" @click="hideCollapse">
+            <a class="nav-link" href="#jugar">Jugar</a>
+          </li>
+          <li class="nav-item" @click="hideCollapse">
+            <a class="nav-link" href="#faq">Preguntas frecuentes</a>
+          </li>
+          <li class="nav-item" @click="hideCollapse">
+            <a class="nav-link" href="#ganadores">Ganador</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -94,6 +105,10 @@ export default {
   justify-content: space-between;
 }
 
+.navbar-white {
+  display: none;
+}
+
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .logo-mobile {
@@ -102,6 +117,10 @@ export default {
 
   .mobile-menu {
     display: none;
+  }
+
+  .navbar-white {
+    display: inline;
   }
 }
 

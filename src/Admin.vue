@@ -25,7 +25,7 @@
       <div v-else>
         <div class="row">
           <div class="col-md-3">
-            <div class="card">
+            <div class="cards">
               <div class="card-body">
                 <h4>
                   Número de registros:
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card">
+            <div class="cards">
               <div class="card-body">
                 <h4>
                   Número de participaciones:
@@ -46,7 +46,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card" style="height: 104px;">
+            <div class="cards" style="height: 104px">
               <div class="card-body">
                 <div class="form-inline my-3">
                   <input
@@ -54,7 +54,7 @@
                     type="search"
                     placeholder="Ticket"
                     aria-label="Search"
-                    style="width: 60%;"
+                    style="width: 60%"
                     v-model="ticket"
                   />
                   <button
@@ -127,10 +127,16 @@
                     <td>{{ ticket.ticket_data.transaction }}</td>
                     <td>{{ ticket.buy_amount }}</td>
                     <td>
-                      <span v-if="ticket.payment_method === 'cash'">Efectivo</span>
-                      <span v-if="ticket.payment_method === 'suburbia_card'">Tarjeta Suburbia</span>
+                      <span v-if="ticket.payment_method === 'cash'"
+                        >Efectivo</span
+                      >
+                      <span v-if="ticket.payment_method === 'suburbia_card'"
+                        >Tarjeta Suburbia</span
+                      >
                       <span v-if="ticket.payment_method === 'other'">Otro</span>
-                      <span v-if="ticket.payment_method === 'citibanamex_card'">Tarjeta Citibanamex</span>
+                      <span v-if="ticket.payment_method === 'citibanamex_card'"
+                        >Tarjeta Citibanamex</span
+                      >
                     </td>
                     <td>{{ ticket.attempts }}</td>
                     <td>{{ ticket.max_attempts }}</td>
@@ -163,12 +169,20 @@
                                 <p>{{ getTime(answer.seconds) }}</p>
                               </td>
                             </tr>
-                            <tr v-if="ticket.attempts - ticket.answers.length !== 0">
-                              <th scope="row">{{ ticket.answers.length + 1 }}</th>
+                            <tr
+                              v-if="
+                                ticket.attempts - ticket.answers.length !== 0
+                              "
+                            >
+                              <th scope="row">
+                                {{ ticket.answers.length + 1 }}
+                              </th>
                               <td></td>
                               <td></td>
                               <td></td>
-                              <td class="text-center">{{ ticket.attempts - ticket.answers.length }}</td>
+                              <td class="text-center">
+                                {{ ticket.attempts - ticket.answers.length }}
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -199,7 +213,7 @@ export default {
 
   data() {
     return {
-      ticket: '',
+      ticket: "",
       error: "",
       data: "",
       answers: [],
@@ -252,16 +266,16 @@ export default {
 
     async cancelSearch() {
       await this.getResults();
-      this.ticket = '';
+      this.ticket = "";
     },
 
     getTime(seconds) {
-      const mins = Math.floor(Number(seconds / 60 % 60));
+      const mins = Math.floor(Number((seconds / 60) % 60));
       let secs = Math.floor(Number(seconds % 60));
       secs = secs < 10 ? `0${secs}` : secs;
 
-      return `${mins}:${secs}`
-    }
+      return `${mins}:${secs}`;
+    },
   },
 };
 </script>
@@ -275,13 +289,65 @@ export default {
   top: 0px;
 }
 
-.card {
+.cards {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
 }
 
-.card:hover {
+.cards:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .card {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .card {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .card {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .card {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
 }
 </style>

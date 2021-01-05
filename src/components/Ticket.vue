@@ -118,7 +118,7 @@
             <div class="invalid-feedback" v-if='$vuelidation.error("email")'>{{ $vuelidation.error('email') }}</div>
           </div>
 
-          <div class="form-group mt-4">
+          <div class="form-group mt-4" id="ticket_input">
             <label for="inputName">Tienda*</label>
             <select class="form-control" @change="setBuyTypeValidation()" v-model="buy_type" :class="{'is-invalid': $vuelidation.error('buy_type') }">
               <option value="" disabled>Seleccionar</option>
@@ -192,7 +192,7 @@
             </select>
             <div class="invalid-feedback">{{ $vuelidation.error('payment_method') }}</div>
           </div>
-
+          
           <div class="form-group mt-4">
             <label for="inputName">Monto Total de Compra* <i @click="openHelpModal(2)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
             <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="fValue" />
@@ -202,8 +202,6 @@
           <div class="d-flex justify-content-end primary-color" style="font-size: .8rem">
             * Casilla obligatoria
           </div>
-          {{ correctInfo }}
-          {{ formTouched }}
           <div class="mt-4">
             <div class="d-flex align-items-center">
               <i class="far fa-square checkbox" @click="correctInfo = !correctInfo" v-if="correctInfo === false"></i>
@@ -247,12 +245,15 @@
             <div class="invalid-error mb-2" v-if="formTouched && !privacy">Lee nuestro aviso de privacidad</div>
           </div>
 
-          <button id="jugar" :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" @click="submit()">
+          <button :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" @click="submit()">
             REGISTRAR
             <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           </button>
+
+          <div id="jugar" class="ancla-play"></div>
       </div>
     </div>
+
 
     <!-- Modal Iniciar -->
     <div class="modal fade" id="init" tabindex="-1" aria-labelledby="triviaStart" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -376,7 +377,7 @@
 
                 <div class="col-md-8">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <h2 class="text-white">¡MUCHAS GRACIAS POR FORMAR PARTE DE ESTE ANIVERSARIO!</h2>
+                    <h2 class="text-white">¡MUCHAS GRACIAS POR FORMAR PARTE DE LA ILUSIÓN DE LA NAVIDAD SUBURBIA!</h2>
                   </div>
                 </div>
               </div>
@@ -465,7 +466,7 @@ export default {
     EventBus.$on('getTicket', (ticket) => {
       this.response.ticket = ticket;
     })
-    if (process.env.NODE_ENV === 'development') this.setTestData();
+    //if (process.env.NODE_ENV === 'development') this.setTestData();
   },
   
   data() {
@@ -625,13 +626,18 @@ export default {
       },
       // setter
       set: function(newValue) {
+        if(this.value.startsWith('0')) {
+          this.value = '';
+          return;
+        }
         if (newValue.length > 2) {
           newValue = newValue.replace(".", "");
+          
           this.value =
             newValue.substr(0, newValue.length - 2) +
             "." +
             newValue.substr(newValue.length - 2);
-            
+          
           this.buy_amount = this.value;
           // add thousend separator formatting here
         } else {
@@ -726,13 +732,15 @@ export default {
       if (this.buy_type === "online") {
         this.store = 'Tienda Online'
       }
-      if (this.$vuelidation.valid() && this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false) {
-        this.registerTicket();
-      } else {
-        if (this.phone === '') {
-          const errors = this.$vuelidation.errors();
-          if (errors.phone && Object.keys(errors).length === 1) {
-            this.registerTicket();
+      if(this.customTicketIsValid && this.customTicketConfirmationIsValid && this.ticketAlreadyExists === false && this.terms && this.privacy && this.bases && this.correctInfo) {
+        if (this.$vuelidation.valid()) {
+          this.registerTicket();
+        } else {
+          if (this.phone === '') {
+            const errors = this.$vuelidation.errors();
+            if (errors.phone && Object.keys(errors).length === 1) {
+              this.registerTicket();
+            }
           }
         }
       }
@@ -771,6 +779,7 @@ export default {
       if (error.response && error.response.data && error.response.data.errors) {
         if (error.response.data.errors.ticket && error.response.data.errors.ticket[0] === "The ticket has already been taken.") {
           this.ticketAlreadyExists = true;
+          document.getElementById('ticket_input').scrollIntoView();
         }
       }
     },

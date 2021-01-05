@@ -100,7 +100,7 @@
         <h4 class="text-center secondary-color">Paso 5</h4>
         <p class="text-center">¡Recuerda que puedes seguir paticipando por cada compra de $500!</p>
       </div>
-      <div id="calendario" class="mt-4"></div>
+      <div id="calendario" class="mt-4 ancla-to-cal"></div>
     </div>
   </div>
 </template>

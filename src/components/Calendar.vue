@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div id="ticket" style="position: absolute; top: 5rem"></div>
+    <div id="ticket" class="ancla"></div>
   </div>
 </template>
 
