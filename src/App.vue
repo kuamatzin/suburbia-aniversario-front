@@ -2,23 +2,13 @@
   <div id="app">
     <go-top :size="50" bg-color="#EAC144"></go-top>
 
-    <!--
-    <Counter />
-    -->
-
-    <Navbar />
+    <div class="pagewide p-3 bg-white">
+      <div class="container">
+        <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 130px" />
+      </div>
+    </div>
 
     <Banner />
-
-    <Steps />
-
-    <Calendar />
-
-    <Ticket />
-
-    <Play />
-
-    <FAQ />
 
     <Winners />
 

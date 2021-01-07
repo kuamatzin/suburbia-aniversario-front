@@ -6,29 +6,8 @@
     data-aos-delay="50"
     data-aos-duration="800"
   >
-    <h3 class="text-center primary-color-subtitle">GANADOR</h3>
-
-    <div
-      class="row"
-      data-aos="fade-up"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="800"
-    >
-      <div class="col-md-8 offset-md-2">
-        <div>
-          <img
-            src="./../assets/ganadores.jpg"
-            alt="ganadores"
-            class="img-fluid"
-            style="position: relative"
-          />
-        </div>
-      </div>
-    </div>
-
     <div class="row mt-5">
-      <div class="col-md-6 mb-3">
+      <div class="col-md-6 my-5">
         <div class="h-100 d-flex align-items-center">
           <img alt="Ticket" src="./../assets/nota.svg" style="width: 100px" />
 
