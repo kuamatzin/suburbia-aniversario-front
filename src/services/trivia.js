@@ -220,6 +220,7 @@ export default {
       '0994': 'ZITACUARO',
       '0949': 'TIJUANA PABELLÓN ROSARITO',
       '0782': 'TIENDA ONLINE',
+      '0959': 'SALTILLO COAHUILA',
     };
 
     return stores[number];
