@@ -17,7 +17,7 @@
     >
       <div class="col-md-8 offset-md-2 mb-4">
         <div class="d-flex align-items-center">
-          <img alt="Ticket" src="./../assets/ojo.png" style="width: 100px" />
+          <img alt="Ticket" src="./../assets/icon-15.svg" style="width: 100px" />
 
           <p class="ml-3 primary-color secondary-font">
             SERÁ
@@ -253,7 +253,7 @@
                 </div>
               </div>
             </div>
-            
+
 
             <div v-if="data_questions.length > 0">
               <p class="p-m text-center m-0 mt-4">{{data_questions[activeQuestion].question}}</p>
@@ -412,7 +412,7 @@ export default {
       this.response.ticket = ticket;
     })
   },
-  
+
   data() {
     return {
       date: {
@@ -655,7 +655,7 @@ export default {
       }
 
       const [error, data] = await Trivia.sendAnswers(dataAnswers);
-      
+
       this.toggleTimer();
       this.data_questions = [];
       this.activeQuestion = 0;
@@ -722,7 +722,7 @@ export default {
 }
 
 .form-check-label {
-  
+
 }
 
 .link {

@@ -10,7 +10,7 @@
       <h3 class="text-center primary-color">PREGUNTAS FRECUENTES</h3>
 
       <div class="accordion mt-5" id="accordionExample">
-        <div style="border-top: 8px solid #621e66">
+        <div style="border-top: 8px solid #ff0e9b">
           <div class="card-header card-white" id="headingOne">
             <h2 class="mb-0">
               <button

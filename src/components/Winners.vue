@@ -6,7 +6,7 @@
     data-aos-delay="50"
     data-aos-duration="800"
   >
-    <h3 class="text-center primary-color">GANADOR</h3>
+    <h3 class="text-center primary-color">GANADORES</h3>
 
     <div
       class="row"
@@ -15,10 +15,10 @@
       data-aos-delay="50"
       data-aos-duration="800"
     >
-      <div class="col-md-8 offset-md-2">
+      <div class="col-md-12">
         <div>
           <img
-            src="./../assets/ganadores.jpg"
+            src="./../assets/ganador-22.jpg"
             alt="ganadores"
             class="img-fluid"
             style="position: relative"
