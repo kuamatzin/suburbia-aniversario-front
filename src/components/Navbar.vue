@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <img src="../assets/logo.jpg" alt="logo" width="150px" class="navbar-white my-2" />
+      <a target="_blank" href="https://www.suburbia.com.mx/tienda/inicio">
+        <img src="../assets/logo.jpg" alt="logo" width="150px" class="navbar-white my-2" />
+      </a>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="w-100 mobile-menu">
@@ -48,7 +50,7 @@
             <a class="nav-link" href="#faq">Preguntas frecuentes</a>
           </li>
           <li class="nav-item" @click="hideCollapse">
-            <a class="nav-link" href="#ganadores">Ganador</a>
+            <a class="nav-link" href="#ganadores">Ganadores</a>
           </li>
         </ul>
       </div>
