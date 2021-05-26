@@ -5,7 +5,7 @@
       class="hero-image-suburbia parallax margin-hero d-flex justify-content-center align-items-center"
     >
       <countdown
-        :time="new Date('12/10/2020 00:00:00').getTime() - new Date().getTime()"
+        :time="new Date('06/03/2021 00:00:00').getTime() - new Date().getTime()"
       >
         <template slot-scope="props">
           <div class="row timer-countdown">
@@ -43,25 +43,25 @@ export default {
 <style scoped lang="scss">
 .timer-countdown {
   width: 80vw;
-  margin-top: 250px;
+  margin-top: 340px;
 }
 
 .timer {
-  font-size: 3rem;
+  font-size: 2.4rem;
   text-align: center;
-  color: #2E3030;
+  color: white;
 }
 
 .hero-image-suburbia {
   background-image: url("./../assets/bg_countdwon_R.jpg");
   height: 100vh;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
 
   p {
-    color: #2E3030;
+    color: white;
   }
 }
 
@@ -82,7 +82,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/under.jpg");
     height: 100vh;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -102,7 +102,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/under.jpg");
     height: 100vh;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -118,7 +118,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/under.jpg");
     height: 100vh;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;

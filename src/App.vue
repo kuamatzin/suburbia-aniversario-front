@@ -1,25 +1,13 @@
 <template>
   <div id="app">
-    <go-top :size="50" bg-color="#EAC144"></go-top>
-
-    <div class="pagewide p-3 bg-white">
-      <div class="container">
-        <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 130px" />
-      </div>
-    </div>
-
-    <Banner />
-
-    <Winners />
-
-    <Footer />
+    <counter></counter>
   </div>
 </template>
 
 <script>
 /* eslint-disable vue/no-unused-components */
-/*import Counter from "./components/Counter";*/
-import Ticket from "./components/Ticket";
+import Counter from "./components/Counter";
+/*import Ticket from "./components/Ticket";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Steps from "./components/Steps";
@@ -28,12 +16,13 @@ import Play from "./components/Play";
 import FAQ from "./components/FAQ";
 import Winners from "./components/Winners";
 import Footer from "./components/Footer";
-import GoTop from "@inotom/vue-go-top";
+import GoTop from "@inotom/vue-go-top";*/
 
 export default {
   name: "App",
   components: {
-    /*Counter,*/
+    Counter,
+    /*
     GoTop,
     Ticket,
     Navbar,
@@ -44,6 +33,7 @@ export default {
     FAQ,
     Winners,
     Footer,
+    */
   },
 };
 </script>
