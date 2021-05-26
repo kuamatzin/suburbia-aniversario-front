@@ -28,9 +28,9 @@
     </div>
 
     <div class="row mt-5">
-      <div class="col-md-6 mb-3">
+      <div class="col-md-6 my-5">
         <div class="h-100 d-flex align-items-center">
-          <img alt="Ticket" src="./../assets/nota.svg" style="width: 130px" />
+          <img alt="Ticket" src="./../assets/nota.svg" style="width: 100px" />
 
           <span class="primary-color px-3 secondary-font" style="font-size: 1.2rem">
             <strong>NOTA</strong>: CONSERVA TU TICKET,
@@ -41,7 +41,7 @@
       </div>
       <div class="col-md-6 mb-3">
         <div class="h-100 d-flex align-items-center">
-          <img alt="Ticket" src="./../assets/participa.svg" style="width: 130px" />
+          <img alt="Ticket" src="./../assets/participa.svg" style="width: 100px" />
 
           <span
             id="ganadores"

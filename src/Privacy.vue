@@ -2,7 +2,7 @@
   <div class="pb-5">
     <div class="terms">
       <header class="entry-header d-flex justify-content-center align-items-center h-100 w-100">
-        <h1 class="entry-title text-center text-white">Términos y Condiciones</h1>
+        <h1 class="entry-title text-center text-white">Aviso de Privacidad</h1>
       </header>
     </div>
     <div class="container">
@@ -11,7 +11,7 @@
           <div id="content" class="site-content" role="main">
             <article id="post-108" class="post-108 page type-page status-publish hentry">
               <!-- .entry-header -->
-              
+
               <div class="mt-5">
                 <ol type="I" style="list-style-type: upper-roman;text-align:justify;">
                   <li>

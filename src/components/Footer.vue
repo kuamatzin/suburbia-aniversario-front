@@ -17,37 +17,29 @@
               <a target="_blank" href="https://www.youtube.com/user/ModaSuburbia">
                 <i class="fab fa-youtube icon mx-2"></i>
               </a>
-              <a target="_blank" href="https://www.pinterest.com.mx/SuburbiaModa">
-                <i class="fab fa-pinterest icon mx-2"></i>
-              </a>
             </div>
           </div>
 
           <div class="col-sm-9 order-sm-1">
-            <div class="d-flex">
-              <div class="px-3">
-                <a href="/terminos" target="_blank">
-                  Todos los derechos reservados D.R.
-                  <span class="ml-2 slash">/</span>
-                </a>
+            <div class="row">
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center" style="color: grey;">
+                  Derechos reservados Suburbia
               </div>
 
-              <div class="px-3">
-                <a href="/terminos" target="_blank">
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
+                <a href="/bases" target="_blank">
                   Bases del concurso
-                  <span class="ml-2 slash">/</span>
                 </a>
               </div>
               
-              <div class="px-3">
-                <a href="/terminos" target="_blank">
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
+                <a href="http://assets.suburbia.com.mx/assets/ayuda/#/sec/otros-temas/terminos-y-condiciones" target="_blank">
                   Términos y condiciones
-                  <span class="ml-2 slash">/</span>
                 </a>
               </div>
 
-              <div class="px-3">
-                <a href="/terminos" target="_blank">Aviso de privacidad</a>
+              <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
+                <a href="http://assets.suburbia.com.mx/assets/ayuda/#/sec/credito/aviso-de-privacidad-integral-clientes" target="_blank">Aviso de privacidad</a>
               </div>
             </div>
           </div>

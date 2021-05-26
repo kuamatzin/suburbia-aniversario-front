@@ -1,7 +1,7 @@
 <template>
   <div class="position: relative">
     <div id="container-hero" class="hero-image-suburbia parallax margin-hero"></div>
-    <div id="mecanica" style="position: absolute; top: 25rem"></div>
+    <div id="mecanica" class="ancla-cal"></div>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .hero-image-suburbia {
-  background-image: url("./../assets/banner-home.jpg");
-  height: 350px;
+  background-image: url("./../assets/banner_home.jpg");
+  height: 430px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,8 +28,8 @@ export default {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/banner-home.jpg");
-    height: 500px;
+    background-image: url("./../assets/banner_home.jpg");
+    height: 580px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,7 +41,7 @@ export default {
 @media (min-width: 768px) {
   .hero-image-suburbia {
     background-image: url("./../assets/banner-home.jpg");
-    height: 480px;
+    height: 200px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,7 +53,7 @@ export default {
 @media (min-width: 992px) {
   .hero-image-suburbia {
     background-image: url("./../assets/banner-home.jpg");
-    height: 480px;
+    height: 380px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

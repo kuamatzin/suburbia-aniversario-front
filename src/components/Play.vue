@@ -17,12 +17,12 @@
     <div class="py-1">
       <div class="h-100">
         <div class="h-100 d-flex justify-content-center align-items-center">
-          <div class="row mx-0">
-            <div class="col-md-4 px-0">
+          <div class="row mx-0 d-block d-lg-flex">
+            <div class="col-lg-4 px-0">
               <div class="hero-image align-items-center">
                 <div class="text-left text-white px-3 ml-4">
                   <h4 class="pt-5">
-                    ¡LLEGÓ EL MOMENTO DE PARTICIPAR PARA GANAR UNO DE NUESTROS
+                    ¡LLEGÓ EL MOMENTO DE PARTICIPAR PARA GANAR UNO DE LOS SIGUIENTES
                     PREMIOS!
                   </h4>
                   <ul class="pl-0 mt-3">
@@ -30,16 +30,16 @@
                       1 motocicleta Italika VORT-X200
                     </li>
                     <li>
-                      4 motonetas Italika D150 2021
+                      3 motonetas Italika D150 2021
                     </li>
                     <li>
-                      4 pantallas LG 75” UHD
+                      5 pantallas LG 75” UHD
                     </li>
                     <li>
-                      4 pantallas LG 43” UHD
+                      5 pantallas LG 43” UHD
                     </li>
                     <li>
-                      4 Smartphones Motorola RAZR 5G Negro
+                      2 Smartphones Motorola RAZR 5G Negro
                     </li>
                   </ul>
                   <p class="mt-3">Si ya registraste tu ticket, verifícalo abajo para concluir tus participaciones restantes.</p>
@@ -48,8 +48,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-8 px-0">
-              <img src="../assets/regalo_right-21.jpg" alt="" style="height: 500px; width: 100%" />
+            <div class="col-lg-8 px-0">
+              <img class="gift" src="../assets/regalo_right-21.jpg" alt="gifts"/>
             </div>
           </div>
         </div>
@@ -152,6 +152,8 @@
         </div>
       </div>
     </div>
+
+    <div id="faq" class="ancla-faq"></div>
   </div>
 </template>
 
@@ -168,17 +170,12 @@ export default {
 
   watch: {
     ticket: function(newValue) {
-      this.customTicketIsValid = newValue.length === 27;
+      this.customTicketIsValid = newValue.length === 23;
 
-      const result = newValue
-        .replace(/\D/g, "")
-        .replace(/(.{4})/g, "$1 ")
-        .trim();
-      if (result.length > 27) {
-        this.$nextTick(
-          () => (this.ticket = this.ticket.substring(0, this.ticket.length - 1))
-        );
-        return;
+      const result = newValue.replace(/[^A-Za-z0-9]/g, "").replace(/(.{5})/g, '$1 ').toUpperCase().trim();
+      if (result.length > 23) {
+        this.$nextTick(() => this.ticket = this.ticket.substring(0, this.ticket.length - 1));
+        return ;
       }
       this.$nextTick(() => (this.ticket = result));
     },
@@ -191,8 +188,14 @@ export default {
   },
 
   mounted() {
-    EventBus.$on("sendDataToPlay", (ticket) => {
-      this.formatTicketData(ticket);
+    EventBus.$on('sendDataToPlay', (ticket) => {
+      this.formatTicketData(ticket)
+    })
+
+    EventBus.$on('plusOneTicketPlay', () => {
+      this.registeredTicket.attempts = this.registeredTicket.attempts + 1;
+      this.registeredTicket.games = this.registeredTicket.games - 1;
+      this.registeredTicket.init =  this.registeredTicket.max_attempts - this.registeredTicket.games + 1;
     });
   },
 
@@ -201,8 +204,9 @@ export default {
       ticket: "",
       customTicketIsValid: false,
       formTouched: false,
-      registeredTicket: "",
-    };
+      registeredTicket: '',
+      loading: false,
+    }
   },
 
   vuelidation: {
@@ -217,25 +221,26 @@ export default {
     async verify() {
       this.formTouched = true;
       if (this.$vuelidation.valid()) {
-        const [error, data] = await Trivia.getTicket(
-          this.ticket.replace(/ /g, "")
-        );
+        this.loading = true;
+        const [error, data] = await Trivia.getTicket(this.ticket.replace(/ /g,''))
+        this.loading = false;
         if (error) return console.log(error);
 
-        this.formatTicketData(data.data.data);
+        this.formatTicketData(data.data.data, true);
       }
     },
 
-    formatTicketData(data) {
+    formatTicketData(data, sendToTicket = false) {
       const object = {};
-      object["id"] = data.id;
-      object["attempts"] = data.attempts ? Number(data.attempts) : 0;
-      object["max_attempts"] = Number(data.max_attempts);
-      object["games"] = object["max_attempts"] - object["attempts"];
-      object["init"] = object["max_attempts"] - object["games"] + 1;
-      this.registeredTicket = { ...object };
-      console.log(this.registeredTicket);
-      EventBus.$emit("getTicket", this.registeredTicket);
+      object['id'] = data.id;
+      object['attempts'] = data.attempts ? Number(data.attempts) : 0;
+      object['max_attempts'] = Number(data.max_attempts);
+      object['games'] = object['max_attempts'] - object['attempts'];
+      object['init'] =  object['max_attempts'] - object['games'] + 1;
+      this.registeredTicket = {...object};
+      if (sendToTicket) {
+        EventBus.$emit('getTicket', this.registeredTicket);
+      }
     },
 
     initGame() {
@@ -247,6 +252,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.gift{
+  height: 250px;
+  width: 100%;
+}
 ul{
   list-style: none;
 }
@@ -278,11 +287,12 @@ ul{
 }
 
 .button {
-  background: #ff0e9b !important;
+  background: white!important;
   padding: 14px 55px;
   font-weight: bold;
-  border-color: #ff0e9b !important;
+  border-color: white !important;
   font-size: 1rem;
+  color: #621e66;
 }
 
 .verify-ticket {
@@ -314,6 +324,14 @@ ul{
   display: none;
 }
 
+.mobile-play {
+  background: url('./../assets/regalo_left-20.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .win-title {
@@ -326,6 +344,10 @@ ul{
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+  .gift{
+    height: 300px;
+    width: 100%;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -337,6 +359,7 @@ ul{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    display: block;
   }
 
   .win-title {
@@ -358,9 +381,9 @@ ul{
   .mobile-play {
     display: none;
   }
-
-  .hero-image {
-    display: block;
+  .gift{
+    height: 500px;
+    width: 100%;
   }
 }
 
@@ -373,6 +396,7 @@ ul{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    display: block;
   }
 
   .win {
@@ -391,6 +415,7 @@ ul{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    display: block;
   }
 }
 </style>
