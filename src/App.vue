@@ -76,7 +76,7 @@ body {
   h2,
   h3,
   h4 {
-    font-family: "Rajdhani", sans-serif !important;
+    font-family: "Montserrat", sans-serif !important;
     font-weight: 700;
   }
 }
@@ -162,7 +162,7 @@ body {
 }
 
 .secondary-font {
-  font-family: "Rajdhani", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .primary-color {
