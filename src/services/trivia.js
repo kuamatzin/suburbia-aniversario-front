@@ -221,6 +221,10 @@ export default {
       '0949': 'TIJUANA PABELLÓN ROSARITO',
       '0782': 'TIENDA ONLINE',
       '0959': 'SALTILLO COAHUILA',
+      '0917': 'PUERTA ARAGON',
+      '0992': 'LOS REYES TEPOZAN',
+      '0788': 'TENARIA',
+      '0822': 'JUAREZ MISIONES'
     };
 
     return stores[number];
