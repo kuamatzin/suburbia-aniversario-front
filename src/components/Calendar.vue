@@ -23,11 +23,23 @@
           <h3 class="text-left text-white regular primary-font">VIGENCIA DE PARTICIPACIÓN</h3>
           <h3
             class="text-left text-white mt-2 primary-font"
-          >DEL 3 DE JUNIO AL 20 DE JUNIO DE 2021</h3>
+          >Del 3 al 20 de junio 2021</h3>
         </div>
       </div>
     </div>
     <div id="ticket" class="ancla"></div>
+      <a href="./GAME/index.html">
+    <button :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" data-toggle="modal" data-target=".bd-example-modal-lg">
+      JUGAR
+    </button>
+    </a>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          LArge
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

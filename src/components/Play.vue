@@ -27,19 +27,19 @@
                   </h4>
                   <ul class="pl-0 mt-3">
                     <li>
-                      1 motocicleta Italika VORT-X200
+                      1 motocicleta deportiva marca Italika
                     </li>
                     <li>
-                      3 motonetas Italika D150 2021
+                      5 pantallas de 75” marca LG
                     </li>
                     <li>
-                      5 pantallas LG 75” UHD
+                      2 Smart phones marca Motorola
                     </li>
                     <li>
-                      5 pantallas LG 43” UHD
+                      3 motonetas marca Italika
                     </li>
                     <li>
-                      2 Smartphones Motorola RAZR 5G Negro
+                      5 pantallas de 43” marca LG
                     </li>
                   </ul>
                   <p class="mt-3">Si ya registraste tu ticket, verifícalo abajo para concluir tus participaciones restantes.</p>
