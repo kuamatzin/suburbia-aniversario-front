@@ -438,6 +438,18 @@
       </div>
     </div>
 
+    <div class="modal fade" id="memorama" tabindex="-1" aria-labelledby="triviaLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable transparent">
+        <div class="modal-content my-modal-trivia modal-content-transparent">
+          <div class="modal-body modal-body-transparent">
+            <div v-if="response.ticket">
+              <iframe src="https://memorama.firebaseapp.com?token=carlitos" frameborder="0" style="width: 100%; height: 600px"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Modal Ayuda -->
     <div class="modal fade" id="help" tabindex="-1">
       <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -467,7 +479,7 @@ export default {
     EventBus.$on('getTicket', (ticket) => {
       this.response.ticket = ticket;
     })
-    //if (process.env.NODE_ENV === 'development') this.setTestData();
+    if (process.env.NODE_ENV === 'development') this.setTestData();
   },
 
   data() {
@@ -773,7 +785,8 @@ export default {
         if (error) { return this.alert(error) }
         this.response.ticket = data.data.data;
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
-        window.$('#init').modal('show');
+        //window.$('#init').modal('show');
+        window.$('#memorama').modal('show');
     },
 
     alert(error) {
@@ -800,6 +813,7 @@ export default {
       this.loading = false;
       if (error) return alert('Oops ocurrió un problema, intenta más tarde');
       this.resetFields();
+      console.log(data);
       this.response.token = data.token;
       this.response.ticket = data.ticket;
       EventBus.$emit('plusOneTicketPlay');
@@ -1235,5 +1249,19 @@ export default {
 
 .form-control.is-invalid, .was-validated .form-control:invalid {
     background-position: right calc(.575em + .875rem) center !important;
+}
+
+.transparent {
+  max-width: 80vw;
+  height: 615px;
+}
+
+.modal-body-transparent {
+    padding: 0rem;
+}
+
+.modal-content-transparent {
+    background: transparent;
+    border: 0px solid transparent;
 }
 </style>

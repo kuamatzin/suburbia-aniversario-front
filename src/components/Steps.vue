@@ -54,7 +54,7 @@
           <small
             class="ml-2 primary-color secondary-font font-weight-bold mb-0 text-uppercase text-justify"
           >
-            Las compras realizadas con Tarjeta de Crédito Suburbia y Tarjeta
+            Tarjeta de Crédito Suburbia y Tarjeta
             Minipagos otorgan doble participación
           </small>
         </div>
@@ -128,11 +128,15 @@
 <script>
 export default {
   name: "Banner",
+
   props: {
     msg: String,
   },
+
+  methods: {
+    openGame() {
+      window.$('#memorama').modal('show');
+    }
+  }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
