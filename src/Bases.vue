@@ -122,7 +122,7 @@
             ASR, sistema de control de tracción.
           </p>
           <p>
-            <strong>MECÁNICA:</strong>
+            <strong>Paso 1:</strong>
           </p>
           <p>
             Para poder participar en la presente dinámica, los clientes
@@ -501,6 +501,8 @@
         </div>
       </div>
     </div>
+
+    
   </div>
 </template>
 
