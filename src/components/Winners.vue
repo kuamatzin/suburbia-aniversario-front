@@ -20,7 +20,13 @@
           <img
             src="./../assets/ganador-22.jpg"
             alt="ganadores"
-            class="img-fluid"
+            class="img-fluid winner"
+            style="position: relative"
+          />
+          <img
+            src="./../assets/r_ganadores.jpg"
+            alt="ganadores"
+            class="img-fluid winner_mobile"
             style="position: relative"
           />
         </div>
@@ -81,12 +87,20 @@ export default {
 }
 
 // Small devices (landscape phones, 576px and up)
+@media (max-width: 575px) {
+  .winner {
+    display: none;
+  }
+}
 @media (min-width: 576px) {
   .winners-text {
     top: 105px;
     padding-left: 50px;
     padding-right: 180px;
     font-size: 13px;
+  }
+  .winner_mobile{
+    display: none;
   }
 }
 

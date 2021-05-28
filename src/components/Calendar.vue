@@ -28,18 +28,6 @@
       </div>
     </div>
     <div id="ticket" class="ancla"></div>
-      <a href="./GAME/index.html">
-    <button :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" data-toggle="modal" data-target=".bd-example-modal-lg">
-      JUGAR
-    </button>
-    </a>
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          LArge
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
