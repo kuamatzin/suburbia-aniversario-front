@@ -407,7 +407,7 @@
                 <div class="col-md-6">
                   <button class="success-buttons mt-4 mb-4" @click="playAgainWithMemorama()">
                     <p class="m-0">JUGAR OTRA VEZ</p>
-                    <p class="m-0 participations">({{response.ticket.max_attempts - response.ticket.attempts}} participaciones restantes)</p>
+                    <p class="m-0 participations">({{ attemptsLeft }} participaciones restantess)</p>
                   </button>
                 </div>
               </div>
@@ -547,7 +547,8 @@ export default {
         answer: ''
       },
       answers: [],
-      loading: false
+      loading: false,
+      attemptsLeft: 0
     };
   },
 
@@ -754,6 +755,8 @@ export default {
     },
 
     async registerTicket() {
+      let importantStuff = window.open('', '_blank');
+      importantStuff.document.write('Loading preview...');
       this.loading = true;
         const [error, data ] = await Trivia.registerTicket({
           first_name: this.first_name,
@@ -781,7 +784,7 @@ export default {
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
         //window.$('#init').modal('show');
         this.resetFields();
-        window.$('#memorama').modal('show');
+        importantStuff.location.href = `https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`;
     },
 
     alert(error) {
@@ -795,8 +798,9 @@ export default {
 
     async playAgainWithMemorama() {
       this.resetFields();
+      window.$('#success').modal('hide')
       EventBus.$emit('plusOneTicketPlay');
-      window.$('#memorama').modal('show');
+      window.open(`https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`, '_blank');
     },
 
     async startTrivia() {
@@ -924,7 +928,8 @@ export default {
           this.response.ticket = event.data.data.ticket;
           this.response.token = '';
           this.timerResult = this.formatSecondsToTimer(event.data.data.answer.seconds);
-          window.$('#memorama').modal('hide')
+          this.response.ticket = { ...event.data.data.ticket };
+          this.attemptsLeft = this.response.ticket.max_attempts - this.response.ticket.attempts;
           window.$('#success').modal('show')
         }, 600);
       }

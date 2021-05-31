@@ -8,7 +8,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="w-100 mobile-menu">
         <li class="nav-item logo-mobile">
-          <a href="#mecanica">
+          <a href="https://www.suburbia.com.mx/tienda/inicio">
             <img
               alt="Suburbia aniversario"
               src="./../assets/logo.jpg"

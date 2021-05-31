@@ -126,8 +126,8 @@
             >
               <div
                 class="d-flex align-items-center mb-3"
-                v-for="index in registeredTicket.attempts"
-                :key="index"
+                v-for="(index, i) in registeredTicket.attempts"
+                :key="i"
               >
                 <p class="m-0 text-white">Participación #{{ index }}</p>
 
@@ -193,9 +193,14 @@ export default {
     })
 
     EventBus.$on('plusOneTicketPlay', () => {
-      this.registeredTicket.attempts = this.registeredTicket.attempts + 1;
-      this.registeredTicket.games = this.registeredTicket.games - 1;
-      this.registeredTicket.init =  this.registeredTicket.max_attempts - this.registeredTicket.games + 1;
+      const tempRegisteredTicket = { ...this.registeredTicket }
+      this.registeredTicket = '';
+      setTimeout(() => {
+        this.registeredTicket = tempRegisteredTicket;
+        this.registeredTicket.attempts = this.registeredTicket.attempts + 1;
+        this.registeredTicket.games = this.registeredTicket.games - 1;
+        this.registeredTicket.init =  this.registeredTicket.max_attempts - this.registeredTicket.games + 1;
+      }, 500);
     });
   },
 
