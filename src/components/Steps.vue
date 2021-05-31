@@ -15,7 +15,7 @@
       data-aos-duration="800"
     >
       <div class="col-md-3 mb-4 d-md-flex align-items-center">
-        <div class="d-md-flex align-items-center text-center text-md-left">
+        <div class="d-flex align-items-center text-md-left">
           <img
             alt="Ticket"
             src="./../assets/icon-05.svg"
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="col-md-3 mb-4 d-md-flex align-items-center">
-        <div class="d-md-flex align-items-center text-center text-md-left">
+        <div class="d-flex align-items-center text-md-left">
           <img alt="Ticket" src="./../assets/icon-07.svg" style="width: 60px" />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase">
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="col-md-3 mb-4 d-md-flex align-items-center">
-        <div class="d-md-flex align-items-center text-center text-md-left">
+        <div class="d-flex align-items-center text-md-left">
           <img alt="Ticket" src="./../assets/2a.svg" style="width: 60px" />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="col-md-3 mb-4 d-md-flex align-items-center">
-        <div class="d-md-flex align-items-center text-center text-md-left">
+        <div class="d-flex align-items-center text-md-left">
           <img alt="Ticket" src="./../assets/icon-09.svg" style="width: 60px" />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase"
