@@ -8,14 +8,14 @@
     </p>
 
     <div
-      class="row mt-5"
+      class="row mt-5 desktop"
       data-aos="fade-up"
       data-aos-offset="200"
       data-aos-delay="50"
       data-aos-duration="800"
     >
       <div class="col-md-3 mb-4 d-md-flex align-items-center">
-        <div class="d-flex align-items-center text-md-left">
+        <div class="d-block d-md-flex align-items-center text-md-left">
           <img
             alt="Ticket"
             src="./../assets/icon-05.svg"
@@ -57,6 +57,52 @@
             Minipagos otorgan doble participación
           </small>
         </div>
+      </div>
+    </div>
+
+    <div
+      class="row mt-5 mobile"
+      data-aos="fade-up"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="800"
+    >
+      <div class="col-md-3 mb-4 text-center">
+          <img
+          class="mx-auto d-block"
+            alt="Ticket"
+            src="./../assets/icon-05.svg"
+            style="width: 60px"
+          />
+
+          <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $500
+          </small>
+      </div>
+      <div class="col-md-3 mb-4 text-center">
+          <img class="mx-auto d-block" alt="Ticket" src="./../assets/icon-07.svg" style="width: 60px" />
+
+          <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase">
+            Participan las compras en tiendas
+            Suburbia, suburbia.com.mx y
+            ventas por teléfono.
+          </small>
+      </div>
+      <div class="col-md-3 mb-4 text-center">
+          <img class="mx-auto d-block" alt="Ticket" src="./../assets/2a.svg" style="width: 60px" />
+
+          <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
+            REGISTRA TU TICKET (NO ACUMULABLES)
+          </small>
+      </div>
+      <div class="col-md-3 mb-4 text-center">
+          <img class="mx-auto d-block" alt="Ticket" src="./../assets/icon-09.svg" style="width: 60px" />
+
+          <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase"
+          >
+            Tarjeta de Crédito Suburbia y Tarjeta
+            Minipagos otorgan doble participación
+          </small>
       </div>
     </div>
 
@@ -143,5 +189,18 @@ export default {
 <style lang="scss" scoped>
   .carac {
     font-size: 12px;
+  }
+
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 577px) {
+    .mobile{
+      display: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .desktop{
+      display: none;
+    }
   }
 </style>
