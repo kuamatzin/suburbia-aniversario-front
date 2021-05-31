@@ -72,7 +72,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <select class="form-control" v-model="b_day" :class="{'is-invalid': $vuelidation.error('b_day') }">
-                  <option value="" disabled>Seleccionar</option>
+                  <option value="" disabled>Día</option>
                   <option v-for="index in 31" :key="index">{{ index }}</option>
                 </select>
                 <div class="invalid-feedback">{{ $vuelidation.error('b_day') }}</div>
@@ -82,7 +82,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <select class="form-control" v-model="b_month" :class="{'is-invalid': $vuelidation.error('b_month') }">
-                  <option value="" disabled>Seleccionar</option>
+                  <option value="" disabled>Mes</option>
                   <option v-for="month in date.month" :key="month">{{month}}</option>
                 </select>
                 <div class="invalid-feedback">{{ $vuelidation.error('b_month') }}</div>
@@ -92,7 +92,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <select class="form-control" v-model="b_year" :class="{'is-invalid': $vuelidation.error('b_year') }">
-                  <option value="" disabled>Seleccionar</option>
+                  <option value="" disabled>Año</option>
                   <option v-for="index in 90" :key="index">{{ 2021 - index}}</option>
                 </select>
                 <div class="invalid-feedback">{{ $vuelidation.error('b_year') }}</div>
@@ -186,7 +186,6 @@
             <select class="form-control" v-model="payment_method" :class="{'is-invalid': $vuelidation.error('payment_method') }">
               <option value="" disabled>Seleccionar</option>
               <option value="suburbia_card">Tarjeta Suburbia</option>
-              <option value="citibanamex_card">Tarjeta Citibanamex</option>
               <option value="cash">Efectivo</option>
               <option value="small_payment">Minipagos</option>
               <option value="other">Otra forma de pago</option>
@@ -378,39 +377,26 @@
 
                 <div class="col-md-8">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <h2 class="text-white">¡MUCHAS GRACIAS POR FORMAR PARTE DE LA ILUSIÓN DE LA NAVIDAD SUBURBIA!</h2>
+                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN EL REGALO MÁS PADRE!</h2>
                   </div>
                 </div>
               </div>
             </div>
 
-            <p class="mt-2 text-white text-center">Finalizaste la trivia y estos son tus resultados:</p>
+            <p class="mt-2 text-center">Finalizaste el juego y este es tu tiempo:</p>
 
 
             <div class="container">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <div class="d-flex flex-column align-items-center justify-content-center">
-                    <span class="text-white">TIEMPO</span>
-                    <div class="results mt-2">
-                      {{ timerResult }}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="d-flex flex-column align-items-center justify-content-center">
-                    <span class="text-white">ACIERTOS</span>
-                    <div class="results mt-2">
-                      {{response.answer.correct_answers}}/15
-                    </div>
-                  </div>
+              <div class="d-flex flex-column align-items-center justify-content-center">
+                <span>TIEMPO</span>
+                <div class="results mt-2">
+                  {{ timerResult }}
                 </div>
               </div>
 
               <div class="px-5 mt-4 d-flex justify-content-center align-items-center">
                 <img src="./../assets/icon_eye_blanco.svg" width="100px" alt="">
-                <p class="ml-2 text-white">Recibirás un correo con todos los resultados una vez concluidas todas las participaciones.</p>
+                <p class="ml-2">Recibirás un correo con todos los resultados una vez concluidas todas las participaciones.</p>
               </div>
 
               <div class="row" v-if="response.ticket.attempts < response.ticket.max_attempts">
@@ -419,7 +405,7 @@
                 </div>
 
                 <div class="col-md-6">
-                  <button class="success-buttons mt-4 mb-4" @click="playAgain()">
+                  <button class="success-buttons mt-4 mb-4" @click="playAgainWithMemorama()">
                     <p class="m-0">JUGAR OTRA VEZ</p>
                     <p class="m-0 participations">({{response.ticket.max_attempts - response.ticket.attempts}} participaciones restantes)</p>
                   </button>
@@ -443,7 +429,8 @@
         <div class="modal-content my-modal-trivia modal-content-transparent">
           <div class="modal-body modal-body-transparent">
             <div v-if="response.ticket">
-              <iframe src="https://memorama.firebaseapp.com?token=carlitos" frameborder="0" style="width: 100%; height: 600px"></iframe>
+              <iframe :src="'https://memorama.firebaseapp.com?token=' + JSON.stringify(response.ticket)" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr;webxr;"
+    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="0" style="width: 100%; height: 700px"></iframe>
             </div>
           </div>
         </div>
@@ -476,10 +463,17 @@ export default {
   name: "Ticket",
 
   mounted() {
+    EventBus.$on('playAgainFromCheck', () => this.playAgainWithMemorama());
     EventBus.$on('getTicket', (ticket) => {
       this.response.ticket = ticket;
     })
     if (process.env.NODE_ENV === 'development') this.setTestData();
+
+    window.addEventListener('message', this.receiveMessage)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('message', this.receiveMessage)
   },
 
   data() {
@@ -786,6 +780,7 @@ export default {
         this.response.ticket = data.data.data;
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
         //window.$('#init').modal('show');
+        this.resetFields();
         window.$('#memorama').modal('show');
     },
 
@@ -798,9 +793,10 @@ export default {
       }
     },
 
-    playAgain() {
-      window.$('#success').modal('hide')
-      window.$('#init').modal('show')
+    async playAgainWithMemorama() {
+      this.resetFields();
+      EventBus.$emit('plusOneTicketPlay');
+      window.$('#memorama').modal('show');
     },
 
     async startTrivia() {
@@ -813,7 +809,6 @@ export default {
       this.loading = false;
       if (error) return alert('Oops ocurrió un problema, intenta más tarde');
       this.resetFields();
-      console.log(data);
       this.response.token = data.token;
       this.response.ticket = data.ticket;
       EventBus.$emit('plusOneTicketPlay');
@@ -920,6 +915,19 @@ export default {
     getStore(store) {
       this.store = Trivia.getStore(store);
       this.validateStore = this.store ? true: false;
+    },
+
+    receiveMessage (event) {
+      if (event.data.event_id === 'memorama_completed') {
+        this.response.ticket = '';
+        setTimeout(() => {
+          this.response.ticket = event.data.data.ticket;
+          this.response.token = '';
+          this.timerResult = this.formatSecondsToTimer(event.data.data.answer.seconds);
+          window.$('#memorama').modal('hide')
+          window.$('#success').modal('show')
+        }, 600);
+      }
     },
 
     resetFields() {
@@ -1185,7 +1193,7 @@ export default {
   margin-right: auto;
   margin-left: auto;
   border-radius: .8rem;
-  background: #1C6812;
+  background: #621F64;
   border: none;
   min-height: 90px;
 }
@@ -1252,8 +1260,8 @@ export default {
 }
 
 .transparent {
-  max-width: 80vw;
-  height: 615px;
+  max-width: 85vw;
+  height: 700px;
 }
 
 .modal-body-transparent {

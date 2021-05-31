@@ -134,9 +134,6 @@
                         >Tarjeta Suburbia</span
                       >
                       <span v-if="ticket.payment_method === 'other'">Otro</span>
-                      <span v-if="ticket.payment_method === 'citibanamex_card'"
-                        >Tarjeta Citibanamex</span
-                      >
                     </td>
                     <td>{{ ticket.attempts }}</td>
                     <td>{{ ticket.max_attempts }}</td>
