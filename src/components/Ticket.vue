@@ -755,8 +755,8 @@ export default {
     },
 
     async registerTicket() {
-      let importantStuff = window.open('', '_blank');
-      importantStuff.document.write('Loading preview...');
+      //let importantStuff = window.open('', '_blank');
+      //importantStuff.document.write('Loading preview...');
       this.loading = true;
         const [error, data ] = await Trivia.registerTicket({
           first_name: this.first_name,
@@ -784,7 +784,8 @@ export default {
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
         //window.$('#init').modal('show');
         this.resetFields();
-        importantStuff.location.href = `https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`;
+        //importantStuff.location.href = `https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`;
+        window.$('#memorama').modal('show');
     },
 
     alert(error) {
@@ -800,7 +801,8 @@ export default {
       this.resetFields();
       window.$('#success').modal('hide')
       EventBus.$emit('plusOneTicketPlay');
-      window.open(`https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`, '_blank');
+      //window.open(`https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`, '_blank');
+      window.$('#memorama').modal('show')
     },
 
     async startTrivia() {
