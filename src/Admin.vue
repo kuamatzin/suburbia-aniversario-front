@@ -148,8 +148,6 @@
                           <thead class="thead-dark">
                             <tr>
                               <th scope="col">#</th>
-                              <th scope="col">Respuestas correctas</th>
-                              <th scope="col">Respuestas incorrectas</th>
                               <th scope="col">Tiempo</th>
                               <th scope="col"># Participaciones inconclusas</th>
                             </tr>
@@ -160,8 +158,6 @@
                               :key="answer.id"
                             >
                               <th scope="row">{{ index + 1 }}</th>
-                              <td>{{ answer.correct_answers }}</td>
-                              <td>{{ 15 - answer.correct_answers }}</td>
                               <td>
                                 <p>{{ getTime(answer.seconds) }}</p>
                               </td>
