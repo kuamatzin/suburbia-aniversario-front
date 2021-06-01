@@ -407,7 +407,7 @@
                 <div class="col-md-6">
                   <button class="success-buttons mt-4 mb-4" @click="playAgainWithMemorama()">
                     <p class="m-0">JUGAR OTRA VEZ</p>
-                    <p class="m-0 participations">({{ attemptsLeft }} participaciones restantess)</p>
+                    <p class="m-0 participations">({{ attemptsLeft }} participaciones restantes)</p>
                   </button>
                 </div>
               </div>
@@ -784,6 +784,7 @@ export default {
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
         //window.$('#init').modal('show');
         this.resetFields();
+        EventBus.$emit('plusOneTicketPlay');
         //importantStuff.location.href = `https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`;
         window.$('#memorama').modal('show');
     },
@@ -932,6 +933,7 @@ export default {
           this.timerResult = this.formatSecondsToTimer(event.data.data.answer.seconds);
           this.response.ticket = { ...event.data.data.ticket };
           this.attemptsLeft = this.response.ticket.max_attempts - this.response.ticket.attempts;
+          window.$('#memorama').modal('hide')
           window.$('#success').modal('show')
         }, 600);
       }
