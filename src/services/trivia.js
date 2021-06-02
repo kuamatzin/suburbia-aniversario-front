@@ -13,7 +13,6 @@ const getHeaders = () => {
 
 export default {
   async getToken(ticket_id) {
-    console.log(ticket_id);
     return await to(axios.post('/token', { ticket_id }));
   },
 

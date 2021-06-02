@@ -29,7 +29,7 @@
 
     <div
     >
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-6 offset-md-3 test">
           <div class="form-group">
             <label for="inputName">Primer Nombre*</label>
             <input type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('first_name') }" v-model="first_name" />
@@ -429,7 +429,7 @@
         <div class="modal-content my-modal-trivia modal-content-transparent">
           <div class="modal-body modal-body-transparent">
             <div v-if="response.ticket">
-              <iframe style="width: 85vw; height: 700px" :src="'https://memorama.firebaseapp.com?token=' + JSON.stringify(response.ticket)" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr;webxr;"
+              <iframe class="iframe-game" :src="'https://memorama.firebaseapp.com?token=' + JSON.stringify(response.ticket)" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr;webxr;"
     allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="0"></iframe>
             </div>
           </div>
@@ -1284,5 +1284,23 @@ export default {
 .modal-content-transparent {
     background: transparent;
     border: 0px solid transparent;
+}
+
+.iframe-game {
+  width: 85vw;
+  height: 700px
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 577px) {
+  .transparent {
+    max-width: 95vw;
+    height: 350px;
+  }
+
+  .iframe-game {
+    width: 95vw;
+    height: 330px
+  }
 }
 </style>
