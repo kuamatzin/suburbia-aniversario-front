@@ -192,7 +192,7 @@ participación. Limitado a 500,000 participaciones electrónicas.
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente participante que haya cumplido con la condición de participación, que haya registrado correcta y verídicamente sus tickets de compra o código de facturación (en caso de compras a través de la página de internet www.suburbia.com.mx), obtenga su folio de participación conforme a las presentes bases y que complete de manera correcta el juego de memoria con cartas en el menor número de intentos  y con en el menor tiempo, será uno de los ganadores del incentivo de acuerdo al orden anteriormente mencionado. Los clientes que hayan registrado sus tickets de conformidad a lo señalado y dentro del periodo de vigencia, serán los únicos que podrán ser parte de la dinámica. 
+              El cliente participante que haya cumplido con la condición de participación, que haya registrado correcta y verídicamente sus tickets de compra o código de facturación (en caso de compras a través de la página de internet www.suburbia.com.mx), obtenga su folio de participación conforme a las presentes bases y que complete de manera correcta el juego de memoria con cartas en el menor número de intentos  y con en el menor tiempo, será uno de los ganadores del incentivo de acuerdo al orden indicado en las bases completas. Los clientes que hayan registrado sus tickets de conformidad a lo señalado y dentro del periodo de vigencia, serán los únicos que podrán ser parte de la dinámica. 
             </div>
           </div>
         </div>

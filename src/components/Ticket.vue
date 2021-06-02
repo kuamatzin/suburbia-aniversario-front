@@ -1,7 +1,7 @@
 <template>
   <div class="section-suburbia container mt-5">
     <h3
-      class="text-center primary-color-subtitle"
+      class="text-center primary-color-subtitle test-class"
       data-aos="fade-up"
       data-aos-offset="200"
       data-aos-delay="50"
@@ -93,7 +93,7 @@
               <div class="form-group">
                 <select class="form-control" v-model="b_year" :class="{'is-invalid': $vuelidation.error('b_year') }">
                   <option value="" disabled>Año</option>
-                  <option v-for="index in 90" :key="index">{{ 2021 - index}}</option>
+                  <option v-for="index in 70" :key="index">{{ 2003 - index}}</option>
                 </select>
                 <div class="invalid-feedback">{{ $vuelidation.error('b_year') }}</div>
               </div>
@@ -122,7 +122,7 @@
             <label for="inputName">Tienda*</label>
             <select class="form-control" @change="setBuyTypeValidation()" v-model="buy_type" :class="{'is-invalid': $vuelidation.error('buy_type') }">
               <option value="" disabled>Seleccionar</option>
-              <option value="store">Física</option>
+              <option value="store">Física y/o por teléfono</option>
               <option value="online">Online</option>
             </select>
             <div class="invalid-feedback">{{ $vuelidation.error('buy_type') }}</div>
@@ -429,8 +429,8 @@
         <div class="modal-content my-modal-trivia modal-content-transparent">
           <div class="modal-body modal-body-transparent">
             <div v-if="response.ticket">
-              <iframe :src="'https://memorama.firebaseapp.com?token=' + JSON.stringify(response.ticket)" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr;webxr;"
-    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="0" style="width: 100%; height: 700px"></iframe>
+              <iframe style="width: 85vw; height: 700px" :src="'https://memorama.firebaseapp.com?token=' + JSON.stringify(response.ticket)" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr;webxr;"
+    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="0"></iframe>
             </div>
           </div>
         </div>
@@ -784,7 +784,7 @@ export default {
         EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
         //window.$('#init').modal('show');
         this.resetFields();
-        EventBus.$emit('plusOneTicketPlay');
+        //EventBus.$emit('plusOneTicketPlay');
         //importantStuff.location.href = `https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`;
         window.$('#memorama').modal('show');
     },
@@ -801,7 +801,7 @@ export default {
     async playAgainWithMemorama() {
       this.resetFields();
       window.$('#success').modal('hide')
-      EventBus.$emit('plusOneTicketPlay');
+      //EventBus.$emit('plusOneTicketPlay');
       //window.open(`https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`, '_blank');
       window.$('#memorama').modal('show')
     },
@@ -936,6 +936,10 @@ export default {
           window.$('#memorama').modal('hide')
           window.$('#success').modal('show')
         }, 600);
+      }
+
+      if (event.data.event_id === 'memorama_started') {
+        EventBus.$emit('plusOneTicketPlay');
       }
     },
 

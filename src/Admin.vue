@@ -133,6 +133,10 @@
                       <span v-if="ticket.payment_method === 'suburbia_card'"
                         >Tarjeta Suburbia</span
                       >
+
+                      <span v-if="ticket.payment_method === 'small_payment'"
+                        >Mini Pagos</span>
+
                       <span v-if="ticket.payment_method === 'other'">Otro</span>
                     </td>
                     <td>{{ ticket.attempts }}</td>

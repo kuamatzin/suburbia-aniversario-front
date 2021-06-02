@@ -135,7 +135,7 @@
         />
         <h4 class="text-center secondary-color">Paso 2</h4>
         <p class="text-center">
-          Cada segundo cuenta, completa la juego en el menor tiempo.
+          Cada segundo cuenta, completa el juego en el menor tiempo.
         </p>
       </div>
 
@@ -161,7 +161,7 @@
         />
         <h4 class="text-center secondary-color">Paso 4</h4>
         <p class="text-center">
-          ¡Recuerda que puedes seguir paticipando con cada compra mínima de
+          ¡Recuerda que puedes seguir participando con cada compra mínima de
           $500!
         </p>
       </div>
