@@ -17,7 +17,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .hero-image-suburbia {
-  background-image: url("./../assets/banner_home.jpg");
+  background-image: url("./../assets/img-04.jpeg");
   height: 430px;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ export default {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/banner_home.jpg");
+    background-image: url("./../assets/img-04.jpeg");
     height: 580px;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/banner-home.jpg");
+    background-image: url("./../assets/img-04.jpeg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ export default {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/banner-home.jpg");
+    background-image: url("./../assets/img-04.jpeg");
     height: 380px;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@ export default {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/banner-home.jpg");
+    background-image: url("./../assets/img-04.jpeg");
     height: 480px;
     background-position: center;
     background-repeat: no-repeat;

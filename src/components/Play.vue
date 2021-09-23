@@ -7,14 +7,13 @@
   >
     <h3
       class="text-center primary-color"
-      data-aos="fade-up"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="800"
     >
       JUGAR
     </h3>
-    <div class="py-1">
+    <div class="position: relative">
+      <div id="container-hero" class="hero-image-play parallax margin-hero"></div>
+    </div>
+    <!-- <div class="py-1">
       <div class="h-100">
         <div class="h-100 d-flex justify-content-center align-items-center">
           <div class="row mx-0 d-block d-lg-flex">
@@ -83,7 +82,7 @@
         <p>¡Regístralo si aún no lo has hecho!</p>
         <small>*Imágenes sólo de caracter ilustrativo.</small>
       </div>
-    </div>
+    </div> -->
 
     <div class="verify-ticket py-5 mt-2">
       <div class="container">
@@ -285,7 +284,7 @@ ul{
 }
 
 .mobile-play {
-  background: url("./../assets/regalo_left-20.jpg");
+  background: url("./../assets/img-60.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -320,7 +319,7 @@ ul{
 }
 
 .hero-image {
-  background-image: url("./../assets/regalo_left-20.jpg");
+  background-image: url("./../assets/img-60.jpeg");
   height: 400px;
   background-position: center;
   background-repeat: no-repeat;
@@ -330,7 +329,7 @@ ul{
 }
 
 .mobile-play {
-  background: url('./../assets/regalo_left-20.jpg');
+  background: url('./../assets/img-60.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -358,7 +357,7 @@ ul{
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .hero-image {
-    background-image: url("./../assets/regalo_left-20.jpg");
+    background-image: url("./../assets/img-60.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -395,7 +394,7 @@ ul{
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .hero-image {
-    background-image: url("./../assets/regalo_left-20.jpg");
+    background-image: url("./../assets/img-60.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -414,7 +413,7 @@ ul{
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .hero-image {
-    background-image: url("./../assets/regalo_left-20.jpg");
+    background-image: url("./../assets/img-60.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -423,4 +422,60 @@ ul{
     display: block;
   }
 }
+
+  .hero-image-play {
+    background-image: url("./../assets/img-60.jpeg");
+    height: 430px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll;
+  }
+
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .hero-image-play {
+      background-image: url("./../assets/img-60.jpeg");
+      height: 580px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment:scroll;
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .hero-image-play {
+      background-image: url("./../assets/img-60.jpeg");
+      height: 200px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment:scroll;
+    }
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .hero-image-play {
+      background-image: url("./../assets/img-60.jpeg");
+      height: 380px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment:scroll;
+    }
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .hero-image-play {
+      background-image: url("./../assets/img-60.jpeg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment:scroll;
+    }
+  }
 </style>
