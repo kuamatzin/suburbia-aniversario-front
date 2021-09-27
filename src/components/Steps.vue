@@ -4,7 +4,7 @@
 
     <p class="text-center px-5 mt-4">
       Completa el juego de memoria con cartas correctamente en el menor tiempo posible <br />y
-      gana uno de los 6 Monederos Electrónicos Suburbia con valor de $25,000.00 c/u que tenemos para ti.
+      gana 1 de los 6 Monederos Electrónicos Suburbia con valor de $25,000.00 c/u que tenemos para ti.
     </p>
 
     <div
