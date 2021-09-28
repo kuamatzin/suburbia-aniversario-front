@@ -17,11 +17,11 @@ function CMenu(){
         _oBg = createBitmap(s_oSpriteLibrary.getSprite('bg_menu'));
         s_oStage.addChild(_oBg);
 	
-	_pStartPosPlay = {x:(CANVAS_WIDTH/2),y:CANVAS_HEIGHT - 70};
+	_pStartPosPlay = {x:(CANVAS_WIDTH/2),y:CANVAS_HEIGHT - 150};
         var oSprite = s_oSpriteLibrary.getSprite('but_menu_bg');
 
-        _oButPlay = new CTextButton(_pStartPosPlay.x,_pStartPosPlay.y,oSprite,TEXT_PLAY,FONT_GAME,"White","24",s_oStage);
-	_oButPlay.setScale(2);
+        _oButPlay = new CTextButton(_pStartPosPlay.x,_pStartPosPlay.y,oSprite,TEXT_PLAY,FONT_GAME, "White", 17, s_oStage);
+	    _oButPlay.setScale(1.5);
         _oButPlay.addEventListener(ON_MOUSE_UP, this._onButPlayRelease, this);
         
         var oSpriteCredits = s_oSpriteLibrary.getSprite('but_credits');

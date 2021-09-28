@@ -145,7 +145,7 @@ function sizeHandler() {
         
         var w = getSize("Width");
 		
-		 _checkOrientation(w,h);
+		 //_checkOrientation(w,h);
 		 
 	var multiplier = Math.min((h / CANVAS_HEIGHT), (w / CANVAS_WIDTH));
 

@@ -28,7 +28,7 @@ function CGfxButton(iXPos,iYPos,oSprite, oParentContainer){
         _oButton.regX = oSprite.width/2;
         _oButton.regY = oSprite.height/2;
         _oButton.cursor = "pointer";
-        oParentContainer.addChild(_oButton);        
+        //oParentContainer.addChild(_oButton);        
         
         this._initListener();
     };
