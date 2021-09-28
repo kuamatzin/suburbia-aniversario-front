@@ -9,7 +9,7 @@
     <h3 class="text-center primary-color-subtitle">CALENDARIO</h3>
 
     <div class="calendar-image parallax py-1 mt-5">
-      <div
+      <!-- <div
         class="h-100 d-flex align-items-center justify-content-center"
         data-aos="fade-up"
         data-aos-offset="200"
@@ -25,7 +25,7 @@
             class="text-left text-white mt-2 primary-font"
           >Del 3 al 20 de junio 2021</h3>
         </div>
-      </div>
+      </div> -->
     </div>
     <div id="ticket" class="ancla"></div>
   </div>
@@ -49,7 +49,7 @@ export default {
 }
 
 .calendar-image {
-  background-image: url("./../assets/bg-calendario.jpg");
+  background-image: url("./../assets/img-39.jpeg");
   height: 300px;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@ export default {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .calendar-image {
-    background-image: url("./../assets/bg-calendario.jpg");
+    background-image: url("./../assets/img-39.jpeg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -85,7 +85,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .calendar-image {
-    background-image: url("./../assets/bg-calendario.jpg");
+    background-image: url("./../assets/img-39.jpeg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -97,7 +97,7 @@ export default {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .calendar-image {
-    background-image: url("./../assets/bg-calendario.jpg");
+    background-image: url("./../assets/img-39.jpeg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -109,7 +109,7 @@ export default {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .calendar-image {
-    background-image: url("./../assets/bg-calendario.jpg");
+    background-image: url("./../assets/img-39.jpeg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;

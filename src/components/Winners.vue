@@ -18,13 +18,13 @@
       <div class="col-md-12">
         <div>
           <img
-            src="./../assets/ganador-22.jpg"
+            src="./../assets/img-22.jpeg"
             alt="ganadores"
             class="img-fluid winner"
             style="position: relative"
           />
           <img
-            src="./../assets/r_ganadores.jpg"
+            src="./../assets/img-22.jpeg"
             alt="ganadores"
             class="img-fluid winner_mobile"
             style="position: relative"
