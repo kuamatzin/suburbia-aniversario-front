@@ -8,6 +8,50 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- GAME -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/orientation_utils.css" type="text/css" />
+    <link rel="stylesheet" href="css/ios_fullscreen.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"
+    />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/createjs.min.js"></script>
+    <script type="text/javascript" src="js/screenfull.js"></script>
+    <script type="text/javascript" src="js/howler.min.js"></script>
+    <script type="text/javascript" src="js/platform.js"></script>
+    <script type="text/javascript" src="js/ios_fullscreen.js"></script>
+    <script type="text/javascript" src="js/ctl_utils.js"></script>
+    <script type="text/javascript" src="js/sprite_lib.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
+    <script type="text/javascript" src="js/CLang.js"></script>
+    <script type="text/javascript" src="js/CPreloader.js"></script>
+    <script type="text/javascript" src="js/CMain.js"></script>
+    <script type="text/javascript" src="js/CTextButton.js"></script>
+    <script type="text/javascript" src="js/CGfxButton.js"></script>
+    <script type="text/javascript" src="js/CToggle.js"></script>
+    <script type="text/javascript" src="js/CMenu.js"></script>
+    <script type="text/javascript" src="js/CGame.js"></script>
+    <script type="text/javascript" src="js/CCard.js"></script>
+    <script type="text/javascript" src="js/CLevels.js"></script>
+    <script type="text/javascript" src="js/CNextLevel.js"></script>
+    <script type="text/javascript" src="js/CInterface.js"></script>
+    <script type="text/javascript" src="js/CGameOver.js"></script>
+    <script type="text/javascript" src="js/CVictory.js"></script>
+    <script type="text/javascript" src="js/CCredits.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -21,7 +65,7 @@
     ></script>
 
     <title>Gana Suburbia</title>
-    <link rel="icon" type="image/gif" href="favicon.ico">
+    <link rel="icon" type="image/gif" href="favicon.ico" />
   </head>
   <body>
     <div id="app"></div>
@@ -32,13 +76,8 @@
         continue.</strong
       >
     </noscript>
-    
+
     <!-- built files will be auto injected -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -61,5 +100,128 @@
       });
       */
     </script>
+    <script>
+      $(document).ready(function () {
+          const urlParams = new URLSearchParams(window.location.search);
+          let token = urlParams.get('token');
+  
+          token = JSON.parse(token)
+          let responseToken;
+          var oMain = new CMain({
+              card_per_level: [
+                  //4,      //NUM CARD IN LEVEL 1
+                  //8,      //NUM CARD IN LEVEL 2
+                  //16,     //NUM CARD IN LEVEL 3
+                  32      //NUM CARD IN LEVEL 4
+              ],
+  
+              time_level: [
+                  //30,  //NUM SECONDS PER LEVEL 1
+                  //60,  //NUM SECONDS PER LEVEL 2
+                  //120, //NUM SECONDS PER LEVEL 3
+                  10000  //NUM SECONDS PER LEVEL 4
+              ],
+  
+              score_match_card: 10,     //SCORE ASSIGNED WHEN USER MATCH TWO CARDS
+              score_time_left_mult: 2,  //MULTIPLIER ASSIGNED TO REMAINING LEVEL TIME
+              time_match_mult: 3000,     //TIME AVAILABLE BETWEEN DISCOVERED MATCHING TO GET SCORE MULTIPLIER
+              show_cards: 0,            //IF YOU WANT TO SHOW CARDS FOR SOME SECONDS WHEN LEVEL START, SET THIS VALUE > 0 (NUM OF SECONDS)
+              fullscreen: true, //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
+              check_orientation: true     //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES
+          });
+  
+          $(oMain).on("start_session", function (evt) {
+              if (getParamValue('ctl-arcade') === "true") {
+                  parent.__ctlArcadeStartSession();
+              }
+              if (!token) {
+                  return 0;
+              }
+              $.ajax({
+                  url: 'https://aniversario-suburbia.herokuapp.com/api/token',
+                  type: 'POST',
+                  data: {
+                      ticket_id: token.id
+                  }
+              }).done(function (response) {
+                  responseToken = response
+  
+                  window.parent.postMessage({
+                      event_id: 'memorama_started',
+                      data: response
+                  }, "*")
+              });
+          });
+  
+          $(oMain).on("end_session", function (evt) {
+              if (getParamValue('ctl-arcade') === "true") {
+                  parent.__ctlArcadeEndSession();
+              }
+              //...ADD YOUR CODE HERE EVENTUALLY
+          });
+  
+          $(oMain).on("start_level", function (evt, iLevel) {
+              if (getParamValue('ctl-arcade') === "true") {
+                  parent.__ctlArcadeStartLevel({level: iLevel});
+              }
+          });
+  
+          $(oMain).on("end_level", function (evt, iLevel) {
+              if (getParamValue('ctl-arcade') === "true") {
+                  parent.__ctlArcadeEndLevel({level: iLevel});
+              }
+          });
+  
+          $(oMain).on("save_score", function (evt, iScore) {
+              if (getParamValue('ctl-arcade') === "true") {
+                  parent.__ctlArcadeSaveScore({score: iScore});
+              }
+              $.ajax({
+                  url: 'https://aniversario-suburbia.herokuapp.com/api/responses_game',
+                  type: 'POST',
+                  data: {
+                      ticket_id: responseToken.ticket.id,
+                      token: responseToken.token,
+                  }
+              }).done(function (response) {
+                  window.parent.postMessage({
+                      event_id: 'memorama_completed',
+                      data: response
+                  }, "*")
+  
+                  setTimeout(function() {
+                      window.close();
+                  }, 400);
+              });
+          });
+  
+          $(oMain).on("show_interlevel_ad", function (evt) {
+              if (getParamValue('ctl-arcade') === "true") {
+                  parent.__ctlArcadeShowInterlevelAD();
+              }
+              //...ADD YOUR CODE HERE EVENTUALLY
+          });
+  
+          $(oMain).on("share_event", function (evt, iScore) {
+              if (getParamValue('ctl-arcade') === "true") {
+                  parent.__ctlArcadeShareEvent({
+                      img: TEXT_SHARE_IMAGE,
+                      title: TEXT_SHARE_TITLE,
+                      msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
+                      msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1
+                  });
+              }
+          });
+  
+          if (isIOS()) {
+              setTimeout(function () {
+                  sizeHandler();
+              }, 200);
+          } else {
+              sizeHandler();
+          }
+      });
+  
+  </script>
   </body>
 </html>
