@@ -8,34 +8,25 @@
       </div>
     </div> -->
 
-    <Navbar />
+    <Navbar v-show="!gameStarted" />
 
-    <Banner />
+    <Banner v-show="!gameStarted" />
 
-    <Steps />
+    <Steps v-show="!gameStarted" />
 
-    <Calendar />
+    <Calendar v-show="!gameStarted" />
 
-    <Ticket />
+    <Ticket v-show="!gameStarted" />
 
-    <Play />
+    <Play v-show="!gameStarted" />
 
-    <FAQ />
+    <FAQ v-show="!gameStarted" />
 
-    <Winners />
+    <Winners v-show="!gameStarted" />
 
-    <Footer />
+    <Footer v-show="!gameStarted" />
 
-    <canvas id="canvas" class="ani_hack" width="1920" height="1080"></canvas>
-    
-    <div data-orientation="landscape" class="orientation-msg-container">
-      <p class="orientation-msg-text">Por favor, gira tu teléfono</p>
-    </div>
-    
-    <div
-      id="block_game"
-      style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"
-    ></div>
+    <Game v-show="gameStarted" />
   </div>
 </template>
 
@@ -51,10 +42,13 @@ import Play from "./components/Play";
 import FAQ from "./components/FAQ";
 import Winners from "./components/Winners";
 import Footer from "./components/Footer";
+import Game from "./components/Game";
 import GoTop from "@inotom/vue-go-top";
+import { EventBus } from './services/events';
 
 export default {
   name: "App",
+
   components: {
     /*Counter,*/
     GoTop,
@@ -67,7 +61,20 @@ export default {
     FAQ,
     Winners,
     Footer,
+    Game
   },
+
+  data() {
+    return {
+      gameStarted: false
+    }
+  },
+
+  mounted() {
+    EventBus.$on('gameStarted', () => {
+      this.gameStarted = true
+    })
+  }
 };
 </script>
 

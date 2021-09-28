@@ -104,7 +104,7 @@
       $(document).ready(function () {
           const urlParams = new URLSearchParams(window.location.search);
           let token = urlParams.get('token');
-  
+
           token = JSON.parse(token)
           let responseToken;
           var oMain = new CMain({
@@ -112,16 +112,16 @@
                   //4,      //NUM CARD IN LEVEL 1
                   //8,      //NUM CARD IN LEVEL 2
                   //16,     //NUM CARD IN LEVEL 3
-                  32      //NUM CARD IN LEVEL 4
+                  4      //NUM CARD IN LEVEL 4
               ],
-  
+
               time_level: [
                   //30,  //NUM SECONDS PER LEVEL 1
                   //60,  //NUM SECONDS PER LEVEL 2
                   //120, //NUM SECONDS PER LEVEL 3
                   10000  //NUM SECONDS PER LEVEL 4
               ],
-  
+
               score_match_card: 10,     //SCORE ASSIGNED WHEN USER MATCH TWO CARDS
               score_time_left_mult: 2,  //MULTIPLIER ASSIGNED TO REMAINING LEVEL TIME
               time_match_mult: 3000,     //TIME AVAILABLE BETWEEN DISCOVERED MATCHING TO GET SCORE MULTIPLIER
@@ -129,7 +129,7 @@
               fullscreen: true, //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
               check_orientation: true     //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES
           });
-  
+
           $(oMain).on("start_session", function (evt) {
               if (getParamValue('ctl-arcade') === "true") {
                   parent.__ctlArcadeStartSession();
@@ -145,33 +145,33 @@
                   }
               }).done(function (response) {
                   responseToken = response
-  
+
                   window.parent.postMessage({
                       event_id: 'memorama_started',
                       data: response
                   }, "*")
               });
           });
-  
+
           $(oMain).on("end_session", function (evt) {
               if (getParamValue('ctl-arcade') === "true") {
                   parent.__ctlArcadeEndSession();
               }
               //...ADD YOUR CODE HERE EVENTUALLY
           });
-  
+
           $(oMain).on("start_level", function (evt, iLevel) {
               if (getParamValue('ctl-arcade') === "true") {
                   parent.__ctlArcadeStartLevel({level: iLevel});
               }
           });
-  
+
           $(oMain).on("end_level", function (evt, iLevel) {
               if (getParamValue('ctl-arcade') === "true") {
                   parent.__ctlArcadeEndLevel({level: iLevel});
               }
           });
-  
+
           $(oMain).on("save_score", function (evt, iScore) {
               if (getParamValue('ctl-arcade') === "true") {
                   parent.__ctlArcadeSaveScore({score: iScore});
@@ -188,20 +188,20 @@
                       event_id: 'memorama_completed',
                       data: response
                   }, "*")
-  
+
                   setTimeout(function() {
                       window.close();
                   }, 400);
               });
           });
-  
+
           $(oMain).on("show_interlevel_ad", function (evt) {
               if (getParamValue('ctl-arcade') === "true") {
                   parent.__ctlArcadeShowInterlevelAD();
               }
               //...ADD YOUR CODE HERE EVENTUALLY
           });
-  
+
           $(oMain).on("share_event", function (evt, iScore) {
               if (getParamValue('ctl-arcade') === "true") {
                   parent.__ctlArcadeShareEvent({
@@ -212,7 +212,7 @@
                   });
               }
           });
-  
+
           if (isIOS()) {
               setTimeout(function () {
                   sizeHandler();
@@ -221,7 +221,7 @@
               sizeHandler();
           }
       });
-  
+
   </script>
   </body>
 </html>
