@@ -27,9 +27,8 @@ function CVictory(){
 		_oMsgTotalScore.shadow = new createjs.Shadow("#000000", 2, 2, 2);
 
 		
-		_oGroup.addChild(oBg, _oMsgText/*_oMsgTotalScore*/);
+		_oGroup.addChild(oBg, _oMsgText, _oMsgTotalScore);
 		
-		/*
 		_oContinueButton =  new CTextButton(CANVAS_WIDTH/2,670,
                                             s_oSpriteLibrary.getSprite('but_menu_bg'),
                                             TEXT_PLAY_AGAIN,
@@ -38,7 +37,6 @@ function CVictory(){
                                             "24",
                                             _oGroup);
         _oContinueButton.addEventListener(ON_MOUSE_DOWN, this.unload, this);
-		*/
 	};
 
     this.display = function(iTotalScore){
@@ -51,7 +49,7 @@ function CVictory(){
     };
 
     this.unload = function(){
-        //_oContinueButton.unload();
+        _oContinueButton.unload();
         s_oStage.removeChild(_oGroup);
 
         s_oGame.unload(false);

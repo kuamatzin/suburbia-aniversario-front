@@ -28,20 +28,20 @@ function CCredits(){
         oTitle.textAlign = "center";
         oTitle.textBaseline = "middle";
         oTitle.lineWidth = 300;
-        _oPanelContainer.addChild(oTitle);
+        //_oPanelContainer.addChild(oTitle);
 
         var oLink = new createjs.Text("www.codethislab.com"," 34px "+FONT_GAME, "#ffffff");
         oLink.y = 70;
         oLink.textAlign = "center";
         oLink.textBaseline = "middle";
         oLink.lineWidth = 300;
-        _oPanelContainer.addChild(oLink);
+        //_oPanelContainer.addChild(oLink);
         
         var oSprite = s_oSpriteLibrary.getSprite('logo_ctl');
         _oLogo = createBitmap(oSprite);
         _oLogo.regX = oSprite.width/2;
         _oLogo.regY = oSprite.height/2;
-        _oPanelContainer.addChild(_oLogo);
+        //_oPanelContainer.addChild(_oLogo);
       
         var oSprite = s_oSpriteLibrary.getSprite('but_exit');
         _oButExit = new CGfxButton(240, -120, oSprite, _oPanelContainer);

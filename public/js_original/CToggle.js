@@ -29,7 +29,7 @@ function CToggle(iXPos,iYPos,oSprite,bActive,oParentContainer){
         _oButton.y = iYPos; 
         _oButton.stop();
         
-        //_oParentContainer.addChild(_oButton);
+        _oParentContainer.addChild(_oButton);
         
         this._initListener();
     };

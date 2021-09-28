@@ -5,7 +5,7 @@ var EDGEBOARD_X = 220;
 var EDGEBOARD_Y = 220;
 
 var DISABLE_SOUND_MOBILE = false;
-var FONT_GAME = "walibi0615bold";
+var FONT_GAME = "Montserrat";
 
 var STATE_LOADING = 0;
 var STATE_MENU    = 1;

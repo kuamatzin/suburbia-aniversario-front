@@ -24,7 +24,7 @@ function CInterface(szTimeLeft){
         _oTimeLeft.y = _pStartPosTimeText.y;
         _oTimeLeft.textBaseline = "alphabetic";
         _oTimeLeft.shadow = new createjs.Shadow("#000000", 2, 2, 2);
-        //s_oStage.addChild(_oTimeLeft);
+        s_oStage.addChild(_oTimeLeft);
 
 	_pStartPosScoreText = {x:CANVAS_WIDTH/2,y:75};
         _szScore = TEXT_SCORE + 0;
@@ -34,7 +34,7 @@ function CInterface(szTimeLeft){
         _oScore.textAlign = "center";
         _oScore.textBaseline = "alphabetic";
         _oScore.shadow = new createjs.Shadow("#000000", 2, 2, 2);
-        //s_oStage.addChild(_oScore);
+        s_oStage.addChild(_oScore);
 
         _oScoreMultText = new createjs.Text("X2", "150px "+FONT_GAME, "#fff");
         _oScoreMultText.textAlign = "center";
@@ -44,7 +44,7 @@ function CInterface(szTimeLeft){
         _oScoreMultText.shadow = new createjs.Shadow("#000000", 2, 2, 2);
         _oScoreMultText.scaleX = _oScoreMultText.scaleY = 0.1;
         _oScoreMultText.visible = false;
-        //s_oStage.addChild(_oScoreMultText);
+        s_oStage.addChild(_oScoreMultText);
 
         var oSprite = s_oSpriteLibrary.getSprite('but_exit');
         _pStartPosExit = {x:CANVAS_WIDTH - (oSprite.width/2) - 20,y:(oSprite.height/2) + 20};
@@ -127,7 +127,7 @@ function CInterface(szTimeLeft){
     };
 
     this.update = function(szTimeLeft){
-        //_oTimeLeft.text = TEXT_TIMELEFT + szTimeLeft;
+        _oTimeLeft.text = TEXT_TIMELEFT + szTimeLeft;
     };
 
     this._onExit = function(){
