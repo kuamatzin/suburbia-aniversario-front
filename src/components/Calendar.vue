@@ -49,8 +49,8 @@ export default {
 }
 
 .calendar-image {
-  background-image: url("./../assets/img-39.jpeg");
-  height: 300px;
+  background-image: url("./../assets/img-41.jpeg");
+  height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,8 +69,8 @@ export default {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .calendar-image {
-    background-image: url("./../assets/img-39.jpeg");
-    height: 200px;
+    background-image: url("./../assets/img-41.jpeg");
+    height: 250px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
