@@ -319,8 +319,8 @@ ul{
 }
 
 .hero-image {
-  background-image: url("./../assets/img-60.jpeg");
-  height: 400px;
+  background-image: url("./../assets/img-21.jpeg");
+  height: 200px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -329,7 +329,7 @@ ul{
 }
 
 .mobile-play {
-  background: url('./../assets/img-60.jpeg');
+  background: url('./../assets/img-21.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -357,7 +357,7 @@ ul{
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .hero-image {
-    background-image: url("./../assets/img-60.jpeg");
+    background-image: url("./../assets/img-21.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -424,8 +424,8 @@ ul{
 }
 
   .hero-image-play {
-    background-image: url("./../assets/img-60.jpeg");
-    height: 430px;
+    background-image: url("./../assets/img-21.jpeg");
+    height: 230px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -435,8 +435,8 @@ ul{
   // Small devices (landscape phones, 576px and up)
   @media (min-width: 576px) {
     .hero-image-play {
-      background-image: url("./../assets/img-60.jpeg");
-      height: 580px;
+      background-image: url("./../assets/img-21.jpeg");
+      height: 280px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
