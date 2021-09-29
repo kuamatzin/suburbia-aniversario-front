@@ -186,6 +186,7 @@
             <select class="form-control" v-model="payment_method" :class="{'is-invalid': $vuelidation.error('payment_method') }">
               <option value="" disabled>Seleccionar</option>
               <option value="suburbia_card">Tarjeta Suburbia</option>
+              <option value="bbva">Tarjeta BBVA</option>
               <option value="cash">Efectivo</option>
               <option value="small_payment">Minipagos</option>
               <option value="other">Otra forma de pago</option>
