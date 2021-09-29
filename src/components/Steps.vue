@@ -52,7 +52,7 @@
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase"
           >
-            Las compras realizadas con Tarjeta de Crédito Suburbia, BBVA y
+            Las compras realizadas con Tarjeta Suburbia, BBVA y
             Minipagos otorgan doble participación
           </small>
         </div>
@@ -98,7 +98,7 @@
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase"
           >
-            Las compras realizadas con Tarjeta de Crédito Suburbia, BBVA y
+            Las compras realizadas con Tarjeta Suburbia, BBVA y
             Minipagos otorgan doble participación
           </small>
       </div>
