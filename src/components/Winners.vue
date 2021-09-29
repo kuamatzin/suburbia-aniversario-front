@@ -24,7 +24,7 @@
             style="position: relative"
           />
           <img
-            src="./../assets/img-22.jpeg"
+            src="./../assets/ganadores_R.jpeg"
             alt="ganadores"
             class="img-fluid winner_mobile"
             style="position: relative"
