@@ -33,7 +33,7 @@
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase">
             Participan las compras en tiendas
-            Suburbia, suburbia.com.mx
+            Suburbia y suburbia.com.mx
           </small>
         </div>
       </div>
@@ -83,7 +83,7 @@
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase">
             Participan las compras en tiendas
-            Suburbia, suburbia.com.mx
+            Suburbia y suburbia.com.mx
           </small>
       </div>
       <div class="col-md-3 mb-4 text-center">

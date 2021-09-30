@@ -228,7 +228,7 @@
               <i class="far fa-square checkbox" @click="terms = !terms" v-if="terms === false"></i>
               <i class="fas fa-check-square active-checkbox" @click="terms = !terms" v-else></i>
 
-              <span class="ml-3">Acepto los <a target="_blank" href="https://assets.suburbia.com.mx/assets/ayuda/#/sec/otros-temas/terminos-y-condiciones" class="form-check-label link" for="defaultCheck3">
+              <span class="ml-3">Acepto los <a target="_blank" href="https://assets.suburbia.com.mx/ayuda/index.html#/sec/otros-temas/terminos-y-condiciones" class="form-check-label link" for="defaultCheck3">
                 términos y condiciones
               </a></span>
             </div>
@@ -238,7 +238,7 @@
               <i class="far fa-square checkbox" @click="privacy = !privacy" v-if="privacy === false"></i>
               <i class="fas fa-check-square active-checkbox" @click="privacy = !privacy" v-else></i>
 
-              <span class="ml-3">He leído el <a target="_blank" href="http://assets.suburbia.com.mx/assets/ayuda/#/sec/credito/aviso-de-privacidad-integral-clientes" class="form-check-label link" for="defaultCheck3">
+              <span class="ml-3">He leído el <a target="_blank" href="https://assets.suburbia.com.mx/ayuda/index.html#/sec/credito/aviso-de-privacidad-integral-clientes" class="form-check-label link" for="defaultCheck3">
                 aviso de privacidad
               </a></span>
             </div>
@@ -250,6 +250,11 @@
             REGISTRAR
             <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           </button>
+
+        <button :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" @click="start()">
+          JUGAR
+          <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
 
           <div id="jugar" class="ancla-play"></div>
       </div>
@@ -378,7 +383,7 @@
 
                 <div class="col-md-8">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN EL REGALO MÁS PADRE!</h2>
+                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN EL ANIVERSARIO SUBURBIA!</h2>
                   </div>
                 </div>
               </div>
@@ -774,6 +779,10 @@ export default {
         EventBus.$emit('gameStarted', this.response.ticket);
     },
 
+    start() {
+      EventBus.$emit('gameStarted', this.response.ticket);
+    },
+
     alert(error) {
       if (error.response && error.response.data && error.response.data.errors) {
         if (error.response.data.errors.ticket && error.response.data.errors.ticket[0] === "The ticket has already been taken.") {
@@ -788,7 +797,7 @@ export default {
       window.$('#success').modal('hide')
       //EventBus.$emit('plusOneTicketPlay');
       window.$('#memorama').modal('show')
-      
+
       this.startGame()
     },
 

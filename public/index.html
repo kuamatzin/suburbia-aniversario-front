@@ -107,15 +107,15 @@
         const urlApi = 'https://suburbia-concurso.herokuapp.com';
         // const urlApi = 'http://127.0.0.1:8000';
         const urlParams = new URLSearchParams(window.location.search);
-    
-        
+
+
         let responseToken;
         var oMain = new CMain({
           card_per_level: [
             //4,      //NUM CARD IN LEVEL 1
             //8,      //NUM CARD IN LEVEL 2
             //16,     //NUM CARD IN LEVEL 3
-            4, //NUM CARD IN LEVEL 4
+            32, //NUM CARD IN LEVEL 4
           ],
 
           time_level: [
@@ -155,7 +155,7 @@
             responseToken = response;
 
             window.Event.$emit("memoramaStarted", response);
-            
+
             /*
             window.parent.postMessage({
                 event_id: 'memorama_started',
@@ -198,7 +198,7 @@
             },
           }).done(function(response) {
             window.Event.$emit("gameFinished", response);
-            
+
             /**
             window.parent.postMessage({
                 event_id: 'memorama_completed',
