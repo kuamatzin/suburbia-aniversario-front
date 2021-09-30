@@ -139,7 +139,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente obtendrá de manera automática en el sistema el número de participaciones equivalentes al monto de compra y forma de pago. Recordando en todo momento que las compras realizadas con Tarjetas de Crédito Suburbia, Tarjetas Minipagos y Tarjetas BBVA (anteriormente mencionadas) obtendrán el doble de oportunidades para participar en la presente mecánica. Limitado a 500,000 participaciones electrónicas.
+              El cliente obtendrá de manera automática en el sistema el número de participaciones equivalentes al monto de compra y forma de pago. Recordando en todo momento que las compras realizadas con Tarjetas Suburbia, Tarjetas Minipagos y Tarjetas BBVA (anteriormente mencionadas) obtendrán el doble de oportunidades para participar en la presente mecánica. Limitado a 500,000 participaciones electrónicas.
             </div>
           </div>
         </div>

@@ -251,11 +251,6 @@
             <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           </button>
 
-        <button :disabled="loading" class="d-flex align-content-center justify-content-center btn btn-primary mt-5 mx-auto button" @click="startGame()">
-          JUGAR {{showGame}}
-          <span v-if="loading" class="ml-2 my-auto spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-        </button>
-
           <div id="jugar" class="ancla-play"></div>
       </div>
     </div>
