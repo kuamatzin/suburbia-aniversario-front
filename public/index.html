@@ -101,127 +101,154 @@
       */
     </script>
     <script>
-      $(document).ready(function () {
-          const urlParams = new URLSearchParams(window.location.search);
-          let token = urlParams.get('token');
+      var token = 'token'
 
-          token = JSON.parse(token)
-          let responseToken;
-          var oMain = new CMain({
-              card_per_level: [
-                  //4,      //NUM CARD IN LEVEL 1
-                  //8,      //NUM CARD IN LEVEL 2
-                  //16,     //NUM CARD IN LEVEL 3
-                  4      //NUM CARD IN LEVEL 4
-              ],
+      const initGame = function() {
+        //const urlApi = 'https://aniversario-suburbia.herokuapp.com';
+        const urlApi = 'http://127.0.0.1:8000';
+        const urlParams = new URLSearchParams(window.location.search);
+    
+        
+        let responseToken;
+        var oMain = new CMain({
+          card_per_level: [
+            //4,      //NUM CARD IN LEVEL 1
+            //8,      //NUM CARD IN LEVEL 2
+            //16,     //NUM CARD IN LEVEL 3
+            4, //NUM CARD IN LEVEL 4
+          ],
 
-              time_level: [
-                  //30,  //NUM SECONDS PER LEVEL 1
-                  //60,  //NUM SECONDS PER LEVEL 2
-                  //120, //NUM SECONDS PER LEVEL 3
-                  10000  //NUM SECONDS PER LEVEL 4
-              ],
+          time_level: [
+            //30,  //NUM SECONDS PER LEVEL 1
+            //60,  //NUM SECONDS PER LEVEL 2
+            //120, //NUM SECONDS PER LEVEL 3
+            10000, //NUM SECONDS PER LEVEL 4
+          ],
 
-              score_match_card: 10,     //SCORE ASSIGNED WHEN USER MATCH TWO CARDS
-              score_time_left_mult: 2,  //MULTIPLIER ASSIGNED TO REMAINING LEVEL TIME
-              time_match_mult: 3000,     //TIME AVAILABLE BETWEEN DISCOVERED MATCHING TO GET SCORE MULTIPLIER
-              show_cards: 0,            //IF YOU WANT TO SHOW CARDS FOR SOME SECONDS WHEN LEVEL START, SET THIS VALUE > 0 (NUM OF SECONDS)
-              fullscreen: true, //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
-              check_orientation: true     //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES
-          });
+          score_match_card: 10, //SCORE ASSIGNED WHEN USER MATCH TWO CARDS
+          score_time_left_mult: 2, //MULTIPLIER ASSIGNED TO REMAINING LEVEL TIME
+          time_match_mult: 3000, //TIME AVAILABLE BETWEEN DISCOVERED MATCHING TO GET SCORE MULTIPLIER
+          show_cards: 0, //IF YOU WANT TO SHOW CARDS FOR SOME SECONDS WHEN LEVEL START, SET THIS VALUE > 0 (NUM OF SECONDS)
+          fullscreen: true, //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
+          check_orientation: true, //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES
+        });
 
-          $(oMain).on("start_session", function (evt) {
-              if (getParamValue('ctl-arcade') === "true") {
-                  parent.__ctlArcadeStartSession();
-              }
-              if (!token) {
-                  return 0;
-              }
-              $.ajax({
-                  url: 'https://aniversario-suburbia.herokuapp.com/api/token',
-                  type: 'POST',
-                  data: {
-                      ticket_id: token.id
-                  }
-              }).done(function (response) {
-                  responseToken = response
-
-                  window.parent.postMessage({
-                      event_id: 'memorama_started',
-                      data: response
-                  }, "*")
-              });
-          });
-
-          $(oMain).on("end_session", function (evt) {
-              if (getParamValue('ctl-arcade') === "true") {
-                  parent.__ctlArcadeEndSession();
-              }
-              //...ADD YOUR CODE HERE EVENTUALLY
-          });
-
-          $(oMain).on("start_level", function (evt, iLevel) {
-              if (getParamValue('ctl-arcade') === "true") {
-                  parent.__ctlArcadeStartLevel({level: iLevel});
-              }
-          });
-
-          $(oMain).on("end_level", function (evt, iLevel) {
-              if (getParamValue('ctl-arcade') === "true") {
-                  parent.__ctlArcadeEndLevel({level: iLevel});
-              }
-          });
-
-          $(oMain).on("save_score", function (evt, iScore) {
-              if (getParamValue('ctl-arcade') === "true") {
-                  parent.__ctlArcadeSaveScore({score: iScore});
-              }
-              $.ajax({
-                  url: 'https://aniversario-suburbia.herokuapp.com/api/responses_game',
-                  type: 'POST',
-                  data: {
-                      ticket_id: responseToken.ticket.id,
-                      token: responseToken.token,
-                  }
-              }).done(function (response) {
-                  window.parent.postMessage({
-                      event_id: 'memorama_completed',
-                      data: response
-                  }, "*")
-
-                  setTimeout(function() {
-                      window.close();
-                  }, 400);
-              });
-          });
-
-          $(oMain).on("show_interlevel_ad", function (evt) {
-              if (getParamValue('ctl-arcade') === "true") {
-                  parent.__ctlArcadeShowInterlevelAD();
-              }
-              //...ADD YOUR CODE HERE EVENTUALLY
-          });
-
-          $(oMain).on("share_event", function (evt, iScore) {
-              if (getParamValue('ctl-arcade') === "true") {
-                  parent.__ctlArcadeShareEvent({
-                      img: TEXT_SHARE_IMAGE,
-                      title: TEXT_SHARE_TITLE,
-                      msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
-                      msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1
-                  });
-              }
-          });
-
-          if (isIOS()) {
-              setTimeout(function () {
-                  sizeHandler();
-              }, 200);
-          } else {
-              sizeHandler();
+        $(oMain).on("start_session", function(evt) {
+          if (getParamValue("ctl-arcade") === "true") {
+            parent.__ctlArcadeStartSession();
           }
-      });
+          if (!token) {
+            return 0;
+          }
 
-  </script>
+          console.log('Iniciar petición');
+          console.log(token)
+
+          $.ajax({
+            url: urlApi + "/api/token",
+            type: "POST",
+            data: {
+              ticket_id: token.id,
+            },
+          }).done(function(response) {
+            console.log(response);
+            responseToken = response;
+
+            window.Event.$emit("memoramaStarted", response);
+            
+            /*
+            window.parent.postMessage({
+                event_id: 'memorama_started',
+                data: response
+            }, "*")
+            */
+          });
+        });
+
+        $(oMain).on("end_session", function(evt) {
+          if (getParamValue("ctl-arcade") === "true") {
+            parent.__ctlArcadeEndSession();
+          }
+          //...ADD YOUR CODE HERE EVENTUALLY
+        });
+
+        $(oMain).on("start_level", function(evt, iLevel) {
+          if (getParamValue("ctl-arcade") === "true") {
+            parent.__ctlArcadeStartLevel({ level: iLevel });
+          }
+        });
+
+        $(oMain).on("end_level", function(evt, iLevel) {
+          if (getParamValue("ctl-arcade") === "true") {
+            parent.__ctlArcadeEndLevel({ level: iLevel });
+          }
+        });
+
+        $(oMain).on("save_score", function(evt, iScore) {
+          if (getParamValue("ctl-arcade") === "true") {
+            parent.__ctlArcadeSaveScore({ score: iScore });
+          }
+
+          $.ajax({
+            url: urlApi + "/api/responses_game",
+            type: "POST",
+            data: {
+              ticket_id: responseToken.ticket.id,
+              token: responseToken.token,
+            },
+          }).done(function(response) {
+            window.Event.$emit("gameFinished", response);
+            
+            /**
+            window.parent.postMessage({
+                event_id: 'memorama_completed',
+                data: response
+            }, "*")
+            */
+          });
+        });
+
+        $(oMain).on("show_interlevel_ad", function(evt) {
+          if (getParamValue("ctl-arcade") === "true") {
+            parent.__ctlArcadeShowInterlevelAD();
+          }
+          //...ADD YOUR CODE HERE EVENTUALLY
+        });
+
+        $(oMain).on("share_event", function(evt, iScore) {
+          if (getParamValue("ctl-arcade") === "true") {
+            parent.__ctlArcadeShareEvent({
+              img: TEXT_SHARE_IMAGE,
+              title: TEXT_SHARE_TITLE,
+              msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
+              msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1,
+            });
+          }
+        });
+
+        if (isIOS()) {
+          setTimeout(function() {
+            sizeHandler();
+          }, 200);
+        } else {
+          sizeHandler();
+        }
+      };
+
+      $(document).ready(function() {
+        initGame();
+
+        window.Event.$on('gameStarted', function(data) {
+            console.log(data)
+            token = data;
+        })
+
+        window.Event.$on("gameFinished", function() {
+          setTimeout(function() {
+            initGame();
+          }, 800);
+        });
+      });
+    </script>
   </body>
 </html>

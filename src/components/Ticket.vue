@@ -430,19 +430,6 @@
       </div>
     </div>
 
-    <div class="modal fade" id="memorama" tabindex="-1" aria-labelledby="triviaLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable transparent">
-        <div class="modal-content my-modal-trivia modal-content-transparent">
-          <div class="modal-body modal-body-transparent">
-            <div v-if="response.ticket">
-              <iframe class="iframe-game" :src="'https://memorama.firebaseapp.com?token=' + JSON.stringify(response.ticket)" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr;webxr;"
-    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="0"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Modal Ayuda -->
     <div class="modal fade" id="help" tabindex="-1">
       <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -477,11 +464,9 @@ export default {
     })
     if (process.env.NODE_ENV === 'development') this.setTestData();
 
-    window.addEventListener('message', this.receiveMessage)
-  },
-
-  beforeDestroy () {
-    window.removeEventListener('message', this.receiveMessage)
+    //window.addEventListener('message', this.receiveMessage)
+    EventBus.$on('memoramaStarted', () => this.gameStarted())
+    EventBus.$on('gameFinished', data => this.gameFinished(data))
   },
 
   data() {
@@ -790,12 +775,8 @@ export default {
         this.loading = false;
         if (error) { return this.alert(error) }
         this.response.ticket = data.data.data;
-        EventBus.$emit('sendDataToPlay', JSON.parse(JSON.stringify(this.response.ticket)) );
-        //window.$('#init').modal('show');
         this.resetFields();
-        //EventBus.$emit('plusOneTicketPlay');
-        //importantStuff.location.href = `https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`;
-        window.$('#memorama').modal('show');
+        EventBus.$emit('gameStarted', this.response.ticket);
     },
 
     alert(error) {
@@ -811,8 +792,9 @@ export default {
       this.resetFields();
       window.$('#success').modal('hide')
       //EventBus.$emit('plusOneTicketPlay');
-      //window.open(`https://memorama.firebaseapp.com?token=${JSON.stringify(this.response.ticket)}`, '_blank');
       window.$('#memorama').modal('show')
+      
+      this.startGame()
     },
 
     async startTrivia() {
@@ -933,23 +915,24 @@ export default {
       this.validateStore = this.store ? true: false;
     },
 
-    receiveMessage (event) {
-      if (event.data.event_id === 'memorama_completed') {
-        this.response.ticket = '';
-        setTimeout(() => {
-          this.response.ticket = event.data.data.ticket;
-          this.response.token = '';
-          this.timerResult = this.formatSecondsToTimer(event.data.data.answer.seconds);
-          this.response.ticket = { ...event.data.data.ticket };
-          this.attemptsLeft = this.response.ticket.max_attempts - this.response.ticket.attempts;
-          window.$('#memorama').modal('hide')
-          window.$('#success').modal('show')
-        }, 600);
-      }
+    gameStarted() {
+      console.log('Juego iniciado')
+      EventBus.$emit('plusOneTicketPlay');
+    },
 
-      if (event.data.event_id === 'memorama_started') {
-        EventBus.$emit('plusOneTicketPlay');
-      }
+    gameFinished(data) {
+      console.log('Juego terminado')
+      console.log(data)
+      this.response.ticket = '';
+      setTimeout(() => {
+        this.response.ticket = data.ticket;
+        this.response.token = '';
+        this.timerResult = this.formatSecondsToTimer(data.answer.seconds);
+        this.response.ticket = { ...data.ticket };
+        this.attemptsLeft = this.response.ticket.max_attempts - this.response.ticket.attempts;
+        console.log('Abrir modal success')
+        window.$('#success').modal('show')
+      }, 600);
     },
 
     resetFields() {
@@ -983,6 +966,7 @@ export default {
       this.customTicketConfirmationIsValid = true;
       this.ticketAlreadyExists = false;
       this.formTouched = false;
+      this.value = "";
       this.$vuelidation.reset();
     },
 
@@ -1016,7 +1000,7 @@ export default {
 
     startGame() {
       this.showGame = true
-      EventBus.$emit('gameStarted')
+      EventBus.$emit('gameStarted', this.response.ticket);
     }
   },
 };

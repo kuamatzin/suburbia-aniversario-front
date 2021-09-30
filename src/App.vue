@@ -26,7 +26,7 @@
 
     <Footer v-show="!gameStarted" />
 
-    <Game v-show="gameStarted" />
+    <Game v-if="inited" v-show="gameStarted" />
   </div>
 </template>
 
@@ -66,13 +66,24 @@ export default {
 
   data() {
     return {
-      gameStarted: false
+      gameStarted: false,
+      inited: true,
     }
   },
 
   mounted() {
     EventBus.$on('gameStarted', () => {
       this.gameStarted = true
+    })
+
+    EventBus.$on('gameFinished', () => {
+      this.gameStarted = false
+
+      this.inited = false
+
+      setTimeout(() => {
+        this.inited = true
+      }, 500)
     })
   }
 };
