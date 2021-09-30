@@ -33,7 +33,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Por cada $500.00 (Quinientos pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana, en compras realizadas a través de la página de internet  www.suburbia.com.mx y ventas por teléfono al 55 88801800  durante el periodo comprendido del 3 al 20 de junio de 2021.
+              Por cada $500.00 (Quinientos pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de la página de internet  www.suburbia.com.mx durante el periodo comprendido del 1 al 28 de octubre de 2021, el cliente podrá participar para ganar 1 (uno) de los 6 (seis) Monederos Electrónicos Suburbia con saldo de $25,000.00 (veinticinco mil pesos 00/100 M.N.) cada uno, el cual se podrá utilizar conforme a las “Condiciones de uso del Monedero Electrónico Suburbia” que más adelante se especificarán.
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan todos los residentes de la República Mexicana mayores de 18 años.
+              En la presente mecánica únicamente podrán participar los residentes de la República Mexicana mayores de 18 años.
             </div>
           </div>
         </div>
@@ -85,7 +85,8 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan todas las tiendas Suburbia de la República Mexicana, así como ventas por internet realizadas a través de la página www.suburbia.com.mx y/o ventas por teléfono al 55 88801800. La tarjeta Minipagos emitida por Suburbia TD, SA de CV., exclusivamente es aplicable para compras en las tiendas Suburbia sucursales: Cuajimalpa, Explanada Pachuca, Forum Tlaquepaque, Guadalajara Centro, Ixtapaluca Ayotla, Ixtapaluca Cortijo, Nicolás Romero, Pachuca, Plaza Del Sol, Plaza México y Tonalá.
+              Participan todas las tiendas Suburbia de la República Mexicana y/o ventas por internet realizadas a través de la página www.suburbia.com.mx.
+              Para el uso de las tarjetas de Minipagos solo se encuentra disponible en las tiendas Suburbia Cuajimalpa, Explanada Pachuca, Forum Tlaquepaque, Guadalajara Centro, Ixtapaluca Ayotla, Ixtapaluca Cortijo, Nicolás Romero, Pachuca, Plaza Del Sol, Plaza México y Tonalá
             </div>
           </div>
         </div>
@@ -111,7 +112,8 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan las compras de los diversos departamentos de las tiendas Suburbia y de la página de internet www.suburbia.com.mx realizadas durante el periodo del 3 al 20 de junio de 2021. EXCEPTO: Pagos de cualquier servicio, mencionando de manera enunciativa más no limitativa  televisión de paga, servicio de telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua, cable, gas, pagos de tarjetas, pago de empresas multinivel, entretenimiento, apartamoda, compra y recarga de peaje y tarjetas de prepago.
+              Participan las compras de los diversos departamentos de las tiendas Suburbia y de la página de internet www.suburbia.com.mx realizadas durante el periodo del 1 al 28 de octubre de 2021.
+              EXCEPTO: Pagos de cualquier servicio, mencionando de manera enunciativa más no limitativa  televisión de paga, servicio de telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua, cable, gas, pagos de tarjetas, pago de empresas multinivel, entretenimiento, apartamoda, compra y recarga de peaje y tarjetas de prepago.
             </div>
           </div>
         </div>
@@ -126,7 +128,7 @@
                 aria-expanded="false"
                 aria-controls="collapseFour"
               >
-                ¿Cuántas veces puedo participar en la trivia?
+                ¿Cuántas veces puedo participar en el concurso?
               </button>
             </h2>
           </div>
@@ -137,10 +139,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente obtendrá de manera automática el número de participaciones equivalentes al
-monto de compra y forma de pago. Recordando en todo momento que las compras
-realizadas con tarjetas Suburbia y Minipagos participantes obtendrán el doble de folios de
-participación. Limitado a 500,000 participaciones electrónicas.
+              El cliente obtendrá de manera automática en el sistema el número de participaciones equivalentes al monto de compra y forma de pago. Recordando en todo momento que las compras realizadas con Tarjetas de Crédito Suburbia, Tarjetas Minipagos y Tarjetas BBVA (anteriormente mencionadas) obtendrán el doble de oportunidades para participar en la presente mecánica. Limitado a 500,000 participaciones electrónicas.
             </div>
           </div>
         </div>
@@ -166,7 +165,7 @@ participación. Limitado a 500,000 participaciones electrónicas.
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Del 03 de junio 2021 al 20 de junio del 2021.
+              Del 1 al 28 de octubre de 2021.
             </div>
           </div>
         </div>
@@ -192,7 +191,8 @@ participación. Limitado a 500,000 participaciones electrónicas.
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente participante que haya cumplido con la condición de participación, que haya registrado correcta y verídicamente sus tickets de compra o código de facturación (en caso de compras a través de la página de internet www.suburbia.com.mx), obtenga su folio de participación conforme a las presentes bases y que complete de manera correcta el juego de memoria con cartas en el menor número de intentos  y con en el menor tiempo, será uno de los ganadores del incentivo de acuerdo al orden indicado en las bases completas. Los clientes que hayan registrado sus tickets de conformidad a lo señalado y dentro del periodo de vigencia, serán los únicos que podrán ser parte de la dinámica. 
+              El cliente participante que haya cumplido con las condiciones de participación, que haya registrado de manera correcta y verídicamente su códigos de facturación y; complete de forma correcta el juego de memoria con cartas con el menor número de errores y en el menor tiempo, podrá ser uno de los seis ganadores/acreedores de los incentivos mencionados anteriormente.
+              La selección de los seis ganadores se realizará en estricto apego al menor número de errores y menor tiempo.
             </div>
           </div>
         </div>
@@ -207,7 +207,7 @@ participación. Limitado a 500,000 participaciones electrónicas.
                 aria-expanded="false"
                 aria-controls="collapseSeven"
               >
-                ¿Cuándo anunciaremos al ganador de la trivia?
+                ¿Cuándo anunciaremos al ganador del concurso?
               </button>
             </h2>
           </div>
@@ -218,7 +218,7 @@ participación. Limitado a 500,000 participaciones electrónicas.
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El nombre de los clientes que resulten ganadores de la presente mecánica, se darán a conocer el día miércoles 14 de julio de 2021 únicamente en el horario de 10:00 am a 10:00 pm, a través de cartulinas o anuncios ubicados en el área de atención a clientes o línea de cajas de las tiendas Suburbia de la República Mexicana, y/o en las redes sociales oficiales de la organizadora y/o en la página ganasuburbia.com.mx
+              El nombre de los clientes que resulten ganadores de la presente mecánica, se darán a conocer el día miércoles 24 de noviembre de 2021 únicamente en el horario de 10:00 am a 10:00 pm, a través de cartulinas o anuncios ubicados en el área de atención a clientes o línea de cajas de las tiendas Suburbia de la República Mexicana, y/o en las redes sociales oficiales de la organizadora y/o en la página ganasuburbia.com.mx
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ participación. Limitado a 500,000 participaciones electrónicas.
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 5580322145.
+              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 5564400971.
             </div>
           </div>
         </div>

@@ -122,7 +122,7 @@
             <label for="inputName">Tienda*</label>
             <select class="form-control" @change="setBuyTypeValidation()" v-model="buy_type" :class="{'is-invalid': $vuelidation.error('buy_type') }">
               <option value="" disabled>Seleccionar</option>
-              <option value="store">Física y/o por teléfono</option>
+              <option value="store">Física</option>
               <option value="online">Online</option>
             </select>
             <div class="invalid-feedback">{{ $vuelidation.error('buy_type') }}</div>
