@@ -2,8 +2,7 @@
   <div class="pb-5">
     <div class="terms">
       <header
-          class="entry-header d-flex flex-column justify-content-center align-items-center h-100 w-100"
-      >
+          class="entry-header d-flex flex-column justify-content-center align-items-center h-100 w-100">
         <h1 class="entry-title text-center text-black">Bases del concurso</h1>
       </header>
     </div>
@@ -20,6 +19,19 @@
             </div>
             <div>
               <div>
+                <p class="strong">
+                  VIGENCIA:
+                </p>
+                <p>
+                  Del 1 al 28 de octubre de 2021.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+              <p class="strong">
+                  CONDICIÓN DE PARTICIPACIÓN:
+                </p>
                 <p>
                   Por cada $500.00 (Quinientos pesos 00/100 M.N.) de compra en
                   cualquiera de las tiendas Suburbia de la República Mexicana
@@ -121,6 +133,9 @@
                   y/o ventas por internet realizadas a través de la página
                   www.suburbia.com.mx.
                 </p>
+                <p>
+                  Para el uso de las tarjetas de Minipagos solo se encuentra disponible en las tiendas Suburbia Cuajimalpa, Explanada Pachuca, Forum Tlaquepaque, Guadalajara Centro, Ixtapaluca Ayotla, Ixtapaluca Cortijo, Nicolás Romero, Pachuca, Plaza Del Sol, Plaza México y Tonalá.
+                </p>
                 <p class="strong">
                   DEPARTAMENTOS PARTICIPANTES:
                 </p>
@@ -190,36 +205,6 @@
                   conforme a las “Condiciones de uso del Monedero Electrónico
                   Suburbia” detalladas más adelante.
                 </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>
-                  Para el uso de las tarjetas de Minipagos solo se encuentra
-                  disponible en las tiendas Suburbia
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>
-                  Cuajimalpa, Explanada Pachuca, Forum Tlaquepaque, Guadalajara
-                  Centro, Ixtapaluca Ayotla,
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>
-                  Ixtapaluca Cortijo, Nicolás Romero, Pachuca, Plaza Del Sol,
-                  Plaza México y Tonalá.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div title="Page 3">
-            <div>
-              <div>
                 <p>
                   Sexto lugar:
                 </p>
@@ -229,13 +214,22 @@
                   conforme a las “Condiciones de uso del Monedero Electrónico
                   Suburbia” detalladas más adelante.
                 </p>
+              </div>
+            </div>
+          </div>
+          <div title="Page 3">
+            <div>
+              <div>
                 <p class="strong">
                   MECÁNICA:
+                </p>
+                <p>
+                  Para participar en la presente dinámica, los clientes deberán cumplir con la condición de participación, es decir, compras mínimas de $500.00 (Quinientos pesos 00/100 M.N.) durante el periodo comprendido del 1 al 28 de octubre de 2021 y también deberán:
                 </p>
                 <ol>
                   <li>
                     <p>
-                      Ingresar a la página ganasuburbia.com.mx y
+                      1. Ingresar a la página ganasuburbia.com.mx y
                       registrarse, para lo cual deberá complementar todos
                       los siguientes campos de manera obligatoria y
                       verídica: primer nombre, segundo nombre (en caso de
@@ -250,7 +244,7 @@
                   </li>
                   <li>
                     <p>
-                      Una vez llenados los campos anteriores, deberá
+                      2. Una vez llenados los campos anteriores, deberá
                       verificar que su información sea correcta, aceptar los
                       términos y condiciones así como el aviso de
                       privacidad y dar “clic” en el botón de registrar.
@@ -258,7 +252,7 @@
                   </li>
                   <li>
                     <p>
-                      Finalizado el paso anterior, aparecerá una pantalla en
+                      3. Finalizado el paso anterior, aparecerá una pantalla en
                       la cual se menciona al cliente que está a punto de
                       participar, habilitándose el botón “jugar” para lo
                       cual, deberá completar el juego de memoria con cartas.
@@ -276,7 +270,7 @@
                   </li>
                   <li>
                     <p>
-                      Es de gran relevancia señalar que una vez que el
+                      4. Es de gran relevancia señalar que una vez que el
                       cliente de “clic” en el botón iniciar, comenzará a
                       correr y computarse el tiempo de participación, por lo
                       que no podrá pausar, reiniciar, ni regresar por
@@ -287,7 +281,7 @@
                   </li>
                   <li>
                     <p>
-                      El cliente obtendrá de manera automática en el
+                      5. El cliente obtendrá de manera automática en el
                       sistema el número de participaciones equivalentes al
                       monto de compra y forma de pago. Recordando en todo
                       momento que las compras realizadas con Tarjetas de
@@ -298,14 +292,14 @@
                   </li>
                   <li>
                     <p>
-                      Al finalizar su participación en el juego, el cliente
+                      6. Al finalizar su participación en el juego, el cliente
                       recibirá un correo a la dirección electrónica que
                       registró con los resultados de su participación.
                     </p>
                   </li>
                   <li>
                     <p>
-                      El cliente participante que haya cumplido con las
+                      7. El cliente participante que haya cumplido con las
                       condiciones de participación, que haya registrado de
                       manera correcta y verídicamente su códigos de
                       facturación y; complete de forma correcta el juego de
@@ -325,31 +319,10 @@
                   Será responsabilidad de los clientes participantes, verificar
                   sus códigos de facturación cumpla con los requisitos de
                   participación y registro, así como de verificar que los datos
-                  registrados y
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>
-                  Para participar en la presente dinámica, los clientes deberán
-                  cumplir con la condición de
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>
-                  participación, es decir, compras mínimas de $500.00
-                  (Quinientos pesos 00/100 M.N.) durante el
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>
-                  periodo comprendido del 1 al 28 de octubre de 2021 y también
-                  deberán:
+                  registrados y proporcionados por ellos mismos, sean correctos y verídicos,
+                  lo anterior, con la finalidad de ser acreedores a la
+                  participación de conformidad con lo que se establece en las
+                  presentes bases.
                 </p>
               </div>
             </div>
@@ -357,12 +330,6 @@
           <div title="Page 4">
             <div>
               <div>
-                <p>
-                  proporcionados por ellos mismos, sean correctos y verídicos,
-                  lo anterior, con la finalidad de ser acreedores a la
-                  participación de conformidad con lo que se establece en las
-                  presentes bases.
-                </p>
                 <p class="strong">
                   CRITERIOS DE DESEMPATE:
                 </p>
@@ -447,22 +414,20 @@
                 <p>
                   - Impresión del correo donde se le notifica como ganador.
                 </p>
+                <p>
+                  - Identificación oficial vigente.
+                  </p>
+                  <p>
+                  - Ticket original o confirmación de compra (esté último en
+                  caso de compras realizadas a través de la página suburbia.com.mx) que le dio derecho a
+                  participar en la presente dinámica.
+                </p>
               </div>
             </div>
           </div>
           <div title="Page 5">
             <div>
               <div>
-                <p>
-                  - Identificación oficial vigente.
-                  <br/>
-                  - Ticket original o confirmación de compra (esté último en
-                  caso de compras realizadas a
-                </p>
-                <p>
-                  través de la página suburbia.com.mx) que le dio derecho a
-                  participar en la presente dinámica.
-                </p>
                 <p>
                   Se señala que los incentivos, única y exclusivamente serán
                   entregados a los clientes participantes que resulten ganadores,
@@ -474,7 +439,7 @@
             <div>
               <div>
                 <div>
-                  <p>
+                  <p class="strong">
                     Condiciones de uso del Monedero Electrónico Suburbia.
                   </p>
                   <p>
@@ -530,42 +495,43 @@
                     lavavajilla, dispensadores de agua, aire acondicionado,
                     calentadores de agua, etc.).
                   </p>
+                  <p>
+                   En caso de que las compras superen la cantidad precargada de
+                   $25,000.00 (veinticinco mil pesos 00/100 M.N.) la diferencia
+                   deberá ser cubierta por el cliente ganador con cualquier
+                   método de pago aceptado por el establecimiento. (Efectivo,
+                   tarjeta de débito o crédito).
+                  </p>
+                  <p>
+                   Es importante señalar que todos los gastos de traslado para
+                   acudir a la entrega de los incentivos correrán por propia
+                   cuenta de los ganadores.
+                  </p>
                 </div>
               </div>
             </div>
             <div>
               <div>
-                <p>
-                  En caso de que las compras superen la cantidad precargada de
-                  $25,000.00 (veinticinco mil pesos 00/100 M.N.) la diferencia
-                  deberá ser cubierta por el cliente ganador con cualquier
-                  método de pago aceptado por el establecimiento. (Efectivo,
-                  tarjeta de débito o crédito).
-                </p>
-                <p>
-                  Es importante señalar que todos los gastos de traslado para
-                  acudir a la entrega de los incentivos correrán por propia
-                  cuenta de los ganadores.
-                </p>
                 <p class="strong">
                   RESTRICCIONES:
                 </p>
                 <ol>
                   <li>
                     <p>
-                      Al participar en la presente dinámica, el cliente
+                      1. Al participar en la presente dinámica, el cliente
                       participante acepta las bases, términos y condiciones
                       que la rigen.
                     </p>
                   </li>
                   <li>
                     <p>
-                      Se deberá conservar el o los tickets de compra en
+                      2. Se deberá conservar el o los tickets de compra en
                       original que dieron el derecho al cliente a participar
                       y presentarlos el día de la entrega del incentivo (en
                       caso de resultar acreedor). En el supuesto que no se
                       presenten los tickets de compra en original, no se
-                      podrá realizar
+                      podrá realizar la entrega del incentivo sin que esto sea
+                      responsabilidad para la empresa responsable de la dinámica.
                     </p>
                   </li>
                 </ol>
@@ -575,21 +541,11 @@
           <div title="Page 6">
             <div>
               <div>
-                <p>
-                  la entrega del incentivo sin que esto sea responsabilidad para
-                  la empresa responsable de
-                </p>
-                <p>
-                  la dinámica.
-                </p>
                 <ol start="3">
                   <li>
                     <p>
-                      La Tarjeta Minipagos (Emitida por Suburbia TD, SA de
-                      CV.) solo se encuentra disponible
-                    </p>
-                    <p>
-                      en las tiendas Suburbia Cuajimalpa, Explanada Pachuca,
+                      3. La Tarjeta Minipagos (Emitida por Suburbia TD, SA de
+                      CV.) solo se encuentra disponible en las tiendas Suburbia Cuajimalpa, Explanada Pachuca,
                       Forum Tlaquepaque, Guadalajara Centro, Ixtapaluca
                       Ayotla, Ixtapaluca Cortijo, Nicolás Romero, Pachuca,
                       Plaza Del Sol, Plaza México y Tonalá.
@@ -597,7 +553,7 @@
                   </li>
                   <li>
                     <p>
-                      No podrán participar en la dinámica, colaboradores ni
+                      4. No podrán participar en la dinámica, colaboradores ni
                       personal contratado por cualquiera de las empresas
                       pertenecientes al Grupo Liverpool y sus respectivas
                       agencias, afiliadas, matrices, subsidiarias; así como
@@ -607,28 +563,22 @@
                   </li>
                   <li>
                     <p>
-                      No participan las compras realizadas con descuento de
+                      5. No participan las compras realizadas con descuento de
                       empleado (Venta de Casa).
                     </p>
                   </li>
                   <li>
                     <p>
-                      Únicamente participan los códigos de facturación
+                      6. Únicamente participan los códigos de facturación
                       registrados por las compras realizadas dentro del
                       periodo de vigencia y que cumplan con la condición de
-                      participación y no se
-                    </p>
-                    <p>
-                      encuentren en el supuesto del presente capitulo.
+                      participación y no se encuentren en el supuesto del presente capitulo.
                     </p>
                   </li>
                   <li>
                     <p>
-                      Solo se otorgará un incentivo por Cliente que resulte
-                      ganador. En el caso de que un mismo
-                    </p>
-                    <p>
-                      Cliente obtenga más de un resultado exitoso, se le
+                      7. Solo se otorgará un incentivo por Cliente que resulte
+                      ganador. En el caso de que un mismo Cliente obtenga más de un resultado exitoso, se le
                       considerará como ganador con el mejor resultado de sus
                       participaciones y se determinará como ganador del
                       lugar subsecuente al Cliente con el siguiente mejor
@@ -642,7 +592,7 @@
                   </li>
                   <li>
                     <p>
-                      El cliente Ganador, aceptara recibir un solo incentivo
+                      8. El cliente Ganador, aceptara recibir un solo incentivo
                       por parte de la Organizadora aun cuando de sus
                       participaciones haya logrado posicionarse más de dos
                       veces en los primeros seis lugares.
@@ -650,7 +600,7 @@
                   </li>
                   <li>
                     <p>
-                      Las compras no son acumulables, únicamente se tomarán
+                      9. Las compras no son acumulables, únicamente se tomarán
                       en cuenta los código de facturación que cumplan con
                       el monto mínimo de participación y que sean de
                       compras en las secciones participantes y durante la
@@ -659,14 +609,14 @@
                   </li>
                   <li>
                     <p>
-                      No participan los códigos de facturación objeto de
+                      10. No participan los códigos de facturación objeto de
                       devoluciones o cancelaciones dentro y fuera de la
                       vigencia de la mecánica.
                     </p>
                   </li>
                   <li>
                     <p>
-                      No participan los códigos de facturación (compras en
+                      11. No participan los códigos de facturación (compras en
                       tiendas físicas o a través de www.suburbia.com.mx)
                       utilizados y/o registrados en el Gran Sorteo Tarjetas
                       Suburbia.
@@ -674,38 +624,23 @@
                   </li>
                   <li>
                     <p>
-                      Quedan descalificados del presente Concurso los
-                      códigos de facturación (compras en
-                    </p>
-                    <p>
-                      tiendas físicas o a través de www.suburbia.com.mx)
-                      utilizados y/o registrados en el Gran
-                    </p>
-                    <p>
-                      Sorteo Tarjetas Suburbia.
+                      12. Quedan descalificados del presente Concurso los
+                      códigos de facturación (compras en tiendas físicas o a través de www.suburbia.com.mx)
+                      utilizados y/o registrados en el Gran Sorteo Tarjetas Suburbia.
                     </p>
                   </li>
                   <li>
                     <p>
-                      El incentivo otorgado es intransferible, no podrá ser
-                      devuelto o cambiado bajo ninguna
-                    </p>
-                    <p>
-                      situación, no podrá ser rembolsable por dinero en
-                      efectivo ni ninguna otra modalidad, ni
-                    </p>
-                    <p>
-                      sustituido por un bien o servicio diferente al
+                      13. El incentivo otorgado es intransferible, no podrá ser
+                      devuelto o cambiado bajo ninguna situación, no podrá ser rembolsable por dinero en
+                      efectivo ni ninguna otra modalidad, ni sustituido por un bien o servicio diferente al
                       ofrecido.
                     </p>
                   </li>
                   <li>
                     <p>
-                      Los seis monederos electrónicos, cuentan con saldo de
-                      $25,000.00 (veinticinco mil pesos
-                    </p>
-                    <p>
-                      00/100 M.N.) cada uno, los cuales se podrán utilizar
+                      14. Los seis monederos electrónicos, cuentan con saldo de
+                      $25,000.00 (veinticinco mil pesos 00/100 M.N.) cada uno, los cuales se podrán utilizar
                       conforme a las “Condiciones de uso del Monedero
                       Electrónico Suburbia” detalladas en el capítulo
                       respectivo de las presentes bases.
@@ -713,7 +648,7 @@
                   </li>
                   <li>
                     <p>
-                      Solo podrán ser parte de la presente mecánica, los
+                      15. Solo podrán ser parte de la presente mecánica, los
                       clientes que se hayan registrado en el sistema con su
                       nombre, apellido materno, apellido paterno, correo,
                       fecha de nacimiento, sexo y que hayan registrado sus
@@ -723,29 +658,20 @@
                   </li>
                   <li>
                     <p>
-                      Limitado a 500,000 participaciones electrónicas.
+                      16. Limitado a 500,000 participaciones electrónicas.
                     </p>
                   </li>
                   <li>
                     <p>
-                      Suburbia no es responsable por fallas técnicas de
-                      cualquier clase (computadoras, cables,
-                    </p>
-                    <p>
-                      red, hardware, software), o la indisponibilidad o
-                      inaccesibilidad de cualquier servicio de
-                    </p>
-                    <p>
-                      Internet.
+                      17. Suburbia no es responsable por fallas técnicas de
+                      cualquier clase (computadoras, cables, red, hardware, software), o la indisponibilidad o
+                      inaccesibilidad de cualquier servicio de Internet.
                     </p>
                   </li>
                   <li>
                     <p>
-                      Los participantes deberán proporcionar sus datos
-                      personales completos y de forma
-                    </p>
-                    <p>
-                      verídica, ya que en caso de resultar ganador, el
+                      18. Los participantes deberán proporcionar sus datos
+                      personales completos y de forma verídica, ya que en caso de resultar ganador, el
                       incentivo le será entregado únicamente si los
                       documentos con los que se identifican, corresponden a
                       los datos proporcionados en su registro.
