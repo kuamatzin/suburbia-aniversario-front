@@ -8,31 +8,14 @@
       </div>
     </div> -->
 
-    <Navbar v-show="!gameStarted" />
-
-    <Banner v-show="!gameStarted" />
-
-    <Steps v-show="!gameStarted" />
-
-    <Calendar v-show="!gameStarted" />
-
-    <Ticket v-show="!gameStarted" />
-
-    <Play v-show="!gameStarted" />
-
-    <FAQ v-show="!gameStarted" />
-
-    <Winners v-show="!gameStarted" />
-
-    <Footer v-show="!gameStarted" />
-
-    <Game v-if="inited" v-show="gameStarted" />
+    <Counter />
   </div>
 </template>
 
 <script>
 /* eslint-disable vue/no-unused-components */
-/*import Counter from "./components/Counter";*/
+import Counter from "./components/Counter"
+/*
 import Ticket from "./components/Ticket";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
@@ -45,12 +28,14 @@ import Footer from "./components/Footer";
 import Game from "./components/Game";
 import GoTop from "@inotom/vue-go-top";
 import { EventBus } from './services/events';
+*/
 
 export default {
   name: "App",
 
   components: {
-    /*Counter,*/
+    Counter,
+    /*
     GoTop,
     Ticket,
     Navbar,
@@ -61,31 +46,8 @@ export default {
     FAQ,
     Winners,
     Footer,
-    Game
+    Game*/
   },
-
-  data() {
-    return {
-      gameStarted: false,
-      inited: true,
-    }
-  },
-
-  mounted() {
-    EventBus.$on('gameStarted', () => {
-      this.gameStarted = true
-    })
-
-    EventBus.$on('gameFinished', () => {
-      this.gameStarted = false
-
-      this.inited = false
-
-      setTimeout(() => {
-        this.inited = true
-      }, 500)
-    })
-  }
 };
 </script>
 

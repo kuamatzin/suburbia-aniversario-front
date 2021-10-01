@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy:testing": "npm run build && firebase deploy --only hosting:ganasuburbia-testing"
+    "deploy:testing": "npm run build && firebase deploy --only hosting:ganasuburbia-testing",
+    "deploy:prod": "npm run build && firebase deploy --only hosting:suburbio-navidad"
   },
   "dependencies": {
     "@chenfengyuan/vue-countdown": "^1.1.5",
