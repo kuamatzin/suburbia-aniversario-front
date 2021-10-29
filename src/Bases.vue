@@ -3,7 +3,7 @@
     <div class="terms">
       <header
           class="entry-header d-flex flex-column justify-content-center align-items-center h-100 w-100">
-        <h1 class="entry-title text-center text-black">Bases del concurso</h1>
+        <h1 class="entry-title text-center text-white">Bases del concurso</h1>
       </header>
     </div>
     <div class="container">
