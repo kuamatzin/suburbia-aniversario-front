@@ -3,7 +3,7 @@
     <div id="comming-soon" style="background: #5F2263; height: 100vh;">
       <div class="h-100 d-flex flex-column justify-content-center align-items-center">
         <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 230px" />
-        <h3 style="color: white" class="text-center">Pronto descubriras lo que tenemos preparado para ti</h3>
+        <h3 style="color: white" class="text-center">Pronto descubriras lo que tenemos preparado para ti.</h3>
       </div>
     </div>
     <!--
