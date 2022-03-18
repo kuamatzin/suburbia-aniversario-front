@@ -1,12 +1,19 @@
 <template>
   <div id="app">
+    <div id="comming-soon" style="background: #5F2263; height: 100vh;">
+      <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+        <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 230px" />
+        <h3 style="color: white" class="text-center">Pronto descubriras lo que tenemos preparado para ti</h3>
+      </div>
+    </div>
+    <!--
     <go-top :size="50" bg-color="#EAC144"></go-top>
 
-    <!-- <div class="pagewide p-3 bg-white">
+    <div class="pagewide p-3 bg-white">
       <div class="container">
         <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 130px" />
       </div>
-    </div> -->
+    </div>
 
     <Navbar v-show="!gameStarted" />
 
@@ -27,6 +34,7 @@
     <Footer v-show="!gameStarted" />
 
     <Game v-if="inited" v-show="gameStarted" />
+    -->
   </div>
 </template>
 
