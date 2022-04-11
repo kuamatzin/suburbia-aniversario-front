@@ -1,33 +1,52 @@
 <template>
   <div>
-    <div
-      id="container-hero"
-      class="hero-image-suburbia parallax margin-hero d-flex justify-content-center align-items-center"
-    >
-      <countdown
-        :time="new Date('12/10/2020 00:00:00').getTime() - new Date().getTime()"
+    <div id="comming-soon" style="background: #5f2263; height: 100vh">
+      <div
+        class="
+          h-100
+          d-flex
+          flex-column
+          justify-content-center
+          align-items-center
+        "
       >
-        <template slot-scope="props">
-          <div class="row timer-countdown">
-            <div class="col-md-3">
-              <p class="timer">{{ props.days }}</p>
-              <p class="text-center">Días</p>
+        <img
+          alt="Suburbia aniversario"
+          class="mb-4"
+          src="./../assets/logo.jpg"
+          style="width: 230px"
+        />
+        <h3 style="color: white" class="text-center">
+          Pronto descubriras lo que tenemos preparado para ti.
+        </h3>
+
+        <countdown
+          :time="
+            new Date('04/20/2022 00:00:00').getTime() - new Date().getTime()
+          "
+        >
+          <template slot-scope="props">
+            <div class="row timer-countdown">
+              <div class="col-md-3">
+                <p class="timer">{{ props.days }}</p>
+                <p class="text-center text-white">Días</p>
+              </div>
+              <div class="col-md-3">
+                <p class="timer">{{ props.hours }}</p>
+                <p class="text-center text-white">Horas</p>
+              </div>
+              <div class="col-md-3">
+                <p class="timer">{{ props.minutes }}</p>
+                <p class="text-center text-white">Minutos</p>
+              </div>
+              <div class="col-md-3">
+                <p class="timer text-white">{{ props.seconds }}</p>
+                <p class="text-center text-white">Segundos</p>
+              </div>
             </div>
-            <div class="col-md-3">
-              <p class="timer">{{ props.hours }}</p>
-              <p class="text-center">Horas</p>
-            </div>
-            <div class="col-md-3">
-              <p class="timer">{{ props.minutes }}</p>
-              <p class="text-center">Minutos</p>
-            </div>
-            <div class="col-md-3">
-              <p class="timer">{{ props.seconds }}</p>
-              <p class="text-center">Segundos</p>
-            </div>
-          </div>
-        </template>
-      </countdown>
+          </template>
+        </countdown>
+      </div>
     </div>
   </div>
 </template>
@@ -43,13 +62,13 @@ export default {
 <style scoped lang="scss">
 .timer-countdown {
   width: 80vw;
-  margin-top: 250px;
+  margin-top: 50px;
 }
 
 .timer {
   font-size: 3rem;
   text-align: center;
-  color: #2E3030;
+  color: white;
 }
 
 .hero-image-suburbia {
@@ -61,7 +80,7 @@ export default {
   background-attachment: scroll;
 
   p {
-    color: #2E3030;
+    color: white;
   }
 }
 

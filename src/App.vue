@@ -1,11 +1,15 @@
 <template>
   <div id="app">
+    <!--
     <div id="comming-soon" style="background: #5F2263; height: 100vh;">
       <div class="h-100 d-flex flex-column justify-content-center align-items-center">
         <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 230px" />
         <h3 style="color: white" class="text-center">Pronto descubriras lo que tenemos preparado para ti.</h3>
       </div>
     </div>
+    -->
+
+    <Counter/>
     <!--
     <go-top :size="50" bg-color="#EAC144"></go-top>
 
@@ -40,7 +44,7 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
-/*import Counter from "./components/Counter";*/
+import Counter from "./components/Counter";
 import Ticket from "./components/Ticket";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
@@ -58,7 +62,7 @@ export default {
   name: "App",
 
   components: {
-    /*Counter,*/
+    Counter,
     GoTop,
     Ticket,
     Navbar,
