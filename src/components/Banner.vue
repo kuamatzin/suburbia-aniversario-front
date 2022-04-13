@@ -40,7 +40,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/img-04.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/banner_home.jpg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ export default {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/img-04.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/banner_home.jpg");
     height: 380px;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@ export default {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/img-04.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/banner_home.jpg");
     height: 480px;
     background-position: center;
     background-repeat: no-repeat;

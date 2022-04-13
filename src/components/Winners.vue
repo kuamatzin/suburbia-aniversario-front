@@ -15,16 +15,16 @@
       data-aos-delay="50"
       data-aos-duration="800"
     >
-      <div class="col-md-12">
+      <div class="col-md-8 offset-md-2">
         <div>
           <img
-            src="./../assets/img-22.jpeg"
+            src="./../assets/images/02_IMG_LANDING/ganador-22.png"
             alt="ganadores"
             class="img-fluid winner"
             style="position: relative"
           />
           <img
-            src="./../assets/ganadores_R.jpeg"
+            src="./../assets/images/02_IMG_LANDING/ganador-22.png"
             alt="ganadores"
             class="img-fluid winner_mobile"
             style="position: relative"
@@ -52,7 +52,7 @@
           <span
             id="ganadores"
             class="ml-3 primary-color px-3 secondary-font" style="font-size: 1.2rem"
-          >¡RECUERDA QUE CON CADA COMPRA MÍNIMA DE $500 PUEDES PARTICIPAR NUEVAMENTE!</span>
+          >¡RECUERDA QUE CON CADA COMPRA MÍNIMA DE $1,000.00 PUEDES PARTICIPAR NUEVAMENTE!</span>
         </div>
       </div>
     </div>

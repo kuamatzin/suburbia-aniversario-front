@@ -85,7 +85,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .calendar-image {
-    background-image: url("./../assets/img-39.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/bg-calendario_completo.jpg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -97,7 +97,7 @@ export default {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .calendar-image {
-    background-image: url("./../assets/img-39.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/bg-calendario_completo.jpg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -109,7 +109,7 @@ export default {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .calendar-image {
-    background-image: url("./../assets/img-39.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/bg-calendario_completo.jpg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;

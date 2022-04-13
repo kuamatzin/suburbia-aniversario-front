@@ -33,7 +33,21 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Por cada $500.00 (Quinientos pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de la página de internet  www.suburbia.com.mx durante el periodo comprendido del 1 al 28 de octubre de 2021, el cliente podrá participar para ganar 1 (uno) de los 6 (seis) Monederos Electrónicos Suburbia con saldo de $25,000.00 (veinticinco mil pesos 00/100 M.N.) cada uno, el cual se podrá utilizar conforme a las “Condiciones de uso del Monedero Electrónico Suburbia” que más adelante se especificarán.
+              Por cada $1,000.00 (un mil pesos 00/100 M.N.) de compra en
+              cualquiera de las tiendas Suburbia de la República Mexicana y/o en
+              compras realizadas a través de app Suburbia y/o la página de
+              internet www.suburbia.com.mx durante el periodo comprendido del 20
+              de abril al 15 de mayo de 2022, el cliente podrá participar para
+              ganar 1 (uno) de los 3 (tres) kits para renovar su hogar con un
+              valor unitario de $94,293.00 (noventa y cuatro mil, doscientos
+              noventa y tres pesos 00/100 M.N.) teniendo cada kit el siguiente
+              contenido: 1 (un) Refrigerador 360L de la marca Mabe, 1 (una)
+              Lavadora 19 kg de la marca Mabe, 1 (una) Secadora gas 20 kg de la
+              marca Mabe, 1 (una) Estufa de gas 76 cm de la marca Mabe, 1 (una)
+              Campana útil 76 cm de la marca Mabe, 1 (un) Microondas 1.1 de la
+              marca Mabe, 1 (una) Bundle de pantalla 65" con barra de sonido de
+              la marca LG y 1 (un) Guardarropa con ropa, calzado y accesorios
+              comercializados en Suburbia.
             </div>
           </div>
         </div>
@@ -41,7 +55,12 @@
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseTwo"
@@ -59,7 +78,8 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              En la presente mecánica únicamente podrán participar los residentes de la República Mexicana mayores de 18 años.
+              En la presente mecánica únicamente podrán participar los
+              residentes de la República Mexicana mayores de 18 años.
             </div>
           </div>
         </div>
@@ -67,7 +87,12 @@
           <div class="card-header card-white" id="headingThree">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseThree"
@@ -85,8 +110,9 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan todas las tiendas Suburbia de la República Mexicana y/o ventas por internet realizadas a través de la página www.suburbia.com.mx.
-              Para el uso de las tarjetas de Minipagos solo se encuentra disponible en las tiendas Suburbia Cuajimalpa, Explanada Pachuca, Forum Tlaquepaque, Guadalajara Centro, Ixtapaluca Ayotla, Ixtapaluca Cortijo, Nicolás Romero, Pachuca, Plaza Del Sol, Plaza México y Tonalá
+              Participan todas las tiendas Suburbia de la República Mexicana,
+              compras realizadas a través de la App Suburbia y/o página de
+              internet www.suburbia.com.mx.
             </div>
           </div>
         </div>
@@ -94,7 +120,12 @@
           <div class="card-header" id="headingNine">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseNine"
@@ -112,8 +143,17 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan las compras de los diversos departamentos de las tiendas Suburbia y de la página de internet www.suburbia.com.mx realizadas durante el periodo del 1 al 28 de octubre de 2021.
-              EXCEPTO: Pagos de cualquier servicio, mencionando de manera enunciativa más no limitativa  televisión de paga, servicio de telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua, cable, gas, pagos de tarjetas, pago de empresas multinivel, entretenimiento, apartamoda, compra y recarga de peaje y tarjetas de prepago.
+              Participan las compras de los diversos departamentos de las
+              tiendas Suburbia de la República Mexicana, compras realizadas a
+              través de la app Suburbia y de la página www.suburbia.com.mx,
+              realizadas durante el periodo del 20 de abril al 15 de mayo de
+              2022. <br><br>
+              EXCEPTO: Pagos de cualquier servicio, mencionando de manera
+              enunciativa más no limitativa televisión de paga, servicio de
+              telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua,
+              cable, gas, pagos de tarjetas, pago de empresas multinivel,
+              entretenimiento, apartamoda, compra y recarga de peaje y tarjetas
+              de prepago.
             </div>
           </div>
         </div>
@@ -121,7 +161,12 @@
           <div class="card-header card-white" id="headingFour">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseFour"
@@ -139,7 +184,12 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente obtendrá de manera automática en el sistema el número de participaciones equivalentes al monto de compra y forma de pago. Recordando en todo momento que las compras realizadas con Tarjetas Suburbia, Tarjetas Minipagos y Tarjetas BBVA (anteriormente mencionadas) obtendrán el doble de oportunidades para participar en la presente mecánica. Limitado a 500,000 participaciones electrónicas.
+              En caso de que el cliente realice sus compras con Tarjeta Crédito
+              Suburbia Departamental (emitida por Suburbia TD, S.A de C.V) o
+              Suburbia Visa (Emitida por Liverpool LPC, S.A de C.V) se le
+              otorgará al cliente el doble de oportunidades para participar en
+              la presente mecánica. Limitado a 500,000 participaciones
+              electrónicas.
             </div>
           </div>
         </div>
@@ -147,7 +197,12 @@
           <div class="card-header" id="headingFive">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseFive"
@@ -164,16 +219,19 @@
             aria-labelledby="headingFive"
             data-parent="#accordionExample"
           >
-            <div class="card-body">
-              Del 1 al 28 de octubre de 2021.
-            </div>
+            <div class="card-body">Del 20 de abril al 15 de mayo de 2022</div>
           </div>
         </div>
         <div class="card">
           <div class="card-header card-white" id="headingSix">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseSix"
@@ -191,8 +249,14 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente participante que haya cumplido con las condiciones de participación, que haya registrado de manera correcta y verídicamente su códigos de facturación y; complete de forma correcta el juego de memoria con cartas con el menor número de errores y en el menor tiempo, podrá ser uno de los seis ganadores/acreedores de los incentivos mencionados anteriormente.
-              La selección de los seis ganadores se realizará en estricto apego al menor número de errores y menor tiempo.
+              El cliente participante que haya cumplido con las condiciones de
+              participación, que haya registrado de manera correcta y
+              verídicamente su códigos de facturación y; complete de forma
+              correcta el juego de memoria con cartas con el menor número de
+              errores y en el menor tiempo, podrá ser uno de los seis
+              ganadores/acreedores de los incentivos mencionados anteriormente.
+              La selección de los seis ganadores se realizará en estricto apego
+              al menor número de errores y menor tiempo.
             </div>
           </div>
         </div>
@@ -200,7 +264,12 @@
           <div class="card-header" id="headingSeven">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseSeven"
@@ -218,7 +287,13 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El nombre de los clientes que resulten ganadores de la presente mecánica, se darán a conocer el día miércoles 24 de noviembre de 2021 únicamente en el horario de 10:00 am a 10:00 pm, a través de cartulinas o anuncios ubicados en el área de atención a clientes o línea de cajas de las tiendas Suburbia de la República Mexicana, y/o en las redes sociales oficiales de la organizadora y/o en la página ganasuburbia.com.mx
+              El nombre de los clientes que resulten ganadores de la presente
+              mecánica, se darán a conocer el día miércoles 18 de mayo de 2022
+              únicamente en el horario de 10:00 am a 10:00 pm, a través de
+              cartulinas o anuncios ubicados en el área de atención a clientes o
+              línea de cajas de las tiendas Suburbia de la República Mexicana,
+              y/o en las redes sociales oficiales de la organizadora y/o en la
+              página ganasuburbia.com.mx
             </div>
           </div>
         </div>
@@ -226,7 +301,12 @@
           <div class="card-header card-white" id="headingEigth">
             <h2 class="mb-0">
               <button
-                class="button-collapse btn btn-link btn-block text-left collapsed"
+                class="
+                  button-collapse
+                  btn btn-link btn-block
+                  text-left
+                  collapsed
+                "
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseEigth"
@@ -244,7 +324,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 5564400971.
+              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 5564400971
             </div>
           </div>
         </div>
@@ -270,7 +350,7 @@
 }
 
 .separator {
-  background-color: #711968;;
+  background-color: #711968;
   height: 20px;
 }
 

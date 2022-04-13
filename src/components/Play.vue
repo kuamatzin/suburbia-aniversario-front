@@ -284,7 +284,7 @@ ul{
 }
 
 .mobile-play {
-  background: url("./../assets/img-60.jpeg");
+  background: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -394,7 +394,7 @@ ul{
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .hero-image {
-    background-image: url("./../assets/img-60.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -413,7 +413,7 @@ ul{
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .hero-image {
-    background-image: url("./../assets/img-60.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -424,8 +424,8 @@ ul{
 }
 
   .hero-image-play {
-    background-image: url("./../assets/img-21.jpeg");
-    height: 230px;
+    background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
+    height: 140px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -435,8 +435,8 @@ ul{
   // Small devices (landscape phones, 576px and up)
   @media (min-width: 576px) {
     .hero-image-play {
-      background-image: url("./../assets/img-21.jpeg");
-      height: 280px;
+      background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
+      height: 200px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -447,8 +447,8 @@ ul{
   // Medium devices (tablets, 768px and up)
   @media (min-width: 768px) {
     .hero-image-play {
-      background-image: url("./../assets/img-60.jpeg");
-      height: 200px;
+      background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
+      height: 300px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -459,8 +459,8 @@ ul{
   // Large devices (desktops, 992px and up)
   @media (min-width: 992px) {
     .hero-image-play {
-      background-image: url("./../assets/img-60.jpeg");
-      height: 380px;
+      background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
+      height: 400px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -471,7 +471,7 @@ ul{
   // Extra large devices (large desktops, 1200px and up)
   @media (min-width: 1200px) {
     .hero-image-play {
-      background-image: url("./../assets/img-60.jpeg");
+      background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;

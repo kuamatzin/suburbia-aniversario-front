@@ -9,36 +9,33 @@
     </div>
     -->
 
-    <Counter/>
-    <!--
-    <go-top :size="50" bg-color="#EAC144"></go-top>
-
-    <div class="pagewide p-3 bg-white">
-      <div class="container">
-        <img alt="Suburbia aniversario" class="mb-4" src="./assets/logo.jpg" style="width: 130px" />
-      </div>
+    <div v-if="activeCountdown">
+      <Counter />
     </div>
 
-    <Navbar v-show="!gameStarted" />
+    <div v-else>
+      <go-top :size="50" bg-color="#EAC144"></go-top>
 
-    <Banner v-show="!gameStarted" />
+      <Navbar v-show="!gameStarted" />
 
-    <Steps v-show="!gameStarted" />
+      <Banner v-show="!gameStarted" />
 
-    <Calendar v-show="!gameStarted" />
+      <Steps v-show="!gameStarted" />
 
-    <Ticket v-show="!gameStarted" />
+      <Calendar v-show="!gameStarted" />
 
-    <Play v-show="!gameStarted" />
+      <Ticket v-show="!gameStarted" />
 
-    <FAQ v-show="!gameStarted" />
+      <Play v-show="!gameStarted" />
 
-    <Winners v-show="!gameStarted" />
+      <FAQ v-show="!gameStarted" />
 
-    <Footer v-show="!gameStarted" />
+      <Winners v-show="!gameStarted" />
 
-    <Game v-if="inited" v-show="gameStarted" />
-    -->
+      <Footer v-show="!gameStarted" />
+
+      <Game v-if="inited" v-show="gameStarted" />
+    </div>
   </div>
 </template>
 
@@ -56,7 +53,7 @@ import Winners from "./components/Winners";
 import Footer from "./components/Footer";
 import Game from "./components/Game";
 import GoTop from "@inotom/vue-go-top";
-import { EventBus } from './services/events';
+import { EventBus } from "./services/events";
 
 export default {
   name: "App",
@@ -73,31 +70,32 @@ export default {
     FAQ,
     Winners,
     Footer,
-    Game
+    Game,
   },
 
   data() {
     return {
       gameStarted: false,
       inited: true,
-    }
+      activeCountdown: false,
+    };
   },
 
   mounted() {
-    EventBus.$on('gameStarted', () => {
-      this.gameStarted = true
-    })
+    EventBus.$on("gameStarted", () => {
+      this.gameStarted = true;
+    });
 
-    EventBus.$on('gameFinished', () => {
-      this.gameStarted = false
+    EventBus.$on("gameFinished", () => {
+      this.gameStarted = false;
 
-      this.inited = false
+      this.inited = false;
 
       setTimeout(() => {
-        this.inited = true
-      }, 500)
-    })
-  }
+        this.inited = true;
+      }, 500);
+    });
+  },
 };
 </script>
 
@@ -195,7 +193,7 @@ body {
 }
 
 .primary-color-subtitle {
-  color: #621F64;
+  color: #621f64;
 }
 
 .primary-font {
