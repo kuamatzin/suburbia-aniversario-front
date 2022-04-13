@@ -77,7 +77,7 @@ export default {
     return {
       gameStarted: false,
       inited: true,
-      activeCountdown: true
+      activeCountdown: false
     };
   },
 
