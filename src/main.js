@@ -41,8 +41,8 @@ const validations = {
     return [valid, msg];
   },
   min: function min(value) {
-    var msg = 'Para poder participar el ticket de compra debe ser de mínimo $500';
-    var valid = value >= 500;
+    var msg = 'Para poder participar el ticket de compra debe ser de mínimo $1,000.00';
+    var valid = value >= 1000;
     return [valid, msg];
   },
   betweenLength: function betweenLength(value, args) {

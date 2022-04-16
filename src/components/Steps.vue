@@ -17,7 +17,7 @@
         <div class="d-block d-md-flex align-items-center text-md-left">
           <img
             alt="Ticket"
-            src="./../assets/icon-05.svg"
+            src="./../assets/images/02_IMG_LANDING/icon-05.svg"
             style="width: 60px"
           />
 
