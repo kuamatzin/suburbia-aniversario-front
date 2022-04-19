@@ -10,79 +10,15 @@
     >
       JUGAR
     </h3>
-    <div class="position: relative">
+    <div class="desktop">
       <div id="container-hero" class="hero-image-play parallax margin-hero"></div>
     </div>
-    <!-- <div class="py-1">
-      <div class="h-100">
-        <div class="h-100 d-flex justify-content-center align-items-center">
-          <div class="row mx-0 d-block d-lg-flex">
-            <div class="col-lg-4 px-0">
-              <div class="hero-image align-items-center">
-                <div class="text-left text-white px-3 ml-4">
-                  <h4 class="pt-5">
-                    ¡LLEGÓ EL MOMENTO DE PARTICIPAR PARA GANAR UNO DE LOS SIGUIENTES
-                    PREMIOS!
-                  </h4>
-                  <ul class="pl-0 mt-3">
-                    <li>
-                      1 motocicleta deportiva marca Italika
-                    </li>
-                    <li>
-                      5 pantallas de 75" marca LG
-                    </li>
-                    <li>
-                      2 smart phones marca Motorola
-                    </li>
-                    <li>
-                      3 motonetas marca Italika
-                    </li>
-                    <li>
-                      5 pantallas de 43" marca LG
-                    </li>
-                  </ul>
-                  <p class="mt-3">Si ya registraste tu ticket, verifícalo abajo para concluir tus participaciones restantes.</p>
-                  <p>¡Regístralo si aún no lo has hecho!</p>
-                  <small>*Imágenes sólo de caracter ilustrativo.</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8 px-0">
-              <img class="gift" src="../assets/regalo_right-21.jpg" alt="gifts"/>
-            </div>
-          </div>
-        </div>
+
+    <div class="mobile">
+      <img src="../assets/images/02_IMG_LANDING/banner-69_responsive.jpg" alt="Premios" class="img-fluid">
+      <div class="gifts-mobile">
       </div>
     </div>
-
-    <div class="mobile-play pb-3">
-      <div class="text-left text-white px-3 ml-4">
-        <h4 class="pt-5">
-          ¡LLEGÓ EL MOMENTO DE PARTICIPAR PARA GANAR UNO DE NUESTROS
-          PREMIOS!
-        </h4>
-        <ul class="pl-0 mt-3">
-          <li>
-            1 motocicleta deportiva marca Italika
-          </li>
-          <li>
-            5 pantallas de 75" marca LG
-          </li>
-          <li>
-            2 smart phones marca Motorola
-          </li>
-          <li>
-            3 motonetas marca Italika
-          </li>
-          <li>
-            5 pantallas de 43" marca LG
-          </li>
-        </ul>
-        <p class="mt-3">Si ya registraste tu ticket, verifícalo abajo para concluir tus participaciones restantes.</p>
-        <p>¡Regístralo si aún no lo has hecho!</p>
-        <small>*Imágenes sólo de caracter ilustrativo.</small>
-      </div>
-    </div> -->
 
     <div class="verify-ticket py-5 mt-2">
       <div class="container">
@@ -318,6 +254,15 @@ ul{
   font-size: 0.8rem;
 }
 
+.gifts-mobile {
+  background-image: url("./../assets/images/02_IMG_LANDING/banner-70_responsive.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  height: 300px;
+}
+
 .hero-image {
   background-image: url("./../assets/img-21.jpeg");
   height: 200px;
@@ -476,6 +421,19 @@ ul{
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment:scroll;
+    }
+  }
+
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 577px) {
+    .mobile{
+      display: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .desktop{
+      display: none;
     }
   }
 </style>

@@ -68,7 +68,7 @@
           <img
           class="mx-auto d-block"
             alt="Ticket"
-            src="./../assets/icon-05.svg"
+            src="./../assets/images/02_IMG_LANDING/icon-05.svg"
             style="width: 60px"
           />
 
