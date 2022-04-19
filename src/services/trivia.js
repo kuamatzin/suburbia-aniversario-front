@@ -225,7 +225,13 @@ export default {
       '0991': 'Gran Patio Ecatepec',
       '0992': 'Los Reyes Tepozan',
       '0994': 'Zitacuaro',
-      '0996': 'Liquidaciones Tlalnepantla'
+      '0996': 'Liquidaciones Tlalnepantla',
+      '0824': 'León Galerías Las Torres',
+      '0836': 'Perinorte',
+      '0839': 'Villahermosa Galerías',
+      '0980': 'Comalcalco',
+      '0993': 'Cancún Mall',
+      '0999': 'León Vía Alta',
     }
 
     return stores[number];

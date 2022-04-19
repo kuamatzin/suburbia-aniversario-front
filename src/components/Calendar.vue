@@ -49,7 +49,7 @@ export default {
 }
 
 .calendar-image {
-  background-image: url("./../assets/img-41.jpeg");
+  background-image: url("./../assets/images/02_IMG_LANDING/banner-40.jpg");
   height: 250px;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@ export default {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .calendar-image {
-    background-image: url("./../assets/img-41.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/banner-40.jpg");
     height: 250px;
     background-position: center;
     background-repeat: no-repeat;

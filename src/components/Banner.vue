@@ -17,7 +17,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .hero-image-suburbia {
-  background-image: url("./../assets/banner_principal_R.jpeg");
+  background-image: url("./../assets/images/02_IMG_LANDING/banner-03.jpg");
   height: 370px;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ export default {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/banner_principal_R.jpeg");
+    background-image: url("./../assets/images/02_IMG_LANDING/banner-03.jpg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
