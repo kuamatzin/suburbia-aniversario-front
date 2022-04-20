@@ -93,7 +93,7 @@
               <div class="form-group">
                 <select class="form-control" v-model="b_year" :class="{'is-invalid': $vuelidation.error('b_year') }">
                   <option value="" disabled>Año</option>
-                  <option v-for="index in 70" :key="index">{{ 2003 - index}}</option>
+                  <option v-for="index in 70" :key="index">{{ 2004 - index}}</option>
                 </select>
                 <div class="invalid-feedback">{{ $vuelidation.error('b_year') }}</div>
               </div>
@@ -186,7 +186,7 @@
             <select class="form-control" v-model="payment_method" :class="{'is-invalid': $vuelidation.error('payment_method') }">
               <option value="" disabled>Seleccionar</option>
               <option value="suburbia_card">Tarjeta Suburbia</option>
-              <option value="bbva">Tarjeta BBVA</option>
+              <option value="credit_card">Tarjeta de crédito</option>
               <option value="cash">Efectivo</option>
               <option value="small_payment">Minipagos</option>
               <option value="other">Otra forma de pago</option>
@@ -384,7 +384,7 @@
 
                 <div class="col-md-8">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN EL ANIVERSARIO SUBURBIA!</h2>
+                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN EL 'CELEBREMOS TU ESTILO DE SER MAMÁ'!</h2>
                   </div>
                 </div>
               </div>

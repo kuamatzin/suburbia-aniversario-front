@@ -22,7 +22,7 @@
           />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00 PESOS
           </small>
         </div>
       </div>
@@ -41,7 +41,7 @@
           <img alt="Ticket" src="./../assets/2a.svg" style="width: 60px" />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            REGISTRA TU TICKET (NO ACUMULABLES)
+            REGISTRA TU TICKET<br>(NO ACUMULABLES)
           </small>
         </div>
       </div>
@@ -158,7 +158,7 @@
         <h4 class="text-center secondary-color">Paso 4</h4>
         <p class="text-center">
           ¡Recuerda que puedes seguir participando con cada compra mínima de
-          $500.00!
+          $1,000.00!
         </p>
       </div>
       <div id="calendario" class="mt-4 ancla-to-cal"></div>

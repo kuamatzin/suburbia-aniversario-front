@@ -324,7 +324,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 5564400971
+              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 7775030285
             </div>
           </div>
         </div>
