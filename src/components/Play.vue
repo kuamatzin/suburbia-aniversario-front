@@ -405,7 +405,7 @@ ul{
   @media (min-width: 992px) {
     .hero-image-play {
       background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
-      height: 400px;
+      height: 480px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -420,6 +420,7 @@ ul{
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      height: 480px;
       background-attachment:scroll;
     }
   }

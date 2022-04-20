@@ -384,7 +384,7 @@
 
                 <div class="col-md-8">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN EL 'CELEBREMOS TU ESTILO DE SER MAMÁ'!</h2>
+                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN 'CELEBREMOS TU ESTILO DE SER MAMÁ'!</h2>
                   </div>
                 </div>
               </div>
