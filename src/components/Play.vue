@@ -15,9 +15,9 @@
     </div>
 
     <div class="mobile">
-      <img src="../assets/images/02_IMG_LANDING/banner-69_responsive.jpg" alt="Premios" class="img-fluid">
       <div class="gifts-mobile">
       </div>
+      <img src="../assets/images/02_IMG_LANDING/banner-69_responsive.jpg" alt="Premios" class="img-fluid">
     </div>
 
     <div class="verify-ticket py-5 mt-2">

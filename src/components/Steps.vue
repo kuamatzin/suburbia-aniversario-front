@@ -2,8 +2,12 @@
   <div class="section-suburbia container mt-5">
     <h3 class="text-center primary-color-subtitle">MECÁNICA</h3>
 
-    <p class="text-center px-5 mt-4">
+    <p class="text-center px-5 mt-4 desktop">
       Completa el juego de memoria en el menor tiempo posible<br>y gana uno de los 3 paquetes de regalos que Suburbia tiene para ti.
+    </p>
+
+    <p class="text-center px-5 mt-4 mobile">
+      Completa el juego de memoria en el menor tiempo posible y gana uno de los 3 paquetes de regalos que Suburbia tiene para ti.
     </p>
 
     <div
@@ -73,7 +77,7 @@
           />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00 PESOS
           </small>
       </div>
       <div class="col-md-3 mb-4 text-center">
@@ -96,8 +100,7 @@
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0 text-uppercase"
           >
-            Las compras realizadas con Tarjeta Suburbia, BBVA y
-            Minipagos otorgan doble participación
+            Las compras realizadas con Tarjeta Suburbia otorgan doble participación
           </small>
       </div>
     </div>
