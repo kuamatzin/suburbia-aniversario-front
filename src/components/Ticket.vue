@@ -93,7 +93,7 @@
               <div class="form-group">
                 <select class="form-control" v-model="b_year" :class="{'is-invalid': $vuelidation.error('b_year') }">
                   <option value="" disabled>Año</option>
-                  <option v-for="index in 70" :key="index">{{ 2004 - index}}</option>
+                  <option v-for="index in 70" :key="index">{{ 2005 - index}}</option>
                 </select>
                 <div class="invalid-feedback">{{ $vuelidation.error('b_year') }}</div>
               </div>
