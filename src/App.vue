@@ -8,10 +8,10 @@
 
       <div v-else>
         <div class="desktop">
-          <img src="./assets/images/end_game.jpeg" width="100%">
+          <img src="./assets/images/end_game_winner.jpeg" width="100%">
         </div>
         <div class="mobile">
-          <img src="./assets/images/end_game_mobile.jpeg" width="100%">
+          <img src="./assets/images/end_game_mobile_winner.jpeg" width="100%">
         </div>
       </div>
     </div>
