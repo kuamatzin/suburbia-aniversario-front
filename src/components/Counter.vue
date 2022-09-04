@@ -17,7 +17,7 @@
           style="width: 230px"
         />
         <h3 style="color: white" class="text-center">
-          Pronto descubriras lo que tenemos preparado para ti.
+          Pronto descubrirás lo que tenemos preparado para ti.
         </h3>
 
         <countdown
