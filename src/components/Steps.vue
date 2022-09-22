@@ -26,7 +26,7 @@
           />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00 PESOS
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $800.00 PESOS
           </small>
         </div>
       </div>
@@ -77,7 +77,7 @@
           />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00 PESOS
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $800.00 PESOS
           </small>
       </div>
       <div class="col-md-3 mb-4 text-center">
@@ -161,7 +161,7 @@
         <h4 class="text-center secondary-color">Paso 4</h4>
         <p class="text-center">
           ¡Recuerda que puedes seguir participando con cada compra mínima de
-          $1,000.00!
+          $800.00!
         </p>
       </div>
       <div id="calendario" class="mt-4 ancla-to-cal"></div>

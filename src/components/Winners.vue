@@ -6,7 +6,7 @@
     data-aos-delay="50"
     data-aos-duration="800"
   >
-    <h3 class="text-center primary-color">GANADORES</h3>
+    <h3 class="text-center primary-color mb-5">GANADORES</h3>
 
     <div
       class="row"
@@ -52,7 +52,7 @@
           <span
             id="ganadores"
             class="ml-3 primary-color px-3 secondary-font" style="font-size: 1.2rem"
-          >¡RECUERDA QUE CON CADA COMPRA MÍNIMA DE $1,000.00 PUEDES PARTICIPAR NUEVAMENTE!</span>
+          >¡RECUERDA QUE CON CADA COMPRA MÍNIMA DE $800.00 PUEDES PARTICIPAR NUEVAMENTE!</span>
         </div>
       </div>
     </div>

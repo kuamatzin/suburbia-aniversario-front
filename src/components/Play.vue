@@ -6,11 +6,12 @@
     data-aos-duration="800"
   >
     <h3
-      class="text-center primary-color"
+      class="text-center primary-color mb-5"
+      style="margin-top: 150px"
     >
-      JUGAR
+      PREMIOS PARA LOS GANADORES
     </h3>
-    <div class="desktop">
+    <div class="desktop" style="margin-bottom: 100px;">
       <div id="container-hero" class="hero-image-play parallax margin-hero"></div>
     </div>
 
@@ -405,7 +406,7 @@ ul{
   @media (min-width: 992px) {
     .hero-image-play {
       background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
-      height: 480px;
+      height: 520px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -420,7 +421,7 @@ ul{
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 480px;
+      height: 520px;
       background-attachment:scroll;
     }
   }
