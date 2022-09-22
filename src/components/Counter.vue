@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="comming-soon" style="background: #5f2263; height: 100vh">
+    <div id="comming-soon" class="hero-image-suburbia">
       <div
         class="
           h-100
@@ -10,15 +10,6 @@
           align-items-center
         "
       >
-        <img
-          alt="Suburbia aniversario"
-          class="mb-4"
-          src="./../assets/logo.jpg"
-          style="width: 230px"
-        />
-        <h3 style="color: white" class="text-center">
-          Pronto descubrirás lo que tenemos preparado para ti.
-        </h3>
 
         <countdown
           :time="
@@ -87,7 +78,7 @@ export default {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/under.jpg");
+    background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,7 +90,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/under.jpg");
+    background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -107,7 +98,7 @@ export default {
     background-attachment: scroll;
 
     .timer-countdown {
-      margin-top: 0px;
+      margin-top: 200px;
     }
 
     .timer {
@@ -119,7 +110,7 @@ export default {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/under.jpg");
+    background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -135,7 +126,7 @@ export default {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/under.jpg");
+    background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
