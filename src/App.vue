@@ -85,10 +85,10 @@ export default {
   data() {
     return {
       waitSoon: true,
-      activeWebsite: false,
+      activeWebsite: true,
       gameStarted: false,
       inited: true,
-      activeCountdown: false
+      activeCountdown: true
     };
   },
 
