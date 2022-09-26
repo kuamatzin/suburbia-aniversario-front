@@ -35,7 +35,7 @@
           </p>
           <p style="font-weight: 400">&nbsp;</p>
           <p style="font-weight: 400">
-            Por cada $1,000.00 (un mil pesos 00/100 M.N.) de compra en
+            Por cada $800.00 (ochocientos pesos 00/100 M.N.) de compra en
             cualquiera de las tiendas Suburbia de la Rep&uacute;blica Mexicana
             y/o en compras realizadas a trav&eacute;s de app Suburbia y/o la
             p&aacute;gina de internet
@@ -270,8 +270,8 @@
           <p style="font-weight: 400">
             Para participar en la presente din&aacute;mica, los clientes
             deber&aacute;n cumplir con la condici&oacute;n de
-            participaci&oacute;n, es decir, compras m&iacute;nimas de $1,000.00
-            (uno mil pesos 00/100 M.N.) durante el periodo comprendido del 20 de
+            participaci&oacute;n, es decir, compras m&iacute;nimas de $800.00
+            (ochocientos pesos 00/100 M.N.) durante el periodo comprendido del 20 de
             abril al 15 de mayo de 2022 y tambi&eacute;n deber&aacute;n:
           </p>
           <p style="font-weight: 400"><strong>&nbsp;</strong></p>

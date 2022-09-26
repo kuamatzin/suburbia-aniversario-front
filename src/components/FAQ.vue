@@ -33,7 +33,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Por cada $1,000.00 (un mil pesos 00/100 M.N.) de compra en
+              Por cada $800.00 (ochocientos pesos 00/100 M.N.) de compra en
               cualquiera de las tiendas Suburbia de la República Mexicana y/o en
               compras realizadas a través de app Suburbia y/o la página de
               internet www.suburbia.com.mx durante el periodo comprendido del 20
