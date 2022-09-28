@@ -261,7 +261,7 @@ ul{
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  height: 300px;
+  height: 220px;
 }
 
 .hero-image {
