@@ -175,6 +175,55 @@
             <div class="invalid-feedback" v-if='$vuelidation.error("online_ticket")'>{{ $vuelidation.error('online_ticket') }}</div>
           </div>
 
+          <div class="row mt-4" v-if="buy_type === 'store'">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Terminal TE:*</label>
+                <input type="number" @input="preventMaxCharacters('terminal', 2)" class="form-control" :class="{'is-invalid': $vuelidation.error('terminal') }" v-model="terminal" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("terminal")'>{{ $vuelidation.error('terminal') }}</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Transacción TR:*</label>
+                <input type="number" @input="preventMaxCharacters('transaction', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('transaction') }" v-model="transaction" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("transaction")'>{{ $vuelidation.error('transaction') }}</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Tienda:*</label>
+                <input type="number" @input="preventMaxCharacters('store_number', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('store_number') || validateStore === false }" v-model="store_number" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("store_number")'>{{ $vuelidation.error('store_number') }}</div>
+                <div class="invalid-feedback" v-if="!$vuelidation.error('store_number') && (validateStore === false && formTouched)">Este campo debe ser un ticket válido</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="inputName">Dónde realizaste tu compra</label>
+            <input type="text" class="form-control" disabled v-model="store" id="inputName" aria-describedby="nameHelp" />
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="exampleFormControlSelect1">Método de pago</label>
+            <select class="form-control" v-model="payment_method" :class="{'is-invalid': $vuelidation.error('payment_method') }">
+              <option value="" disabled>Seleccionar</option>
+              <option value="suburbia_card">Tarjeta Suburbia</option>
+              <option value="credit_card">Tarjeta de crédito</option>
+              <option value="cash">Efectivo</option>
+              <option value="small_payment">Minipagos</option>
+              <option value="other">Otra forma de pago</option>
+            </select>
+            <div class="invalid-feedback">{{ $vuelidation.error('payment_method') }}</div>
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal(2)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="fValue" />
+            <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
+          </div>
+
           <div class="d-flex justify-content-end primary-color" style="font-size: .8rem">
             * Casilla obligatoria
           </div>
@@ -483,6 +532,9 @@ export default {
       email: "",
       buy_type: "",
       online_ticket: "",
+      terminal: "",
+      transaction: "",
+      store_number: "",
       ticket: "",
       confirm_ticket: "",
       store: "",
@@ -550,6 +602,18 @@ export default {
       online_ticket: {
         numeric: true,
         length: 16,
+      },
+      terminal: {
+        numeric: true,
+        length: 2,
+      },
+      transaction: {
+        numeric: true,
+        length: 4,
+      },
+      store_number: {
+        numeric: true,
+        length: 4,
       },
       ticket: {
         required: { msg },
@@ -667,8 +731,14 @@ export default {
   methods: {
     setBuyTypeValidation() {
       if (this.buy_type === 'store') {
+        this.terminal = "";
+        this.transaction = "";
+        this.store_number = "";
         this.online_ticket = "2222222222222222";
       } else {
+        this.terminal = "22";
+        this.transaction = "2222";
+        this.store_number = "2222";
         this.online_ticket = "";
         this.store = 'Tienda Online'
       }
@@ -678,6 +748,15 @@ export default {
       if (this[value].length > max) {
         this[value] = this[value].slice(0, max);
       }
+
+      if (value === 'store_number' && this[value].length === 4) {
+        this.getStore(this[value]);
+      }
+    },
+
+    getStore(store) {
+      this.store = Trivia.getStore(store);
+      this.validateStore = this.store ? true: false;
     },
 
     async submit() {
@@ -893,6 +972,9 @@ export default {
       this.email = "";
       this.buy_type = "";
       this.online_ticket = "";
+      this.terminal = "";
+      this.transaction = "";
+      this.store_number = "";
       this.ticket = "";
       this.confirm_ticket = "";
       this.store = "";
@@ -924,6 +1006,9 @@ export default {
       this.email = "kuamatzin@gmail.com";
       this.buy_type = "store";
       this.online_ticket = "";
+      this.terminal = "";
+      this.transaction = "";
+      this.store_number = "";
       this.ticket = "22222 22222 22222 22222";
       this.confirm_ticket = "22222 22222 22222 22222";
       this.store = "";
