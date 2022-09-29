@@ -53,7 +53,7 @@ export default {
 <style scoped lang="scss">
 .timer-countdown {
   width: 80vw;
-  margin-top: 230px;
+  margin-top: 300px;
 }
 
 .timer {
