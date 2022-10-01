@@ -395,7 +395,7 @@
     <!-- Modal Exito -->
     <div class="modal fade" id="success" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content modal-success">
+        <div class="modal-content fond">
           <div class="modal-body">
 
             <div class="container mt-4">
@@ -408,13 +408,13 @@
 
                 <div class="col-md-8">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN 'CELEBREMOS TU ESTILO DE SER MAMÁ'!</h2>
+                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR!</h2>
                   </div>
                 </div>
               </div>
             </div>
 
-            <p class="mt-2 text-center">Finalizaste el juego y este es tu tiempo:</p>
+            <p class="mt-2 text-center">Finalizaste el juego y estos son tus resultados:</p>
 
 
             <div class="container">
@@ -1281,7 +1281,7 @@ export default {
   background-size: cover;
 }
 
-.modal-success {
+.fond {
   background: url('./../assets/bg_gracias.jpg');
   background-position: center;
   background-repeat: no-repeat;
