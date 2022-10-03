@@ -65,7 +65,7 @@ export default {
 .hero-image-suburbia {
   background-image: url("./../assets/bg_countdwon_R.jpg");
   height: 100vh;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
@@ -80,7 +80,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -92,7 +92,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -112,7 +112,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -128,7 +128,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
     height: 100vh;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
