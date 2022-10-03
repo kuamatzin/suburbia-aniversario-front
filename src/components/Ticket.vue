@@ -128,6 +128,37 @@
             <div class="invalid-feedback">{{ $vuelidation.error('buy_type') }}</div>
           </div>
 
+          <div class="row mt-4" v-if="buy_type === 'store'">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Terminal TE:*</label>
+                <input type="number" @input="preventMaxCharacters('terminal', 2)" class="form-control" :class="{'is-invalid': $vuelidation.error('terminal') }" v-model="terminal" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("terminal")'>{{ $vuelidation.error('terminal') }}</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Transacción TR:*</label>
+                <input type="number" @input="preventMaxCharacters('transaction', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('transaction') }" v-model="transaction" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("transaction")'>{{ $vuelidation.error('transaction') }}</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName">Tienda:*</label>
+                <input type="number" @input="preventMaxCharacters('store_number', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('store_number') || validateStore === false }" v-model="store_number" />
+                <div class="invalid-feedback" v-if='$vuelidation.error("store_number")'>{{ $vuelidation.error('store_number') }}</div>
+                <div class="invalid-feedback" v-if="!$vuelidation.error('store_number') && (validateStore === false && formTouched)">Este campo debe ser un ticket válido</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mt-4" v-if="buy_type === 'online'">
+            <label for="inputName">Número de boleta*</label>
+            <input type="text" @input="preventMaxCharacters('online_ticket', 16)" class="form-control" :class="{'is-invalid': $vuelidation.error('online_ticket') }" v-model="online_ticket" />
+            <div class="invalid-feedback" v-if='$vuelidation.error("online_ticket")'>{{ $vuelidation.error('online_ticket') }}</div>
+          </div>
+
           <div class="form-group mt-4">
             <label for="inputName">Dónde realizaste tu compra</label>
             <input type="text" class="form-control" disabled v-model="store" id="inputName" aria-describedby="nameHelp" />
@@ -167,61 +198,6 @@
             <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('confirm_ticket') || (customTicketConfirmationIsValid === false && formTouched) }" v-model="confirm_ticket" />
             <div class="invalid-feedback" v-if='$vuelidation.error("confirm_ticket")'>{{ $vuelidation.error('confirm_ticket') }}</div>
             <div class="invalid-feedback" v-else>Este campo debe coincidir con el ticket</div>
-          </div>
-
-          <div class="form-group mt-4" v-if="buy_type === 'online'">
-            <label for="inputName">Número de boleta*</label>
-            <input type="text" @input="preventMaxCharacters('online_ticket', 16)" class="form-control" :class="{'is-invalid': $vuelidation.error('online_ticket') }" v-model="online_ticket" />
-            <div class="invalid-feedback" v-if='$vuelidation.error("online_ticket")'>{{ $vuelidation.error('online_ticket') }}</div>
-          </div>
-
-          <div class="row mt-4" v-if="buy_type === 'store'">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="inputName">Terminal TE:*</label>
-                <input type="number" @input="preventMaxCharacters('terminal', 2)" class="form-control" :class="{'is-invalid': $vuelidation.error('terminal') }" v-model="terminal" />
-                <div class="invalid-feedback" v-if='$vuelidation.error("terminal")'>{{ $vuelidation.error('terminal') }}</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="inputName">Transacción TR:*</label>
-                <input type="number" @input="preventMaxCharacters('transaction', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('transaction') }" v-model="transaction" />
-                <div class="invalid-feedback" v-if='$vuelidation.error("transaction")'>{{ $vuelidation.error('transaction') }}</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="inputName">Tienda:*</label>
-                <input type="number" @input="preventMaxCharacters('store_number', 4)" class="form-control" :class="{'is-invalid': $vuelidation.error('store_number') || validateStore === false }" v-model="store_number" />
-                <div class="invalid-feedback" v-if='$vuelidation.error("store_number")'>{{ $vuelidation.error('store_number') }}</div>
-                <div class="invalid-feedback" v-if="!$vuelidation.error('store_number') && (validateStore === false && formTouched)">Este campo debe ser un ticket válido</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group mt-4">
-            <label for="inputName">Dónde realizaste tu compra</label>
-            <input type="text" class="form-control" disabled v-model="store" id="inputName" aria-describedby="nameHelp" />
-          </div>
-
-          <div class="form-group mt-4">
-            <label for="exampleFormControlSelect1">Método de pago</label>
-            <select class="form-control" v-model="payment_method" :class="{'is-invalid': $vuelidation.error('payment_method') }">
-              <option value="" disabled>Seleccionar</option>
-              <option value="suburbia_card">Tarjeta Suburbia</option>
-              <option value="credit_card">Tarjeta de crédito</option>
-              <option value="cash">Efectivo</option>
-              <option value="small_payment">Minipagos</option>
-              <option value="other">Otra forma de pago</option>
-            </select>
-            <div class="invalid-feedback">{{ $vuelidation.error('payment_method') }}</div>
-          </div>
-
-          <div class="form-group mt-4">
-            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal(2)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="fValue" />
-            <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
           </div>
 
           <div class="d-flex justify-content-end primary-color" style="font-size: .8rem">
@@ -793,6 +769,9 @@ export default {
           email: this.email,
           buy_type: this.buy_type,
           online_ticket: this.online_ticket,
+          store_number: this.store_number,
+          terminal: this.terminal,
+          transaction: this.transaction,
           ticket: this.ticket.replace(/ /g,''),
           store: this.store,
           payment_method: this.payment_method,

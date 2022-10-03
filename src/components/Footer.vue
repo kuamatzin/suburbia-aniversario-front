@@ -5,10 +5,10 @@
         <div class="row py-5">
           <div class="col-sm-3 order-sm-12 footer-bottom">
             <div class="d-flex align-items-center justify-content-center">
-              <a target="_blank" href="https://www.facebook.com/moda.suburbia">
+              <a target="_blank" href="https://www.facebook.com/estrenasuburbia/">
                 <i class="fab fa-facebook-square icon mx-2"></i>
               </a>
-              <a target="_blank" href="https://twitter.com/Moda_Suburbia">
+              <a target="_blank" href="https://twitter.com/estrenasuburbia">
                 <i class="fab fa-twitter icon mx-2"></i>
               </a>
               <a target="_blank" href="https://www.instagram.com/modasuburbia">
@@ -23,7 +23,7 @@
           <div class="col-sm-9 order-sm-1">
             <div class="row">
               <div class="col-md-3 d-flex align-items-center justify-content-center text-center" style="color: grey;">
-                  Derechos reservados Suburbia
+                  Derechos reservados Suburbia 2022
               </div>
 
               <div class="col-md-3 d-flex align-items-center justify-content-center text-center">
