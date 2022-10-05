@@ -285,7 +285,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 55 9815 5364
+              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 55 6912 1845
             </div>
           </div>
         </div>
