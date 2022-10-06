@@ -3,11 +3,11 @@
     <h3 class="text-center primary-color-subtitle">MECÁNICA</h3>
 
     <p class="text-center px-5 mt-4 desktop">
-      Completa el juego de memoria en el menor tiempo posible<br>y gana uno de los 3 paquetes de regalos que Suburbia tiene para ti.
+      Completa los 16 pares en el juego de memoria en el menor tiempo posible<br>y gana 1 de los 3 kits Suburbia que constan de 1 guardarropa y 1 Iphone SE con valor de $22,900.00<br> o uno de los 20 guardaropas Suburbia con valor de $10,000.00 que tenemos para tí.
     </p>
 
     <p class="text-center px-5 mt-4 mobile">
-      Completa el juego de memoria en el menor tiempo posible y gana uno de los 3 paquetes de regalos que Suburbia tiene para ti.
+      Completa los 16 pares en el juego de memoria en el menor tiempo posible y gana 1 de los 3 kits Suburbia que constan de 1 guardarropa y 1 Iphone SE con valor de $22,900.00 o uno de los 20 guardaropas Suburbia con valor de $10,000.00 que tenemos para tí.
     </p>
 
     <div
@@ -26,7 +26,7 @@
           />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00 PESOS
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $800.00 PESOS
           </small>
         </div>
       </div>
@@ -77,7 +77,7 @@
           />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00 PESOS
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $800.00 PESOS
           </small>
       </div>
       <div class="col-md-3 mb-4 text-center">
@@ -161,7 +161,7 @@
         <h4 class="text-center secondary-color">Paso 4</h4>
         <p class="text-center">
           ¡Recuerda que puedes seguir participando con cada compra mínima de
-          $1,000.00!
+          $800.00!
         </p>
       </div>
       <div id="calendario" class="mt-4 ancla-to-cal"></div>

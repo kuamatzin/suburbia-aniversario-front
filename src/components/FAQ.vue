@@ -33,21 +33,9 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Por cada $1,000.00 (un mil pesos 00/100 M.N.) de compra en
-              cualquiera de las tiendas Suburbia de la República Mexicana y/o en
-              compras realizadas a través de app Suburbia y/o la página de
-              internet www.suburbia.com.mx durante el periodo comprendido del 20
-              de abril al 15 de mayo de 2022, el cliente podrá participar para
-              ganar 1 (uno) de los 3 (tres) kits para renovar su hogar con un
-              valor unitario de $94,293.00 (noventa y cuatro mil, doscientos
-              noventa y tres pesos 00/100 M.N.) teniendo cada kit el siguiente
-              contenido: 1 (un) Refrigerador 360L de la marca Mabe, 1 (una)
-              Lavadora 19 kg de la marca Mabe, 1 (una) Secadora gas 20 kg de la
-              marca Mabe, 1 (una) Estufa de gas 76 cm de la marca Mabe, 1 (una)
-              Campana útil 76 cm de la marca Mabe, 1 (un) Microondas 1.1 de la
-              marca Mabe, 1 (una) Bundle de pantalla 65" con barra de sonido de
-              la marca LG y 1 (un) Guardarropa con ropa, calzado y accesorios
-              comercializados en Suburbia.
+              Por cada $ 800.00 (ochocientos pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de app Suburbia y/o la página de internet www.suburbia.com.mx durante el periodo comprendido del 06 al 31 de octubre de 2022, el cliente podrá participar para ganar los siguientes incentivos:
+              <br><br>
+              Uno de los tres kits que contiene un guardarropa en ropa, calzado y accesorios con un valor unitario de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno así como un Celular APPLE Smartphone iPhone SE 22 128GB con valor de $12,999.00 (doce mil novecientos noventa y nueve pesos 00/100 M.N.) danto un total de $22,999.00 (veintidós mil novecientos noventa y nueve pesos 00/100 M.N.) cada uno o 1 (uno) de los 20 (veinte) ganadores en ropa, calzado y accesorios comercializados en Suburbia con valor de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno.
             </div>
           </div>
         </div>
@@ -78,8 +66,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              En la presente mecánica únicamente podrán participar los
-              residentes de la República Mexicana mayores de 18 años.
+              En la presente mecánica únicamente podrán participar los residentes de la República Mexicana mayores de 18 años.
             </div>
           </div>
         </div>
@@ -110,9 +97,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan todas las tiendas Suburbia de la República Mexicana,
-              compras realizadas a través de la App Suburbia y/o página de
-              internet www.suburbia.com.mx.
+              Participan todas las tiendas Suburbia de la República Mexicana, compras realizadas a través de la App Suburbia y/o página de internet www.suburbia.com.mx
             </div>
           </div>
         </div>
@@ -143,17 +128,9 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan las compras de los diversos departamentos de las
-              tiendas Suburbia de la República Mexicana, compras realizadas a
-              través de la app Suburbia y de la página www.suburbia.com.mx,
-              realizadas durante el periodo del 20 de abril al 15 de mayo de
-              2022. <br><br>
-              EXCEPTO: Pagos de cualquier servicio, mencionando de manera
-              enunciativa más no limitativa televisión de paga, servicio de
-              telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua,
-              cable, gas, pagos de tarjetas, pago de empresas multinivel,
-              entretenimiento, apartamoda, compra y recarga de peaje y tarjetas
-              de prepago.
+              Participan las compras de todos los departamentos de ropa, calzado y accesorios de las tiendas Suburbia de la República Mexicana, compras realizadas a través de la App Suburbia y de la página www.suburbia.com.mx, realizadas durante el periodo del 06 al 31 de octubre de 2022.
+              <br><br>
+              EXCEPTO: Pagos de cualquier servicio, mencionando de manera enunciativa más no limitativa televisión de paga, servicio de telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua, cable, gas, pagos de tarjetas, pago de empresas multinivel, entretenimiento, apartamoda, compra y recarga de peaje y tarjetas de prepago.
             </div>
           </div>
         </div>
@@ -184,12 +161,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              En caso de que el cliente realice sus compras con Tarjeta Crédito
-              Suburbia Departamental (emitida por Suburbia TD, S.A de C.V) o
-              Suburbia Visa (Emitida por Liverpool LPC, S.A de C.V) se le
-              otorgará al cliente el doble de oportunidades para participar en
-              la presente mecánica. Limitado a 500,000 participaciones
-              electrónicas.
+              El cliente obtendrá de manera automática en el sistema el número de participaciones equivalentes al monto de compra y forma de pago. Recordando en todo momento que las compras realizadas con Tarjeta Crédito Suburbia Departamental (emitida por Suburbia TD, S.A de C.V) o Suburbia Visa (Emitida por Liverpool LPC, S.A de C.V) se le otorgará al cliente el doble de oportunidades para participar en la presente mecánica. Limitado a 1,000,000 participaciones electrónicas.
             </div>
           </div>
         </div>
@@ -219,7 +191,9 @@
             aria-labelledby="headingFive"
             data-parent="#accordionExample"
           >
-            <div class="card-body">Del 20 de abril al 15 de mayo de 2022</div>
+            <div class="card-body">
+              Del 06 al 31 de octubre de 2022
+            </div>
           </div>
         </div>
         <div class="card">
@@ -249,14 +223,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente participante que haya cumplido con las condiciones de
-              participación, que haya registrado de manera correcta y
-              verídicamente su códigos de facturación y; complete de forma
-              correcta el juego de memoria con cartas con el menor número de
-              errores y en el menor tiempo, podrá ser uno de los seis
-              ganadores/acreedores de los incentivos mencionados anteriormente.
-              La selección de los seis ganadores se realizará en estricto apego
-              al menor número de errores y menor tiempo.
+              El cliente participante que haya cumplido con las condiciones de participación, que haya registrado de manera correcta y verídicamente su códigos de facturación y; complete de forma correcta el juego de MEMORAMA, podrá ser uno de los ganadores/acreedores de los incentivos mencionados anteriormente. La selección de los 23 (veintitrés) ganadores se realizará en estricto apego al menor número de errores y menor tiempo de acuerdo al concurso.
             </div>
           </div>
         </div>
@@ -287,13 +254,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El nombre de los clientes que resulten ganadores de la presente
-              mecánica, se darán a conocer el día miércoles 18 de mayo de 2022
-              únicamente en el horario de 10:00 am a 10:00 pm, a través de
-              cartulinas o anuncios ubicados en el área de atención a clientes o
-              línea de cajas de las tiendas Suburbia de la República Mexicana,
-              y/o en las redes sociales oficiales de la organizadora y/o en la
-              página ganasuburbia.com.mx
+              El nombre de los clientes que resulten ganadores de la presente mecánica, se darán a conocer el día jueves 10 de noviembre de 2022 únicamente en el horario de 10:00 am a 10:00 pm, a través de cartulinas o anuncios ubicados en el área de atención a clientes o línea de cajas de las tiendas Suburbia de la República Mexicana, y/o en las redes sociales oficiales de la organizadora y/o en la página ganasuburbia.com.mx
             </div>
           </div>
         </div>
@@ -324,7 +285,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 7775030285
+              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 55 6912 1845
             </div>
           </div>
         </div>

@@ -128,29 +128,6 @@
             <div class="invalid-feedback">{{ $vuelidation.error('buy_type') }}</div>
           </div>
 
-          <div class="form-group mt-4">
-            <label for="inputName">Código de facturación* <i @click="openHelpModal(1)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
-            <div class="invalid-feedback" v-if="ticketAlreadyExists">Este ticket ya fue registrado previamente.</div>
-            <template v-else>
-              <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
-              <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
-            </template>
-          </div>
-
-          <div class="form-group mt-4">
-            <label for="inputName">Código de facturación* (Repetir)</label>
-            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('confirm_ticket') || (customTicketConfirmationIsValid === false && formTouched) }" v-model="confirm_ticket" />
-            <div class="invalid-feedback" v-if='$vuelidation.error("confirm_ticket")'>{{ $vuelidation.error('confirm_ticket') }}</div>
-            <div class="invalid-feedback" v-else>Este campo debe coincidir con el ticket</div>
-          </div>
-
-          <div class="form-group mt-4" v-if="buy_type === 'online'">
-            <label for="inputName">Número de boleta*</label>
-            <input type="text" @input="preventMaxCharacters('online_ticket', 16)" class="form-control" :class="{'is-invalid': $vuelidation.error('online_ticket') }" v-model="online_ticket" />
-            <div class="invalid-feedback" v-if='$vuelidation.error("online_ticket")'>{{ $vuelidation.error('online_ticket') }}</div>
-          </div>
-
           <div class="row mt-4" v-if="buy_type === 'store'">
             <div class="col-md-4">
               <div class="form-group">
@@ -176,9 +153,21 @@
             </div>
           </div>
 
+          <div class="form-group mt-4" v-if="buy_type === 'online'">
+            <label for="inputName">Número de boleta*</label>
+            <input type="text" @input="preventMaxCharacters('online_ticket', 16)" class="form-control" :class="{'is-invalid': $vuelidation.error('online_ticket') }" v-model="online_ticket" />
+            <div class="invalid-feedback" v-if='$vuelidation.error("online_ticket")'>{{ $vuelidation.error('online_ticket') }}</div>
+          </div>
+
           <div class="form-group mt-4">
             <label for="inputName">Dónde realizaste tu compra</label>
             <input type="text" class="form-control" disabled v-model="store" id="inputName" aria-describedby="nameHelp" />
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal(2)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="fValue" />
+            <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
           </div>
 
           <div class="form-group mt-4">
@@ -195,9 +184,20 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="inputName">Monto Total de Compra* <i @click="openHelpModal(2)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
-            <input @blur="isInputActive = false" @focus="isInputActive = true" type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('buy_amount') }" v-model="fValue" />
-            <div class="invalid-feedback" v-if='$vuelidation.error("buy_amount")'>{{ $vuelidation.error('buy_amount') }}</div>
+            <label for="inputName">Código de facturación* <i @click="openHelpModal(1)" class="ml-2 far fa-question-circle secondary-color cursor-pointer"></i></label>
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('ticket') || ticketAlreadyExists || (customTicketIsValid === false && formTouched) }" v-model="ticket" />
+            <div class="invalid-feedback" v-if="ticketAlreadyExists">Este ticket ya fue registrado previamente.</div>
+            <template v-else>
+              <div class="invalid-feedback" v-if='$vuelidation.error("ticket")'>{{ $vuelidation.error('ticket') }}</div>
+              <div class="invalid-feedback" v-else>Este campo debe ser un ticket válido</div>
+            </template>
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="inputName">Código de facturación* (Repetir)</label>
+            <input @click.right.prevent @copy.prevent @paste.prevent type="text" class="form-control" :class="{'is-invalid': $vuelidation.error('confirm_ticket') || (customTicketConfirmationIsValid === false && formTouched) }" v-model="confirm_ticket" />
+            <div class="invalid-feedback" v-if='$vuelidation.error("confirm_ticket")'>{{ $vuelidation.error('confirm_ticket') }}</div>
+            <div class="invalid-feedback" v-else>Este campo debe coincidir con el ticket</div>
           </div>
 
           <div class="d-flex justify-content-end primary-color" style="font-size: .8rem">
@@ -371,7 +371,7 @@
     <!-- Modal Exito -->
     <div class="modal fade" id="success" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content modal-success">
+        <div class="modal-content fond">
           <div class="modal-body">
 
             <div class="container mt-4">
@@ -384,13 +384,13 @@
 
                 <div class="col-md-8">
                   <div class="d-flex flex-column align-items-center justify-content-center">
-                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR EN 'CELEBREMOS TU ESTILO DE SER MAMÁ'!</h2>
+                    <h2>¡MUCHAS GRACIAS POR PARTICIPAR!</h2>
                   </div>
                 </div>
               </div>
             </div>
 
-            <p class="mt-2 text-center">Finalizaste el juego y este es tu tiempo:</p>
+            <p class="mt-2 text-center">Finalizaste el juego y estos son tus resultados:</p>
 
 
             <div class="container">
@@ -730,6 +730,11 @@ export default {
       }
     },
 
+    getStore(store) {
+      this.store = Trivia.getStore(store);
+      this.validateStore = this.store ? true: false;
+    },
+
     async submit() {
       this.formTouched = true;
       if (this.buy_type === "online") {
@@ -915,19 +920,11 @@ export default {
       window.$('#help').modal('show')
     },
 
-    getStore(store) {
-      this.store = Trivia.getStore(store);
-      this.validateStore = this.store ? true: false;
-    },
-
     gameStarted() {
-      console.log('Juego iniciado')
       EventBus.$emit('plusOneTicketPlay');
     },
 
     gameFinished(data) {
-      console.log('Juego terminado')
-      console.log(data)
       this.response.ticket = '';
       setTimeout(() => {
         this.response.ticket = data.ticket;
@@ -935,7 +932,6 @@ export default {
         this.timerResult = this.formatSecondsToTimer(data.answer.seconds);
         this.response.ticket = { ...data.ticket };
         this.attemptsLeft = this.response.ticket.max_attempts - this.response.ticket.attempts;
-        console.log('Abrir modal success')
         window.$('#success').modal('show')
       }, 600);
     },
@@ -1264,7 +1260,7 @@ export default {
   background-size: cover;
 }
 
-.modal-success {
+.fond {
   background: url('./../assets/bg_gracias.jpg');
   background-position: center;
   background-repeat: no-repeat;

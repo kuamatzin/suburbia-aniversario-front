@@ -6,17 +6,17 @@
     data-aos-duration="800"
   >
     <h3
-      class="text-center primary-color"
+      class="text-center primary-color mb-5"
+      style="margin-top: 150px"
     >
-      JUGAR
+      PREMIOS PARA LOS GANADORES
     </h3>
-    <div class="desktop">
-      <div id="container-hero" class="hero-image-play parallax margin-hero"></div>
+    <div class="desktop" style="margin-bottom: 100px;">
+      <img src="../assets/images/02_IMG_LANDING/banner regalos-60.jpg" alt="Premios" class="img-fluid" style="min-width: 100%">
     </div>
 
     <div class="mobile">
-      <div class="gifts-mobile">
-      </div>
+      <div class="gifts-mobile"></div>
       <img src="../assets/images/02_IMG_LANDING/banner-69_responsive.jpg" alt="Premios" class="img-fluid">
     </div>
 
@@ -260,7 +260,7 @@ ul{
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  height: 300px;
+  height: 220px;
 }
 
 .hero-image {
@@ -336,6 +336,17 @@ ul{
   }
 }
 
+@media (min-width: 400px) {
+  .gifts-mobile {
+    background-image: url("./../assets/images/02_IMG_LANDING/banner-70_responsive.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 270px;
+  }
+}
+
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .hero-image {
@@ -405,7 +416,7 @@ ul{
   @media (min-width: 992px) {
     .hero-image-play {
       background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
-      height: 480px;
+      height: 520px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -417,10 +428,10 @@ ul{
   @media (min-width: 1200px) {
     .hero-image-play {
       background-image: url("./../assets/images/02_IMG_LANDING/banner regalos-60.jpg");
-      background-position: center;
+      background-position: left;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 480px;
+      height: 520px;
       background-attachment:scroll;
     }
   }

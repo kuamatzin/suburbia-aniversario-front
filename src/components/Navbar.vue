@@ -1,19 +1,23 @@
 <template>
   <div>
+    <!--
     <div class="container">
       <a target="_blank" href="https://www.suburbia.com.mx/tienda/inicio">
         <img src="../assets/logo.jpg" alt="logo" width="150px" class="navbar-white my-2" />
       </a>
     </div>
+    -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="w-100 mobile-menu">
         <li class="nav-item logo-mobile">
           <a href="https://www.suburbia.com.mx/tienda/inicio">
+            <!--
             <img
               alt="Suburbia aniversario"
               src="./../assets/logo.jpg"
               style="width: 100px"
             />
+            -->
           </a>
         </li>
         <button

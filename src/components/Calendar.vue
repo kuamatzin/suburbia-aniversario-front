@@ -9,7 +9,7 @@
     <h3 class="text-center primary-color-subtitle">CALENDARIO</h3>
 
     <div class="calendar-image parallax py-1 mt-5">
-      <!-- <div
+      <div
         class="h-100 d-flex align-items-center justify-content-center"
         data-aos="fade-up"
         data-aos-offset="200"
@@ -20,12 +20,12 @@
          <img src="../assets/icon-40.svg" alt="calendar" style="width: 100px">
        </div>
         <div class="text-calendar">
-          <h3 class="text-left text-white regular primary-font">VIGENCIA DE PARTICIPACIÓN</h3>
+          <h3 class="text-left text-white regular primary-font font-weight-bold">VIGENCIA DE PARTICIPACIÓN</h3>
           <h3
-            class="text-left text-white mt-2 primary-font"
-          >Del 3 al 20 de junio 2021</h3>
+            class="text-left text-white mt-2 primary-font font-weight-bold"
+          >DEL 6 AL 31 DE OCTUBRE DE 2022</h3>
         </div>
-      </div> -->
+      </div>
     </div>
     <div id="ticket" class="ancla"></div>
   </div>
