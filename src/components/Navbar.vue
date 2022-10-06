@@ -11,11 +11,13 @@
       <div class="w-100 mobile-menu">
         <li class="nav-item logo-mobile">
           <a href="https://www.suburbia.com.mx/tienda/inicio">
+            <!--
             <img
               alt="Suburbia aniversario"
               src="./../assets/logo.jpg"
               style="width: 100px"
             />
+            -->
           </a>
         </li>
         <button
