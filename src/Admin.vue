@@ -137,8 +137,8 @@
                       <span v-if="ticket.payment_method === 'small_payment'"
                         >Mini Pagos</span>
 
-                      <span v-if="ticket.payment_method === 'store'"
-                        >Tienda</span>
+                      <span v-if="ticket.payment_method === 'credit_card'"
+                        >Tarjeta de crédito</span>
 
                       <span v-if="ticket.payment_method === 'other'">Otro</span>
                     </td>
