@@ -232,6 +232,7 @@ export default {
       '0980': 'Comalcalco',
       '0993': 'Cancún Mall',
       '0999': 'León Vía Alta',
+      '0873': 'Outlet Lerma'
     }
 
     return stores[number];
