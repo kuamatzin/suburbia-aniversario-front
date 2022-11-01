@@ -161,17 +161,17 @@
                           </thead>
                           <tbody>
                             <tr
-                              v-for="(answer, index) of ticket.answers"
+                              v-for="(answer, index) of ticket.max_attempts"
                               :key="answer.id"
                             >
                               <th scope="row">{{ index + 1 }}</th>
                               <td>
-                                <p>{{ getTime(answer.seconds) }}</p>
+                                <p>{{ getTime(ticket.answers[index].seconds) }}</p>
                               </td>
                             </tr>
                             <tr
                               v-if="
-                                ticket.attempts - ticket.answers.length !== 0
+                                ticket.attempts - ticket.answers.length > 0
                               "
                             >
                               <th scope="row">
