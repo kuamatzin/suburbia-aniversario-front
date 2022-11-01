@@ -160,15 +160,28 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr
-                              v-for="(answer, index) of ticket.answers"
-                              :key="answer.id"
-                            >
-                              <th scope="row">{{ index + 1 }}</th>
-                              <td>
-                                <p>{{ getTime(answer.seconds) }}</p>
-                              </td>
-                            </tr>
+                            <template v-if="ticket.answers.length <= ticket.max_attempts">
+                              <tr
+                                v-for="(answer, index) of ticket.answers"
+                                :key="answer.id"
+                              >
+                                <th scope="row">{{ index + 1 }}</th>
+                                <td>
+                                  <p>{{ getTime(answer.seconds) }}</p>
+                                </td>
+                              </tr>
+                            </template>
+                            <template v-else>
+                              <tr
+                                v-for="(answer, index) of ticket.max_attempts"
+                                :key="answer.id"
+                              >
+                                <th scope="row">{{ index + 1 }}</th>
+                                <td>
+                                  <p>{{ getTime(ticket.answers[index].seconds) }}</p>
+                                </td>
+                              </tr>
+                            </template>
                             <tr
                               v-if="
                                 ticket.attempts - ticket.answers.length > 0
