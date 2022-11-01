@@ -161,12 +161,12 @@
                           </thead>
                           <tbody>
                             <tr
-                              v-for="(answer, index) of ticket.max_attempts"
+                              v-for="(answer, index) of ticket.answers"
                               :key="answer.id"
                             >
                               <th scope="row">{{ index + 1 }}</th>
                               <td>
-                                <p>{{ getTime(ticket.answers[index].seconds) }}</p>
+                                <p>{{ getTime(answer.seconds) }}</p>
                               </td>
                             </tr>
                             <tr
