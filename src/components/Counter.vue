@@ -73,12 +73,20 @@ export default {
   p {
     color: white;
   }
+
+  .timer {
+    font-size: 1.5rem;
+  }
+
+  .timer-countdown {
+    margin-top: 390px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
+    background-image: url("./../assets/bg_countdwon_R.jpg");
     height: 100vh;
     background-position: top;
     background-repeat: no-repeat;
@@ -90,7 +98,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .hero-image-suburbia {
-    background-image: url("./../assets/images/01\ COUNTDOWN/RELOJ.jpg");
+    background-image: url("./../assets/bg_countdwon_R.jpg");
     height: 100vh;
     background-position: top;
     background-repeat: no-repeat;
@@ -98,7 +106,7 @@ export default {
     background-attachment: scroll;
 
     .timer-countdown {
-      margin-top: 200px;
+      margin-top: 500px;
     }
 
     .timer {
