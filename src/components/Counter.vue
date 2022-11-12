@@ -13,7 +13,7 @@
 
         <countdown
           :time="
-            new Date('10/06/2022 00:00:00').getTime() - new Date().getTime()
+            new Date('11/22/2022 00:00:00').getTime() - new Date().getTime()
           "
         >
           <template slot-scope="props">
