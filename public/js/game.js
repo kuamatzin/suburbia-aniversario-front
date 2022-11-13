@@ -550,7 +550,7 @@ function goPage(page){
 		break;
 
 		case 'result':
-			console.log(playerData)
+			console.log(playerData);
 			targetContainer = resultContainer;
 			stopSoundLoop('musicMain');
 
