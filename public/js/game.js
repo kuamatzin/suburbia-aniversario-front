@@ -17,19 +17,10 @@ var keyboard_arr = {left:[65,37],
 //car array
 var car_array = [
 					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:40, height:90, speed:7, reverseSpeed:5, life:100}},
-					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:40, height:90, speed:7, reverseSpeed:5, life:100}},
-					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:44, height:90, speed:7, reverseSpeed:5, life:100}},
-					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:40, height:95, speed:7, reverseSpeed:5, life:100}},
-					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:40, height:90, speed:7, reverseSpeed:5, life:100}},
-					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:40, height:90, speed:7, reverseSpeed:5, life:100}},
-					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:40, height:90, speed:7, reverseSpeed:5, life:100}},
-					{image:'assets/car1.png', thumb:'assets/car1_thumb.png', data:{width:40, height:98, speed:7, reverseSpeed:5, life:100}},
 				];
 
 //police car array
 var policecar_array = [
-					{image:'assets/car_police1.png', thumb:'assets/car_police1_thumb.png', data:{width:44, height:96, speed:12, reverseSpeed:10, damage:1.3}},
-					{image:'assets/car_police2.png', thumb:'assets/car_police2_thumb.png', data:{width:40, height:93, speed:12, reverseSpeed:10, damage:1.3}}
 				];
 
 //map array
