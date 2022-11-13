@@ -1,16 +1,34 @@
 <template>
   <!-- GAME -->
   <div>
-    <canvas id="canvas" class="ani_hack" width="1920" height="1080"></canvas>
+    <div id="mainLoader"><img src="assets/loader.png" /><br/><span>0</span></div>
+      <!-- PERCENT LOADER END-->
 
-    <div data-orientation="landscape" class="orientation-msg-container">
-      <p class="orientation-msg-text">Por favor, gira tu teléfono</p>
-    </div>
+      <!-- CONTENT START-->
+      <div id="mainHolder">
 
-    <div
-        id="block_game"
-        style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"
-    ></div>
+        <!-- BROWSER NOT SUPPORT START-->
+        <div id="notSupportHolder">
+              <div class="notSupport">TU NAVEGADOR NO ES COMPATIBLE.<br/>ACTUALIZA TU NAVEGADOR PARA EJECUTAR EL JUEGO</div>
+          </div>
+          <!-- BROWSER NOT SUPPORT END-->
+
+          <!-- ROTATE INSTRUCTION START-->
+          <div id="rotateHolder">
+              <div class="mobileRotate">
+                <div class="rotateImg"><img src="assets/rotate.png" /></div>
+                  <div class="rotateDesc">Gire su dispositivo<br/>a landscape</div>
+              </div>
+          </div>
+          <!-- ROTATE INSTRUCTION END-->
+
+          <!-- CANVAS START-->
+          <div id="canvasHolder">
+              <canvas id="gameCanvas" width="1280" height="768"></canvas>
+          </div>
+          <!-- CANVAS END-->
+
+      </div>
   </div>
 </template>
 

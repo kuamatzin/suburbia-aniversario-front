@@ -1,254 +1,75 @@
 <!DOCTYPE html>
 <html translate="no">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- GAME -->
-    <link rel="stylesheet" href="css/reset.css" type="text/css" />
-    <link rel="stylesheet" href="css/main.css" type="text/css" />
-    <link rel="stylesheet" href="css/orientation_utils.css" type="text/css" />
-    <link rel="stylesheet" href="css/ios_fullscreen.css" type="text/css" />
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"
-    />
-    <meta name="msapplication-tap-highlight" content="no" />
+  <!-- GAME -->
+  <link rel="stylesheet" href="css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+  <link rel="stylesheet" href="css/orientation_utils.css" type="text/css" />
+  <link rel="stylesheet" href="css/ios_fullscreen.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/createjs.min.js"></script>
-    <script type="text/javascript" src="js/screenfull.js"></script>
-    <script type="text/javascript" src="js/howler.min.js"></script>
-    <script type="text/javascript" src="js/platform.js"></script>
-    <script type="text/javascript" src="js/ios_fullscreen.js"></script>
-    <script type="text/javascript" src="js/ctl_utils.js"></script>
-    <script type="text/javascript" src="js/sprite_lib.js"></script>
-    <script type="text/javascript" src="js/settings.js"></script>
-    <script type="text/javascript" src="js/CLang.js"></script>
-    <script type="text/javascript" src="js/CPreloader.js"></script>
-    <script type="text/javascript" src="js/CMain.js"></script>
-    <script type="text/javascript" src="js/CTextButton.js"></script>
-    <script type="text/javascript" src="js/CGfxButton.js"></script>
-    <script type="text/javascript" src="js/CToggle.js"></script>
-    <script type="text/javascript" src="js/CMenu.js"></script>
-    <script type="text/javascript" src="js/CGame.js"></script>
-    <script type="text/javascript" src="js/CCard.js"></script>
-    <script type="text/javascript" src="js/CLevels.js"></script>
-    <script type="text/javascript" src="js/CNextLevel.js"></script>
-    <script type="text/javascript" src="js/CInterface.js"></script>
-    <script type="text/javascript" src="js/CGameOver.js"></script>
-    <script type="text/javascript" src="js/CVictory.js"></script>
-    <script type="text/javascript" src="js/CCredits.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://kit.fontawesome.com/ed79ab687d.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/ed79ab687d.js" crossorigin="anonymous"></script>
 
-    <title>Gana Suburbia</title>
-    <link rel="icon" type="image/gif" href="favicon.ico" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <noscript>
-      <strong
-        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+  <title>Gana Suburbia</title>
+  <link rel="icon" type="image/gif" href="favicon.ico" />
+</head>
+
+<body>
+  <div id="app"></div>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
         properly without JavaScript enabled. Please enable it to
-        continue.</strong
-      >
-    </noscript>
+        continue.</strong>
+  </noscript>
 
-    <!-- built files will be auto injected -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.$ = $;
-      /*
-      $(window).scroll(function() {
-        var scrolledY = $(window).scrollTop();
-        $('#container-hero').css(
-          'background-position',
-          'center ' + scrolledY + 'px'
-        );
-      });
-      */
-    </script>
-    <script>
-      var token = 'token'
+  <!-- built files will be auto injected -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
 
-      const initGame = function() {
-        const urlApi = 'https://suburbia-concurso.herokuapp.com';
-        // const urlApi = 'http://127.0.0.1:8000';
-        const urlParams = new URLSearchParams(window.location.search);
+  <script src="js/vendor/detectmobilebrowser.js"></script>
+  <script src="js/vendor/createjs.min.js"></script>
+  <script src="js/vendor/TweenMax.min.js"></script>
+  <script src="js/vendor/p2.min.js"></script>
 
+  <script src="js/plugins.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/p2.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/mobile.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/init.js"></script>
+</body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86567323-30"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-        let responseToken;
-        var oMain = new CMain({
-          card_per_level: [
-            //4,      //NUM CARD IN LEVEL 1
-            //8,      //NUM CARD IN LEVEL 2
-            //16,     //NUM CARD IN LEVEL 3
-            32, //NUM CARD IN LEVEL 4
-          ],
+  gtag('config', 'UA-86567323-30');
+</script>
 
-          time_level: [
-            //30,  //NUM SECONDS PER LEVEL 1
-            //60,  //NUM SECONDS PER LEVEL 2
-            //120, //NUM SECONDS PER LEVEL 3
-            10000, //NUM SECONDS PER LEVEL 4
-          ],
-
-          score_match_card: 10, //SCORE ASSIGNED WHEN USER MATCH TWO CARDS
-          score_time_left_mult: 2, //MULTIPLIER ASSIGNED TO REMAINING LEVEL TIME
-          time_match_mult: 3000, //TIME AVAILABLE BETWEEN DISCOVERED MATCHING TO GET SCORE MULTIPLIER
-          show_cards: 0, //IF YOU WANT TO SHOW CARDS FOR SOME SECONDS WHEN LEVEL START, SET THIS VALUE > 0 (NUM OF SECONDS)
-          fullscreen: true, //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
-          check_orientation: true, //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES
-        });
-
-        $(oMain).on("start_session", function(evt) {
-          if (getParamValue("ctl-arcade") === "true") {
-            parent.__ctlArcadeStartSession();
-          }
-          if (!token) {
-            return 0;
-          }
-
-          console.log('Iniciar petición');
-          console.log(token)
-
-          $.ajax({
-            url: urlApi + "/api/token",
-            type: "POST",
-            data: {
-              ticket_id: token.id,
-            },
-          }).done(function(response) {
-            console.log(response);
-            responseToken = response;
-
-            window.Event.$emit("memoramaStarted", response);
-
-            /*
-            window.parent.postMessage({
-                event_id: 'memorama_started',
-                data: response
-            }, "*")
-            */
-          });
-        });
-
-        $(oMain).on("end_session", function(evt) {
-          if (getParamValue("ctl-arcade") === "true") {
-            parent.__ctlArcadeEndSession();
-          }
-          //...ADD YOUR CODE HERE EVENTUALLY
-        });
-
-        $(oMain).on("start_level", function(evt, iLevel) {
-          if (getParamValue("ctl-arcade") === "true") {
-            parent.__ctlArcadeStartLevel({ level: iLevel });
-          }
-        });
-
-        $(oMain).on("end_level", function(evt, iLevel) {
-          if (getParamValue("ctl-arcade") === "true") {
-            parent.__ctlArcadeEndLevel({ level: iLevel });
-          }
-        });
-
-        $(oMain).on("save_score", function(evt, iScore) {
-          if (getParamValue("ctl-arcade") === "true") {
-            parent.__ctlArcadeSaveScore({ score: iScore });
-          }
-
-          $.ajax({
-            url: urlApi + "/api/responses_game",
-            type: "POST",
-            data: {
-              ticket_id: responseToken.ticket.id,
-              token: responseToken.token,
-            },
-          }).done(function(response) {
-            window.Event.$emit("gameFinished", response);
-
-            /**
-            window.parent.postMessage({
-                event_id: 'memorama_completed',
-                data: response
-            }, "*")
-            */
-          });
-        });
-
-        $(oMain).on("show_interlevel_ad", function(evt) {
-          if (getParamValue("ctl-arcade") === "true") {
-            parent.__ctlArcadeShowInterlevelAD();
-          }
-          //...ADD YOUR CODE HERE EVENTUALLY
-        });
-
-        $(oMain).on("share_event", function(evt, iScore) {
-          if (getParamValue("ctl-arcade") === "true") {
-            parent.__ctlArcadeShareEvent({
-              img: TEXT_SHARE_IMAGE,
-              title: TEXT_SHARE_TITLE,
-              msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
-              msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1,
-            });
-          }
-        });
-
-        if (isIOS()) {
-          setTimeout(function() {
-            sizeHandler();
-          }, 200);
-        } else {
-          sizeHandler();
-        }
-      };
-
-      $(document).ready(function() {
-        initGame();
-
-        window.Event.$on('gameStarted', function(data) {
-            console.log(data)
-            token = data;
-        })
-
-        window.Event.$on("gameFinished", function() {
-          setTimeout(function() {
-            initGame();
-          }, 800);
-        });
-      });
-    </script>
-  </body>
 </html>

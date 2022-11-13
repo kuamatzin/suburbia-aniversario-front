@@ -1,0 +1,204 @@
+<div id="editWrapper">
+    <div id="floatForm">
+    	<input id='toggleShowOption' name="toggleOption" type="button" value="Hide Edit Option" />
+        
+        <div id="editOption">
+        	<br/>
+            <div id='selectMapWrapper'>
+                Select maps:<br/>
+                <select id="maplist" name="maplist">
+                </select><br/>
+                <input id="prevMap" name="prevMap" class="button" type="button" value="Prev Map">
+                <input id="nextMap" name="nextMap" class="button" type="button" value="Next Map">
+                <br/><br/>
+                Map zoom option:<br/>
+                <input id="zoomIn" name="zoomIn" type="button" value="Zoom In">
+                <input id="zoomOut" name="zoomOut" type="button" value="Zoom Out">
+                <input name="resetMapCenter" class="resetMapCenter" type="button" value="Reset map to center" />
+                *Drag the map to move around.
+                <br/><br/>
+            </div>
+            
+            <div id='mapDataWrapper'>
+            	Map option:
+                <input id='removeMap' name="removeMap" type="button" value="Remove Map" />
+                <input id='moveMapUp' name="moveMapUp" type="button" value="Move Map Up" />
+                <input id='moveMapDown' name="moveMapDown" type="button" value="Move Map Down" />
+                <input id='addMap' name="addMap" type="button" value="Add Map" />
+                <br/><br/>
+                Edit map:<br/>
+                <input id='editMap' name="editMap" type="button" value="Edit Map" />
+                <br/><br/>
+                Test game, generate and replace array:<br/>
+                <input id='testRun' name="testRun" type="button" value="Test Run" />
+                <input id='generateArray' name="generateArray" type="button" value="Generate Array" />
+                <textarea id="outputArray" name="outputArray" cols="" rows="10"></textarea>
+            </div>
+            
+            <div id="editMapWrapper">
+            	Edit map details:
+				<div class="formRow">
+                    <label class="button">Radar:</label>
+                    <input id="radar" name="radar" type="text" />
+                </div>
+                <div class="formRow">
+                    <label class="button">Thumbnail:</label>
+                    <input id="thumbnail" name="thumbnail" type="text" />
+                </div>
+                <div class="formRow">
+                    <label class="button">Image:</label>
+                    <input id="image" name="image" type="text" />
+                </div>
+                <div class="formRow">
+                    <label class="button">Lap:</label>
+                    <input id="lap" name="lap" type="text" />
+                </div>
+                <input id="updateMapData" name="updateMapData" type="button" value="Update Map">
+                <br/><br/>
+                Build track:
+                <input id="editMapCollision" name="editMapCollision" type="button" value="Edit collision area" />
+                <input id="editCheckpoints" name="editCheckpoints" type="button" value="Edit checkpoints" />
+                <input id="editAIMove" name="editAIMove" type="button" value="Edit AI Movement" />
+                <input id="editCarPos" name="editCarPos" type="button" value="Edit car position" />
+                <br/><br/>
+                <input name="backMain" class="backMain" type="button" value="Done" />
+            </div>
+            
+            <div id="editCollisionWrapper">
+                Select Collision:<br/>
+                <select id="collisionlist" name="collisionlist">
+                </select><br/>
+                <input id="prevCollision" name="prevCollision" class="button" type="button" value="Prev Collision">
+                <input id="nextCollision" name="nextCollision" class="button" type="button" value="Next Collision">
+                <br/><br/>
+                <input id='addCollision' name="addCollision" type="button" value="Add Collision" />
+                <input id='removeCollision' name="removeCollision" type="button" value="Remove Collision" />
+                <br/><br/>
+                *Drag collision on stage to move around.
+                <br/><br/>
+                <div class="formRow">
+                    <label class="button">Collision type:</label>
+                    <select id="collisionType" name="collisionType">
+                        <option value="0">Static</option>
+                        <option value="1">Grass/dirt</option>
+                    </select>
+                </div>
+                <input id='editCollision' name="editCollision" type="button" value="Edit Collision Path" />
+                <br/><br/>
+                <!--<input name="resetMapCenter" class="resetMapCenter" type="button" value="Reset map to center" />-->
+                <input name="backMap" class="backMap" type="button" value="Done" />
+            </div>
+            
+            <div id="editCheckpointWrapper">
+                Select Checkpoints:<br/>
+                <select id="checkpointslist" name="checkpointslist">
+                </select><br/>
+                <input id="prevCheckpoint" name="prevCheckpoint" class="button" type="button" value="Prev Checkpoint">
+                <input id="nextCheckpoint" name="nextCheckpoint" class="button" type="button" value="Next Checkpoint">
+                <br/><br/>
+                
+                Double click on screen to add new checkpoint<br/>
+                <input id='removeCheckpoint' name="removeCheckpoint" type="button" value="Remove checkpoint" />
+                *Drag checkpoint on stage to move around.
+                <br/><br/>
+                
+                <div class="formRow">
+                    <label class="button">Rotation (0 - 360):</label>
+                    <input id="checkpointRotation" name="checkpointRotation" class="button" type="text">
+                </div>
+                <div class="formRow">
+                    <label class="button">Width (default 800):</label>
+                    <input id="checkpointWidth" name="checkpointWidth" class="button" type="text">
+                </div>
+                <input id='updateCheckpointRotation' name="updateCheckpointRotation" type="button" value="Update Checkpoint" />
+                <!--<input name="resetMapCenter" class="resetMapCenter" type="button" value="Reset map to center" />-->
+                <br/><br/>
+                <input name="backMap" class="backMap" type="button" value="Done" />
+            </div>
+            
+            <div id="editAIWrapper">
+                Select AI Move:<br/>
+                <select id="aimovelist" name="aimovelist">
+                </select><br/>
+                <input id="prevAIMove" name="prevAIMove" class="button" type="button" value="Prev Move">
+                <input id="nextAIMove" name="nextAIMove" class="button" type="button" value="Next Move">
+                <br/><br/>
+                Double click on screen to add new move point
+                <input id='removeAIMove' name="removeAIMove" type="button" value="Remove Move" />
+                *Drag point on stage to move around.
+                <!--<input name="resetMapCenter" class="resetMapCenter" type="button" value="Reset map to center" />-->
+                <br/><br/>
+                <input name="backMap" class="backMap" type="button" value="Done" />
+            </div>
+            
+            <div id="editShapeWrapper">
+            	Edit collision path:<br/>
+                Select collision path:<br/>
+                <select id="pathlist" name="pathlist">
+                </select><br/>
+                <input id="prevPath" name="prevPath" class="button" type="button" value="Prev Path">
+                <input id="nextPath" name="nextPath" class="button" type="button" value="Next Path">
+                <br/><br/>
+                
+                Double click on screen to add new path
+                <input id='removePath' name="removePath" type="button" value="Remove Path" />
+                *Drag point on stage to move around.
+                <!--<input name="resetMapCenter" class="resetMapCenter" type="button" value="Reset map to center" />-->
+                <br/><br/>
+                <input id='backToCollision' name="backToCollision" type="button" value="Done" />
+            </div>
+            
+            <div id="editCarWrapper">
+                Select Cars:<br/>
+                <select id="carslist" name="carslist">
+                </select><br/>
+                <input id="prevCar" name="prevCar" class="button" type="button" value="Prev Car">
+                <input id="nextCar" name="nextCar" class="button" type="button" value="Next Car">
+                <br/><br/>
+                <!--<input id='addCar' name="addCar" type="button" value="Add Car" />-->
+                Double click on screen to add new car
+                <input id='removeCar' name="removeCar" type="button" value="Remove Car" />
+                *Drag car on stage to move around.
+                <br/><br/>
+                <div class="formRow">
+                    <label class="button">Position x:</label>
+                    <input id="carX" name="carX" class="button" type="text">
+                </div>
+                <div class="formRow">
+                    <label class="button">Position Y:</label>
+                    <input id="carY" name="carY" class="button" type="text">
+                </div>
+                <div class="formRow">
+                    <label class="button">Rotation (0 - 360):</label>
+                    <input id="carRotation" name="carRotation" class="button" type="text">
+                </div>
+                <div class="formRow">
+                    <label class="button">Type:</label>
+                    <select id="carType" name="carType">
+                        <option value="0">Sports car</option>
+                        <option value="1">Police car</option>
+                    </select>
+                </div>
+                <input id='updateCar' name="updateCar" type="button" value="Update Car" />
+                <!--<input name="resetMapCenter" class="resetMapCenter" type="button" value="Reset map to center" />-->
+                <br/><br/>
+                <input name="backMap" class="backMap" type="button" value="Done" />
+            </div>
+            
+            <div id="editTestRunWrapper">
+                <div class="formRow">
+                    <label class="button">Camera follow car:</label>
+                    <input id="stickcamera" name="stickcamera" type="checkbox" value="" checked />
+                </div>
+                <select id="followcarlist" name="followcarlist">
+                </select><br/>
+                <input id="prevFollowCar" name="prevFollowCar" class="button" type="button" value="Prev Car">
+                <input id="nextFollowCar" name="nextFollowCar" class="button" type="button" value="Next Car">
+                <br/><br/>
+                <input id='testRunGame' name="testRunGame" type="button" value="Test Run" />
+                <br/><br/>
+                <input name="backMain" class="backMain" type="button" value="Done" />
+            </div>
+         </div>
+    </div>
+</div>
