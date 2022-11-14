@@ -21,7 +21,7 @@
         <div class="d-block d-md-flex align-items-center text-md-left">
           <img
             alt="Ticket"
-            src="./../assets/images/02_IMG_LANDING/icon-05.svg"
+            src="./../assets/images/02_IMG_LANDING/icon-05.png"
             style="width: 60px"
           />
 
@@ -72,12 +72,12 @@
           <img
           class="mx-auto d-block"
             alt="Ticket"
-            src="./../assets/images/02_IMG_LANDING/icon-05.svg"
+            src="./../assets/images/02_IMG_LANDING/icon-05.png"
             style="width: 60px"
           />
 
           <small class="ml-2 carac primary-color secondary-font font-weight-bold mb-0">
-            PARTICIPA POR CADA COMPRA MÍNIMA DE $800.00 PESOS
+            PARTICIPA POR CADA COMPRA MÍNIMA DE $1,000.00 PESOS
           </small>
       </div>
       <div class="col-md-3 mb-4 text-center">
