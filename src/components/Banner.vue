@@ -19,7 +19,7 @@ export default {
 .hero-image-suburbia {
   background-image: url("./../assets/images/02_IMG_LANDING/banner-03.jpg");
   height: 330px;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment:scroll;
@@ -30,7 +30,7 @@ export default {
   .hero-image-suburbia {
     background-image: url("./../assets/images/02_IMG_LANDING/banner-03.jpg");
     height: 500px;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:scroll;
