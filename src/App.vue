@@ -93,7 +93,7 @@ export default {
   },
 
   mounted() {
-    EventBus.$on("gameStarted", () => {
+    EventBus.$on('gameStarted', () => {
       this.gameStarted = true;
     });
 
