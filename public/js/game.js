@@ -7,7 +7,8 @@
  * GAME SETTING CUSTOMIZATION START
  *
  */
-
+//var urlApi = 'http://api.localhost.com/';
+var urlApi = 'https://suburbia-concurso.herokuapp.com';
 //keyboard key code
 var keyboard_arr = {left:[65,37],
 					right:[68,39],
@@ -525,6 +526,7 @@ function goPage(page){
 		break;
 
 		case 'game':
+			console.log('Game Started');
 			targetContainer = gameContainer;
 
 			stopSoundLoop('musicMain');
@@ -676,6 +678,7 @@ function updateCountdown(){
 
 		toggleCountdown(false);
 	}else if(countNum == countdownTotal){
+		getJWTtoStartGame();
 		playSound('soundCountdownRace');
 
 		//start race
@@ -695,6 +698,21 @@ function updateCountdown(){
 		if(countNum >= 1)
 			playSound('soundCountdown');
 	}
+}
+
+function getJWTtoStartGame() {
+	$.ajax({
+		url: urlApi + "/api/token",
+		type: "POST",
+		data: {
+			ticket_id: token.id,
+		},
+	}).done(function(response) {
+		console.log(response);
+		responseToken = response;
+
+		window.Event.$emit("memoramaStarted", response);
+	});
 }
 
 function updateGameStatus(text, con){
