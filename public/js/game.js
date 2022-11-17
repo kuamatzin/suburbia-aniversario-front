@@ -778,13 +778,15 @@ function saveGame(score){
 	}
 
 	$.ajax({
-      type: "POST",
-      url: 'saveResults.php',
-      data: {score:score},
-      success: function (result) {
-          console.log(result);
-      }
-    });
+		url: urlApi + "/api/responses_game",
+		type: "POST",
+		data: {
+			ticket_id: responseToken.ticket.id,
+			token: responseToken.token,
+		},
+	}).done(function(response) {
+		window.Event.$emit("gameFinished", response);
+	});
 }
 
 /*!
