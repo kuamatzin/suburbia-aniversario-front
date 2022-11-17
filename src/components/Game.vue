@@ -1,6 +1,6 @@
 <template>
   <!-- GAME -->
-  <div>
+  <div if="gggame">
     <div id="mainLoader"><img src="assets/loader.png" /><br/><span>0</span></div>
       <!-- PERCENT LOADER END-->
 

@@ -1,3 +1,15 @@
+//var urlApi = 'http://api.localhost.com/';
+var urlApi = 'https://suburbia-concurso.herokuapp.com';
+var token = 'token';
+var responseToken = '';
+
+$(document).ready(function() {
+	window.Event.$on('gameStarted', function(data) {
+		console.log(data)
+		token = data;
+	})
+});
+
 ////////////////////////////////////////////////////////////
 // GAME v1.8
 ////////////////////////////////////////////////////////////
@@ -7,16 +19,6 @@
  * GAME SETTING CUSTOMIZATION START
  *
  */
-//var urlApi = 'http://api.localhost.com/';
-var urlApi = 'https://suburbia-concurso.herokuapp.com';
-var token = 'token';
-var responseToken = '';
-
-window.Event.$on('gameStarted', function(data) {
-	console.log(data)
-	token = data;
-})
-
 //keyboard key code
 var keyboard_arr = {left:[65,37],
 					right:[68,39],
@@ -38,7 +40,7 @@ var map_array = [
 						radar:'assets/map1_radar.png',
 						thumb:'assets/map1_thumb.png',
 						image:'assets/map1.png',
-						lap:3,
+						lap:1,
 						collisions:[
 							{type:0, path:[[-1671,440],[-1460,288],[-1442,-214],[-1017,-204],[-717,-372],[-482,-675],[-209,-1078],[1287,-1081],[1804,-687],[1813,-836],[1287,-1226],[-221,-1214],[-1683,-1211],[-1773,430],]},
 							{type:0, path:[[-1665,452],[-1655,852],[-1349,1115],[587,1109],[872,966],[1101,585],[1398,-74],[1711,-771],[1813,-734],[1813,1270],[-1792,1260],[-1804,424],]},
@@ -558,7 +560,7 @@ function goPage(page){
 			stopGame();
 			stopPhysics();
 
-			window.Event.$emit("gameFinished", playerData);
+			//window.Event.$emit("gameFinished", playerData);
 
 			if(gameData.gameMode == 'race'){
 				saveGame(playerData.pos);

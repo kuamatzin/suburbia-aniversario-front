@@ -98,9 +98,8 @@ export default {
     });
 
     EventBus.$on("gameFinished", () => {
-      this.gameStarted = false;
-
       this.inited = false;
+      this.gameStarted = false;
 
       setTimeout(() => {
         this.inited = true;

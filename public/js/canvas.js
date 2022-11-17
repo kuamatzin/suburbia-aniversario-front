@@ -36,7 +36,9 @@ $.selectMap = {};
 $.car = {};
 $.maps = {};
 $.traffic = {};
-$.buttons = {};
+$.buttons = {
+
+};
 
 /*!
  *
@@ -44,6 +46,7 @@ $.buttons = {};
  *
  */
 function buildGameCanvas(){
+	console.log('buildGameCanvas')
 	canvasContainer = new createjs.Container();
 	mainContainer = new createjs.Container();
 	instructionsContainer = new createjs.Container();
@@ -183,7 +186,6 @@ function buildGameCanvas(){
 	itemArrowGuide.regY = 90;
 
 	for(var n=0; n<car_array.length; n++){
-		console.log(car_array[n].image);
 		$.car[n] = new createjs.Bitmap(loader.getResult('car'+n));
 		$.car[n].x = -500;
 		centerReg($.car[n]);
@@ -547,7 +549,6 @@ function resizeCanvas(){
 		//buttons
 		var rangeX = 85;
 		var rangeY = 70;
-
 		$.buttons['itemButtonLeft'].x = offset.x + rangeX;
 		$.buttons['itemButtonLeft'].y = (canvasH - offset.y) - rangeY;
 

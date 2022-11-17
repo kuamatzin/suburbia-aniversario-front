@@ -8,6 +8,7 @@
  *
  */
 function initPreload(){
+	console.log('initPreload')
 	toggleLoader(true);
 
 	checkMobileEvent();
@@ -118,6 +119,7 @@ function initPreload(){
 		loader.installPlugin(createjs.Sound);
 	}
 
+	console.log('loader init', loader);
 	loader.addEventListener("complete", handleComplete);
 	loader.addEventListener("fileload", fileComplete);
 	loader.addEventListener("error",handleFileError);
@@ -160,6 +162,7 @@ function handleProgress() {
  */
 function handleComplete() {
 	toggleLoader(false);
+	console.log('Lets go to initMaaaaain')
 	initMain();
 };
 
