@@ -52,7 +52,7 @@
           <span
             id="ganadores"
             class="ml-3 primary-color px-3 secondary-font" style="font-size: 1.2rem"
-          >¡RECUERDA QUE CON CADA COMPRA MÍNIMA DE $800.00 PUEDES PARTICIPAR NUEVAMENTE!</span>
+          >¡RECUERDA QUE CON CADA COMPRA MÍNIMA DE $1,000.00 PUEDES PARTICIPAR NUEVAMENTE!</span>
         </div>
       </div>
     </div>

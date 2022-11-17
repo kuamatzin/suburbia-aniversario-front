@@ -925,8 +925,10 @@ export default {
     },
 
     gameFinished(data) {
+      console.log('gameFinished', data);
       this.response.ticket = '';
       setTimeout(() => {
+        console.log('makdmaskldmlkas')
         this.response.ticket = data.ticket;
         this.response.token = '';
         this.timerResult = this.formatSecondsToTimer(data.answer.seconds);

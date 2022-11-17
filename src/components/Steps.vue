@@ -161,7 +161,7 @@
         <h4 class="text-center secondary-color">Paso 4</h4>
         <p class="text-center">
           ¡Recuerda que puedes seguir participando con cada compra mínima de
-          $800.00!
+          $1,000.00!
         </p>
       </div>
       <div id="calendario" class="mt-4 ancla-to-cal"></div>

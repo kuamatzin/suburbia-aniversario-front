@@ -509,7 +509,7 @@ function goPage(page){
 	var targetContainer = null;
 	switch(page){
 		case 'main':
-			playSoundLoop('musicMain');
+			//playSoundLoop('musicMain');
 			targetContainer = mainContainer;
 		break;
 
@@ -756,14 +756,14 @@ function saveGame(score){
 		toggleScoreboardSave(true);
 	}
 
-	/*$.ajax({
+	$.ajax({
       type: "POST",
       url: 'saveResults.php',
       data: {score:score},
       success: function (result) {
           console.log(result);
       }
-    });*/
+    });
 }
 
 /*!

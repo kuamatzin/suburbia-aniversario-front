@@ -33,7 +33,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Por cada $ 800.00 (ochocientos pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de app Suburbia y/o la página de internet www.suburbia.com.mx durante el periodo comprendido del 06 al 31 de octubre de 2022, el cliente podrá participar para ganar los siguientes incentivos:
+              Por cada $1,000.00 (mil pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de app Suburbia y/o la página de internet www.suburbia.com.mx durante el periodo comprendido del 06 al 31 de octubre de 2022, el cliente podrá participar para ganar los siguientes incentivos:
               <br><br>
               Uno de los tres kits que contiene un guardarropa en ropa, calzado y accesorios con un valor unitario de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno así como un Celular APPLE Smartphone iPhone SE 22 128GB con valor de $12,999.00 (doce mil novecientos noventa y nueve pesos 00/100 M.N.) danto un total de $22,999.00 (veintidós mil novecientos noventa y nueve pesos 00/100 M.N.) cada uno o 1 (uno) de los 20 (veinte) ganadores en ropa, calzado y accesorios comercializados en Suburbia con valor de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno.
             </div>
