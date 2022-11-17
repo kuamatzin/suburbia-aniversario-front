@@ -9,6 +9,9 @@
  */
 //var urlApi = 'http://api.localhost.com/';
 var urlApi = 'https://suburbia-concurso.herokuapp.com';
+var token = 'token';
+var responseToken = '';
+
 //keyboard key code
 var keyboard_arr = {left:[65,37],
 					right:[68,39],
