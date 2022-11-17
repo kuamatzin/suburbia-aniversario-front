@@ -86,7 +86,7 @@ export default {
     return {
       waitSoon: false,
       activeWebsite: true,
-      gameStarted: true,
+      gameStarted: false,
       inited: true,
       activeCountdown: false
     };

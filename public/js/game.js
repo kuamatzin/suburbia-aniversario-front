@@ -12,6 +12,11 @@ var urlApi = 'https://suburbia-concurso.herokuapp.com';
 var token = 'token';
 var responseToken = '';
 
+window.Event.$on('gameStarted', function(data) {
+	console.log(data)
+	token = data;
+})
+
 //keyboard key code
 var keyboard_arr = {left:[65,37],
 					right:[68,39],
