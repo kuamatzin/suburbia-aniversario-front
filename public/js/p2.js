@@ -27,7 +27,6 @@ var aiMoveData = {distance:300, range:70};
  *
  */
 function startPhysics(){
-	'Iniciando física';
 	world = new p2.World({gravity:[0,0]});
 
 	worldData.car = [];

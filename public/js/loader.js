@@ -8,7 +8,6 @@
  *
  */
 function initPreload(){
-	console.log('initPreload')
 	toggleLoader(true);
 
 	checkMobileEvent();
@@ -22,6 +21,7 @@ function initPreload(){
 	manifest=[
 			{src:'assets/background.png', id:'background'},
 			{src:'assets/backgroundInstructions.png', id:'backgroundInstructions'},
+			{src:'assets/backgroundPlayAgain.png', id:'backgroundPlayAgain'},
 			{src:'assets/logo.png', id:'logo'},
 			{src:'assets/logoInstructions.png', id:'logoInstructions'},
 			{src:'assets/button_start.png', id:'buttonStart'},
@@ -54,6 +54,7 @@ function initPreload(){
 			{src:'assets/item_confirm.png', id:'itemExit'},
 
 			{src:'assets/button_continue.png', id:'buttonContinue'},
+			{src:'assets/button_play_again.png', id:'buttonPlayAgain'},
 			{src:'assets/item_result.png', id:'itemResult'},
 			{src:'assets/button_facebook.png', id:'buttonFacebook'},
 			{src:'assets/button_twitter.png', id:'buttonTwitter'},
@@ -119,7 +120,6 @@ function initPreload(){
 		loader.installPlugin(createjs.Sound);
 	}
 
-	console.log('loader init', loader);
 	loader.addEventListener("complete", handleComplete);
 	loader.addEventListener("fileload", fileComplete);
 	loader.addEventListener("error",handleFileError);
@@ -162,7 +162,6 @@ function handleProgress() {
  */
 function handleComplete() {
 	toggleLoader(false);
-	console.log('Lets go to initMaaaaain')
 	initMain();
 };
 

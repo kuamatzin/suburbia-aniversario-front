@@ -971,7 +971,19 @@ export default {
       this.$vuelidation.reset();
     },
 
+    generateString(length) {
+        const characters ='123456789';
+        let result = ' ';
+        const charactersLength = characters.length;
+        for ( let i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+
+        return result;
+    },
+
     setTestData() {
+      const ticket = this.generateString(20);
       this.first_name = "Carlos";
       this.second_name = "Carlos";
       this.paternal_last_name = "Cuamatzin";
@@ -984,15 +996,15 @@ export default {
       this.mobile = "2228544315";
       this.email = "kuamatzin@gmail.com";
       this.buy_type = "store";
-      this.online_ticket = "";
-      this.terminal = "";
-      this.transaction = "";
-      this.store_number = "";
-      this.ticket = "22222 22222 22222 22222";
-      this.confirm_ticket = "22222 22222 22222 22222";
-      this.store = "";
+      this.online_ticket = "2222222222222222";
+      this.terminal = "22";
+      this.transaction = "2212";
+      this.store_number = "0953";
+      this.ticket = ticket;
+      this.confirm_ticket = ticket;
+      this.store = "Merida Gran Santa Fe";
       this.payment_method = "suburbia_card";
-      this.buy_amount = 0;
+      this.buy_amount = "1000.00";
       this.correctInfo = true;
       this.terms = true;
       this.privacy = true;

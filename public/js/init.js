@@ -54,7 +54,6 @@ function checkBrowser(){
 	if(browserSupport){
 		if(!isLoaded){
 			isLoaded=true;
-			console.log('Entreeeeeeeee')
 			initPreload();
 		}
 	}else{

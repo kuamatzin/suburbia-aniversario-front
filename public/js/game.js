@@ -5,7 +5,7 @@ var responseToken = '';
 
 $(document).ready(function() {
 	window.Event.$on('gameStarted', function(data) {
-		console.log(data)
+		//console.log(data)
 		token = data;
 	})
 });
@@ -124,7 +124,7 @@ var resultTitleLoseText = 'GAME OVER!'; //result title display text
 
 var resultLossText = 'YOU FINISH IN [POSITION]'; //result loss display text
 var resultWinText = 'YOU FINISH IN [POSITION]'; //result win display text
-var resultBestTimeText = 'BEST TIME : [NUMBER]'; //result win display text
+var resultBestTimeText = 'TIEMPO : [NUMBER]'; //result win display text
 
 var resultPursuitText = '[TOTAL] CARS BUSTED'; //result caught display text
 var resultPursuitAwayText = '[TOTAL] CARS GET AWAY'; //result not caught display text
@@ -243,6 +243,11 @@ function buildGameButton(){
 	buttonContinue.addEventListener("click", function(evt) {
 		playSound('soundClick');
 		goPage('main');
+	});
+
+	buttonPlayAgain.cursor = "pointer";
+	buttonPlayAgain.addEventListener("click", function(evt) {
+		location.reload()
 	});
 
 	buttonFacebook.cursor = "pointer";
@@ -505,7 +510,7 @@ function toggleKeyPress(name, side, con){
  *
  */
 var curPage=''
-function goPage(page){
+async function goPage(page){
 	curPage=page;
 
 	mainContainer.visible = false;
@@ -514,6 +519,7 @@ function goPage(page){
 	gameContainer.visible = false;
 	editContainer.visible = false;
 	resultContainer.visible = false;
+	playAgainContainer.visible = false;
 
 	stopSoundLoop('musicGame');
 
@@ -536,7 +542,7 @@ function goPage(page){
 		break;
 
 		case 'game':
-			console.log('Game Started');
+			//console.log('Game Started');
 			targetContainer = gameContainer;
 
 			stopSoundLoop('musicMain');
@@ -553,8 +559,7 @@ function goPage(page){
 		break;
 
 		case 'result':
-			console.log(playerData);
-			targetContainer = resultContainer;
+			targetContainer = playAgainContainer;
 			stopSoundLoop('musicMain');
 
 			stopGame();
@@ -563,18 +568,22 @@ function goPage(page){
 			//window.Event.$emit("gameFinished", playerData);
 
 			if(gameData.gameMode == 'race'){
-				saveGame(playerData.pos);
-
-				resultTimeTxt.text = resultBestTimeText.replace('[NUMBER]', millisecondsToTimeGame(playerData.best));
-				if(playerData.pos <= 3){
-					resultTitleTxt.text = resultTitleWinText;
-					resultScoreTxt.text = resultWinText.replace('[POSITION]', resultPos_arr[playerData.pos-1]);
-					resultScoreTxt.text = ''
-				}else{
-					resultTitleTxt.text = resultTitleLoseText;
-					resultScoreTxt.text = resultLossText.replace('[POSITION]', resultPos_arr[playerData.pos-1]);
-					resultScoreTxt.text = ''
+				const result = await saveGame(playerData.pos);
+				//console.log('YEI', result);
+				const missing_attemps = result.ticket.max_attempts - result.ticket.attempts;
+				if (missing_attemps > 0) {
+					playAgainContainer.removeChild(buttonPlayAgain);
+					playAgainContainer.addChild(buttonContinue);
+				} else {
+					//console.log('Entre aquí')
+					playAgainContainer.removeChild(buttonContinue);
+					playAgainContainer.addChild(buttonPlayAgain);
 				}
+
+				resultTimeTxt.text = millisecondsToTimeGame(result.answer.miliseconds)
+				resultTitleTxt.text = '';
+				resultScoreTxt.text = ''
+				resultScoreTxt.text = missing_attemps ? 'PARTICIPACIONES RESTANTES: ' + missing_attemps : '';
 			} else{
 				saveGame(playerData.caught);
 
@@ -718,7 +727,7 @@ function getJWTtoStartGame() {
 			ticket_id: token.id,
 		},
 	}).done(function(response) {
-		console.log(response);
+		//console.log(response);
 		responseToken = response;
 
 		window.Event.$emit("memoramaStarted", response);
@@ -776,23 +785,26 @@ function stopGame(){
  *
  */
 function saveGame(score){
-	if ( typeof toggleScoreboardSave == 'function' ) {
-		$.scoreData.score = score;
-		if(typeof type != 'undefined'){
-			$.scoreData.type = type;
+	return new Promise((resolve) => {
+		if ( typeof toggleScoreboardSave == 'function' ) {
+			$.scoreData.score = score;
+			if(typeof type != 'undefined'){
+				$.scoreData.type = type;
+			}
+			toggleScoreboardSave(true);
 		}
-		toggleScoreboardSave(true);
-	}
 
-	$.ajax({
-		url: urlApi + "/api/responses_game",
-		type: "POST",
-		data: {
-			ticket_id: responseToken.ticket.id,
-			token: responseToken.token,
-		},
-	}).done(function(response) {
-		window.Event.$emit("gameFinished", response);
+		$.ajax({
+			url: urlApi + "/api/responses_game",
+			type: "POST",
+			data: {
+				ticket_id: responseToken.ticket.id,
+				token: responseToken.token,
+			},
+		}).done(function(response) {
+			return resolve(response);
+			//window.Event.$emit("gameFinished", response);
+		});
 	});
 }
 
@@ -969,6 +981,7 @@ function createCar(type,index,x,y,rotation,id){
 							lifeMax:carLife,
 							damage:carDamage
 						};
+	//console.log(newCar.engineData)
 
 	newCar.idleData = {time:0, reset:0, reverse:0, impulse:0};
 

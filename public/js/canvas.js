@@ -28,17 +28,15 @@ function initGameCanvas(w,h){
 }
 
 var guide = false;
-var canvasContainer, mainContainer, instructionsContainer, gameContainer, holesContainer, effectContainer, ballContainer, handleContainer, resultContainer;
-var guideline, bg, logo, buttonStart, bgInstructions, logoInstructions, buttonStart2, buttonContinue, buttonFacebook, buttonTwitter, buttonWhatsapp, buttonFullscreen, buttonSoundOn, buttonSoundOff, fpsLabel;
+var canvasContainer, mainContainer, instructionsContainer, gameContainer, holesContainer, effectContainer, ballContainer, handleContainer, resultContainer, playAgainContainer;
+var guideline, bg, logo, buttonStart, bgInstructions, bgPlayAgain, logoInstructions, buttonStart2, buttonContinue, buttonPlayAgain, buttonFacebook, buttonTwitter, buttonWhatsapp, buttonFullscreen, buttonSoundOn, buttonSoundOff, fpsLabel;
 
 $.selectCar = {};
 $.selectMap = {};
 $.car = {};
 $.maps = {};
 $.traffic = {};
-$.buttons = {
-
-};
+$.buttons = {};
 
 /*!
  *
@@ -46,7 +44,6 @@ $.buttons = {
  *
  */
 function buildGameCanvas(){
-	console.log('buildGameCanvas')
 	canvasContainer = new createjs.Container();
 	mainContainer = new createjs.Container();
 	instructionsContainer = new createjs.Container();
@@ -64,6 +61,7 @@ function buildGameCanvas(){
 	confirmContainer = new createjs.Container();
 	optionsContainer = new createjs.Container();
 	resultContainer = new createjs.Container();
+	playAgainContainer = new createjs.Container();
 
 	editMapContainer = new createjs.Container();
 	editShapeContainer = new createjs.Container();
@@ -75,6 +73,7 @@ function buildGameCanvas(){
 	logo = new createjs.Bitmap(loader.getResult('logo'));
 
 	bgInstructions = new createjs.Bitmap(loader.getResult('backgroundInstructions'));
+	bgPlayAgain = new createjs.Bitmap(loader.getResult('backgroundPlayAgain'));
 	logoInstructions = new createjs.Bitmap(loader.getResult('logoInstructions'));
 
 	buttonStart = new createjs.Bitmap(loader.getResult('buttonStart'));
@@ -343,22 +342,22 @@ function buildGameCanvas(){
 	resultTitleTxt.y = canvasH/100 * 24;
 
 	resultTimeTxt = new createjs.Text();
-	resultTimeTxt.font = "55px bebas_neueregular";
-	resultTimeTxt.color = "#fff";
+	resultTimeTxt.font = "35px bebas_neueregular";
+	resultTimeTxt.color = "#ffbf00";
 	resultTimeTxt.textAlign = "center";
 	resultTimeTxt.textBaseline='alphabetic';
 	resultTimeTxt.text = '';
 	resultTimeTxt.x = canvasW/2;
-	resultTimeTxt.y = canvasH/100 * 35;
+	resultTimeTxt.y = canvasH/100 * 47;
 
 	resultScoreTxt = new createjs.Text();
-	resultScoreTxt.font = "80px bebas_neueregular";
+	resultScoreTxt.font = "35px bebas_neueregular";
 	resultScoreTxt.color = "#ffbf00";
 	resultScoreTxt.textAlign = "center";
 	resultScoreTxt.textBaseline='alphabetic';
 	resultScoreTxt.text = '';
 	resultScoreTxt.x = canvasW/2;
-	resultScoreTxt.y = canvasH/100 * 44;
+	resultScoreTxt.y = canvasH/100 * 52;
 
 	resultShareTxt = new createjs.Text();
 	resultShareTxt.font = "40px bebas_neueregular";
@@ -388,6 +387,12 @@ function buildGameCanvas(){
 	createHitarea(buttonContinue);
 	buttonContinue.x = canvasW/2;
 	buttonContinue.y = canvasH/100 * 72;
+
+	buttonPlayAgain = new createjs.Bitmap(loader.getResult('buttonPlayAgain'));
+	centerReg(buttonPlayAgain);
+	createHitarea(buttonPlayAgain);
+	buttonPlayAgain.x = canvasW/2;
+	buttonPlayAgain.y = canvasH/100 * 72;
 
 	//option
 	buttonFullscreen = new createjs.Bitmap(loader.getResult('buttonFullscreen'));
@@ -472,6 +477,7 @@ function buildGameCanvas(){
 	mapRadarContainer.alpha = mapRadarData.alpha;
 	gameContainer.addChild(itemDustAnimate, itemSirenAnimate, p2Container, mapRadarContainer, itemArrowGuide, countdownContainer, mobileControllerContainer, /*gamePosTxt, gamePosCountTxt,, gameLapTxt, gameLapCountTxt, itemTimer, gameTimerTxt*/);
 	resultContainer.addChild(itemResult, resultTitleTxt, resultScoreTxt, resultTimeTxt, buttonContinue);
+	playAgainContainer.addChild(bgPlayAgain, resultTitleTxt, resultScoreTxt, resultTimeTxt, buttonContinue);
 	optionsContainer.addChild(buttonFullscreen, buttonSoundOn, buttonSoundOff, buttonExit);
 	optionsContainer.visible = false;
 
@@ -479,7 +485,7 @@ function buildGameCanvas(){
 		resultContainer.addChild(resultShareTxt, buttonFacebook, buttonTwitter, buttonWhatsapp);
 	}
 
-	canvasContainer.addChild(bg, mainContainer, instructionsContainer, selectContainer, gameContainer, editContainer, resultContainer, confirmContainer, optionsContainer, /*buttonSettings,*/ guideline, fpsLabel);
+	canvasContainer.addChild(bg, mainContainer, instructionsContainer, selectContainer, gameContainer, editContainer, resultContainer,playAgainContainer, confirmContainer, optionsContainer, /*buttonSettings,*/ guideline, fpsLabel);
 	stage.addChild(canvasContainer);
 
 	resizeCanvas();

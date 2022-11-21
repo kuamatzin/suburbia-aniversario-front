@@ -17,7 +17,6 @@ function initMain(){
 	}
 
 	initGameCanvas(stageW,stageH);
-	console.log('initMain')
 	buildGameCanvas();
 	buildGameButton();
 	if ( typeof buildScoreBoardCanvas == 'function' ) {
@@ -114,11 +113,8 @@ function resizeGameFunc(){
 			$(window).scrollTop(1000);
 		}
 
-		console.log('OOOOOFset')
-		console.log(offset)
-
 		setTimeout(function() {
 			resizeCanvas();
-		}, 2000)
+		}, 200)
 	}, 100);
 }
