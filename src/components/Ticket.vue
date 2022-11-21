@@ -463,7 +463,7 @@ export default {
     EventBus.$on('getTicket', (ticket) => {
       this.response.ticket = ticket;
     })
-    if (process.env.NODE_ENV === 'development') this.setTestData();
+    if (process.env.NODE_ENV === 'development' || location.path.includes('testing')) this.setTestData();
 
     //window.addEventListener('message', this.receiveMessage)
     EventBus.$on('memoramaStarted', () => this.gameStarted())
