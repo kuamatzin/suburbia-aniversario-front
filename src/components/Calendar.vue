@@ -23,7 +23,7 @@
           <h3 class="text-center text-left text-white regular primary-font font-weight-bold">VIGENCIA DE PARTICIPACIÓN</h3>
           <h3
             class="text-left text-white mt-2 primary-font font-weight-bold"
-          >DEL 22 DE NOVIEMBRE AL 24 DE DICIEMBRE DE 2022</h3>
+          >DEL 24 DE NOVIEMBRE AL 24 DE DICIEMBRE DE 2022</h3>
         </div>
       </div>
     </div>

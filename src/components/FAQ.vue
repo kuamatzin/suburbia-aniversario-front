@@ -33,7 +33,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Por cada $1,000.00 (mil pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de app Suburbia y/o la página de internet www.suburbia.com.mx durante el periodo comprendido del 06 al 31 de octubre de 2022, el cliente podrá participar para ganar los siguientes incentivos:
+              Por cada $1,000.00 (mil pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de app Suburbia y/o la página de internet www.suburbia.com.mx durante el periodo comprendido del 22 de noviembre al 6 de diciembre de 2022, el cliente podrá participar para ganar los siguientes incentivos:
               <br><br>
               Uno de los tres kits que contiene un guardarropa en ropa, calzado y accesorios con un valor unitario de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno así como un Celular APPLE Smartphone iPhone SE 22 128GB con valor de $12,999.00 (doce mil novecientos noventa y nueve pesos 00/100 M.N.) danto un total de $22,999.00 (veintidós mil novecientos noventa y nueve pesos 00/100 M.N.) cada uno o 1 (uno) de los 20 (veinte) ganadores en ropa, calzado y accesorios comercializados en Suburbia con valor de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno.
             </div>
@@ -128,7 +128,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan las compras de todos los departamentos de ropa, calzado y accesorios de las tiendas Suburbia de la República Mexicana, compras realizadas a través de la App Suburbia y de la página www.suburbia.com.mx, realizadas durante el periodo del 06 al 31 de octubre de 2022.
+              Participan las compras de todos los departamentos de ropa, calzado y accesorios de las tiendas Suburbia de la República Mexicana, compras realizadas a través de la App Suburbia y de la página www.suburbia.com.mx, realizadas durante el periodo del 22 de noviembre al 6 de diciembre de 2022.
               <br><br>
               EXCEPTO: Pagos de cualquier servicio, mencionando de manera enunciativa más no limitativa televisión de paga, servicio de telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua, cable, gas, pagos de tarjetas, pago de empresas multinivel, entretenimiento, apartamoda, compra y recarga de peaje y tarjetas de prepago.
             </div>
@@ -192,7 +192,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Del 06 al 31 de octubre de 2022
+              Del 24 de noviembre al 6 de diciembre de 2022
             </div>
           </div>
         </div>
@@ -223,7 +223,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente participante que haya cumplido con las condiciones de participación, que haya registrado de manera correcta y verídicamente su códigos de facturación y; complete de forma correcta el juego de MEMORAMA, podrá ser uno de los ganadores/acreedores de los incentivos mencionados anteriormente. La selección de los 23 (veintitrés) ganadores se realizará en estricto apego al menor número de errores y menor tiempo de acuerdo al concurso.
+              El cliente participante que haya cumplido con las condiciones de participación, que haya registrado de manera correcta y verídicamente su códigos de facturación y; complete el juego de CARRERAS, podrá ser uno de los ganadores/acreedores de los incentivos mencionados anteriormente. La selección de los 23 (veintitrés) ganadores se realizará en estricto apego al menor número de errores y menor tiempo de acuerdo al concurso.
             </div>
           </div>
         </div>
