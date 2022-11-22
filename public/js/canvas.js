@@ -343,7 +343,7 @@ function buildGameCanvas(){
 
 	resultTimeTxt = new createjs.Text();
 	resultTimeTxt.font = "35px bebas_neueregular";
-	resultTimeTxt.color = "#ffbf00";
+	resultTimeTxt.color = "#711a68";
 	resultTimeTxt.textAlign = "center";
 	resultTimeTxt.textBaseline='alphabetic';
 	resultTimeTxt.text = '';
@@ -352,7 +352,7 @@ function buildGameCanvas(){
 
 	resultScoreTxt = new createjs.Text();
 	resultScoreTxt.font = "35px bebas_neueregular";
-	resultScoreTxt.color = "#ffbf00";
+	resultScoreTxt.color = "#711a68";
 	resultScoreTxt.textAlign = "center";
 	resultScoreTxt.textBaseline='alphabetic';
 	resultScoreTxt.text = '';
