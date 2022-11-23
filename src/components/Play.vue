@@ -16,7 +16,6 @@
     </div>
 
     <div class="mobile">
-      <div class="gifts-mobile"></div>
       <img src="../assets/images/02_IMG_LANDING/banner-69_responsive.jpg" alt="Premios" class="img-fluid">
     </div>
 
