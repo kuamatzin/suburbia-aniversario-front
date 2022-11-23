@@ -1,6 +1,8 @@
 <template>
   <div class="section-suburbia container mt-5">
-    <h3 class="text-center primary-color-subtitle">MECÁNICA</h3>
+    <h1 class="text-center primary-color-subtitle pb-5">Concurso Navidad</h1>
+
+    <h3 class="text-center primary-color-subtitle mt-5">MECÁNICA</h3>
 
     <p class="text-center px-5 mt-4 desktop">
       Completa el juego de carreras en el menor tiempo posible<br>y gana 1 de las 15 Motonetas ITALIKA 2022 que Suburbia tiene para ti.
