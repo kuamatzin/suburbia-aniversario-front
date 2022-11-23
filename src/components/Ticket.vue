@@ -684,6 +684,11 @@ export default {
         this.resetingFields === false;
       }
       this.customTicketIsValid = newValue.length === 23;
+      if (newValue.startsWith('BR')) {
+        this.customTicketIsValid = true
+      } else {
+        this.customTicketIsValid = false
+      }
       this.customTicketConfirmationIsValid = newValue === this.confirm_ticket;
       const result = newValue.replace(/[^A-Za-z0-9]/g, "").replace(/(.{5})/g, '$1 ').toUpperCase().trim();
       if (result.length > 23) {
@@ -979,11 +984,11 @@ export default {
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
 
-        return result;
+        return 'BR' + result;
     },
 
     setTestData() {
-      const ticket = this.generateString(20);
+      const ticket = this.generateString(18);
       this.first_name = "Carlos";
       this.second_name = "Carlos";
       this.paternal_last_name = "Cuamatzin";
