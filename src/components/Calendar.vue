@@ -16,9 +16,6 @@
         data-aos-delay="50"
         data-aos-duration="800"
       >
-       <div class="mx-2">
-         <img src="../assets/icon-40.svg" alt="calendar" style="width: 100px">
-       </div>
         <div class="text-calendar">
           <h3 class="text-center text-left text-white regular primary-font font-weight-bold">VIGENCIA DE PARTICIPACIÓN</h3>
           <h3

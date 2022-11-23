@@ -33,9 +33,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Por cada $1,000.00 (mil pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de app Suburbia y/o la página de internet www.suburbia.com.mx durante el periodo comprendido del 22 de noviembre al 6 de diciembre de 2022, el cliente podrá participar para ganar los siguientes incentivos:
-              <br><br>
-              Uno de los tres kits que contiene un guardarropa en ropa, calzado y accesorios con un valor unitario de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno así como un Celular APPLE Smartphone iPhone SE 22 128GB con valor de $12,999.00 (doce mil novecientos noventa y nueve pesos 00/100 M.N.) danto un total de $22,999.00 (veintidós mil novecientos noventa y nueve pesos 00/100 M.N.) cada uno o 1 (uno) de los 20 (veinte) ganadores en ropa, calzado y accesorios comercializados en Suburbia con valor de $10,000.00 (diez mil pesos 00/100 M.N.) cada uno.
+              Por cada $ 1,000.00 (un mil pesos 00/100 M.N.) de compra en cualquiera de las tiendas Suburbia de la República Mexicana y/o en compras realizadas a través de App Suburbia y/o la página de internet www.suburbia.com.mx durante el periodo comprendido del 24 de noviembre al 24 de diciembre de 2022, el cliente podrá participar para ganar uno de los siguinetes incentivos:                                                                                                                                                                                                                                                     1 (uno) de las 15 (quince) motonetas Italika Mod.WS 175 2022 con un valor unitario de $36,999.00 (treinta y seis mil novecientos noventa y nueve pesos 00/100 M.N.) cada una, dando un total de $554,985.00 (Quinientos cincuenta y cuatro mil novecientos ochenta y cinco pesos 00/100M.N.) con IVA incluido.
             </div>
           </div>
         </div>
@@ -128,7 +126,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Participan las compras de todos los departamentos de ropa, calzado y accesorios de las tiendas Suburbia de la República Mexicana, compras realizadas a través de la App Suburbia y de la página www.suburbia.com.mx, realizadas durante el periodo del 22 de noviembre al 6 de diciembre de 2022.
+              Participan las compras de todos los departamentos de ropa, calzado y accesorios de las tiendas Suburbia de la República Mexicana, compras realizadas a través de la App Suburbia y de la página www.suburbia.com.mx, realizadas durante el periodo del 24 de noviembre al 24 de diciembre de 2022.
               <br><br>
               EXCEPTO: Pagos de cualquier servicio, mencionando de manera enunciativa más no limitativa televisión de paga, servicio de telefonía, (TELMEX), pago de impuestos y/o derechos, luz, agua, cable, gas, pagos de tarjetas, pago de empresas multinivel, entretenimiento, apartamoda, compra y recarga de peaje y tarjetas de prepago.
             </div>
@@ -192,7 +190,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Del 24 de noviembre al 6 de diciembre de 2022
+              Del 24 de noviembre al 24 de diciembre de 2022
             </div>
           </div>
         </div>
@@ -223,7 +221,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El cliente participante que haya cumplido con las condiciones de participación, que haya registrado de manera correcta y verídicamente su códigos de facturación y; complete el juego de CARRERAS, podrá ser uno de los ganadores/acreedores de los incentivos mencionados anteriormente. La selección de los 23 (veintitrés) ganadores se realizará en estricto apego al menor número de errores y menor tiempo de acuerdo al concurso.
+              El cliente participante que haya cumplido con las condiciones de participación, que haya registrado de manera correcta y verídicamente su códigos de facturación y; complete de forma correcta el juego de CARRERA DE NAVIDAD, podrá ser uno de los ganadores/acreedores de los incentivos mencionados anteriormente. La selección de los 15 (quince) ganadores se realizará en estricto apego al menor número de errores y menor tiempo de acuerdo al concurso.
             </div>
           </div>
         </div>
@@ -254,7 +252,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              El nombre de los clientes que resulten ganadores de la presente mecánica, se darán a conocer el día jueves 10 de noviembre de 2022 únicamente en el horario de 10:00 am a 10:00 pm, a través de cartulinas o anuncios ubicados en el área de atención a clientes o línea de cajas de las tiendas Suburbia de la República Mexicana, y/o en las redes sociales oficiales de la organizadora y/o en la página ganasuburbia.com.mx
+              El nombre de los clientes que resulten ganadores de la presente mecánica, se darán a conocer el día jueves 06 de enero de 2023 únicamente en el horario de 10:00 am a 10:00 pm, a través de cartulinas o anuncios ubicados en el área de atención a clientes o línea de cajas de las tiendas Suburbia de la República Mexicana, y/o en las redes sociales oficiales de la organizadora y/o en la página ganasuburbia.com.mx
             </div>
           </div>
         </div>
@@ -285,7 +283,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 55 6912 1845
+              Puedes ponerte directamente en contacto con algún asesor vía Whatsapp en nuestro número de atención que es: 55 9815 5364
             </div>
           </div>
         </div>
