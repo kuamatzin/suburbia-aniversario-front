@@ -85,7 +85,7 @@ export default {
   data() {
     return {
       waitSoon: false,
-      activeWebsite: true,
+      activeWebsite: false,
       gameStarted: false,
       inited: true,
       activeCountdown: false
