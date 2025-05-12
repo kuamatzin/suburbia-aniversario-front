@@ -115,7 +115,7 @@
             //4,      //NUM CARD IN LEVEL 1
             //8,      //NUM CARD IN LEVEL 2
             //16,     //NUM CARD IN LEVEL 3
-            32, //NUM CARD IN LEVEL 4
+            16, //NUM CARD IN LEVEL 4
           ],
 
           time_level: [
@@ -141,9 +141,6 @@
             return 0;
           }
 
-          console.log('Iniciar petición');
-          console.log(token)
-
           $.ajax({
             url: urlApi + "/api/token",
             type: "POST",
@@ -151,7 +148,6 @@
               ticket_id: token.id,
             },
           }).done(function(response) {
-            console.log(response);
             responseToken = response;
 
             window.Event.$emit("memoramaStarted", response);
