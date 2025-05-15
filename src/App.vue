@@ -31,6 +31,7 @@
             <span class="font-weight-bold text-2xl">Has tardado</span> <span class="game-time">{{ time }} segundos</span> <span>en completar el juego</span>
           </div>
           <h2 class="mt-4">¡Exige tu premio!</h2>
+          <button class="btn btn-light mt-4" @click="restartGame" style="font-weight: bold; font-size: 1.2rem; padding: 12px 32px; border-radius: 8px;">Reiniciar juego</button>
         </div>
       </div>
     </div>
@@ -94,6 +95,12 @@ export default {
       this.gameFinished = true;
     });
   },
+  methods: {
+    restartGame() {
+      // Reload the page
+      location.reload();
+    }
+  }
 };
 </script>
 
