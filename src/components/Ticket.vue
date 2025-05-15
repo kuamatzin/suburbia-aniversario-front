@@ -467,7 +467,6 @@ export default {
 
     //window.addEventListener('message', this.receiveMessage)
     EventBus.$on('memoramaStarted', () => this.gameStarted())
-    EventBus.$on('gameFinished', data => this.gameFinished(data))
   },
 
   data() {

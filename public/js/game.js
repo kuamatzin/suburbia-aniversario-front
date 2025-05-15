@@ -793,18 +793,7 @@ function saveGame(score){
 			}
 			toggleScoreboardSave(true);
 		}
-
-		$.ajax({
-			url: urlApi + "/api/responses_game",
-			type: "POST",
-			data: {
-				ticket_id: responseToken.ticket.id,
-				token: responseToken.token,
-			},
-		}).done(function(response) {
-			return resolve(response);
-			//window.Event.$emit("gameFinished", response);
-		});
+		window.Event.$emit("gameFinished", playerData.time);
 	});
 }
 

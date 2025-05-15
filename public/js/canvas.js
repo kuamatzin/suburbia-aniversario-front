@@ -79,7 +79,7 @@ function buildGameCanvas(){
 	buttonStart = new createjs.Bitmap(loader.getResult('buttonStart'));
 	centerReg(buttonStart);
 	buttonStart.x = canvasW/2;
-	buttonStart.y = canvasH/100 * 77;
+	buttonStart.y = canvasH/100 * 90;
 
 	buttonStart2 = new createjs.Bitmap(loader.getResult('buttonStart2'));
 	centerReg(buttonStart2);

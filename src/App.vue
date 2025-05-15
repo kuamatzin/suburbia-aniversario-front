@@ -22,26 +22,6 @@
       </div>
 
       <div v-else>
-        <go-top :size="50" bg-color="#EAC144"></go-top>
-
-        <Navbar v-show="!gameStarted" />
-
-        <Banner v-show="!gameStarted" />
-
-        <Steps v-show="!gameStarted" />
-
-        <Calendar v-show="!gameStarted" />
-
-        <Ticket v-show="!gameStarted" />
-
-        <Play v-show="!gameStarted" />
-
-        <FAQ v-show="!gameStarted" />
-
-        <Winners v-show="!gameStarted" />
-
-        <Footer v-show="!gameStarted" />
-
         <Game v-if="inited" v-show="gameStarted" />
       </div>
     </div>
@@ -97,7 +77,7 @@ export default {
       this.gameStarted = true;
     });
 
-    EventBus.$on("gameFinished", () => {
+    EventBus.$on("gameFinished", (miliseconds) => {
       this.inited = false;
       this.gameStarted = false;
 
