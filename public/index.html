@@ -110,6 +110,7 @@
 
 
         let responseToken;
+        let secondsCounter = 0;
         var oMain = new CMain({
           card_per_level: [
             //4,      //NUM CARD IN LEVEL 1
@@ -141,24 +142,10 @@
             return 0;
           }
 
-          $.ajax({
-            url: urlApi + "/api/token",
-            type: "POST",
-            data: {
-              ticket_id: token.id,
-            },
-          }).done(function(response) {
-            responseToken = response;
-
-            window.Event.$emit("memoramaStarted", response);
-
-            /*
-            window.parent.postMessage({
-                event_id: 'memorama_started',
-                data: response
-            }, "*")
-            */
-          });
+          secondsCounter = 0;
+          setInterval(() => {
+            secondsCounter++;
+          }, 1000);
         });
 
         $(oMain).on("end_session", function(evt) {
@@ -184,24 +171,10 @@
           if (getParamValue("ctl-arcade") === "true") {
             parent.__ctlArcadeSaveScore({ score: iScore });
           }
-
-          $.ajax({
-            url: urlApi + "/api/responses_game",
-            type: "POST",
-            data: {
-              ticket_id: responseToken.ticket.id,
-              token: responseToken.token,
-            },
-          }).done(function(response) {
-            window.Event.$emit("gameFinished", response);
-
-            /**
-            window.parent.postMessage({
-                event_id: 'memorama_completed',
-                data: response
-            }, "*")
-            */
-          });
+          clearInterval(secondsCounter);
+          console.log(secondsCounter);
+          window.Event.$emit("gameFinished", secondsCounter);
+          secondsCounter = 0;
         });
 
         $(oMain).on("show_interlevel_ad", function(evt) {
@@ -237,12 +210,6 @@
         window.Event.$on('gameStarted', function(data) {
             console.log(data)
             token = data;
-        })
-
-        window.Event.$on("gameFinished", function() {
-          setTimeout(function() {
-            initGame();
-          }, 800);
         });
       });
     </script>

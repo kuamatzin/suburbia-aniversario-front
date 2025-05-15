@@ -22,27 +22,16 @@
       </div>
 
       <div v-else>
-        <go-top :size="50" bg-color="#EAC144"></go-top>
-
-        <Navbar v-show="!gameStarted" />
-
-        <Banner v-show="!gameStarted" />
-
-        <Steps v-show="!gameStarted" />
-
-        <Calendar v-show="!gameStarted" />
-
-        <Ticket v-show="!gameStarted" />
-
-        <Play v-show="!gameStarted" />
-
-        <FAQ v-show="!gameStarted" />
-
-        <Winners v-show="!gameStarted" />
-
-        <Footer v-show="!gameStarted" />
-
         <Game v-if="inited" v-show="gameStarted" />
+
+        <div class="game-finished" v-if="gameFinished">
+          <!-- Logo centered -->
+          <img alt="Suburbia aniversario" class="mb-4" src="https://protact.mx/assets/img/white_logo.png" style="width: 400px" />
+          <div class="d-flex j align-items-center">
+            <span class="font-weight-bold text-2xl">Has tardado</span> <span class="game-time">{{ time }} segundos</span> <span>en completar el juego</span>
+          </div>
+          <h2 class="mt-4">¡Exige tu premio!</h2>
+        </div>
       </div>
     </div>
   </div>
@@ -88,7 +77,9 @@ export default {
       activeWebsite: true,
       gameStarted: true,
       inited: true,
-      activeCountdown: false
+      activeCountdown: false,
+      time: 0,
+      gameFinished: false
     };
   },
 
@@ -97,14 +88,10 @@ export default {
       this.gameStarted = true;
     });
 
-    EventBus.$on("gameFinished", () => {
+    EventBus.$on("gameFinished", (time) => {
+      this.time = time;
       this.gameStarted = false;
-
-      this.inited = false;
-
-      setTimeout(() => {
-        this.inited = true;
-      }, 500);
+      this.gameFinished = true;
     });
   },
 };
@@ -118,6 +105,48 @@ export default {
   .mobile {
     display: none;
   }
+}
+
+.game-finished {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #ff2a68 0%, #ff5858 50%, #ff6f61 100%);
+  color: #fff;
+  font-family: 'Montserrat', 'Rajdhani', sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.game-finished h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.15);
+}
+
+.game-finished p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.game-time {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff 30%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 @media (max-width: 576px) {
