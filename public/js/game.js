@@ -149,6 +149,7 @@ var sharePursuitMessage = 'Total [TOTAL] cars busted is my new pursuit result on
 $.editor = {enable:false};
 
 var playerData = {time:0, best:0, pos:0, caught:0};
+var secondsCounter = 0;
 var gameData = {paused:true, gameMode:'race', gameControl:false, gameAIControl:false, userIndex:0, carIndex:0, mapIndex:0, cars:[], pos:[], aimove:[], gameEnd:false, startDate:0, timer:false, checkpointW:800, checkpointH:20, checkpoint:[], mapW:0, mapH:0, mapRadarW:0, mapRadarH:0, mapRadarGap:20, chase:[], pursuitLap:0};
 var statsData = {speed:0, strength:0, damage:0};
 var gameWorldData = {car:[]};
@@ -542,7 +543,7 @@ async function goPage(page){
 		break;
 
 		case 'game':
-			//console.log('Game Started');
+			console.log('Game Started');
 			targetContainer = gameContainer;
 
 			stopSoundLoop('musicMain');
@@ -697,6 +698,9 @@ function updateCountdown(){
 
 		toggleCountdown(false);
 	}else if(countNum == countdownTotal){
+		setInterval(() => {
+			secondsCounter++;
+		}, 1000);
 		getJWTtoStartGame();
 		playSound('soundCountdownRace');
 
@@ -793,7 +797,10 @@ function saveGame(score){
 			}
 			toggleScoreboardSave(true);
 		}
-		window.Event.$emit("gameFinished", playerData.time);
+
+		window.Event.$emit("gameFinished", secondsCounter);
+		clearInterval(secondsCounter);
+		resolve(secondsCounter);
 	});
 }
 
