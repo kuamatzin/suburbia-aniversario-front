@@ -8,10 +8,10 @@
 
       <div v-else>
         <div class="desktop">
-          <img src="./assets/wait_desktop.jpeg" width="100%">
+          <img src="./assets/images/end_game_winner.jpeg" width="100%">
         </div>
         <div class="mobile">
-          <img src="./assets/wait_mobile.jpeg" width="100%">
+          <img src="./assets/images/end_game_mobile_winner.jpeg" width="100%">
         </div>
       </div>
     </div>
@@ -28,9 +28,10 @@
           <!-- Logo centered -->
           <img alt="Suburbia aniversario" class="mb-4" src="https://protact.mx/assets/img/white_logo.png" style="width: 400px" />
           <div class="d-flex j align-items-center">
-            <span class="font-weight-bold text-2xl">Has tardado</span> <span class="game-time">{{ time }} segundos</span> <span>en completar la carrera</span>
+            <span class="font-weight-bold text-2xl">Has tardado</span> <span class="game-time">{{ time }} segundos</span> <span>en completar el juego</span>
           </div>
           <h2 class="mt-4">¡Exige tu premio!</h2>
+<button class="btn btn-light mt-4" @click="restartGame" style="font-weight: bold; font-size: 1.2rem; padding: 0.75rem 2rem; border-radius: 8px;">Reiniciar juego</button>
         </div>
       </div>
     </div>
@@ -73,65 +74,44 @@ export default {
 
   data() {
     return {
-      waitSoon: false,
+      waitSoon: true,
       activeWebsite: true,
       gameStarted: true,
       inited: true,
       activeCountdown: false,
-      gameFinished: false,
       time: 0,
+      gameFinished: false
     };
   },
 
   mounted() {
-    EventBus.$on('gameStarted', () => {
+    EventBus.$on("gameStarted", () => {
       this.gameStarted = true;
     });
 
-    EventBus.$on("gameFinished", (miliseconds) => {
-      this.inited = false;
+    EventBus.$on("gameFinished", (time) => {
+      this.time = time;
       this.gameStarted = false;
       this.gameFinished = true;
-      this.time = miliseconds;
-
-      setTimeout(() => {
-        this.inited = true;
-      }, 500);
     });
   },
+
+  methods: {
+    restartGame() {
+      // Reload the page
+      window.location.reload();
+    }
+  }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 
 @media (min-width: 577px) {
   .mobile {
     display: none;
-  }
-}
-
-@media (max-width: 576px) {
-  .desktop {
-    display: none;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  color: #666666;
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: "Montserrat", sans-serif !important;
-    font-weight: 700;
   }
 }
 
@@ -175,6 +155,29 @@ body {
   background-clip: text;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+@media (max-width: 576px) {
+  .desktop {
+    display: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #666666;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 700;
+  }
 }
 
 #myBtn {
